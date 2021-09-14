@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   class Usuario extends Model {
     static associate(models) {
       this.hasMany(models.Reserva, {foreignKey: "id_usuario"})
+      this.hasOne(models.RefreshToken, { foreignKey: "user_id" });
     }
 
     isPasswordValid(password) {
