@@ -1,5 +1,5 @@
 const createHttpError = require("http-errors")
-const { Usuario } = require("../db/models");
+const { Usuario, Quarto, Reserva } = require("../db/models");
 const nodemail = require("nodemailer")
 const QRCode = require('qrcode')
 
@@ -20,7 +20,7 @@ async function createUser(user) {
     return newUser;
 }
 
-async function sendEmail(email) {
+async function sendEmail(email, texto) {
     const transporter = nodemail.createTransport({
         service: "Gmail",
         auth: {
@@ -33,7 +33,7 @@ async function sendEmail(email) {
         from: process.env.EMAIL_USER,
         to: email,
         subject: "Teste",
-        text: "Apenas um email de teste"
+        text: texto
     }
 
     await transporter.sendMail(emailText, function (error, info) {
@@ -59,13 +59,52 @@ async function reserve(usuario) {
             email: usuario.email
         }
     })
-    qrCode(user)
 
-    sendEmail(user.email)
+    if(!user){
+        throw new createHttpError(409, "User not Found");
+    }
+
+    const quarto = await Quarto.findOne({
+        where: {
+            disponibilidade: true
+        }
+    })
+
+    quarto.disponibilidade = false
+    quarto.numero_pessoas = 4
+    await quarto.save()
+
+    const reserva = await Reserva.create({
+        tipo_quarto: quarto.tipo_quarto,
+        numero_pessoas: 4,
+        numero_quarto: quarto.numero_quarto,
+        id_usuario: user.id,
+        id_quarto: quarto.id
+    })
+
+    const text = `Dono da Reserva: ${user.email}\nQuarto: ${reserva.numero_quarto}\nNúmero de Pessoas: ${reserva.numero_pessoas}`
+    
+    
+    /**
+     * TODO
+     */
+    // qrCode(user)
+
+    sendEmail(usuario.email, text)
+}
+
+async function quartos(infoQuarto){
+    const { tipo_quarto, numero_quarto } = infoQuarto
+
+    Quarto.create({
+        numero_quarto: numero_quarto,
+        tipo_quarto: tipo_quarto
+    })
 }
 
 module.exports = {
     createUser,
     reserve,
-    qrCode
+    qrCode,
+    quartos
 };

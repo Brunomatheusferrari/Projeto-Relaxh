@@ -10,12 +10,27 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Quarto.init({
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
+    },
     tipo_quarto: {
       type: DataTypes.STRING,
       validate: {
         isIn: [["Standart", "Premium", "Deluxe"]]
       },
       allowNull: false
+    },
+    numero_pessoas: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    numero_quarto: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      unique: true
     },
     disponibilidade: {
       type: DataTypes.BOOLEAN,

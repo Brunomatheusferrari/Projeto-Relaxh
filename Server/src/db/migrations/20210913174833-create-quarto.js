@@ -18,7 +18,12 @@ module.exports = {
       },
       numero_quarto: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        unique: true
+      },
+      disponibilidade: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
       },
       created_at: {
         allowNull: false,

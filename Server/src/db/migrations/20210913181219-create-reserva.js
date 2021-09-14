@@ -16,6 +16,14 @@ module.exports = {
         allowNull: false,
         defaultValue: true
       },
+      numero_pessoas:{
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      numero_quarto: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
       id_usuario: {
         type: Sequelize.UUID,
         allowNull: false,

@@ -11,6 +11,17 @@ async function create(req, res, next) {
     }
 }
 
+async function quartos(req, res, next) {
+    try {
+        const user = await usersServices.quartos(req.body);
+
+        res.status(201).json(user);
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
 async function reserve(req, res, next){
     try {
         const user = await usersServices.reserve(req.body);
@@ -24,5 +35,6 @@ async function reserve(req, res, next){
 
 module.exports = {
     create,
-    reserve
+    reserve,
+    quartos
 };
