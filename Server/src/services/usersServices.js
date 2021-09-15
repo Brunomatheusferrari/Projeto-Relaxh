@@ -3,6 +3,10 @@ const { Usuario, Quarto, Reserva } = require("../db/models");
 const nodemail = require("nodemailer")
 const QRCode = require('qrcode');
 const jwt = require("jsonwebtoken");
+const jwt_decode = require("jwt-decode")
+const { createCanvas } = require('canvas')
+
+const canvas = createCanvas(300, 300)
 
 async function createUser(user) {
     const [newUser, created] = await Usuario.findOrCreate({
@@ -21,7 +25,7 @@ async function createUser(user) {
     return newUser;
 }
 
-async function sendEmail(email, texto) {
+async function sendEmail(email) {
     const transporter = nodemail.createTransport({
         service: "Gmail",
         auth: {
@@ -33,8 +37,10 @@ async function sendEmail(email, texto) {
     const emailText = {
         from: process.env.EMAIL_USER,
         to: email,
-        subject: "Teste",
-        text: texto
+        attachDataUrls: true,
+        subject: "Relaxh",
+        text: "Obrigado Pela Preferência, aqui está o seu qrcode de Check-in",
+        html: "<p>Aqui está o seu qrcode de Check-in" + "\n" +'<img src="' + canvas.toDataURL() + '" />'
     }
 
     await transporter.sendMail(emailText, function (error, info) {
@@ -47,10 +53,9 @@ async function sendEmail(email, texto) {
     })
 }
 
-async function qrCode(reserveInfo) {
-    await QRCode.toString(`email: ${reserveInfo.email}`, function (err, string) {
+async function qrCode(tokenReserva) {
+     await QRCode.toCanvas(canvas, tokenReserva, function (err, string) {
         if (err) throw err
-        return string
     })
 }
 
@@ -83,19 +88,23 @@ async function createReserva(usuario, quarto, data_entrada, data_saida) {
     })
 }
 
-function generateToken(data, reserva){
-
-    return jwt.sign({ 
+function generateToken(data, reserva) {
+    return jwt.sign({
         id_reserva: reserva.id
     }, process.env.TOKEN_SECRET, {
         expiresIn: data
     });
-
 }
 
 async function reserve(InfoReserva) {
-    const { email, tipo_quarto, numero_pessoas, data_entrada, data_saida } = InfoReserva
-    
+    const {
+        email,
+        tipo_quarto,
+        numero_pessoas,
+        data_entrada,
+        data_saida
+    } = InfoReserva
+
     const user = await getUser(email)
 
     if (!user) {
@@ -105,37 +114,56 @@ async function reserve(InfoReserva) {
     const quarto = await getRoom(tipo_quarto)
 
     if (!quarto) {
-        throw new createHttpError(404, "Não há quaros disponiveis");
+        throw new createHttpError(404, "Não há quartos disponiveis");
     }
 
-    //Reservando o Quarto
+    //Mudando Infos da Reserva
     quarto.disponibilidade = false,
         quarto.numero_pessoas = numero_pessoas,
         await quarto.save()
+
+    //Mudando info do usuário
+    user.role = "user"
+        await user.save()
 
     const reserva = await createReserva(user, quarto, data_entrada, data_saida)
 
     const token = generateToken(data_entrada, reserva)
 
-    // const text = `Dono da Reserva: ${user.email}\nQuarto: ${reserva.numero_quarto}\nNúmero de Pessoas: ${reserva.numero_pessoas}`
+    console.log(token)
 
-    // qrCode(user)
+    qrCode(token)
 
-    // sendEmail(usuario.email, text)
+    // sendEmail(user.email)
 }
 
 async function quartos(infoQuarto) {
-    const { tipo_quarto, numero_quarto } = infoQuarto
+    const {
+        tipo_quarto,
+        numero_quarto
+    } = infoQuarto
 
-    Quarto.create({
+    await Quarto.create({
         numero_quarto: numero_quarto,
         tipo_quarto: tipo_quarto
     })
 }
 
+async function check_in({token}){
+    const { id_reserva } = jwt_decode(token)
+
+    const reserva = await Reserva.findOne({
+        where: {
+            id: id_reserva
+        }
+    })
+
+    console.log(reserva)
+}
+
 module.exports = {
     createUser,
     reserve,
-    qrCode,
-    quartos
+    quartos,
+    check_in
 };
