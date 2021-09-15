@@ -5,12 +5,12 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Reserva extends Model {
     static associate(models) {
-      this.belongsTo(models.Usuario, {foreignKey: "id_usuario", as: "usuario"})
-      this.belongsTo(models.Quarto, {foreignKey: "id_quarto", as: "quarto"})
+      this.belongsTo(models.Usuario, { foreignKey: "id_usuario", as: "usuario" })
+      this.belongsTo(models.Quarto, { foreignKey: "id_quarto", as: "quarto" })
     }
   };
   Reserva.init({
-    id:{
+    id: {
       type: DataTypes.UUID,
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
@@ -22,12 +22,20 @@ module.exports = (sequelize, DataTypes) => {
       },
       allowNull: false
     },
-    numero_pessoas:{
+    numero_pessoas: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
     numero_quarto: {
       type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    data_entrada: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    data_saida: {
+      type: DataTypes.DATE,
       allowNull: false
     },
     id_usuario: {
@@ -49,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
         key: "id"
       },
       allowNull: false
-    } 
+    }
   }, {
     sequelize,
     modelName: 'Reserva',

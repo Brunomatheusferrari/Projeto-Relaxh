@@ -11,17 +11,20 @@ module.exports = {
       tipo_quarto: {
         type: Sequelize.ENUM("Standart", "Premium", "Delux")
       },
-      disponibilidade: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        defaultValue: true
-      },
       numero_pessoas:{
         type: Sequelize.INTEGER,
         allowNull: false
       },
       numero_quarto: {
         type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      data_entrada: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      data_saida: {
+        type: Sequelize.DATE,
         allowNull: false
       },
       id_usuario: {
