@@ -132,7 +132,7 @@ async function reserve(InfoReserva) {
 
     console.log(token)
 
-    qrCode(token)
+        qrCode(token)
 
     // sendEmail(user.email)
 }
@@ -149,8 +149,24 @@ async function quartos(infoQuarto) {
     })
 }
 
+async function verifyTokenExpiration({ token }) {
+    var current_time = Date.now() / 1000;
+
+    if (jwt.exp < current_time) {
+        return null
+    }
+
+    return token
+}
+
 async function check_in({token}){
-    const { id_reserva } = jwt_decode(token)
+    const validToken = verifyTokenExpiration(token)
+
+    if(!validToken){
+        throw new createHttpError(401, "Token Expirou");
+    }
+    
+    const { id_reserva } = jwt_decode(validToken)
 
     const reserva = await Reserva.findOne({
         where: {
@@ -158,7 +174,7 @@ async function check_in({token}){
         }
     })
 
-    console.log(reserva)
+    return reserva
 }
 
 module.exports = {

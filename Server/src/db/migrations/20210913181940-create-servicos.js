@@ -19,6 +19,10 @@ module.exports = {
       horario: {
         type: Sequelize.INTEGER
       },
+      tipo: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       id_quarto:{
         type: Sequelize.UUID,
         references: {

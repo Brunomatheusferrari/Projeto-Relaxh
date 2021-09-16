@@ -30,7 +30,9 @@ module.exports = (sequelize, DataTypes) => {
     numero_quarto: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true
+      unique: {
+        msg: "Quarto já Cadastrado"
+      }
     },
     disponibilidade: {
       type: DataTypes.BOOLEAN,
