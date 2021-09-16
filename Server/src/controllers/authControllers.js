@@ -11,7 +11,6 @@ async function login(req, res, next) {
     }
 }
 
-
 async function refresh(req, res, next) {
     try {
         const tokens = await authServices.refreshToken(req.body);

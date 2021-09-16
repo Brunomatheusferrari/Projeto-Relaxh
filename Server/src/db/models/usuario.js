@@ -37,8 +37,10 @@ module.exports = (sequelize, DataTypes) => {
       unique: {
         msg: "Este e-mail já está cadastrado"
       },
-      isEmail: {
-        msg: "E-mail Inválido"
+      validate: {
+        isEmail: {
+          msg: "Email Inválido"
+        },
       }
     },
     password: {

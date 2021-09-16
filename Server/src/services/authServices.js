@@ -7,7 +7,7 @@ const { RefreshToken, Usuario } = require("../db/models");
 async function createTokens(user) {
     const { email, password } = user;
 
-    const registeredUser = await Usuario.findOne({ where: { email } });    
+    const registeredUser = await Usuario.findOne({ where: { email } });
 
     // Checando se o usuário existe
     if (!registeredUser) {
@@ -22,7 +22,7 @@ async function createTokens(user) {
     }
 
     // Criando o token
-    const token = jwt.sign({ 
+    const token = jwt.sign({
         sub: registeredUser.id,
         role: registeredUser.role
     }, process.env.TOKEN_SECRET, {
@@ -30,7 +30,7 @@ async function createTokens(user) {
     });
 
     // Criando o refresh token
-    const refreshTokenExpiration = Date.now() + ms("30 days");    
+    const refreshTokenExpiration = Date.now() + ms("30 days");
 
     const newRefreshToken = jwt.sign({
         sub: registeredUser.id,
@@ -54,7 +54,7 @@ async function createTokens(user) {
     return { token, refreshToken: newRefreshToken };
 }
 
-async function refreshToken({ refreshToken }) {    
+async function refreshToken({ refreshToken }) {
     // Validando o refreshToken
     const validRefreshToken = await RefreshToken.findOne({
         where: {
@@ -68,7 +68,7 @@ async function refreshToken({ refreshToken }) {
     }
 
     // Criando o token
-    const token = jwt.sign({ 
+    const token = jwt.sign({
         sub: validRefreshToken.user.id,
         role: validRefreshToken.user.role
     }, process.env.TOKEN_SECRET, {
@@ -80,7 +80,7 @@ async function refreshToken({ refreshToken }) {
 
     if (isRefreshTokenExpirated) {
         // Criando novo refreshToken
-        const refreshTokenExpiration = Date.now() + ms("30 days");    
+        const refreshTokenExpiration = Date.now() + ms("30 days");
 
         const newRefreshToken = jwt.sign({
             sub: validRefreshToken.user.id,
@@ -91,14 +91,25 @@ async function refreshToken({ refreshToken }) {
         validRefreshToken.token = newRefreshToken;
         validRefreshToken.expiresIn = refreshTokenExpiration;
         await validRefreshToken.save();
-        
+
         return { token, refreshToken: newRefreshToken }
     }
 
     return { token };
 }
 
-module.exports = {
-    createTokens,
-    refreshToken
-};
+async function verifyTokenExpiration({ token }) {
+    var current_time = Date.now() / 1000;
+
+    if (jwt.exp < current_time) {
+        throw new createHttpError(401, "Token Expirou");
+    }
+
+    return token
+}
+
+    module.exports = {
+        createTokens,
+        refreshToken,
+        verifyTokenExpiration
+    };
