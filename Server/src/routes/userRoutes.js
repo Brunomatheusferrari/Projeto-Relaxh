@@ -8,5 +8,6 @@ router.post("/create", usersControllers.create);
 router.post("/reserve", usersControllers.reserve)
 router.post("/quartos", usersControllers.quartos)
 router.post("/checkin", usersControllers.check_in)
+router.post("/checkout", usersControllers.check_out)
 
 module.exports = router;

@@ -44,9 +44,21 @@ async function check_in(req, res, next){
     }
 }
 
+async function check_out(req, res, next){
+    try {
+        const user = await usersServices.check_out(req.body);
+
+        res.status(201).json(user);
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
 module.exports = {
     create,
     reserve,
     quartos,
-    check_in
+    check_in,
+    check_out
 };
