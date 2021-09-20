@@ -12,22 +12,28 @@ import { LineText } from "../../components/LineText";
 import LogoRelaxh from "../../static/img/logoRelaxh.png"
 import hotelPhoto from "../../static/img/hotelPhoto.png"
 import { HotelPhoto } from "../../components/HotelPhoto";
+import { Link } from "react-router-dom";
 
-export function Homepage() {
+export function Homepage(props) {
     return(
     <>
     <HeaderContainer>
         <NavBarHeader>
             <FiMenu className="menuIcon"/>
-            <LoginButton>Login</LoginButton>
+            <LoginButton>                
+                <Link to="/Login" label="Login" className="loginButtonStyle">Login</Link>                
+            </LoginButton>
         </NavBarHeader>
-        <img src={relaxhTitle} />
-        <img src={relaxhSubtitle} className="subtitle"/>
-        <ReserveButton href="www.youtube.com">Reservar Agora</ReserveButton>
+        <div className="titleContainer">
+            <img src={relaxhTitle} />
+            <img src={relaxhSubtitle} className="subtitle"/>
+            <ReserveButton>Reservar Agora</ReserveButton>
+            <video className="videoBg" autoPlay loop muted>
+                <source src={bgVideo} />
+            </video>
+        </div>
         <FiArrowDownCircle className="iconArrowDown"/>
-        <video className="videoBg" autoPlay loop muted>
-            <source src={bgVideo} />
-        </video>
+
     </HeaderContainer>
         <IntroductSection>
             <div className="lineTextCenter">
