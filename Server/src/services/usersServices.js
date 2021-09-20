@@ -4,7 +4,6 @@ const nodemail = require("nodemailer")
 const QRCode = require('qrcode');
 const jwt = require("jsonwebtoken");
 const { createCanvas } = require('canvas');
-const { use } = require("../routes/userRoutes");
 
 const canvas = createCanvas(300, 300)
 
@@ -133,11 +132,15 @@ async function reserve(InfoReserva) {
 }
 
 async function getUser({id}){
-    return await Usuario.findOne({
+    const user = await Usuario.findOne({
         where: {
             id
         }
     })
+
+    if(!user){
+        throw new createHttpError(404, "User not found");
+    }
 }
 
 async function editUser(infoUser) {

@@ -3,7 +3,9 @@ const router = express.Router();
 
 const authControllers = require("../controllers/authControllers");
 
-router.post("/login", authControllers.login);
-router.post("/refresh", authControllers.refresh);
+const authValidations = require("../validations/authValidations")
+
+router.post("/login", authValidations.login , authControllers.login);
+router.post("/refresh", authValidations.refresh ,authControllers.refresh);
 
 module.exports = router;
