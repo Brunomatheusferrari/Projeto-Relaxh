@@ -7,9 +7,10 @@ export const NavBarHeader = styled.div`
     z-index: 2;
     width: 95vw;
     position: relative;
-    top: -30%;
     overflow-y: hidden;
-
+    align-items: center;
+    height: 50px;
+    margin-top: 30px;
     .menuIcon {
         color:${colors.lightWhite};
         width: 40px;

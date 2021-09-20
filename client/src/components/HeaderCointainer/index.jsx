@@ -27,13 +27,12 @@ export const HeaderContainer = styled.div`
     }
 
     .iconArrowDown {
-        position: relative;
-        top: 30%;
         color: ${colors.lightWhite};
         width: 40px;
         height: auto;
         z-index: 1;
         overflow-y: hidden;
+        margin-bottom: 30px;
 
     }
 
@@ -45,8 +44,17 @@ export const HeaderContainer = styled.div`
 			min-height: 100%;
 			width: auto; 
 			height: auto; 
-			z-index: -1000;
+            z-index: -1000;
+            filter: brightness(80%);
 			background-size: cover; 
+    }
+
+    .titleContainer {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
 
