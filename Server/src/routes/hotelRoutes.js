@@ -6,8 +6,8 @@ const authentication = require("../middlewares/authentication")
 
 const hotelValidation = require("../validations/hotelValidations")
 
-router.post("/quartos", hotelValidation.quartos , hotelControllers.quartos)
-router.post("/checkin", hotelValidation.postCheckin , hotelControllers.check_in)
-router.post("/checkout", hotelValidation.postCheckout, hotelControllers.check_out)
+router.post("/quartos", authentication(["admin"]), hotelValidation.quartos , hotelControllers.quartos)
+router.post("/checkin", authentication(["admin", "guest"]),hotelValidation.postCheckin , hotelControllers.check_in)
+router.post("/checkout", authentication(["admin", "user"]),hotelValidation.postCheckout, hotelControllers.check_out)
 
 module.exports = router;

@@ -2,8 +2,8 @@
     "openapi": "3.0.0",
     "info": {
       "version": "1.0.0", 
-      "title": "Todo APP",
-      "description": "REST API para um TODO APP"
+      "title": "Relaxh",
+      "description": "REST API for Relaxh project"
     },
     "servers": [
         {
@@ -23,6 +23,10 @@
       {
           "name": "Auth",
           "description": "Endpoints de Autenticação"
+      },
+      {
+          "name": "Services",
+          "description": "Endpoints de Services"
       }
     ],
     "components": {
@@ -74,7 +78,7 @@
                     "description": "Usuário a ser criado",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -99,7 +103,7 @@
                     "200": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -149,7 +153,7 @@
                     "description": "Informações do Usuário",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -166,7 +170,7 @@
                     "201": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/User" 
                                 }
@@ -182,12 +186,13 @@
         "/users/edit": {
             "put": {
                 "tags": ["Users"],
+                "security": [{"BearerAuth": []}],
                 "summary": "Editar info do Usuário",
                 "requestBody": {
                     "description": "Editar",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -208,7 +213,7 @@
                     "201": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/User" 
                                 }
@@ -224,12 +229,13 @@
         "/users/delete": {
             "delete": {
                 "tags": ["Users"],
+                "security": [{"BearerAuth": []}],
                 "summary": "Deletar Usuário",
                 "requestBody": {
                     "description": "Deletar",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -255,12 +261,13 @@
         "/users/reserve": {
             "post": {
                 "tags": ["Users"],
+                "security": [{"BearerAuth": []}],
                 "summary": "Reserva uma vaga no Hotel",
                 "requestBody": {
                     "description": "Informações da Reserva",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -289,7 +296,7 @@
                     "201": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -311,7 +318,7 @@
         "/auth/login": {
             "post": {                
                 "tags": ["Auth"],
-                "summary": "Recebe o access-token e o refresh-toen do usuário ",
+                "summary": "Recebe o access-token e o refresh-token do usuário ",
                 "requestBody": {
                     "description": "As informações de login do usuário",
                     "required": true,
@@ -340,7 +347,7 @@
                     "200": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -387,7 +394,7 @@
                     "200": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -409,12 +416,13 @@
         "/hotel/quartos": {
             "post": {
                 "tags": ["Hotel"],
+                "security": [{"BearerAuth": []}],
                 "summary": "Criação de Quartos",
                 "requestBody": {
                     "description": "Informações do Quarto",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -435,7 +443,7 @@
                     "201": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -478,15 +486,16 @@
                 }
             } 
         },
-        "/hotels/checkin": {
+        "/hotel/checkin": {
             "post": {
                 "tags": ["Hotel"],
+                "security": [{"BearerAuth": []}],
                 "summary": "Rota de Check-in",
                 "requestBody": {
                     "description": "Token de Check-in",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -503,7 +512,7 @@
                     "201": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -522,15 +531,16 @@
                 }
             } 
         },
-        "/hotels/checkout": {
+        "/hotel/checkout": {
             "post": {
                 "tags": ["Hotel"],
+                "security": [{"BearerAuth": []}],
                 "summary": "Rota de Check-out",
                 "requestBody": {
                     "description": "Token de Check-out",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -547,7 +557,7 @@
                     "201": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -562,6 +572,89 @@
                     },
                     "500": {
                         "description": "O token expirou"                    
+                    }
+                }
+            } 
+        },
+        "/service/": {
+            "post": {
+                "tags": ["Services"],
+                "security": [{"BearerAuth": []}],
+                "summary": "Rota de cadastro de Serviços",
+                "requestBody": {
+                    "description": "Informações do Serviço",
+                    "required": true,
+                    "content": {
+                        "application/json": {                            
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "descrição": {
+                                        "type": "string",
+                                        "description": "Descrição do Serviço"                                        
+                                    },
+                                    "tipo": {
+                                        "type": "string",
+                                        "description": "Tipo do Serviço"                                        
+                                    },
+                                    "horario": {
+                                        "type": "string",
+                                        "description": "Horário do serviço (opcional)"                                        
+                                    },
+                                    "id_quarto": {
+                                        "type": "string",
+                                        "description": "Id do quarto que está pedindo o serviço"                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },                
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "text": {
+                                            "type": "string",
+                                            "description": "Serviço Cadastrado"                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+        },
+        "/service/getAll": {
+            "get": {
+                "tags": ["Services"],
+                "security": [{"BearerAuth": []}],
+                "summary": "Mostrar todos os serviços de quarto",
+                "requestBody": {
+                    "description": "Serviços de Quarto",
+                    "required": true
+                },                
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "service": {
+                                            "type": "string",
+                                            "description": "Info do Serviço"                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             } 
