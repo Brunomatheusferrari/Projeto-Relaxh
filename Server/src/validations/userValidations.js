@@ -15,7 +15,7 @@ module.exports = {
         .withMessage("E-mail inválido"),
         body("password")
         .isStrongPassword()
-        .withMessage("Senha inválida"),
+        .withMessage("Senha Fraca"),
         body().custom(body => {
             const keys = ['nome', 'email', 'password'];
             return Object.keys(body).every(key => keys.includes(key));
