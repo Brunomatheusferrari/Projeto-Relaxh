@@ -4,7 +4,7 @@ import colors from "../../themes/colors";
 
 export const IntroductSection = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
-    width: 100vw;
+    width: 99vw;
     height: 60vh;
     background-color: ${colors.mediumWhite};
     overflow-y: hidden;
