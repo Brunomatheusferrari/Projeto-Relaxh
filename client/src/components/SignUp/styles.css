@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+
+h1{
+    color: white;
+}
+
+.container-principal{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.carousel-item{
+    width: 80vw;
+    height: 100vh;
+}
+
+.container-sub{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-color: teal;
+    width: 100%;
+    height: 100%;
+}
+
+.container-buttons{
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    padding: 5rem;
+}
+
+.button-header{
+    width: 120px;
+    height: 8px;
+    border: none;
+}
+
+.div-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
