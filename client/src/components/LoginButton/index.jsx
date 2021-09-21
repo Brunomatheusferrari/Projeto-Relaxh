@@ -8,7 +8,7 @@ export const LoginButton = styled.a`
         border: 2px solid ${colors.lightWhite};
         text-decoration: none;
         box-shadow: inset 0 0 0 0 ${colors.lightWhite};
-        transition: 1s ease-in-out;
+        transition: .5s ease-in-out;
         z-index: 2;
         margin-right: 40px;
         overflow-y: hidden;
