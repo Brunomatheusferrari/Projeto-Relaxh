@@ -1,7 +1,5 @@
 const { colors } = require("../themes/colors");
 
-colors
-
 const Input = styled.input`
     padding: 0.5em;
     margin: 0.5em;
