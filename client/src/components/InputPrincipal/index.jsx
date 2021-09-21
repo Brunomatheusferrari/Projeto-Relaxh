@@ -3,7 +3,7 @@ import colors from "../../themes/colors";
 
 export const InputPrincipal =  styled.input`
     padding: 5px 20px 5px 20px;
-    width: 400px;
+    width: 280px;
     height: 40px;
     background: none;
     border: none;
@@ -11,4 +11,5 @@ export const InputPrincipal =  styled.input`
     font-size: 15px;
     color: ${colors.lightWhite};
     margin-bottom: 40px;
+    outline: none;
 `;

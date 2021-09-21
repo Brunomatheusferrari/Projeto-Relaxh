@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
+import Leaves1 from "../../static/img/leaves1.png"
+ 
 
 
 export const LoginContainer = styled.div`
@@ -11,6 +13,48 @@ export const LoginContainer = styled.div`
     justify-content: space-between;
     align-items: center;
 
+    .wrapper {
+        height: 100vh;
+        display: flex ;
+        flex-direction: row;
+        flex: 1;
+        
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        
+    }
+
+    .leavesPng {
+        width: 14vw;
+        height: 12vw;
+        background-image: url(${Leaves1});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        display: flex;
+        /* order: -1; */
+        align-self: flex-end;
+        position: absolute;
+        margin: 0;
+        left: 0;
+    }
+
+    .leavesPng2 {
+        width: 14vw;
+        height: 12vw;
+        background-image: url(${Leaves1});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        display: flex;
+        /* order: -1; */
+        align-self: flex-start;
+        position: absolute;
+        margin: 0;
+        right: 0;
+        transform: rotate(180deg);
+    }
+
     .loginTitle {
         color : ${colors.lightWhite};
         margin-bottom: 30px;
@@ -19,20 +63,10 @@ export const LoginContainer = styled.div`
     }
     
 
-    .contentContainer {
-        display: flex ;
-        flex-direction: column;
-        flex: 1;
-        
-        align-items: center;
-        justify-content: center;
-
-    }
-    
     .contentAdjust {
         display: flex;
         flex-direction: column;
-        width: 450px;
+        width: 300px;
         justify-content: center;
     }
 
@@ -50,9 +84,20 @@ export const LoginContainer = styled.div`
         color : ${colors.lightWhite};
         margin-top: 80px;
         font-size: 18px;
-      
-
     }
+
+    .backButton {
+        color: ${colors.lightWhite};
+        font-size: 30px;
+        position: relative;
+    }
+
+    .backButtonContainer {
+        width: 100%;
+        height: 40px;
+    }
+
+  
 
     strong {
         border-bottom: 2px dotted ${colors.lightWhite};

@@ -13,6 +13,7 @@ import LogoRelaxh from "../../static/img/logoRelaxh.png"
 import hotelPhoto from "../../static/img/hotelPhoto.png"
 import { HotelPhoto } from "../../components/HotelPhoto";
 import { Link } from "react-router-dom";
+import Fade from 'react-reveal/Fade';
 
 export function Homepage(props) {
     return(
@@ -37,11 +38,14 @@ export function Homepage(props) {
     </HeaderContainer>
         <IntroductSection>
             <div className="lineTextCenter">
-                <LineText title="Relaxh" />            
+                <LineText title="Relaxh" />    
             </div>
             <div className="contentContainer"> 
-                <p className="sectionTitle">Moderno, Simples e Prático.</p>
+            <Fade bottom cascade>
+            <p className="sectionTitle">Moderno, Simples e Prático.</p>
                 <img src={LogoRelaxh} className="logoRelaxh"/>
+            </Fade>
+           
             </div>
             <div className="bgLogo"></div>
            
