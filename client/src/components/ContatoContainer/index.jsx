@@ -1,40 +1,68 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
+import leaves2 from "../../static/img/leaves2.png"
 
 export const ContatoContainer = styled.div`
-@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     width: 100vw;
     height: 100vh;
     background-color: ${colors.lightGreen};
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
+    .contatoContainer {
+        display: flex;
+        flex-direction: column;
+    }
 
     .contatoTitle {
-        color : ${colors.lightWhite};
+        width: 100%;
+        text-align: center;
         font-family: 'Cormorant', serif;
-        font-size: 50px;
         font-weight: bold;
+        font-size: 40px;
+        margin: 0 0 20px 0;
     }
 
-    .contatoAdjust {
+    .buttonContainer {
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        align-items: center; 
+        justify-content: center;
+    
     }
 
-    .contatoInputs {
+    .loginButtonStyle {
+        margin: 0;
+    }
+    
+    .leaves {
+        width: 35vw;
+        height: 37vw;
+        background-image: url(${leaves2});
+        background-repeat: no-repeat;
+        background-size: 100%;
         display: flex;
-        flex-direction: column;
-        margin-bottom: 25px;
-        
+        /* order: -1; */
+        align-self: flex-end;
+        position: absolute;
+        margin: 0;
+        left: 5%;
     }
 
-    .inputsDois {
-        margin-bottom: 30px;
+    .leaves2 {
+        width: 30vw;
+        height: 32vw;
+        background-image: url(${leaves2});
+        background-repeat: no-repeat;
+        background-size: 100%;
         display: flex;
-        flex-direction: column;
+        /* order: -1; */
+        align-self: flex-end;
+        position: absolute;
+        margin: 0;
+        right: 5%;
+        transform: scaleX(-1);
     }
-
 `
