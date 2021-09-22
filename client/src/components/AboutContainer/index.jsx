@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
-import Leaves2 from "../../static/img/leaves2.png";
+import Leaves3 from "../../static/img/leaves3.png";
 import hyperwTeam from "../../static/img/hyperwTeam.png";
 
 export const AboutContainer = styled.div`
@@ -64,7 +64,7 @@ export const AboutContainer = styled.div`
         
         width: 30vw;
         height: 27vw;
-        background-image: url(${Leaves2});
+        background-image: url(${Leaves3});
         background-repeat: no-repeat;
         background-size: 100%;
         display: flex;
