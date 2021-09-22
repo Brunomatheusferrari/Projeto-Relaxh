@@ -1,6 +1,6 @@
 import React from "react"
 import { InputPrincipal } from "../../../InputPrincipal/index"
-import { Container, Row, Col } from 'react-bootstrap'
+
 
 import "./styles.css"
 
