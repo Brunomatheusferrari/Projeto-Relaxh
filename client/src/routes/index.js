@@ -5,6 +5,7 @@ import { Login } from "../pages/Login";
 import { Contato } from "../pages/Contato"
 import { SignUpContent } from "../pages/SignUp"
 import { Sobre } from "../pages/About";
+import { Precos } from "../pages/Precos"; 
 
 
 export const Routes = () => {
@@ -12,10 +13,11 @@ export const Routes = () => {
        <BrowserRouter>
             <Switch>
                 <Route component = { Homepage }  path="/" exact />
-                <Route component = { Login }  path="/login" />
+                <Route component = { Login }  path="/entrar" />
                 <Route component = { Contato }  path="/contato" />
-                <Route component = { SignUpContent } path="/signup" />
+                <Route component = { SignUpContent } path="/cadastro" />
                 <Route component= { Sobre } path="/sobre" />
+                <Route component= { Precos } path="/preços" />
            </Switch>
        </BrowserRouter>
    )

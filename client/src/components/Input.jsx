@@ -7,4 +7,5 @@ const Input = styled.input`
     background: papayawhip;
     border: none;
     border-radius: 3px;
+    
 `;

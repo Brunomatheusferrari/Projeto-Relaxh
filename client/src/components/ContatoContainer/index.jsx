@@ -15,6 +15,8 @@ export const ContatoContainer = styled.div`
     .contatoContainer {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .contatoTitle {
@@ -24,17 +26,20 @@ export const ContatoContainer = styled.div`
         font-weight: bold;
         font-size: 40px;
         margin: 0 0 20px 0;
+        z-index: 1;
     }
 
     .buttonContainer {
         width: 100%;
         display: flex;
         justify-content: center;
+        z-index: 1;
     
     }
 
     .loginButtonStyle {
         margin: 0;
+        z-index: 1;
     }
     
     .leaves {
@@ -64,5 +69,62 @@ export const ContatoContainer = styled.div`
         margin: 0;
         right: 5%;
         transform: scaleX(-1);
+    }
+
+    .backButton {
+        color: ${colors.lightWhite};
+        font-size: 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 80px;
+        margin-left: 100px;
+    }
+
+    .backButtonContainer {
+        width: 100%;
+        height: 40px;
+    }
+
+
+    @media (max-width: 800px) {
+        .leaves {
+            width: 55vw;
+            height: 57vw;
+            opacity: 40%;
+            z-index: 0;
+            left: -5%;
+        }   
+
+        .leaves2 {
+            width: 40vw;
+            height: 42vw;
+            z-index: 0;
+            opacity: 40%;
+            right: 0%;
+        }
+
+        .backButton {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 30px;
+            margin-left: 30px;
+            font-size: 40px;
+        }
+
+        input {
+            width: 250px;
+        }
+
+        .descriptionTextarea {
+            width: 250px;
+            height: 150px;
+        }
+
+        .contatoTitle {
+            font-size: 35px;
+        }
+        
     }
 `

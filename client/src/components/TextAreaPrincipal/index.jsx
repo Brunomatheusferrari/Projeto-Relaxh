@@ -13,7 +13,8 @@ export const TextAreaPrincipal =  styled.textarea`
     color: ${colors.lightWhite};
     margin-bottom: 40px;
     outline: none;
-    
+    z-index: 1;
+
     &::placeholder {
         color: #c2c1c1;
         font-family: 'Baskervville', serif;
