@@ -1,11 +1,11 @@
 import React from "react";
 import { AboutContainer } from "../../components/AboutContainer";
-// import hyperwLogo from "../../static/img/";
 
 export function Sobre(props) {
 
     return (
-        <AboutContainer>
+        <AboutContainer>            
+            <div className="leavesPng"></div>
             <div className="contentContainer">
                 <div className="contentAdjust">
                     <div className="titleContainer">
@@ -43,11 +43,10 @@ export function Sobre(props) {
                     </div>
                 </div>
 
-
-
+                <div className="hyperwTeam"></div>
             </div>
 
-            {/* <img src={hyperwLogo} className="hyperwLogo"/> */}
+            
         </AboutContainer>
     );
 }
