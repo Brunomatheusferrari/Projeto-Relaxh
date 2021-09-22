@@ -13,20 +13,19 @@ export function Contato(props) {
 
         <ContatoContainer>
             <div className="contatoContainer">
-                <div className="contatoAdjust">
-                    <h1 className="contatoTitle">Contato</h1>
-                    <div className="contatoInputs">
-                        <div className="inputsDois">
-                        <InputPrincipal type="text" placeholder="Nome" />
-                        <InputPrincipal type="text" placeholder="Título" /> 
-                        </div>                       
-                        <TextAreaPrincipal placeholder="Descrição" /> 
-                    </div>
-                    <SubmitButton> 
-                        <Link to="/enviar" label="enviar" className="loginButtonStyle">Enviar</Link>
-                    </SubmitButton>
+                <h1 className="contatoTitle">Contato</h1>
+                <InputPrincipal type="text" placeholder="Nome" />
+                <InputPrincipal type="text" placeholder="Titulo" />
+                <TextAreaPrincipal type="textarea" placeholder="Descrição" />
+                <div className="buttonContainer">
+                <SubmitButton>                
+                        <Link to="/contato" label="enviarContato" className="loginButtonStyle">Enviar</Link>                
+                </SubmitButton>
                 </div>
             </div>
+
+            <div className="leaves"></div>
+            <div className="leaves2"></div>
         </ContatoContainer>
     )
 }
