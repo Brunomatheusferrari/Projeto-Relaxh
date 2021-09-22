@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+
+.button-submit{
+    color:  #FAF7F2;
+    padding: 10px 50px 10px 50px;
+    border: 2px solid #FAF7F2;
+    text-decoration: none;
+    box-shadow: inset 0 0 0 0 #FAF7F2;
+    transition: .5s ease-in-out;
+    z-index: 2;
+    overflow-y: hidden;
+    position: relative;
+    font-family: 'Baskervville', serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.button-submit:hover {
+    box-shadow: inset 300px 0 0 0 #FAF7F2;
+    color: #2F3E46;
+    cursor: pointer;
+}
