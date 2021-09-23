@@ -122,5 +122,45 @@ module.exports = {
 
             next();
         }
+    ],
+    deleteReserva: [
+        body("id")
+        .isUUID()
+        .withMessage("Formato Incorreto"),
+        body().custom(body => {
+            const keys = ['id'];
+            return Object.keys(body).every(key => keys.includes(key));
+        }).withMessage('Parâmetros extras enviados'),
+        (req, res, next) => {
+            const errors = validationResult(req);
+
+            if (!errors.isEmpty()) {
+                return res.status(400).json({
+                    errors: errors.array()
+                });
+            }
+
+            next();
+        }
+    ],
+    getReserva: [
+        body("id")
+        .isUUID()
+        .withMessage("Formato Incorreto"),
+        body().custom(body => {
+            const keys = ['id'];
+            return Object.keys(body).every(key => keys.includes(key));
+        }).withMessage('Parâmetros extras enviados'),
+        (req, res, next) => {
+            const errors = validationResult(req);
+
+            if (!errors.isEmpty()) {
+                return res.status(400).json({
+                    errors: errors.array()
+                });
+            }
+
+            next();
+        }
     ]
 }

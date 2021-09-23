@@ -55,11 +55,35 @@ async function deleteUser(req, res, next){
     }
 }
 
+async function deleteReserva(req, res, next){
+    try {
+        const user = await usersServices.deleteReserva(req.body);
+
+        res.status(204).end();
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
+async function getReserva(req, res, next){
+    try {
+        const reserva = await usersServices.getReserva(req.body);
+
+        res.status(201).json(reserva);
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
 
 
 module.exports = {
     create,
     reserve,
+    deleteReserva,
+    getReserva,
     getUser,
     editUser,
     deleteUser

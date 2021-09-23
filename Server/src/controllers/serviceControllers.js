@@ -22,10 +22,22 @@ async function getAll(req, res, next) {
     }
 }
 
+async function deleteService(req, res, next){
+    try {
+        const user = await serviceServices.deleteService(req.body);
+
+        res.status(204).end();
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
 
 module.exports = {
     registerService,
-    getAll
+    getAll,
+    deleteService
 }
 
 
