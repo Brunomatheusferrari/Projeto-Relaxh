@@ -66,5 +66,45 @@ module.exports = {
 
             next();
         }
+    ],
+    quartoDelete: [
+        body("id")
+        .isUUID()
+        .withMessage("id do quarto Inválido"),
+        body().custom(body => {
+            const keys = ['id'];
+            return Object.keys(body).every(key => keys.includes(key));
+        }).withMessage('Parâmetros extras enviados'),
+        (req, res, next) => {
+            const errors = validationResult(req);
+
+            if (!errors.isEmpty()) {
+                return res.status(400).json({
+                    errors: errors.array()
+                });
+            }
+
+            next();
+        }
+    ],
+    quartoGet: [
+        body("id")
+        .isUUID()
+        .withMessage("id do quarto Inválido"),
+        body().custom(body => {
+            const keys = ['id'];
+            return Object.keys(body).every(key => keys.includes(key));
+        }).withMessage('Parâmetros extras enviados'),
+        (req, res, next) => {
+            const errors = validationResult(req);
+
+            if (!errors.isEmpty()) {
+                return res.status(400).json({
+                    errors: errors.array()
+                });
+            }
+
+            next();
+        }
     ]
 }

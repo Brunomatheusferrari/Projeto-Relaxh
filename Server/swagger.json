@@ -315,6 +315,103 @@
                 }
             }     
         },
+        "/reserve/delete": {
+            "delete": {
+                "tags": ["Users"],
+                "security": [{"BearerAuth": []}],
+                "summary": "Deletar Reserva",
+                "requestBody": {
+                    "description": "Deletar Reserva",
+                    "content": {
+                        "application/json": {                            
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "description": "Id do Serviço"                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },                
+                "responses": {
+                    "204": {
+                        "description": "OK"
+                    }
+                }
+            } 
+        },
+        "/reserve/get": {
+            "get": {
+                "tags": ["Users"],
+                "security": [{"BearerAuth": []}],
+                "summary": "Pegar informações da Reserva",
+                "requestBody": {
+                    "description": "Informaçoes da Reserva",
+                    "content": {
+                        "application/json": {                            
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "description": "Id do quarto"                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },                
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "description": "Id da Reserva"                                            
+                                        },
+                                        "tipo_quarto": {
+                                            "type": "string",
+                                            "description": "Tipo do quarto"                                            
+                                        },
+                                        "numero_pessoas": {
+                                            "type": "integer",
+                                            "description": "Numero de pessoas no quarto"                                            
+                                        },
+                                        "numero_quarto": {
+                                            "type": "integer",
+                                            "description": "Numero do quarto"                                            
+                                        },
+                                        "data_entrada": {
+                                            "type": "string",
+                                            "description": "Data de Entrada"                                            
+                                        },
+                                        "data_saida": {
+                                            "type": "string",
+                                            "description": "Data de saída"                                            
+                                        },
+                                        "id_usuario": {
+                                            "type": "string",
+                                            "description": "Id do usuario"                                            
+                                        },
+                                        "id_quarto": {
+                                            "type": "string",
+                                            "description": "Id do quarto"                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+        },
         "/auth/login": {
             "post": {                
                 "tags": ["Auth"],
@@ -452,11 +549,11 @@
                                             "description": "Id do quarto"                                            
                                         },
                                         "numero_pessoas": {
-                                            "type": "boolean",
+                                            "type": "integer",
                                             "description": "Numero de pessoas no quarto"                                            
                                         },
                                         "disponibilidade": {
-                                            "type": "string",
+                                            "type": "boolean",
                                             "description": "Disponibilidade do quarto"                                            
                                         },
                                         "numero_quarto": {
@@ -482,6 +579,91 @@
                     },
                     "500": {
                         "description": "Quarto já cadastrado"                    
+                    }
+                }
+            } 
+        },
+        "/hotel/quartos/delete": {
+            "delete": {
+                "tags": ["Hotel"],
+                "security": [{"BearerAuth": []}],
+                "summary": "Deletar Quarto",
+                "requestBody": {
+                    "description": "Deletar Quarto",
+                    "content": {
+                        "application/json": {                            
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "description": "Id do quarto"                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },                
+                "responses": {
+                    "204": {
+                        "description": "OK"
+                    }
+                }
+            } 
+        },
+        "/hotel/quartos/get": {
+            "get": {
+                "tags": ["Hotel"],
+                "security": [{"BearerAuth": []}],
+                "summary": "Pegar informações do Quarto",
+                "requestBody": {
+                    "description": "informaçoes do quarto",
+                    "content": {
+                        "application/json": {                            
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "description": "Id do quarto"                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },                
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "description": "Id do quarto"                                            
+                                        },
+                                        "numero_pessoas": {
+                                            "type": "integer",
+                                            "description": "Numero de pessoas no quarto"                                            
+                                        },
+                                        "disponibilidade": {
+                                            "type": "boolean",
+                                            "description": "Disponibilidade do quarto"                                            
+                                        },
+                                        "numero_quarto": {
+                                            "type": "integer",
+                                            "description": "Numero do quarto"                                            
+                                        },
+                                        "tipo_quarto": {
+                                            "type": "string",
+                                            "description": "Tipo do quarto"                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             } 
@@ -626,6 +808,34 @@
                                 }
                             }
                         }
+                    }
+                }
+            } 
+        },
+        "/service/delete": {
+            "delete": {
+                "tags": ["Services"],
+                "security": [{"BearerAuth": []}],
+                "summary": "Deletar Serviço",
+                "requestBody": {
+                    "description": "Deletar Serviço",
+                    "content": {
+                        "application/json": {                            
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "description": "Id do Serviço"                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },                
+                "responses": {
+                    "204": {
+                        "description": "OK"
                     }
                 }
             } 

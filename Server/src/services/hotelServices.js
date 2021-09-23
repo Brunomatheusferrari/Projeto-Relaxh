@@ -165,8 +165,32 @@ async function quartos(infoQuarto) {
     return quarto
 }
 
+async function getQuarto({id}){
+    const quarto = await Quarto.findOne({
+        where: {
+            id
+        }
+    })
+
+    if(!quarto){
+        throw new createHttpError(404, "Quarto not found");
+    }
+
+    return quarto
+}
+
+async function deleteQuarto({id}){
+    const quarto = getQuarto(id)
+
+    await quarto.destroy()
+}
+
+
+
 module.exports = {
     quartos,
     check_in,
-    check_out
+    check_out,
+    getQuarto,
+    deleteQuarto
 };

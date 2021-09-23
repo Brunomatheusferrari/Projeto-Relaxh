@@ -25,8 +25,23 @@ async function getAll(){
     return await Servico.findAll()
 }
 
+async function deleteService({id}){
+    const servico = await Servico.findOne({
+        where: {
+            id
+        }
+    })
+
+    if(!servico){
+        throw new createHttpError(404, "Sevice not found");
+    }
+
+    await servico.destroy()
+}
+
 
 module.exports = {
     register,
-    getAll
+    getAll,
+    deleteService
 };

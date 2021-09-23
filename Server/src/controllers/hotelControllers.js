@@ -33,10 +33,35 @@ async function quartos(req, res, next) {
     }
 }
 
+async function getQuarto(req, res, next){
+    try {
+        const quarto = await hotelServices.getQuarto(req.body);
+
+        res.status(201).json(quarto);
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
+
+async function deleteQuarto(req, res, next){
+    try {
+        const user = await hotelServices.deleteQuarto(req.body);
+
+        res.status(204).end();
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
 module.exports = {
     quartos,
     check_in,
-    check_out
+    check_out,
+    getQuarto,
+    deleteQuarto
 }
 
 

@@ -175,9 +175,35 @@ async function deleteUser({id}){
     await user.destroy()
 }
 
+async function getReserva({id}){
+    const reserva = await Reserva.findOne({
+        where: {
+            id
+        }
+    })
+
+    if(!reserva){
+        throw new createHttpError(404, "Reserva not found");
+    }
+
+    return reserva
+}
+
+async function deleteReserva({id}){
+    const reserva = getReserva(id)
+
+    if(!reserva){
+        throw new createHttpError(404, "Reserva not found");
+    }
+
+    await reserva.destroy()
+}
+
 module.exports = {
     createUser,
     reserve,
+    getReserva,
+    deleteReserva,
     getUser,
     editUser,
     deleteUser
