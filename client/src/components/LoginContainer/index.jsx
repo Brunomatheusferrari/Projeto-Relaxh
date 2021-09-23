@@ -101,6 +101,10 @@ export const LoginContainer = styled.div`
         height: 40px;
     }
 
+    .linkContato {
+        text-decoration: none;
+        color: ${colors.lightWhite};
+    }
   
 
     strong {

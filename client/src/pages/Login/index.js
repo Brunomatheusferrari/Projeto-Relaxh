@@ -24,9 +24,9 @@ export function Login(props) {
                         <InputPrincipal type="password" placeholder="Senha" />
                         </div>
                         <SubmitButton>                
-                        <Link to="/Login" label="Login" className="loginButtonStyle">Entrar</Link>                
+                        <Link to="/entrar" label="Login" className="loginButtonStyle">Entrar</Link>                
                         </SubmitButton>
-                        <p className="passwordRecover">Esqueceu sua senha? <strong>Entre em Contato</strong></p>
+                        <p className="passwordRecover">Esqueceu sua senha? <strong><Link to="/contato" label="contato" className="linkContato">Entre em Contato </Link></strong></p>
                     </div>
                 </div>
 

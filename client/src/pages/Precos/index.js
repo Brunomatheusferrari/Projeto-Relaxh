@@ -36,6 +36,10 @@ export function Precos() {
             </CardPrecos>
             </div>
 
+            <div className="leaves"></div>
+            <div className="leaves2"></div>
+            <div className="leaves3"></div>
+            <div className="leaves4"></div>
           
         </PrecosContainer>
     );
