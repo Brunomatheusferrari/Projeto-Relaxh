@@ -4,8 +4,10 @@ import { AboutContainer } from "../../components/AboutContainer";
 export function Sobre(props) {
 
     return (
-        <AboutContainer>            
-            <div className="leavesPng"></div>
+        <AboutContainer>
+            <div className="leavesAdjust">
+                <div className="leavesPng"></div>
+            </div>
             <div className="contentContainer">
                 <div className="contentAdjust">
                     <div className="titleContainer">
@@ -42,11 +44,11 @@ export function Sobre(props) {
                         </ul>
                     </div>
                 </div>
+                    <div className="hyperwTeam"></div>
 
-                <div className="hyperwTeam"></div>
             </div>
 
-            
+
         </AboutContainer>
     );
 }
