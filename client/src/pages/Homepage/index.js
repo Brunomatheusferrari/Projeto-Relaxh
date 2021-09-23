@@ -15,20 +15,25 @@ import { HotelPhoto } from "../../components/HotelPhoto";
 import { Link } from "react-router-dom";
 import Fade from 'react-reveal/Fade';
 
+
+
 export function Homepage(props) {
+   
     return(
     <>
     <HeaderContainer>
         <NavBarHeader>
             <FiMenu className="menuIcon"/>
             <LoginButton>                
-                <Link to="/Login" label="Login" className="loginButtonStyle">Login</Link>                
+                <Link to="/entrar" label="entrar" className="loginButtonStyle">Login</Link>                
             </LoginButton>
         </NavBarHeader>
         <div className="titleContainer">
             <img src={relaxhTitle} />
             <img src={relaxhSubtitle} className="subtitle"/>
-            <ReserveButton>Reservar Agora</ReserveButton>
+            <ReserveButton>
+                <Link to="/cadastro" label="cadastro" className="reserveButton">Reservar Agora</Link>    
+            </ReserveButton>
             <video className="videoBg" autoPlay loop muted>
                 <source src={bgVideo} />
             </video>
