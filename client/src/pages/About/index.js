@@ -5,23 +5,22 @@ export function Sobre(props) {
 
     return (
         <AboutContainer>
-            <div className="leavesAdjust">
-                <div className="leavesPng"></div>
-            </div>
+          
             <div className="contentContainer">
                 <div className="contentAdjust">
+                    <div className="aboutContainerText">
                     <div className="titleContainer">
                         <h1 className="aboutTitle">Sobre</h1>
                     </div>
-
-                    <div className="aboutContainer">
                         <p className="aboutContent">
                             Site desenvolvido por alunos do programa Entra21
                             da turma de Programação Web,
                             utilizando-se da linguagem Javascript com
                             a biblioteca React.
                         </p>
+               
                     </div>
+                    
 
                     <div className="creatorsContainer">
                         <h2 className="cretorsTitle">Criado por:</h2>
@@ -44,9 +43,14 @@ export function Sobre(props) {
                         </ul>
                     </div>
                 </div>
-                    <div className="hyperwTeam"></div>
-
             </div>
+
+            <div className="imagesAdjust"> 
+                <div className="leavesPng"></div>
+                <div className="hyperwTeam"></div>
+            </div>
+
+           
 
 
         </AboutContainer>
