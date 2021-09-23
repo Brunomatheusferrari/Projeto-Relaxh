@@ -88,8 +88,12 @@ export const LoginContainer = styled.div`
 
     .backButton {
         color: ${colors.lightWhite};
-        font-size: 30px;
-        position: relative;
+        font-size: 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 60px;
+        margin-left: 60px;
     }
 
     .backButtonContainer {
@@ -106,5 +110,39 @@ export const LoginContainer = styled.div`
         &:hover {
             cursor: pointer;
         }
+    }
+
+    @media (max-width: 1200px) {
+        .perfilImg {
+            display: none;
+        }
+
+        .loginTitle {
+            font-size: 35px;
+        }
+
+        input {
+            width: 250px;
+        }
+
+        .backButton {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 30px;
+            margin-left: 30px;
+            font-size: 40px;
+        }
+
+        .leavesPng {
+            width: 24vw;
+            height: 22vw;
+        }
+
+        .leavesPng2 {
+            width: 24vw;
+            height: 22vw;
+        }
+
     }
 `;

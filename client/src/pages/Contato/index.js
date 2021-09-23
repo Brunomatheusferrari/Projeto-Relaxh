@@ -4,6 +4,7 @@ import { ContatoContainer } from "../../components/ContatoContainer";
 import { InputPrincipal } from "../../components/InputPrincipal";
 import { SubmitButton } from "../../components/SubmitButton";
 import { TextAreaPrincipal } from "../../components/TextAreaPrincipal";
+import { FiArrowLeft } from "react-icons/fi";
 
 
 
@@ -13,10 +14,13 @@ export function Contato(props) {
 
         <ContatoContainer>
             <div className="contatoContainer">
+                <div className="backButtonContainer">
+                    <Link to="/" label="homepage"><FiArrowLeft className="backButton"/></Link>
+                </div>
                 <h1 className="contatoTitle">Contato</h1>
                 <InputPrincipal type="text" placeholder="Nome" />
                 <InputPrincipal type="text" placeholder="Titulo" />
-                <TextAreaPrincipal type="textarea" placeholder="Descrição" />
+                <TextAreaPrincipal type="textarea" placeholder="Descrição" className="descriptionTextarea" />
                 <div className="buttonContainer">
                 <SubmitButton>                
                         <Link to="/contato" label="enviarContato" className="loginButtonStyle">Enviar</Link>                
