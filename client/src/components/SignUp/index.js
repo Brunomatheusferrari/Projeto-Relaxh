@@ -8,6 +8,7 @@ import { Pagamento } from "./components/Pagamento"
 import { PersonalInfo } from "./components/PersonalInfo"
 
 import "./styles.css"
+import { RegisterProvider } from "../../contexts/registerContext"
 
 export function SignUp() {
   const [index, setIndex] = useState("cadastro");
@@ -26,7 +27,7 @@ export function SignUp() {
             <button className="button-header" onClick={() => setIndex("cadastro")}></button>
           </div>
           <div className="div-button">
-            <p>Additional Info</p>
+            <p>Informações</p>
             <button className="button-header" onClick={() => setIndex("info")}></button>
           </div>
           <div className="div-button">
@@ -34,22 +35,24 @@ export function SignUp() {
             <button className="button-header" onClick={() => setIndex("pagamento")}></button>
           </div>
         </div>
-          {
-            index == "reserva" &&
-            <Reserva />
-          }
-          {
-            index == "cadastro" &&
-            <Cadastro />
-          }
-          {
-            index == "info" &&
-            <PersonalInfo />
-          }
-          {
-            index == "pagamento" &&
-            <Pagamento />
-          }
+          <RegisterProvider>
+            {
+              index == "reserva" &&
+              <Reserva next={() => setIndex("cadastro")} />
+            }
+            {
+              index == "cadastro" &&
+              <Cadastro next={() => setIndex("info")} />
+            }
+            {
+              index == "info" &&
+              <PersonalInfo next={() => setIndex("pagamento")}/>
+            }
+            {
+              index == "pagamento" &&
+              <Pagamento />
+            }
+          </RegisterProvider>
       </div>
     </div>
   )
