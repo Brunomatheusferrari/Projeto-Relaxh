@@ -74,7 +74,7 @@
                     "description": "Usuário a ser criado",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -99,7 +99,7 @@
                     "200": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -149,7 +149,7 @@
                     "description": "Informações do Usuário",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -166,7 +166,7 @@
                     "201": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/User" 
                                 }
@@ -187,7 +187,7 @@
                     "description": "Editar",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -208,7 +208,7 @@
                     "201": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/User" 
                                 }
@@ -229,7 +229,7 @@
                     "description": "Deletar",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -260,7 +260,7 @@
                     "description": "Informações da Reserva",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -289,7 +289,7 @@
                     "201": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -340,7 +340,7 @@
                     "200": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -387,7 +387,7 @@
                     "200": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -414,7 +414,7 @@
                     "description": "Informações do Quarto",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -435,7 +435,7 @@
                     "201": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -486,7 +486,7 @@
                     "description": "Token de Check-in",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -503,7 +503,7 @@
                     "201": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -530,7 +530,7 @@
                     "description": "Token de Check-out",
                     "required": true,
                     "content": {
-                        "aplication/json": {                            
+                        "application/json": {                            
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -547,7 +547,7 @@
                     "201": {
                         "description": "OK",
                         "content": {
-                            "aplication/json": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
