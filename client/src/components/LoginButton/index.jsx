@@ -3,6 +3,7 @@ import colors from "../../themes/colors";
 
 export const LoginButton = styled.a`
     .loginButtonStyle {
+        justify-self: flex-end;
         color: ${colors.lightWhite};
         padding: 10px 40px 10px 40px;
         border: 2px solid ${colors.lightWhite};
