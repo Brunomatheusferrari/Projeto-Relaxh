@@ -1,19 +1,27 @@
 import React from "react"
+import { useState } from "react"
 import { useRegister } from "../../../../contexts/registerContext"
 import { DateInput } from "../../../DateInput"
 import { InputPrincipal } from "../../../InputPrincipal/index"
 import { ButtonSub } from "../ButtonSub/index"
-
+import authServices from "../../../../services/authServices"
 
 import "./styles.css"
 
-export function PersonalInfo({ next }) {
-  const { state, dispatch } = useRegister();  
+export function PersonalInfo() {
+    const { state } = useRegister();
+    const[ error, setError ] = useState("")
 
-  function handleClick() {
-      // dispatch({ type: "CADASTRO", payload: {email, confirmarEmail, senha, confirmarSenha} })
-      next();
-  }
+    async function handleClick(e) {
+        e.preventDefault();
+        console.log(state.email, state.password)
+        try {
+            await authServices.signIn({email: state.email, password: state.password});            
+        } catch (err) {
+            setError(err.message);
+            console.log(err.message)
+        }
+    }
 
   return (
     <>
