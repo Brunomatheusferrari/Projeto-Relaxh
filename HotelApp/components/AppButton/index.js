@@ -10,14 +10,16 @@ export const AppButton = ({ onPress, title }) => (
   const styles = StyleSheet.create({
     appButtonContainer: {
       elevation: 8,
-      backgroundColor: "#009688",
-      borderRadius: 10,
+      backgroundColor: "#354F52",
+      borderRadius: 5,
+      borderWidth: 2,
+      borderColor: "#FAF7F2",
       paddingVertical: 10,
       paddingHorizontal: 12
     },
     appButtonText: {
-      fontSize: 18,
-      color: "#fff",
+      fontSize: 25,
+      color: "#FAF7F2",
       fontWeight: "bold",
       alignSelf: "center",
       textTransform: "uppercase"

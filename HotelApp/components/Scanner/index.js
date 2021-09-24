@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Dimensions,Image ,Text, View, StyleSheet, Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import hotelServices from '../../src/services/hotelServices';
+
+const { width } = Dimensions.get('window')
+const qrSize = width * 0.7
 
 export default function Scanner(props) {
   const [hasPermission, setHasPermission] = useState(null);
@@ -17,10 +20,10 @@ export default function Scanner(props) {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
 
-    if(props.type == "checkin"){
+    if(props.type == "Checkin"){
       const res = hotelServices.CheckIn({token: data})
       alert("Check-in!")
-    }else if (props.type == "checkout"){
+    }else if (props.type == "Checkout"){
       const res = hotelServices.CheckOut({token: data})
       alert("Check-Out!")
     }
@@ -35,19 +38,36 @@ export default function Scanner(props) {
   }
 
   return (
-    <View style={styles.container}>
-      <BarCodeScanner
-        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-        style={StyleSheet.absoluteFillObject}
-      />
+    <>
+      <BarCodeScanner style={[StyleSheet.absoluteFill, styles.container]} onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}>
+        <Text style={styles.description}>{props.type}</Text>
+        <Image
+            style={styles.qr}
+            source={require('../../static/img/Qr.png')}
+          />
+          {props.children}
+      </BarCodeScanner>
       {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
-    </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    width: "50%",
-    height: "50%"
+    flex: 1,
+    alignItems: 'center'
+  },
+  qr: {
+    marginTop: '20%',
+    marginBottom: '20%',
+    width: qrSize,
+    height: qrSize,
+  },
+  description: {
+    marginTop: '10%',
+    textAlign: 'center',
+    width: '80%',
+    fontSize: 50,
+    color: '#FAF7F2',
   }
 })
