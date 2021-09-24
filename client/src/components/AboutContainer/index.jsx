@@ -14,10 +14,14 @@ export const AboutContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     
     .contentContainer{
-      width: 80vw;
-      height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 100vh;
     }
 
     .aboutTitle {
@@ -30,8 +34,14 @@ export const AboutContainer = styled.div`
 
     .aboutContent {
         color : ${colors.lightWhite};
-        font-size: 30px;
+        font-size: 25px;
+        width: 80%;
         
+    }
+
+    .creatorsContainer {
+        position: relative;
+        top: 2%;
     }
 
     .cretorsTitle {
@@ -53,25 +63,30 @@ export const AboutContainer = styled.div`
 
     .creatorsLI {
         height: 5vh;
+        font-size: 25px;
     }
 
     .contentAdjust {
-        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
     }
 
     .leavesPng {
-        width: 35vw;
-        height: 37vw;
+        width: 32vw;
+        height: 30vw;
         background-image: url(${Leaves3});
         background-repeat: no-repeat;
         background-size: 100%;
-        /* order: -1; */
-        position: absolute;
-        top: 60px;
-        right: 0;
+        position: relative;
+        display: flex;
+        align-self: flex-start;
+        top: -5%;
+        flex-direction: column;
+        right: -4%;
     }
 
-    
 
     .hyperwTeam {
         width: 10vw;
@@ -80,13 +95,98 @@ export const AboutContainer = styled.div`
         background-repeat: no-repeat;
         background-size: 100%;
         /* order: -1; */
-        position: absolute;
-        right: 00px;
+        right: 0px;
         bottom: 100px;
     }
 
-    @media (max-width: 768px) {
+    .imagesAdjust {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        right: -8%;
+        height: 100vh;
+    }
+
+    @media (max-width: 1100px) {
+        flex-direction: column;
+        overflow: scroll;
+        height: fit-content;
+        position: relative;
+
+        .creatorsContainer {
+            width: fit-content;
+            position: relative;
+            right: -10%;
+        }
+
+        .aboutContainerText {
+            width: fit-content;
+            margin: 0;
+            position: relative;
+            right: -10%;
+        }
+
+        .aboutContent {
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .imagesAdjust {
+            width: 80vw;
+            height: fit-content;
+            position: relative;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .hyperwTeam {
+            order: -1;
+            width: 20vw;
+            height: 24vw;
+        }
+
         .leavesPng {
+            align-self: flex-end;
+            width: 52vw;
+            height: 50vw;
+            top: -30%;
+        }
+
+        .contentAdjust {
+            height: fit-content;
+            margin-top: 60px;
+            
+        }
+
+        .aboutTitle {
+            font-size: 60px;
+            height: fit-content;
+        }
+
+        .cretorsTitle {
+            font-size: 40px;
+            margin-top: 60px;
+        }
+
+        .creatorsLI {
+            font-size: 22px;
+        }
+
+        .aboutContent {
+            font-size: 22px;
+        }
+        
+        .contentContainer {
+            height: fit-content;
+           
+        }
+
+        /* .leavesPng {
             width: 35vw;
             height: 40vw;
         }
@@ -99,54 +199,37 @@ export const AboutContainer = styled.div`
             bottom: 60px;
         }
 
+        } */
+
+    }
+
+    @media (max-width: 470px) {
+
+        .aboutTitle {
+            font-size: 40px;
         }
 
-    @media (max-width: 425px) {
-
-
-    
-
-    .aboutTitle {
-        text-align: center;
-        font-size: 50px;
-    }
-
-    .aboutContent {
-        font-size: 25px;
-        
-    }
-
-    .cretorsTitle {
-        font-size: 30px;   
-    }
-
-    .creatorsUL {
-        font-size: 15px; 
-    }
-
-
-    .leavesPng {
-        background-image: url(${Leaves5});
-        width: 105vw;
-        height: 122vw;
-        top: 200px;
-        right: 0;
-    }
-
-    .hyperwTeam {
-        width: 30vw;
-        height: 34vw;
-        background-image: url(${hyperwTeam});
-        background-repeat: no-repeat;
-        background-size: 100%;
-        /* order: -1; */
-        position: absolute;
-        right: 50;
-        bottom: 50px;
-
-        z-index:-1;
-    }
-        
-
+        .aboutContent {
+            font-size: 20px;
+            width: 100%;
         }
-`
+
+        .cretorsTitle {
+            font-size: 30px;
+        }
+
+        .creatorsLI {
+            font-size: 15px;
+            width: 100%;
+        }
+
+        .aboutContainerText {
+            right: 0;
+        }
+
+        .creatorsContainer {
+            right: 0;
+        }      
+
+    }
+`;
