@@ -11,7 +11,7 @@ import "./styles.css"
 import { RegisterProvider } from "../../contexts/registerContext"
 
 export function SignUp() {
-  const [index, setIndex] = useState("cadastro");
+  const [index, setIndex] = useState("reserva");
 
   return (
     <div className="container-principal">

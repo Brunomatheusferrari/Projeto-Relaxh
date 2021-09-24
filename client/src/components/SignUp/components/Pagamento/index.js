@@ -2,10 +2,20 @@ import React from "react"
 import { DateInput } from "../../../DateInput"
 import { InputPrincipal } from "../../../InputPrincipal/index"
 import { ButtonSub } from "../ButtonSub/index"
+import { useRegister } from "../../../../contexts/registerContext"
 
 import "./styles.css"
 
 export function Pagamento() {
+    const {createReserva } = useRegister();
+
+    async function handleClick() {
+        const reserva = await createReserva()
+        
+        console.log(reserva)
+    }
+
+
   return (
     <>
     <div className="header">
@@ -25,7 +35,7 @@ export function Pagamento() {
                     <InputPrincipal placeholder="Banco"  className="inputCadastro"/>
                 </div>
                 <div>
-                <ButtonSub title="Continuar"/>
+                <ButtonSub title="Continuar" onClick={handleClick}/>
                 </div>  
             </div>
         </div>
