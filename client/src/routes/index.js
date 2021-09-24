@@ -7,6 +7,7 @@ import { SignUpContent } from "../pages/SignUp"
 import { Sobre } from "../pages/About";
 import { Precos } from "../pages/Precos"; 
 import { Servicos } from "../pages/Servicos";
+import { Delivery } from "../pages/Delivery";
 
 
 export const Routes = () => {
@@ -17,9 +18,10 @@ export const Routes = () => {
                 <Route component = { Login }  path="/entrar" />
                 <Route component = { Contato }  path="/contato" />
                 <Route component = { SignUpContent } path="/cadastro" />
-                <Route component= { Sobre } path="/sobre" />
-                <Route component= { Precos } path="/preços" />
-                <Route component= { Servicos } path="/serviços" />
+                <Route component = { Sobre } path="/sobre" />
+                <Route component = { Precos } path="/preços" />
+                <Route component = { Servicos } path="/serviços" />
+                <Route component = { Delivery } path="/serviços-delivery" />
            </Switch>
        </BrowserRouter>
    )
