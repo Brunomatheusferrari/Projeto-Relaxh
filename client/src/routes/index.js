@@ -7,7 +7,7 @@ import { SignUpContent } from "../pages/SignUp"
 import { Sobre } from "../pages/About";
 import { Precos } from "../pages/Precos"; 
 import { Servicos } from "../pages/Servicos";
-
+import { Limpeza } from "../pages/Limpeza";
 
 export const Routes = () => {
    return(
@@ -20,6 +20,7 @@ export const Routes = () => {
                 <Route component= { Sobre } path="/sobre" />
                 <Route component= { Precos } path="/preços" />
                 <Route component= { Servicos } path="/serviços" />
+                <Route component= { Limpeza } path="/serviços-limpeza" />
            </Switch>
        </BrowserRouter>
    )
