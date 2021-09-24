@@ -7,7 +7,7 @@ export const CardOutros = styled.div`
     width: 25vw;
     height: 25vw;
     background-color: ${colors.mediumGreen};
-    transition: 1s ease-in-out;
+    transition: .5s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,14 +21,14 @@ export const CardOutros = styled.div`
     }
 
     .deliveryCardPng {
-        width: 40%;
+        width: 30%;
         height: auto;
     }
 
     .cardTitle {
         font-family: 'Cormorant', serif;
         color: ${colors.lightWhite};
-        font-size: 60px;
+        font-size: 50px;
         margin: 10px;
     }
 
@@ -59,4 +59,28 @@ export const CardOutros = styled.div`
         opacity: 100%;
         transform: rotate(335deg);
     }
+
+    @media (max-width: 1250px) {
+        .deliveryCardPng {
+            width: 25%;
+        }
+
+        .cardTitle {
+            font-size: 40px;
+        }
+    }
+
+    @media (max-width: 850px) {
+        margin-bottom: 50px;
+        width: 60vw;
+        height: 60vw;
+
+        
+        &:hover {
+            background-color: ${colors.mediumGreen};
+            transform: scale(1);
+        }
+    }
+
+  
 `;

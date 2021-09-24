@@ -20,7 +20,6 @@ export const ServicosContainer = styled.div`
         justify-content: center;
         align-items: center;
         width: 80vw;
-        height: 80vh;
     }
 
     .servicosTitle {
@@ -38,7 +37,9 @@ export const ServicosContainer = styled.div`
     .cards {
         display: flex;
         width: 90vw;
-        justify-content: space-around;
+        justify-content: space-evenly;
+        z-index: 1;
+        position: relative;
     }
 
     .leaves6 {
@@ -55,8 +56,8 @@ export const ServicosContainer = styled.div`
 
     
     .leaves7 {
-        width: 14vw;
-        height: 14vw ;
+        width: 12vw;
+        height: 12vw ;
         background-image: url(${leaves6});
         background-repeat: no-repeat;
         background-size: cover;
@@ -64,12 +65,13 @@ export const ServicosContainer = styled.div`
         bottom: 0;
         left:  0%;
         transform: rotate(90deg);
+        z-index: 0;
     }
 
         
     .leaves8 {
-        width: 10vw;
-        height: 10vw ;
+        width: 8vw;
+        height: 8vw ;
         background-image: url(${leaves6});
         background-repeat: no-repeat;
         background-size: cover;
@@ -77,6 +79,37 @@ export const ServicosContainer = styled.div`
         bottom: 0;
         left:  70%;
         transform: scaleX(-1) rotate(90deg);
+        z-index: 0;
+    }
+
+    @media (max-width: 1250px) {
+
+    }
+
+    @media (max-width: 850px) {
+        height: 100%;
+        overflow: scroll;
+        position: relative;
+
+        .servicosTitle {
+            font-size: 40px;
+            position: relative;
+            text-align: center;
+            top: 0%;
+            margin-top: 30px;
+            
+        }
+
+        .cards {
+            flex-direction: column;
+            align-items: center;
+            height: fit-content;
+            justify-content: center;
+        }
+    }
+
+    @media (max-height: 750px) {
+    
     }
 
 `;

@@ -7,7 +7,7 @@ export const CardDelivery = styled.div`
     width: 25vw;
     height: 25vw;
     background-color: ${colors.mediumGreen};
-    transition: 1s ease-in-out;
+    transition: .5s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,14 +21,14 @@ export const CardDelivery = styled.div`
     }
 
     .deliveryCardPng {
-        width: 30%;
+        width: 28%;
         height: auto;
     }
 
     .cardTitle {
         font-family: 'Cormorant', serif;
         color: ${colors.lightWhite};
-        font-size: 60px;
+        font-size: 50px;
         margin: 10px;
     }
 
@@ -57,6 +57,29 @@ export const CardDelivery = styled.div`
         z-index: 1000;
         opacity: 100%;
         transform: rotate(335deg);
+    }
+
+    @media (max-width: 1250px) {
+        .deliveryCardPng {
+            width: 25%;
+        }
+
+        .cardTitle {
+            font-size: 40px;
+        }
+    }
+
+    
+    @media (max-width: 850px) {
+
+        &:hover {
+            background-color: ${colors.mediumGreen};
+            transform: scale(1);
+        }
+        
+        margin-bottom: 20px;
+        width: 60vw;
+        height: 60vw;
     }
 
 `;
