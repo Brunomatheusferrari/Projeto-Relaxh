@@ -6,11 +6,13 @@ import { ButtonSub } from "../ButtonSub/index"
 import "./styles.css"
 
 export function Cadastro({ next }) {
-    const { state, dispatch } = useRegister();
+    const { state, dispatch, registerUser } = useRegister();
     const [email, setEmail] = useState(state.email);
+    const [password, setPassword] = useState(state.password)
 
-    function handleClick() {
-        // dispatch({ type: "CADASTRO", payload: {email, confirmarEmail, senha, confirmarSenha} })
+    async function handleClick() {
+        dispatch({ type: "CADASTRO", payload: {email, password} })
+        await registerUser(email,password)
         next();
     }
 
@@ -21,14 +23,13 @@ export function Cadastro({ next }) {
             <div className="info">
                 <div className="input-container">
                     <div className="input-capsule">
-                    {/* value={email} onChange={e => setEmail(e.target.value)} */}
-                        <InputPrincipal placeholder="Email"  className="inputCadastro"/>
+                        <InputPrincipal value={email} onChange={e => setEmail(e.target.value)} placeholder="Email"  className="inputCadastro"/>
                     </div>
                     <div className="input-capsule">
                         <InputPrincipal placeholder="Confirmar Email" className="inputCadastro"/>
                     </div>
                     <div className="input-capsule">
-                        <InputPrincipal placeholder="Senha"  className="inputCadastro"/>
+                        <InputPrincipal placeholder="Senha"  value={password} onChange={e => setPassword(e.target.value)} className="inputCadastro"/>
                     </div>
                     <div className="input-capsule">
                         <InputPrincipal placeholder="Confirmar Senha"  className="inputCadastro"/>
