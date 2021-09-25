@@ -98,9 +98,9 @@ module.exports = {
         }
     ],
     postReserva: [
-        body("email")
-        .isEmail()
-        .withMessage("E-mail Inválido"),
+        // body("email")
+        // .isEmail()
+        // .withMessage("E-mail Inválido"),
         body("tipo_quarto")
         .isIn(["Standart", "Premium", "Deluxe"])
         .withMessage("Tipo do quarto Inválido"),

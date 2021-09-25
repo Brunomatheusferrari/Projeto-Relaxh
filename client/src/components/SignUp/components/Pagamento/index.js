@@ -15,7 +15,6 @@ export function Pagamento() {
         console.log(reserva)
     }
 
-
   return (
     <>
     <div className="header">
@@ -39,7 +38,6 @@ export function Pagamento() {
                 </div>  
             </div>
         </div>
-        
     </div>
     </>
   )

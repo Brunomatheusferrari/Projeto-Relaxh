@@ -3,6 +3,7 @@ const { Usuario, Quarto, Reserva} = require("../db/models");
 const nodemail = require("nodemailer")
 const QRCode = require('qrcode');
 const jwt = require("jsonwebtoken");
+const jwt_decode = require("jwt-decode")
 const { createCanvas } = require('canvas');
 
 const canvas = createCanvas(300, 300)
@@ -103,6 +104,8 @@ async function reserve(InfoReserva) {
         data_saida
     } = InfoReserva
 
+    // console.log(email)
+
     const user = await getUserByEmail(email)
 
     if (!user) {
@@ -131,15 +134,22 @@ async function reserve(InfoReserva) {
     return token
 }
 
-async function getUser({id}){
-    const user = await Usuario.findOne({
-        where: {
-            id
-        }
-    })
+async function getUser(id){
+    try {
+        const user = await Usuario.findOne({
+            where: {
+                id
+            }
+        })
 
-    if(!user){
-        throw new createHttpError(404, "User not found");
+        if(!user){
+            throw new createHttpError(404, "User not found");
+        }
+
+        return user
+        
+    } catch (error) {
+        throw new createHttpError(404, `${error}`)
     }
 }
 

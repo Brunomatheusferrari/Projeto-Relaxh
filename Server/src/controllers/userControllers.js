@@ -13,6 +13,7 @@ async function create(req, res, next) {
 
 async function reserve(req, res, next){
     try {
+        console.log(req.body)
         const user = await usersServices.reserve(req.body);
 
         res.status(201).json(user);
@@ -24,9 +25,10 @@ async function reserve(req, res, next){
 
 async function getUser(req, res, next){
     try {
-        const user = await usersServices.getUser(req.body);
+        const {id} = req.query
+        const user = await usersServices.getUser(id);
 
-        res.status(201).json(user);
+        res.status(200).json(user);
     } catch (error) {
         console.log(error);
         next(error);
