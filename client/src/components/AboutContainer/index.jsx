@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
 import Leaves3 from "../../static/img/leaves3.png";
-import Leaves5 from "../../static/img/leaves5.png";
 import hyperwTeam from "../../static/img/hyperwTeam.png";
 
 

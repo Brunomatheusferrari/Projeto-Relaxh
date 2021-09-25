@@ -1,5 +1,4 @@
 import React from "react"
-import { useState } from "react"
 import { useRegister } from "../../../../contexts/registerContext"
 import { DateInput } from "../../../DateInput"
 import { InputPrincipal } from "../../../InputPrincipal/index"
@@ -8,21 +7,25 @@ import authServices from "../../../../services/authServices"
 
 import "./styles.css"
 
-export function PersonalInfo() {
-    const { state } = useRegister();
-    const[ error, setError ] = useState("")
+export function PersonalInfo({ next }) {
+    const { signIn } = useRegister();
 
-    async function handleClick(e) {
+    const accessToken = authServices.getAccessToken();  
+
+    async function handleSubmit(e) {
         e.preventDefault();
-        console.log(state.email, state.password)
         try {
-            await authServices.signIn({email: state.email, password: state.password});            
+
+            if (accessToken) {
+                return next()
+              }
+
+            const res = await signIn()
+            console.log(res)
         } catch (err) {
-            setError(err.message);
             console.log(err.message)
         }
     }
-
   return (
     <>
     <div className="header">
@@ -42,7 +45,7 @@ export function PersonalInfo() {
                     <InputPrincipal placeholder="Endereço"  className="inputCadastro"/>
                 </div>
                 <div>
-                <ButtonSub title="Continuar" onClick={handleClick}/>
+                <ButtonSub title="Continuar" onClick={handleSubmit}/>
                 </div>  
             </div>
         </div>

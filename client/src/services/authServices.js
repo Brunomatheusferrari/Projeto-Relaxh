@@ -25,9 +25,13 @@ function getRoleFromAccessToken(accessToken) {
     }
 }
 
-async function getUser(accessToken) {
+async function getUser() {
+    const token = getAccessToken()
+    const { sub } = jwtDecode(token)
     try {        
-        const user = await api.get("/users", { headers: { "Authorization": `Bearer ${accessToken}` }});
+        const user = await api.get("/users", { params: { id: sub} , headers: { "Authorization": `Bearer ${token}`}});
+        
+        console.log(user)
 
         return user;
     } catch (err) {

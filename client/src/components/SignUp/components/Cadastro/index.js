@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useRegister } from "../../../../contexts/registerContext"
 import { InputPrincipal } from "../../../InputPrincipal/index"
 import { ButtonSub } from "../ButtonSub/index"
+import authServices from "../../../../services/authServices"
 
 import "./styles.css"
 
@@ -10,10 +11,25 @@ export function Cadastro({ next }) {
     const [email, setEmail] = useState(state.email);
     const [password, setPassword] = useState(state.password)
 
-    async function handleClick() {
-        dispatch({ type: "CADASTRO", payload: {email, password} })
-        await registerUser(email,password)
-        next();
+    
+    const accessToken = authServices.getAccessToken();  
+
+    if (accessToken) {
+      next()
+    }
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        try {
+            dispatch({ type: "CADASTRO", payload: {email, password} })
+            const res = await registerUser()
+            console.log(email, password)
+            console.log(res)
+            next();
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
     return (
@@ -35,7 +51,7 @@ export function Cadastro({ next }) {
                         <InputPrincipal placeholder="Confirmar Senha"  className="inputCadastro"/>
                     </div>
                     <div>
-                    <ButtonSub title="Continuar" onClick={handleClick} />
+                    <ButtonSub title="Continuar" onClick={handleSubmit} />
                     </div>  
                 </div>
             </div>
