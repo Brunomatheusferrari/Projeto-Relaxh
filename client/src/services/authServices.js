@@ -55,7 +55,7 @@ async function signIn(email, password) {
 async function refreshToken() {
     const refresh_token = getRefreshToken();
     try {
-        const res = await api.post("/auth/refreshToken", { refreshToken: refresh_token });
+        const res = await api.post("/auth/refresh", { refreshToken: refresh_token });
 
         const newAccessToken = res.data.accessToken;
         const newRefreshToken = res.data.refreshToken;        

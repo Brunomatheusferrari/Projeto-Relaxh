@@ -10,6 +10,7 @@ export function Cadastro({ next }) {
     const { state, dispatch, registerUser } = useRegister();
     const [email, setEmail] = useState(state.email);
     const [password, setPassword] = useState(state.password)
+    const [nome, setNome] = useState("")
 
     
     const accessToken = authServices.getAccessToken();  
@@ -21,9 +22,7 @@ export function Cadastro({ next }) {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            dispatch({ type: "CADASTRO", payload: {email, password} })
-            const res = await registerUser()
-            console.log(email, password)
+            const res = await registerUser(nome, email, password)
             console.log(res)
             next();
         } catch (error) {
@@ -39,10 +38,10 @@ export function Cadastro({ next }) {
             <div className="info">
                 <div className="input-container">
                     <div className="input-capsule">
-                        <InputPrincipal value={email} onChange={e => setEmail(e.target.value)} placeholder="Email"  className="inputCadastro"/>
+                        <InputPrincipal value={nome} onChange={e => setNome(e.target.value)} placeholder="nome"  className="inputCadastro"/>
                     </div>
                     <div className="input-capsule">
-                        <InputPrincipal placeholder="Confirmar Email" className="inputCadastro"/>
+                        <InputPrincipal value={email} onChange={e => setEmail(e.target.value)} placeholder="Email"  className="inputCadastro"/>
                     </div>
                     <div className="input-capsule">
                         <InputPrincipal placeholder="Senha"  value={password} onChange={e => setPassword(e.target.value)} className="inputCadastro"/>

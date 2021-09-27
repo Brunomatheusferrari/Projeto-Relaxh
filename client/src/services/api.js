@@ -19,10 +19,10 @@ api.interceptors.response.use(function (response) {
   }, async function (error) {
     const originalRequest = error.config;
     const loginUrl = `http://localhost:3001/auth/login`;
-    const refreshTokenUrl = "/auth/refreshToken";    
+    const refreshTokenUrl = "/auth/refresh";    
     if (error.response.status === 401 && originalRequest.url !== refreshTokenUrl && error.request.responseURL !== loginUrl) {      
       await authServices.refreshToken();      
-      return api(originalRequest);
+      return api(originalRequest);  
     }
     return Promise.reject(error);
 });
