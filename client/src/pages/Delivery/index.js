@@ -9,8 +9,15 @@ export function Delivery(props) {
             
             <div className="header">
                 <div className="headerContents">
+                    <div className="forkandKnife"></div>
+                    <div className="dash"></div>
                     <h1 className="title">Delivery</h1>
-                    <div className="image"></div>
+                        
+                    <div className="leavesHeader"> 
+                        <div className="leaves3Png"></div>
+                        <div className="leaves4Png"></div>
+                        <div className="leaves5Png"></div>
+                    </div>
                 </div>
             </div>
 
