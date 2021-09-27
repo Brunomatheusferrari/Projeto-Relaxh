@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Dimensions,Image ,Text, View, StyleSheet, Button } from 'react-native';
+import { Dimensions,Image ,Text,StyleSheet, Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
-import hotelServices from '../../src/services/hotelServices';
+import hotelServices from '../../services/hotelServices';
 
 const { width } = Dimensions.get('window')
 const qrSize = width * 0.7
@@ -43,7 +43,7 @@ export default function Scanner(props) {
         <Text style={styles.description}>{props.type}</Text>
         <Image
             style={styles.qr}
-            source={require('../../static/img/Qr.png')}
+            source={require('../../assets/Qr.png')}
           />
           {props.children}
       </BarCodeScanner>
