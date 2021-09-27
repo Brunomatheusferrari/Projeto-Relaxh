@@ -22,6 +22,7 @@ export function PersonalInfo({ next }) {
 
             const res = await signIn()
             console.log(res)
+            next()
         } catch (err) {
             console.log(err.message)
         }

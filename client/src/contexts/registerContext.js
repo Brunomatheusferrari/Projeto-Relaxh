@@ -42,14 +42,15 @@ function reducer(prevState, action) {
 export function RegisterProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    async function registerUser(){
-        const nome = "Paulo"
-        const { email, password } = state
-        try {
+    async function registerUser(nome,email, password){    
+        try {  
             const res = await userServices.createUser(nome,email,password)
 
-            console.log(res)
-            return res
+            if(!res) {
+                console.log("Usuário Não Criado")
+            }
+            
+            dispatch({ type: "CADASTRO", payload: {email, password} })
         } catch (error) {
             console.log(error)
         }
@@ -66,7 +67,6 @@ export function RegisterProvider({ children }) {
     
             const res = await userServices.reserva(email, tipo_quarto, toTimestamp(data_entrada), toTimestamp(data_saida), numero_pessoas) 
             
-            console.log(res)
             return res
         } catch (error) {
             console.log(error)
@@ -78,7 +78,6 @@ export function RegisterProvider({ children }) {
         try {
             const res = await authServices.signIn(email,password)
 
-            console.log(res)
             return res
         } catch (error) {
             console.log(error)
