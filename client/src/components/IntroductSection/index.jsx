@@ -53,12 +53,12 @@ export const IntroductSection = styled.div`
         transform: scaleX(-1);
     }
 
-    .bgLogo {
+    /* .bgLogo {
         width: 465px;
         height: 67%;
         position: absolute;
         background-color: ${colors.darkWhite};
         z-index: 0;
         right: 0px;
-    }
+    } */
 `;
