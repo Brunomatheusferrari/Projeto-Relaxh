@@ -11,7 +11,7 @@ export const HeaderContainer = styled.div`
     box-sizing: border-box;
 
     img {
-        width: 500px;
+        width: 30%;
         height: auto;
         margin-bottom: 30px;
         z-index: 1;
@@ -19,7 +19,7 @@ export const HeaderContainer = styled.div`
     }
 
     .subtitle {
-        width: 150px;
+        width: 10%;
         height: auto;
         margin-bottom: 80px;
         z-index: 1;
@@ -28,7 +28,7 @@ export const HeaderContainer = styled.div`
 
     .iconArrowDown {
         color: ${colors.lightWhite};
-        width: 40px;
+        width: 3%;
         height: auto;
         z-index: 1;
         overflow-y: hidden;

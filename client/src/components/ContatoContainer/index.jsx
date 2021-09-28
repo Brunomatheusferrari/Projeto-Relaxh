@@ -19,6 +19,13 @@ export const ContatoContainer = styled.div`
         align-items: center;
     }
 
+    .input1 {
+        margin-bottom: 5px;
+    }
+    .input2 {
+        margin-bottom: 50px;
+    }
+
     .contatoTitle {
         width: 100%;
         text-align: center;
@@ -80,12 +87,6 @@ export const ContatoContainer = styled.div`
         margin-top: 80px;
         margin-left: 100px;
     }
-
-    .backButtonContainer {
-        width: 100%;
-        height: 40px;
-    }
-
 
     @media (max-width: 800px) {
         .leaves {

@@ -7,19 +7,20 @@ import { TextAreaPrincipal } from "../../components/TextAreaPrincipal";
 import { FiArrowLeft } from "react-icons/fi";
 
 
-
 export function Contato(props) {
-
     return (
-
         <ContatoContainer>
             <div className="contatoContainer">
                 <div className="backButtonContainer">
                     <Link to="/" label="homepage"><FiArrowLeft className="backButton"/></Link>
                 </div>
                 <h1 className="contatoTitle">Contato</h1>
-                <InputPrincipal type="text" placeholder="Nome" />
-                <InputPrincipal type="text" placeholder="Titulo" />
+                <div className="input1">
+                    <InputPrincipal type="text" placeholder="Nome" />
+                </div>
+                <div className="input2"> 
+                    <InputPrincipal type="text" placeholder="Titulo" />
+                </div>
                 <TextAreaPrincipal type="textarea" placeholder="Descrição" className="descriptionTextarea" />
                 <div className="buttonContainer">
                 <SubmitButton>                

@@ -8,8 +8,6 @@ import cleanerSpray from "../../static/img/cleanerSpray.png";
 import poolPng from "../../static/img/poolPng.png";
 
 
-
-
 export function Servicos() {
     return(
         <ServicosContainer>
@@ -41,7 +39,6 @@ export function Servicos() {
             </div>
             <div className="leaves7"></div>
             <div className="leaves8"></div>
-
         </ServicosContainer>
     );
 }

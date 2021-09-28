@@ -3,7 +3,6 @@ import colors from "../../themes/colors";
 import Leaves1 from "../../static/img/leaves1.png"
  
 
-
 export const LoginContainer = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     width: 100vw;
@@ -24,6 +23,14 @@ export const LoginContainer = styled.div`
         position: relative;
 
         
+    }
+
+    .input1 {
+        margin-bottom: 20px;
+    }
+
+    .input2 {
+        margin-bottom: 20px;
     }
 
     .leavesPng {
@@ -61,7 +68,6 @@ export const LoginContainer = styled.div`
         font-family: 'Cormorant', serif;
         font-size: 50px;
     }
-    
 
     .contentAdjust {
         display: flex;
@@ -69,7 +75,6 @@ export const LoginContainer = styled.div`
         width: 300px;
         justify-content: center;
     }
-
 
     .perfilImg {
         height: 100%;
@@ -105,7 +110,6 @@ export const LoginContainer = styled.div`
         text-decoration: none;
         color: ${colors.lightWhite};
     }
-  
 
     strong {
         border-bottom: 2px dotted ${colors.lightWhite};
