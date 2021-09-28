@@ -11,31 +11,29 @@ export const DeliveryContainer = styled.div`
     height: 100vh;
     background-color: ${colors.darkGreen};
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     position: relative;
 
     .header {
         width: 100vw;
-        height: 20vh;
+        height: 15vh;
         background-color: ${colors.lightGreen};
         position: absolute;
+        display: flex;
+        align-items: center;
         top: 0px;
         left: 0px;
     }
 
     .title {
         margin: 0px;
-        position: relative;
-        top: -30%;
-        right: 250%;
     }
 
     .dash {
-        border-left: 1px solid white;
+        border-left: 2px solid white;
         padding: 30px;
-        position: relative;
-        right: 270%;
+        margin-left: 60px;
     }
 
     .forkandKnife {
@@ -44,9 +42,18 @@ export const DeliveryContainer = styled.div`
         background-image: url(${forkandKnife});
         background-repeat: no-repeat;
         background-size: 100%;
-        position: relative;
-        top: 35%;
-        right: 330%;
+    }
+
+    .headerObjects {
+        width: 80vw;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .texts {
+        display: flex;
     }
 
     .leavesHeader {
@@ -56,7 +63,7 @@ export const DeliveryContainer = styled.div`
     }
 
     .leaves3Png {
-        width: 6vw;
+        width: 5vw;
         height: 8vw;
         filter: brightness(60%);
         transform: rotate(180deg);
@@ -64,8 +71,33 @@ export const DeliveryContainer = styled.div`
         background-repeat: no-repeat;
         background-size: 100%;
         position: absolute;
-        top: 0%;
-        right: 0%;
+        top: -10%;
+        right: 35%;
+    }
+
+    .leaves4Png {
+        width: 6vw;
+        height: 12vw;
+        filter: brightness(60%);
+        transform: rotate(125deg);
+        background-image: url(${leaves9});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: -50%;  
+    }
+
+    .leaves5Png {
+        width: 4vw;
+        height: 6vw;
+        filter: brightness(60%);
+        transform: rotate(125deg);
+        background-image: url(${leaves9});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: -10%;  
+        left: 0%;
     }
 
     .leavesPng {
@@ -74,9 +106,9 @@ export const DeliveryContainer = styled.div`
         background-image: url(${leaves8});
         background-repeat: no-repeat;
         background-size: 100%;
-        position: relative;
+        position: absolute;
         bottom: 0%;
-        right: -30%;
+        right: -3%;
     }
     .leaves2Png {
         width: 12vw;
@@ -85,8 +117,8 @@ export const DeliveryContainer = styled.div`
         background-image: url(${leaves9});
         background-repeat: no-repeat;
         background-size: 100%;
-        position: relative;
+        position: absolute;
         bottom: 0%;
-        left: -34%;
+        left: -4%;
     }
 `;
