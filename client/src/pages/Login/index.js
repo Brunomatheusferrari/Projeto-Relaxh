@@ -8,6 +8,7 @@ import { SubmitButton } from "../../components/SubmitButton";
 import { FiArrowLeft } from "react-icons/fi";
 import { useState } from "react";
 import authServices from "../../services/authServices";
+import { Error } from "../../components/Error";
 
 
 export function Login(props) {
@@ -23,6 +24,7 @@ export function Login(props) {
 
     async function handleSubmit(e) {
         e.preventDefault();
+        setError(null)
         try {
             await authServices.signIn(email, password);            
             window.location.replace("/");
@@ -31,7 +33,7 @@ export function Login(props) {
             console.log(err.message)
         }
     }
-      
+
     return(
         <LoginContainer>
             <div className="wrapper">
@@ -44,11 +46,14 @@ export function Login(props) {
                         <h1 className="loginTitle">Login</h1>
                         <div className="containerInputs">
                             <div className="input1">
-                                <InputPrincipal type="email" onChange={e => setEmail(e.target.value)} placeholder="Email" required />
+                                <InputPrincipal type="email" onChange={e =>  setEmail(e.target.value)} placeholder="Email" required />
                             </div>
                             <div className="input2">
                                 <InputPrincipal type="password" onChange={e => setPassword(e.target.value)} placeholder="Senha" required />
                             </div>
+                            {error &&
+                                <Error error={error}/>
+                            }
                         </div>
                         <SubmitButton onClick={handleSubmit}>                
                             <Link to="/entrar" label="Login" className="loginButtonStyle">Entrar</Link>                

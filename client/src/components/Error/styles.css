@@ -1,0 +1,9 @@
+.error-div {
+    display: flex;
+}
+
+.error-text {
+    color: rgb(209, 64, 64);
+    margin-top: 0;
+    font-size: 17px;
+}
