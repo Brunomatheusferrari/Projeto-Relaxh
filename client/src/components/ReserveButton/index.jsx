@@ -4,7 +4,7 @@ import colors from "../../themes/colors";
 export const ReserveButton = styled.a`
   .reserveButton {
   color: ${colors.lightWhite};
-  padding: 15px 50px 15px 50px;
+  padding: 10px 30px 10px 30px;
   border: 2px solid ${colors.lightWhite};
   text-decoration: none;
   box-shadow: inset 0 0 0 0 ${colors.lightWhite};

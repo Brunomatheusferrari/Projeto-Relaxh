@@ -5,7 +5,7 @@ import colors from "../../themes/colors";
 export const IntroductSection = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     width: 100vw;
-    height: 60vh;
+    height: 60%;
     background-color: ${colors.mediumWhite};
     overflow-y: hidden;
     display: flex;
@@ -55,7 +55,7 @@ export const IntroductSection = styled.div`
 
     .bgLogo {
         width: 465px;
-        height: 60vh;
+        height: 67%;
         position: absolute;
         background-color: ${colors.darkWhite};
         z-index: 0;

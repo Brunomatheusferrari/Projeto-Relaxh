@@ -2,6 +2,7 @@ import styled from "styled-components";
 import colors from "../../themes/colors";
 import leaves4 from "../../static/img/leaves4.png"
 
+
 export const PrecosContainer =  styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     width: 100vw;
@@ -19,7 +20,7 @@ export const PrecosContainer =  styled.div`
         color: ${colors.lightWhite};
         font-size: 60px;
         position: relative;
-        top: -80px;
+        margin-top: 0;
     }
     
     .cards {

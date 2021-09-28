@@ -2,7 +2,6 @@ import React from "react";
 import { AboutContainer } from "../../components/AboutContainer";
 
 export function Sobre(props) {
-
     return (
         <AboutContainer>
           
@@ -18,10 +17,8 @@ export function Sobre(props) {
                             utilizando-se da linguagem Javascript com
                             a biblioteca React.
                         </p>
-               
                     </div>
                     
-
                     <div className="creatorsContainer">
                         <h2 className="cretorsTitle">Criado por:</h2>
                         <ul className="creatorsUL">
@@ -49,9 +46,6 @@ export function Sobre(props) {
                 <div className="leavesPng"></div>
                 <div className="hyperwTeam"></div>
             </div>
-
-           
-
 
         </AboutContainer>
     );

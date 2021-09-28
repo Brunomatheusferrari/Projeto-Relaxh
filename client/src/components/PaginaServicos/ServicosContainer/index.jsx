@@ -30,8 +30,6 @@ export const ServicosContainer = styled.div`
         font-size: 64px;
         margin: 0px 0px 30px 0px;
         position: relative;
-        top: -10%;
-
     }
 
     .cards {

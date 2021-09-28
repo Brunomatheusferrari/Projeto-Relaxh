@@ -184,22 +184,7 @@ export const AboutContainer = styled.div`
             height: fit-content;
            
         }
-
-        /* .leavesPng {
-            width: 35vw;
-            height: 40vw;
-        }
-
-        .hyperwTeam {
-            width: 160px;
-            height: 250px;
-            
-            right: 150px;
-            bottom: 60px;
-        }
-
-        } */
-
+        
     }
 
     @media (max-width: 470px) {

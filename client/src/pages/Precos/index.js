@@ -4,11 +4,11 @@ import { PrecosContainer } from "../../components/PrecosContainer";
 import { Link } from "react-router-dom";
 import { SubmitButton } from "../../components/SubmitButton";
 
+
 export function Precos() {
     return(
         <PrecosContainer>
             <h1 className="precosTitle">Preços</h1>
-
             <div className="cards">
             <CardPrecos>
                 <h2 className="roomType">Standart</h2>
@@ -35,12 +35,10 @@ export function Precos() {
                 </SubmitButton>
             </CardPrecos>
             </div>
-
             <div className="leaves"></div>
             <div className="leaves2"></div>
             <div className="leaves3"></div>
             <div className="leaves4"></div>
-          
         </PrecosContainer>
     );
 }

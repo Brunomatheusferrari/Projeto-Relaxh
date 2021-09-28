@@ -6,7 +6,6 @@ import perfilPhoto from "../../static/img/perfilPhoto.png";
 import { Link } from "react-router-dom";
 import { SubmitButton } from "../../components/SubmitButton";
 import { FiArrowLeft } from "react-icons/fi";
-
 import { useState } from "react";
 import authServices from "../../services/authServices";
 
@@ -44,8 +43,12 @@ export function Login(props) {
                         <div className="contentAdjust">
                         <h1 className="loginTitle">Login</h1>
                         <div className="containerInputs">
-                        <InputPrincipal type="email" onChange={e => setEmail(e.target.value)} placeholder="Email" required />
-                        <InputPrincipal type="password" onChange={e => setPassword(e.target.value)} placeholder="Senha" required />
+                            <div className="input1">
+                                <InputPrincipal type="email" onChange={e => setEmail(e.target.value)} placeholder="Email" required />
+                            </div>
+                            <div className="input2">
+                                <InputPrincipal type="password" onChange={e => setPassword(e.target.value)} placeholder="Senha" required />
+                            </div>
                         </div>
                         <SubmitButton onClick={handleSubmit}>                
                             <Link to="/entrar" label="Login" className="loginButtonStyle">Entrar</Link>                
@@ -53,12 +56,8 @@ export function Login(props) {
                         <p className="passwordRecover">Esqueceu sua senha? <strong><Link to="/contato" label="contato" className="linkContato">Entre em Contato </Link></strong></p>
                     </div>
                 </div>
-
                 <div className="leavesPng2"></div>
             </div>
-        
-               
-
                 <img src={perfilPhoto} className="perfilImg"/>
         </LoginContainer>
     );
