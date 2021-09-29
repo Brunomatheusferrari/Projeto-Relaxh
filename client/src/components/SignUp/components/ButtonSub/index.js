@@ -3,8 +3,7 @@ import "./styles.css"
 
 export function ButtonSub(props) {
     return (
-        <a className="button-submit" {...props}>
-            {props.title}
-        </a>
+        <input type="submit" placeholder={props.title} className="button-submit" {...props}>
+        </input>
     )
 }
