@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 import colors from "../../themes/colors";
 import leaves8 from "../../static/img/leaves8.png";
@@ -20,28 +19,22 @@ export const ServicoLimpeza = styled.div`
 
     .header {
         width: 100vw;
-        height: 20vh;
+        height: 15vh;
         background-color: ${colors.lightGreen};
         position: absolute;
-        display: flex;
-        align-items: flex-end;
         top: 0px;
         left: 0px;
     }
 
     .title {
         margin: 0px;
-        position: relative;
-        top: -30%;
-        right: 250%;
+       
     }
 
     .dash {
-        border-left: 1px solid white;
+        border-left: 2px solid white;
         padding: 30px;
-        position: relative;
-        right: 270%;
-    
+        margin-left: 60px;
     }
 
     .cleanerSpray {
@@ -51,9 +44,19 @@ export const ServicoLimpeza = styled.div`
         background-image: url(${cleanerSpray});
         background-repeat: no-repeat;
         background-size: 100%;
-        position: relative;
-        top: 35%;
-        right: 330%;
+        
+    }
+
+    .headerObjects {
+        width: 80vw;
+        height: 4vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .texts {
+        display: flex;
     }
 
     .leavesHeader {
@@ -62,18 +65,6 @@ export const ServicoLimpeza = styled.div`
         align-items: center;
     }
 
-    .leaves3Png {
-        width: 6vw;
-        height: 8vw;
-        filter: brightness(60%);
-        transform: rotate(180deg);
-        background-image: url(${leaves8});
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: absolute;
-        top: 0%;
-        right: 0%;
-    }
 
     .leavesPng {
         width: 12vw;
@@ -95,5 +86,30 @@ export const ServicoLimpeza = styled.div`
         position: relative;
         bottom: 0%;
         left: -34%;
+    }
+
+    .leaves3Png {
+        width: 5vw;
+        height: 7vw;
+        filter: brightness(60%);
+        transform: rotate(180deg);
+        background-image: url(${leaves8});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: 0%;
+        right: 32%;
+    }
+
+    .leaves4Png {
+        width: 6vw;
+        height: 12vw;
+        filter: brightness(60%);
+        transform: rotate(125deg);
+        background-image: url(${leaves9});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: -50%;  
     }
 `;
