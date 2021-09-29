@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { DeliveryContainer } from "../../components/DeliveryContainer";
 import { DeliveryModal } from "../../components/DeliveryModal";
 import { DeliveryButton } from "../../components/DeliveryButton";
+import { Counter } from "../../components/DeliveryModalButtons/index";
 import { Link } from "react-router-dom";
 
 export function Delivery(props) {
@@ -20,11 +21,9 @@ export function Delivery(props) {
                             <h1 className="title">Delivery</h1>
                         </div>
 
-                
                     <DeliveryButton onClick={() => setIsModalVisible(true)}>                
-                            <Link to="/serviços-delivery" label="Login" className="deliveryButtonStyle">Fazer Pedido +</Link>                
+                            <a  label="Delivery" className="deliveryButtonStyle">Fazer Pedido +</a>                
                         </DeliveryButton>
-            
                     </div>
 
                     <div className="leavesHeader">
@@ -47,7 +46,17 @@ export function Delivery(props) {
             {
             isModalVisible &&
             <DeliveryModal>
+                <header className="headerModal">
+                    <div className="headerModalObjects">
+                        <h2 className="titleModal">Pedidos</h2>
+                        <a onClick={() => setIsModalVisible(false)}>X</a>
+                    </div>
+                </header>
 
+                <div className="ModalContent">                   
+                    <Counter />
+                    
+                </div>
             </DeliveryModal>
             }
             
