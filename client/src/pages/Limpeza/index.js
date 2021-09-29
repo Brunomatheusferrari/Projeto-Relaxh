@@ -1,10 +1,10 @@
-import React from "react"
+import React, { useState } from "react";
 import { LimpezaButton } from "../../components/LimpezaButton";
 import { ServicoLimpeza } from "../../components/ServicoLimpeza";
-import { Link } from "react-router-dom";
-
+import { LimpezaModal } from "../../components/LimpezaModal";
 
 export function Limpeza(props) {
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
     return (
 
@@ -13,14 +13,18 @@ export function Limpeza(props) {
             <div className="header">
                 <div className="headerContents">
                     <div className="headerObjects">
-                        <div className="cleanerSpray"></div>
-                        <div className="dash"></div>
-                        <h1 className="title">Serviços de Limpeza</h1>
-                    </div>
+                        <div className="texts">
+                            <div className="cleanerSpray"></div>
+                            <div className="dash"></div>
+                            <h1 className="title">Serviços de Limpeza</h1>
+                        </div>
 
-                    <LimpezaButton onClick>
-                            <Link to="/" label="Login" className="LimpezaButtonStyle">Fazer Pedido</Link>
-                    </LimpezaButton>
+
+                        <LimpezaButton onClick={() => setIsModalVisible(true)}>
+                            <a label="Limpeza" className="LimpezaButtonStyle">Fazer Pedido</a>
+                        </LimpezaButton>
+
+                    </div>
 
                     <div className="leavesHeader">
                         <div className="leaves3Png"></div>
@@ -36,6 +40,12 @@ export function Limpeza(props) {
             <div className="leaves1Adjust">
                 <div className="leavesPng"></div>
             </div>
+            {
+            isModalVisible &&
+            <LimpezaModal>
+
+            </LimpezaModal>
+}
         </ServicoLimpeza>
     )
 }
