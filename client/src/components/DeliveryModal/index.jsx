@@ -7,10 +7,34 @@ export const DeliveryModal = styled.div`
     width: 70vw;
     height: 70vh;
     background-color: ${colors.mediumWhite};
-    filter: opacity(70%);
+    /* filter: opacity(70%); */
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     z-index: 2;
+    margin-top: 9%;
+
+    .headerModal {
+        color: white;
+        width: 70vw;
+        height: 10vh;
+        background-color: ${colors.lightGreen};
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0px;
+        left: 0px;
+    }
+
+    .headerModalObjects {
+        width: 60vw;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    
 `;
