@@ -21,13 +21,20 @@ export default function Scanner(props) {
     setScanned(true);
 
     if(props.type == "Checkin"){
-      const res = hotelServices.CheckIn({token: data})
-      alert("Check-in!")
+      try {
+        const res = hotelServices.CheckIn({token: data})
+        alert(res)
+      } catch (error) {
+        alert(error)
+      }
     }else if (props.type == "Checkout"){
-      const res = hotelServices.CheckOut({token: data})
-      alert("Check-Out!")
+      try {
+        const res = hotelServices.CheckOut({token: data})
+        alert(res)
+      } catch (error) {
+        alert(error)
+      }
     }
-    
   };
 
   if (hasPermission === null) {

@@ -30,14 +30,18 @@ const styles = StyleSheet.create({
     },
     label: {
         alignSelf: "flex-start",
-        fontSize: size.label,        
+        fontSize: size.label, 
+        color: colors.lightWhite,       
     },
-    input: {        
-        fontSize: size.input,
+    input: {      
         flex: 1,        
-        padding: 10        
+        padding: 10,
+        color: colors.lightGreen,
+        fontSize: 16,
+        backgroundColor: colors.mediumGreen,
     },
     icon: {                
-        paddingRight: 5
+        paddingRight: 5,
+        color: "white"
     }
 });

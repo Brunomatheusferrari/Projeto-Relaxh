@@ -5,6 +5,7 @@ import imgLogo from "../assets/logoRelaxh.png"
 import planta1 from "../assets/leaves1.png"
 import planta2 from "../assets/leaves3.png"
 import { useAuth } from "../contexts/AuthContext";
+import { SignOutButton } from "../components/SignOutButton";
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
@@ -24,6 +25,9 @@ export function HomeScreen({ navigation }) {
       <View style={styles.container}>
       <Image source={planta2} style={styles.planta2}/>
         <View style={styles.bigContainer}>
+        <View>
+          <SignOutButton title="SignOut" onPress={handleSignOut}/>
+        </View>
           <View style={styles.container_header}>
             <Image style={styles.logo} source={imgLogo}/>
             <Text style={styles.title}>Home</Text>
@@ -31,7 +35,6 @@ export function HomeScreen({ navigation }) {
           <View style={styles.button_container}>
             <AppButton title="Check-in" onPress={() => navigation.navigate('Check-in')}/>
             <AppButton title="Check-Out" onPress={() => navigation.navigate('Check-Out')}/>
-            <AppButton title="SignOut" onPress={handleSignOut}/>
           </View>
         </View>
         <Image style={styles.planta1} source={planta1}/>

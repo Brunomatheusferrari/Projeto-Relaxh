@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { KeyboardAvoidingView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { KeyboardAvoidingView, StyleSheet, Dimensions, Image, View } from "react-native";
 import { AppButton } from "../components/AppButton";
 import { ValidationInput } from "../components/ValidationInput";
-import { MaterialIcons } from '@expo/vector-icons';
 import colors from "../theme/colors";
 import { handleEmailChange, handlePasswordChange } from "../utils/commonValidations";
 import { useAuth } from "../contexts/AuthContext";
 import { Loader } from "../components/Loader";
 import { showErrorMessage } from "../utils/errorHandlers";
+import imgLogo from "../assets/logoRelaxh.png"
+import planta1 from "../assets/leaves1.png"
+import planta2 from "../assets/leaves3.png"
+
 
 const initialState = {
     email: "",
@@ -17,6 +20,9 @@ const initialState = {
     isLoginValid: false,
     isLoading: false,       
 }
+
+const screenWidth = Dimensions.get('window').width;
+const screenHeight = Dimensions.get('window').height;
 
 export function SignInScreen({ navigation }) {
     const { memoContext } = useAuth();    
@@ -51,8 +57,10 @@ export function SignInScreen({ navigation }) {
 
     return (            
         <KeyboardAvoidingView behavior="height" style={styles.container}>
+        <Image source={planta2} style={styles.planta2}/>
+        <Image style={styles.planta1} source={planta1}/>
             <Loader isVisible={state.isLoading} />
-            <MaterialIcons name="add-task" size={200} color={colors.primary} />
+            <Image style={styles.logo} source={imgLogo}/>
             <ValidationInput 
                 value={state.email}
                 onChangeText={text => handleEmailChange(text, setState)}
@@ -81,9 +89,26 @@ export function SignInScreen({ navigation }) {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: colors.backgroundColor,
+      backgroundColor: colors.darkGreen,
       alignItems: 'center',
       justifyContent: 'center',
       padding: 10
     },
-});
+    logo: {
+        width: 100,
+        height: 150
+    },
+    planta1:{
+        zIndex: -1,
+        position: "absolute",
+        top: screenHeight - (screenWidth / 2),
+        left: screenWidth - (screenWidth + 10),
+    },
+    planta2:{
+      zIndex: -1,
+      position: "absolute",
+      top: screenHeight - (screenWidth * 2.2),
+      left: screenWidth - 350,
+      transform: [{scale: 0.5}]
+    }
+})
