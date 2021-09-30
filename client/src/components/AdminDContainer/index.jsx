@@ -46,5 +46,22 @@ export const AdminDContainer = styled.div`
         right: 3%;
         transform: rotate(180deg);
     }
+
+    @media(max-width: 1100px) {
+        .title {
+            font-size: 30px;
+        }
+    }
+
+    @media(max-width: 600px) {
+        .title {
+            font-size: 25px;
+        }
+
+        .leaves1 {
+            width: 10vw;
+            height: 15vw;
+        }
+    }
 `;
 

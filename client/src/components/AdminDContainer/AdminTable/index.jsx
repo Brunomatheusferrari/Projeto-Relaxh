@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import colors from "../../../themes/colors";
-
 export const AdminTable = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     width: 60%;
@@ -12,9 +11,10 @@ export const AdminTable = styled.div`
     align-items: center;
     overflow-y: scroll;
     position: relative;
+    padding: 0;
 
     &::-webkit-scrollbar {
-        width: 15px;            
+        width: 10px;            
         position: absolute;
         }
 
@@ -52,6 +52,59 @@ export const AdminTable = styled.div`
                 width: 40%;
             }
         }
+    }
+
+    @media(max-width: 1100px) {
+        
+        width: 80%;
+
+
+        .adminTableHeader {
+            .headerText {
+                font-size: 15px;
+            } 
+        }
+        
+    }
+
+    @media(max-width: 600px) {
+        
+        width: 90%;
+
+
+        .adminTableHeader {
+            width: 100%;
+            position: relative;
+            left: 0;
+
+            .headerText {
+                font-size: 12px;
+
+                &:nth-child(1) {
+                    position: relative;
+                    left: 10%;
+                }
+
+                &:nth-child(2) {
+                    position: relative;
+                    left: -6%;
+                }
+
+                &:nth-child(3) {
+                    position: relative;
+                    left: -4%;
+                }
+
+                &:nth-child(4) {
+                    position: relative;
+                    left: -4%;
+                }
+
+            } 
+
+          
+        }
+        
     }
 
 

@@ -45,6 +45,42 @@ export const DivPedido = styled.div`
     @media(max-width: 1100px) {
         .serviceTitle {
             width: 42%;
+            font-size: 13px;
+            margin-left: 20px;
+        }
+
+        p {
+            font-size: 13px;
+        }
+
+        .serviceRoomNumber {
+            margin: 20px;
+        }
+
+        .serviceHorario {
+            margin: 20px;
+        }
+
+        
+    }
+
+    @media(max-width: 600px) {
+        .serviceTitle {
+            width: 42%;
+            font-size: 10px;
+            margin-left: 20px;
+        }
+
+        p {
+            font-size: 10px;
+        }
+
+        .serviceRoomNumber {
+            margin: 20px;
+        }
+
+        .serviceHorario {
+            margin: 20px;
         }
 
         
