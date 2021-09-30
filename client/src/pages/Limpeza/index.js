@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { LimpezaButton } from "../../components/LimpezaButton";
 import { ServicoLimpeza } from "../../components/ServicoLimpeza";
 import { LimpezaModal } from "../../components/LimpezaModal";
+import { Counter } from "../../components/DeliveryModalButtons/index";
 
 export function Limpeza(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -43,7 +44,17 @@ export function Limpeza(props) {
             {
             isModalVisible &&
             <LimpezaModal>
+                <header className="headerModal">
+                    <div className="headerModalObjects">
+                        <h2 className="titleModal">Pedidos</h2>
+                        <a onClick={() => setIsModalVisible(false)}>X</a>
+                    </div>
+                </header>
 
+                <div className="ModalContent">                   
+                    <Counter />
+                    
+                </div>
             </LimpezaModal>
 }
         </ServicoLimpeza>
