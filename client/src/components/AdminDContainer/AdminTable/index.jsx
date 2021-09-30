@@ -11,6 +11,24 @@ export const AdminTable = styled.div`
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
+    position: relative;
+
+    &::-webkit-scrollbar {
+        width: 15px;            
+        position: absolute;
+        }
+
+    &::-webkit-scrollbar-track {
+        background: none;        /* color of the tracking area */
+        position: absolute;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color:${colors.lightGreen};    /* color of the scroll thumb */
+        border-radius: 20px; 
+        border: 3px solid ${colors.mediumGreen};  /* creates padding around scroll thumb */
+        position: absolute;
+    }
 
     .adminTableHeader {
         width: 100%;
@@ -23,6 +41,7 @@ export const AdminTable = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-around;
+        position: relative;
 
         .headerText {
             font-family: 'Cormorant', serif;
@@ -34,5 +53,7 @@ export const AdminTable = styled.div`
             }
         }
     }
+
+
 
 `;
