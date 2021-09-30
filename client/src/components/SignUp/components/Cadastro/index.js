@@ -72,8 +72,8 @@ export function Cadastro({ next }) {
                                 })}
                                 onChange={() => clearErrors("password")}
                             />
-                            {errors.password && <p>{errors.password.message}</p>}
                         </div>
+                        {errors.password && <p>{errors.password.message}</p>}
                         <div className="input-capsule">
                             <InputPrincipal
                                 name="password_repeat"
@@ -86,8 +86,9 @@ export function Cadastro({ next }) {
                                 })}
                                 onChange={() => clearErrors("password_repeat")}
                             />
-                            {errors.password_repeat && <p>{errors.password_repeat.message}</p>}
+                            {/* a */}
                         </div>
+                        {errors.password_repeat && <p>{errors.password_repeat.message}</p>}
                         <div>
                             <ButtonSub title="Continuar"/>
                         </div>  
