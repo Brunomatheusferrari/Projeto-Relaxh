@@ -1,61 +1,99 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { useRegister } from "../../../../contexts/registerContext"
 import { InputPrincipal } from "../../../InputPrincipal/index"
 import { ButtonSub } from "../ButtonSub/index"
 import authServices from "../../../../services/authServices"
+import { useForm } from "react-hook-form";
 
 import "./styles.css"
 
 export function Cadastro({ next }) {
     const { state, dispatch, registerUser } = useRegister();
-    const [email, setEmail] = useState(state.email);
-    const [password, setPassword] = useState(state.password)
-    const [nome, setNome] = useState("")
+    const { register, handleSubmit, formState: { errors }, clearErrors, watch} = useForm();
 
-    
     const accessToken = authServices.getAccessToken();  
 
     if (accessToken) {
       next()
     }
 
-    async function handleSubmit(e) {
-        e.preventDefault();
+    async function onSubmit(data) {
         try {
+            const { nome, email, password} = data
             const res = await registerUser(nome, email, password)
-            console.log(res)
             next();
         } catch (error) {
             console.log(error)
         }
-
     }
 
     return (
-        <>
         <div className="header">
             <h1 className="title">Cadastrar - se</h1>
             <div className="info">
                 <div className="input-container">
-                    <div className="input-capsule">
-                        <InputPrincipal value={nome} onChange={e => setNome(e.target.value)} placeholder="nome"  className="inputCadastro"/>
-                    </div>
-                    <div className="input-capsule">
-                        <InputPrincipal value={email} onChange={e => setEmail(e.target.value)} placeholder="Email"  className="inputCadastro"/>
-                    </div>
-                    <div className="input-capsule">
-                        <InputPrincipal placeholder="Senha"  value={password} onChange={e => setPassword(e.target.value)} className="inputCadastro"/>
-                    </div>
-                    <div className="input-capsule">
-                        <InputPrincipal placeholder="Confirmar Senha"  className="inputCadastro"/>
-                    </div>
-                    <div>
-                    <ButtonSub title="Continuar" onClick={handleSubmit} />
-                    </div>  
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="input-capsule">
+                            <InputPrincipal  
+                                placeholder="Nome" 
+                                {...register("nome", { required: true })}
+                                className="inputCadastro"
+                                onChange={() => clearErrors("nome")}
+                            />
+                        </div>
+                        {errors.nome && <p>This field is required</p>}
+                        <div className="input-capsule">
+                            <InputPrincipal  
+                                placeholder="Email"  
+                                className="inputCadastro"
+                                {...register("email", { 
+                                    required: true,
+                                    pattern: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi,
+                                    message: "Please enter a valida Email"
+                                })}
+                                onChange={() => clearErrors("email")}
+                            />
+                        </div>
+                        {errors.email && errors.email.type == "required" && <p>This field is required</p>}
+                        {errors.email && errors.email.type == "pattern" && <p>Invalid Email</p>}
+
+                        <div className="input-capsule">
+                            <InputPrincipal
+                                name="password"
+                                type="password" 
+                                placeholder="Senha" 
+                                className="inputCadastro"
+                                {...register("password", { 
+                                    required: "You must specify a password",
+                                    minLength: {
+                                    value: 8,
+                                    message: "Password must have at least 8 characters"
+                                }
+                                })}
+                                onChange={() => clearErrors("password")}
+                            />
+                            {errors.password && <p>{errors.password.message}</p>}
+                        </div>
+                        <div className="input-capsule">
+                            <InputPrincipal
+                                name="password_repeat"
+                                type="password" 
+                                placeholder="Confirmar Senha"  
+                                className="inputCadastro"
+                                {...register("password_repeat", { 
+                                    validate: (value) => 
+                                        value === watch("password") || "The passwords do not match"
+                                })}
+                                onChange={() => clearErrors("password_repeat")}
+                            />
+                            {errors.password_repeat && <p>{errors.password_repeat.message}</p>}
+                        </div>
+                        <div>
+                            <ButtonSub title="Continuar"/>
+                        </div>  
+                    </form>
                 </div>
             </div>
-            
         </div>
-        </>
     )
 }
