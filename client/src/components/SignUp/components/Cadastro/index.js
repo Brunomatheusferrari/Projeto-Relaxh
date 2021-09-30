@@ -86,6 +86,7 @@ export function Cadastro({ next }) {
                                 })}
                                 onChange={() => clearErrors("password_repeat")}
                             />
+                            {/* a */}
                         </div>
                         {errors.password_repeat && <p>{errors.password_repeat.message}</p>}
                         <div>
