@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { LimpezaButton } from "../../components/LimpezaButton";
 import { ServicoLimpeza } from "../../components/ServicoLimpeza";
 import { LimpezaModal } from "../../components/LimpezaModal";
-import { Counter } from "../../components/DeliveryModalButtons/index";
+import { Counter } from "../../components/LimpezaModalButtons/index";
 
 export function Limpeza(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
