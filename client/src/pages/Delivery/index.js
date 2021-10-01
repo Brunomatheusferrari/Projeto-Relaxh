@@ -54,9 +54,21 @@ export function Delivery(props) {
                 </header>
 
                 <div className="ModalContent">                   
-                    <Counter />
-                    
+                    <Counter name="Hamburger" price="56"/>
+                    <Counter name="Pizza"  price="56"/>
+                    <Counter name="Coca-Cola" price="56"/>
+                    <Counter name="Coca-Cola" price="56"/>
+                    <Counter name="Pizza" price="56"/>
+                    <Counter name="Coca-Cola" price="56"/>
+                    <Counter name="Coca-Cola" price="56"/>
                 </div>
+
+                <footer className="modalFooter">
+                    <div className="footerContainer">
+                        <p className="total">+</p>
+                        <button>enviar</button>
+                    </div>
+                </footer>
             </DeliveryModal>
             }
             
