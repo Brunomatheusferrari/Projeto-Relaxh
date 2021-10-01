@@ -3,10 +3,10 @@ import { DeliveryContainer } from "../../components/DeliveryContainer";
 import { DeliveryModal } from "../../components/DeliveryModal";
 import { DeliveryButton } from "../../components/DeliveryButton";
 import { Counter } from "../../components/DeliveryModalButtons/index";
-import { Link } from "react-router-dom";
 
 export function Delivery(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [total, setTotal] = useState(0);
 
     return (
 
@@ -48,24 +48,21 @@ export function Delivery(props) {
             <DeliveryModal>
                 <header className="headerModal">
                     <div className="headerModalObjects">
-                        <h2 className="titleModal">Pedidos</h2>
+                        <h2 className="titleModal">Cardápio</h2>
                         <a onClick={() => setIsModalVisible(false)}>X</a>
                     </div>
                 </header>
 
                 <div className="ModalContent">                   
-                    <Counter name="Hamburger" price="56"/>
-                    <Counter name="Pizza"  price="56"/>
-                    <Counter name="Coca-Cola" price="56"/>
-                    <Counter name="Coca-Cola" price="56"/>
-                    <Counter name="Pizza" price="56"/>
-                    <Counter name="Coca-Cola" price="56"/>
-                    <Counter name="Coca-Cola" price="56"/>
+                    <Counter name="Hamburger" price={42} changeTotal={setTotal} />
+                    <Counter name="Pizza"  price={100} changeTotal={setTotal} />
+                    <Counter name="Coca-Cola 1L" price={12} changeTotal={setTotal} /> 
+                    <Counter name="Água" price={4} changeTotal={setTotal} />
                 </div>
 
                 <footer className="modalFooter">
                     <div className="footerContainer">
-                        <p className="total">+</p>
+                        <p className="total">R$ {total.toFixed(2)}</p>
                         <button>enviar</button>
                     </div>
                 </footer>
