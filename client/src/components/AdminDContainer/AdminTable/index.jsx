@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import colors from "../../../themes/colors";
+
+
 export const AdminTable = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     width: 60%;
@@ -55,9 +57,7 @@ export const AdminTable = styled.div`
     }
 
     @media(max-width: 1100px) {
-        
         width: 80%;
-
 
         .adminTableHeader {
             .headerText {
@@ -68,9 +68,7 @@ export const AdminTable = styled.div`
     }
 
     @media(max-width: 600px) {
-        
         width: 90%;
-
 
         .adminTableHeader {
             width: 100%;
