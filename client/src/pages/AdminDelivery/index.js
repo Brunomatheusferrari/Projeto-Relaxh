@@ -2,9 +2,25 @@ import React from "react";
 import { AdminDContainer } from "../../components/AdminDContainer";
 import { AdminTable } from "../../components/AdminDContainer/AdminTable";
 import { DivPedido } from "../../components/AdminDContainer/DivPedido";
+import userServices from "../../services/userServices";
 
+export function AdminDelivery({userRole}) {
+    if (!userRole === "admin") {
+      return window.location.replace("/")
+    }
 
-export function AdminDelivery() {
+    async function getServicos(){
+      try {
+        const res = await userServices.getServicos()
+        console.log(res)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    getServicos()
+    
+
     return(
       <AdminDContainer>
         <div className="leaves2" />
@@ -16,7 +32,6 @@ export function AdminDelivery() {
               <h3 className="headerText">Nº Quarto</h3>
               <h3 className="headerText">Concluído</h3>
             </div>
-
             <DivPedido />
             <DivPedido />
             <DivPedido />
