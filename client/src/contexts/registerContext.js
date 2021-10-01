@@ -52,7 +52,7 @@ export function RegisterProvider({ children }) {
             
             dispatch({ type: "CADASTRO", payload: {email, password} })
         } catch (error) {
-            console.log(error)
+            throw new Error(error.message);
         }
     }
 
@@ -69,7 +69,7 @@ export function RegisterProvider({ children }) {
             
             return res
         } catch (error) {
-            console.log(error)
+            throw new Error(error.message);
         }
     }
 
@@ -80,7 +80,7 @@ export function RegisterProvider({ children }) {
 
             return res
         } catch (error) {
-            console.log(error)
+            throw new Error(error.message);
         }
     }
     return (

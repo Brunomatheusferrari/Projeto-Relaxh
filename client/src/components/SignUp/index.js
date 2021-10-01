@@ -36,19 +36,19 @@ export function SignUp() {
         </div>
           <RegisterProvider>
             {
-              index == "reserva" &&
+              index === "reserva" &&
               <Reserva next={() => setIndex("cadastro")} />
             }
             {
-              index == "cadastro" &&
+              index === "cadastro" &&
               <Cadastro next={() => setIndex("info")} />
             }
             {
-              index == "info" &&
+              index === "info" &&
               <PersonalInfo next={() => setIndex("pagamento")}/>
             }
             {
-              index == "pagamento" &&
+              index === "pagamento" &&
               <Pagamento />
             }
           </RegisterProvider>

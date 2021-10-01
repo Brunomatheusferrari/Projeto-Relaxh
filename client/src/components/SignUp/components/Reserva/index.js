@@ -9,9 +9,14 @@ import { useForm } from "react-hook-form";
 import "./styles.css"
 
 export function Reserva({ next }) {
-  const { state, dispatch } = useRegister();  
-  const { register, handleSubmit, formState: { errors }, clearErrors} = useForm();
+  const { dispatch } = useRegister();  
+  const { register, handleSubmit, formState: { errors }, watch, clearErrors} = useForm();
   const [tipo_quarto, setTipo_quarto] = useState("Standart")
+
+    function toTimestamp(strDate){
+        var datum = Date.parse(strDate);
+        return datum/1000;
+    }
 
   function onSubmit(data) {
     const { data_entrada, data_saida, numero_pessoas} = data
@@ -29,22 +34,32 @@ export function Reserva({ next }) {
                     <p className="titleInput">Data de Entrada</p>
                     <DateInput 
                         type="datetime-local" 
-                        {...register("data_entrada", { required: true })} 
+                        {...register("data_entrada", { 
+                            required: true,
+                            validate: (value) => 
+                                toTimestamp(value) > toTimestamp(new Date)
+                        })}
                         onChange={() => clearErrors("data_entrada")} 
                         placeholder="Data de Entrada"  
                         className="inputCadastro"/>
                 </div>
-                {errors.data_entrada && <span>This field is required</span>}
+                {errors.data_entrada && errors.data_entrada.type === "validate" && <span>Invalid Date</span>}
+                {errors.data_entrada && errors.data_entrada.type === "required" && <span>This field is required</span>}
                 <div className="input-capsule">
                     <p className="titleInput">Data de Saída</p>
                     <DateInput 
                         type="datetime-local"  
-                        {...register("data_saida", { required: true})} 
+                        {...register("data_saida", { 
+                            required: true,
+                            validate: (value) => 
+                               toTimestamp(value) > toTimestamp(watch("data_entrada")) 
+                        })}
                         onChange={() => clearErrors("data_saida")} 
                         placeholder="Confirmar Email" 
                         className="inputCadastro"/>
                 </div>
-                {errors.data_saida && <span>This field is required</span>}
+                {errors.data_saida && errors.data_saida.type === "validate" && <span>Invalid Date</span>}
+                {errors.data_saida && errors.data_saida.type === "required" && <span>This field is required</span>}
                 <div className="input-capsule">
                     <p className="titleInput">Número de Pessoas</p>
                     <DateInput 
