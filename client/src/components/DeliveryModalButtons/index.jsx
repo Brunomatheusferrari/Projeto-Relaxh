@@ -2,33 +2,31 @@ import React from "react";
 import { DeliveryFoodList } from "../DeliveryFoodList";
 import { Button } from "./Button";
 import { Food } from "./Text";
-import { Price } from "./Price";
+import { Price } from "../DeliveryPrices/Price";
 
 export class Counter extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            Counter: props.initial
+            counter: 0,
+            currentValue: this.props.price
         };
     }
 
     increment = () => {
-        this.setState(state => {
-            if(state.Counter !== 9){
-                return { Counter: state.Counter + 1 }
-            }
-        });
+        if(this.state.counter !== 9) {
+            this.setState(state => ({ counter: state.counter + 1 }));                
+            this.props.changeTotal(prevTotal => prevTotal + this.props.price);
+        };        
     }
 
     decrement = () => {
-        this.setState(state => {
-            if (state.Counter !== 0) {
-                return { Counter: state.Counter - 1 }
-            }            
-        });
+        if (this.state.counter !== 0) {
+            this.setState(state => ({ counter: state.counter - 1 }));                
+            this.props.changeTotal(prevTotal => prevTotal - this.props.price);
+        }
     }
-
 
 
     render() {
@@ -45,11 +43,10 @@ export class Counter extends React.Component {
 
                     <div className="counter">
                         <Button legend="+" onClick={this.increment} />
-                        <p className="number">{this.state.Counter}</p>
+                        <p className="number">{this.state.counter}</p>
                         <Button legend="-" onClick={this.decrement} />
                     </div>
                 </div>
-
             </DeliveryFoodList>
         )
     }

@@ -39,8 +39,8 @@ export const DeliveryFoodList = styled.div`
     }
 
     .name {
-        width: 70vw;
-        font-size: 45px;        
+        width: 60vw;
+        font-size: 35px;        
     }
 
     .price {
