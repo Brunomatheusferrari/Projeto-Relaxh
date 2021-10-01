@@ -32,13 +32,15 @@ export function AdminDelivery({userRole}) {
               <h3 className="headerText">Nº Quarto</h3>
               <h3 className="headerText">Concluído</h3>
             </div>
-            <DivPedido />
-            <DivPedido />
-            <DivPedido />
-            <DivPedido />
-            <DivPedido />
-            <DivPedido />
-            <DivPedido />
+            <DivPedido>
+              <p className="serviceTitle">02 Refigerantes</p>
+              <div className="verticalLine" />
+              <p className="serviceHorario">19:00</p>
+              <div className="verticalLine2" />
+              <p className="serviceRoomNumber">519</p>
+              <div className="verticalLine3" />
+              <input type="checkbox" className="serviceCheckBox" />
+            </DivPedido>            
           </AdminTable>
 
           <div className="leaves1" />
