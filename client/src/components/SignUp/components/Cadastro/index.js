@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React from "react"
 import { useRegister } from "../../../../contexts/registerContext"
 import { InputPrincipal } from "../../../InputPrincipal/index"
 import { ButtonSub } from "../ButtonSub/index"
@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import "./styles.css"
 
 export function Cadastro({ next }) {
-    const { state, dispatch, registerUser } = useRegister();
+    const { registerUser } = useRegister();
     const { register, handleSubmit, formState: { errors }, clearErrors, watch} = useForm();
 
     const accessToken = authServices.getAccessToken();  
@@ -20,10 +20,11 @@ export function Cadastro({ next }) {
     async function onSubmit(data) {
         try {
             const { nome, email, password} = data
-            const res = await registerUser(nome, email, password)
+            await registerUser(nome, email, password)
+
             next();
         } catch (error) {
-            console.log(error)
+            alert(error.message) 
         }
     }
 
@@ -54,8 +55,8 @@ export function Cadastro({ next }) {
                                 onChange={() => clearErrors("email")}
                             />
                         </div>
-                        {errors.email && errors.email.type == "required" && <p>This field is required</p>}
-                        {errors.email && errors.email.type == "pattern" && <p>Invalid Email</p>}
+                        {errors.email && errors.email.type === "required" && <p>This field is required</p>}
+                        {errors.email && errors.email.type ===   "pattern" && <p>Invalid Email</p>}
 
                         <div className="input-capsule">
                             <InputPrincipal

@@ -20,7 +20,7 @@ export function PersonalInfo({ next }) {
 
     async function onSubmit(data) {
         try {
-            // const res = await signIn()
+            await signIn()
             next()
         } catch (err) {
             console.log(err.message)
@@ -42,7 +42,7 @@ export function PersonalInfo({ next }) {
                                 required: true
                             })}/>
                     </div>
-                    {errors.nome && errors.nome.type == "required" && <span>This field is required</span>}
+                    {errors.nome && errors.nome.type === "required" && <span>This field is required</span>}
                     <div className="input-capsule">
                         <DateInput 
                             type="number" 
@@ -55,8 +55,8 @@ export function PersonalInfo({ next }) {
                                 message: "Invalid Email"
                             })}/>
                     </div>
-                    {errors.telefone && errors.telefone.type == "pattern" && <span>Invalid Phone Number</span>}
-                    {errors.telefone && errors.telefone.type == "required" && <span>This field is required</span>}
+                    {errors.telefone && errors.telefone.type === "pattern" && <span>Invalid Phone Number</span>}
+                    {errors.telefone && errors.telefone.type === "required" && <span>This field is required</span>}
                     <div className="input-capsule">
                         <DateInput 
                             type="text" 
@@ -65,12 +65,13 @@ export function PersonalInfo({ next }) {
                             onChange={() => clearErrors("cpf")}
                             {...register("cpf", { 
                                 required: true,
-                                pattern: /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/,
+                                //Se der erro /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/
+                                pattern: /^\d{3}\.\d{3}\.\d{3}\\d{2}$/,
                                 message : "Invalid Cpf"
                             })}/>
                     </div>
-                    {errors.cpf && errors.cpf.type == "pattern" && <span>Invalid CPF</span>}
-                    {errors.cpf && errors.cpf.type == "required" && <span>This field is required</span>}
+                    {errors.cpf && errors.cpf.type === "pattern" && <span>Invalid CPF</span>}
+                    {errors.cpf && errors.cpf.type === "required" && <span>This field is required</span>}
                     <div className="input-capsule">
                         <InputPrincipal 
                             placeholder="Endereço"  
@@ -80,7 +81,7 @@ export function PersonalInfo({ next }) {
                                 required: true
                             })}/>
                     </div>
-                    {errors.endereco && errors.endereco.type == "required" && <span>This field is required</span>}
+                    {errors.endereco && errors.endereco.type === "required" && <span>This field is required</span>}
                     <div>
                     <ButtonSub title="Continuar"/>
                     </div>  

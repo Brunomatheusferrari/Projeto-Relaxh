@@ -13,9 +13,9 @@ async function registerService(req, res, next) {
 
 async function getAll(req, res, next) {
     try {
-        const user = await serviceServices.getAll(req.body);
+        const services = await serviceServices.getAll();
 
-        res.status(201).json(user);
+        res.status(201).json(services);
     } catch (error) {
         console.log(error);
         next(error);

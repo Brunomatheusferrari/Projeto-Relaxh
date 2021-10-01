@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import "./styles.css"
 
 export function Reserva({ next }) {
-  const { state, dispatch } = useRegister();  
+  const { dispatch } = useRegister();  
   const { register, handleSubmit, formState: { errors }, watch, clearErrors} = useForm();
   const [tipo_quarto, setTipo_quarto] = useState("Standart")
 
@@ -43,8 +43,8 @@ export function Reserva({ next }) {
                         placeholder="Data de Entrada"  
                         className="inputCadastro"/>
                 </div>
-                {errors.data_entrada && errors.data_entrada.type == "validate" && <span>Invalid Date</span>}
-                {errors.data_entrada && errors.data_entrada.type == "required" && <span>This field is required</span>}
+                {errors.data_entrada && errors.data_entrada.type === "validate" && <span>Invalid Date</span>}
+                {errors.data_entrada && errors.data_entrada.type === "required" && <span>This field is required</span>}
                 <div className="input-capsule">
                     <p className="titleInput">Data de Saída</p>
                     <DateInput 
@@ -58,8 +58,8 @@ export function Reserva({ next }) {
                         placeholder="Confirmar Email" 
                         className="inputCadastro"/>
                 </div>
-                {errors.data_saida && errors.data_saida.type == "validate" && <span>Invalid Date</span>}
-                {errors.data_saida && errors.data_saida.type == "required" && <span>This field is required</span>}
+                {errors.data_saida && errors.data_saida.type === "validate" && <span>Invalid Date</span>}
+                {errors.data_saida && errors.data_saida.type === "required" && <span>This field is required</span>}
                 <div className="input-capsule">
                     <p className="titleInput">Número de Pessoas</p>
                     <DateInput 
