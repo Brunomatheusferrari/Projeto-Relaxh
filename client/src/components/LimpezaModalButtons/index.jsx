@@ -1,5 +1,5 @@
 import React from "react";
-import { LimpezaServicoList } from "../DeliveryFoodList";
+import { LimpezaServicoList } from "../LimpezaServicoList";
 import { Button } from "./Button"
 
 // const ButtonP = style.Component `
