@@ -15,7 +15,7 @@ export class Counter extends React.Component {
     }
 
     increment = () => {
-        if(this.state.counter !== 9) {
+        if(this.state.counter !== 20) {
             this.setState(state => ({ counter: state.counter + 1 }));                
             this.props.changeTotal(prevTotal => prevTotal + this.props.price);
         };        

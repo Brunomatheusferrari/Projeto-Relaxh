@@ -3,6 +3,7 @@ import { DeliveryContainer } from "../../components/DeliveryContainer";
 import { DeliveryModal } from "../../components/DeliveryModal";
 import { DeliveryButton } from "../../components/DeliveryButton";
 import { Counter } from "../../components/DeliveryModalButtons/index";
+import { IoClose } from 'react-icons/io5';
 
 export function Delivery(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -21,8 +22,8 @@ export function Delivery(props) {
                             <h1 className="title">Delivery</h1>
                         </div>
 
-                    <DeliveryButton onClick={() => setIsModalVisible(true)}>                
-                            <a  label="Delivery" className="deliveryButtonStyle">Fazer Pedido +</a>                
+                        <DeliveryButton onClick={() => setIsModalVisible(true)}>
+                            <a label="Delivery" className="deliveryButtonStyle">Fazer Pedido +</a>
                         </DeliveryButton>
                     </div>
 
@@ -44,31 +45,43 @@ export function Delivery(props) {
             </div>
 
             {
-            isModalVisible &&
-            <DeliveryModal>
-                <header className="headerModal">
-                    <div className="headerModalObjects">
-                        <h2 className="titleModal">Cardápio</h2>
-                        <a onClick={() => setIsModalVisible(false)}>X</a>
-                    </div>
-                </header>
+                isModalVisible &&
+                <DeliveryModal>
+                    <header className="headerModal">
+                        <div className="headerModalObjects">
+                            <h2 className="titleModal">Cardápio</h2>
+                            <a onClick={() => setIsModalVisible(false)} className="closeIcon"><IoClose /></a>
+                        </div>
+                    </header>
 
-                <div className="ModalContent">                   
-                    <Counter name="Hamburger" price={42} changeTotal={setTotal} />
-                    <Counter name="Pizza"  price={100} changeTotal={setTotal} />
-                    <Counter name="Coca-Cola 1L" price={12} changeTotal={setTotal} /> 
-                    <Counter name="Água" price={4} changeTotal={setTotal} />
-                </div>
-
-                <footer className="modalFooter">
-                    <div className="footerContainer">
-                        <p className="total">R$ {total.toFixed(2)}</p>
-                        <button>enviar</button>
+                    <div className="ModalContent">
+                        <section className="foods">
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <Counter name="Hamburger" price={42} changeTotal={setTotal} />
+                            <Counter name="Pizza" price={100} changeTotal={setTotal} />
+                        </section>
+                        <section className="drinks">
+                            <h2 className="sectionsTitle">Bebidas</h2>
+                            <Counter name="Coca-Cola 1L" price={12} changeTotal={setTotal} />
+                            <Counter name="Água" price={4} changeTotal={setTotal} />
+                        </section>
                     </div>
-                </footer>
-            </DeliveryModal>
+
+                    <footer className="modalFooter">
+                        <div className="footerContainer">
+                            <div className="cost">
+                                <p className="total">R$ {total.toFixed(2)}</p>
+                            </div>
+                            <div className="button">
+                                <DeliveryButton onClick={() => setIsModalVisible(false)}>
+                                    <a label="Delivery" className="deliveryButtonStyle">Finalizar Pedido</a>
+                                </DeliveryButton>
+                            </div>
+                        </div>
+                    </footer>
+                </DeliveryModal>
             }
-            
+
 
         </DeliveryContainer>
     );
