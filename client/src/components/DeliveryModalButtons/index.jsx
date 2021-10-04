@@ -1,57 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { DeliveryFoodList } from "../DeliveryFoodList";
 import { Button } from "./Button";
 import { Food } from "./Text";
 import { Price } from "../DeliveryPrices/Price";
+import { useDelivery } from "../../contexts/deliveryContext";
 
-export class Counter extends React.Component {
-    constructor(props) {
-        super(props);
+export function Counter(props) {
+    const [counter, setCounter] = useState(0);
+    const { deliveryActions } = useDelivery();    
 
-        this.state = {
-            counter: 0,
-            currentValue: this.props.price
-        };
-    }
-
-    increment = () => {
-        if(this.state.counter !== 20) {
-            this.setState(state => ({ counter: state.counter + 1 }));                
-            this.props.changeTotal(prevTotal => prevTotal + this.props.price);
+    function increment() {
+        if(counter !== 20) {
+            setCounter(counter => counter + 1);                
+            deliveryActions.addTotal(props.price);
         };        
     }
 
-    decrement = () => {
-        if (this.state.counter !== 0) {
-            this.setState(state => ({ counter: state.counter - 1 }));                
-            this.props.changeTotal(prevTotal => prevTotal - this.props.price);
+    function decrement() {
+        if (counter !== 0) {
+            setCounter(counter => counter - 1);                
+            deliveryActions.subTotal(props.price);
         }
     }
 
-
-    render() {
-        return (
-            <DeliveryFoodList>
-                <div className="foodList">
-                    <div className="name">
-                        <Food name={this.props.name} />
-                    </div>
-
-                    <div className="price">
-                        <Price price={"R$"+this.props.price}/>
-                    </div>
-
-                    <div className="counter">
-                        <Button legend="+" onClick={this.increment} />
-                        <p className="number">{this.state.counter}</p>
-                        <Button legend="-" onClick={this.decrement} />
-                    </div>
+    return (
+        <DeliveryFoodList>
+            <div className="foodList">
+                <div className="name">
+                    <Food name={props.name} />
                 </div>
-            </DeliveryFoodList>
-        )
-    }
-}
 
-Counter.defaultProps = {
-    initial: 0
-};
+                <div className="price">
+                    <Price price={"R$"+props.price}/>
+                </div>
+
+                <div className="counter">
+                    <Button legend="+" onClick={increment} />
+                    <p className="number">{counter}</p>
+                    <Button legend="-" onClick={decrement} />
+                </div>
+            </div>
+        </DeliveryFoodList>
+    )
+}

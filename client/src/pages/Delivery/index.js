@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DeliveryContainer } from "../../components/DeliveryContainer";
 import { DeliveryModal } from "../../components/DeliveryModal";
 import { DeliveryButton } from "../../components/DeliveryButton";
 import { Counter } from "../../components/DeliveryModalButtons/index";
 import { IoClose } from 'react-icons/io5';
+import { useDelivery } from "../../contexts/deliveryContext";
 
 export function Delivery(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const [total, setTotal] = useState(0);
+    const { total, deliveryActions } = useDelivery();
+    const [pedidos, setPedidos] = useState([]);
+    
+
+    useEffect(() => {
+        const pedidos = JSON.parse(localStorage.getItem("delivery"));
+
+        setPedidos(pedidos);
+    }, []);
+
+    function handleClose() {        
+        setIsModalVisible(false);
+    }
 
     return (
 
@@ -57,13 +70,13 @@ export function Delivery(props) {
                     <div className="ModalContent">
                         <section className="foods">
                             <h2 className="sectionsTitle">Comidas</h2>
-                            <Counter name="Hamburger" price={42} changeTotal={setTotal} />
-                            <Counter name="Pizza" price={100} changeTotal={setTotal} />
+                            <Counter name="Hamburger" price={42} />
+                            <Counter name="Pizza" price={100} />
                         </section>
                         <section className="drinks">
                             <h2 className="sectionsTitle">Bebidas</h2>
-                            <Counter name="Coca-Cola 1L" price={12} changeTotal={setTotal} />
-                            <Counter name="Água" price={4} changeTotal={setTotal} />
+                            <Counter name="Coca-Cola 1L" price={12} />
+                            <Counter name="Água" price={4} />
                         </section>
                     </div>
 
@@ -73,7 +86,7 @@ export function Delivery(props) {
                                 <p className="total">R$ {total.toFixed(2)}</p>
                             </div>
                             <div className="button">
-                                <DeliveryButton onClick={() => setIsModalVisible(false)}>
+                                <DeliveryButton onClick={handleClose}>
                                     <a label="Delivery" className="deliveryButtonStyle">Finalizar Pedido</a>
                                 </DeliveryButton>
                             </div>

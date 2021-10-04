@@ -72,10 +72,12 @@ export const DeliveryModal = styled.div`
     .ModalContent {
         flex: 1;
         align-self: center;
+        color: gray;
     }
 
     .titleModal {
         font-size: 40px;
+        color: lightgray;
     }
 
     .sectionsTitle {
