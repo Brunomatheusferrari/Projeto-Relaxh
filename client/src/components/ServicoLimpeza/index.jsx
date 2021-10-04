@@ -13,8 +13,8 @@ export const ServicoLimpeza = styled.div`
     height: 100vh;
     background-color: ${colors.darkGreen};
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     position: relative;
 
     .header {
@@ -22,13 +22,14 @@ export const ServicoLimpeza = styled.div`
         height: 15vh;
         background-color: ${colors.lightGreen};
         position: absolute;
+        display: flex;
+        align-items: center;
         top: 0px;
         left: 0px;
     }
 
     .title {
         margin: 0px;
-       
     }
 
     .dash {
@@ -38,7 +39,6 @@ export const ServicoLimpeza = styled.div`
     }
 
     .cleanerSpray {
-
         width: 3vw;
         height: 4vw;
         background-image: url(${cleanerSpray});
@@ -49,7 +49,7 @@ export const ServicoLimpeza = styled.div`
 
     .headerObjects {
         width: 80vw;
-        height: 4vw;
+        height: 15vh;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -65,40 +65,17 @@ export const ServicoLimpeza = styled.div`
         align-items: center;
     }
 
-
-    .leavesPng {
-        width: 12vw;
-        height: 18vw;
-        background-image: url(${leaves8});
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: relative;
-        bottom: 0%;
-        right: -30%;
-    }
-    .leaves2Png {
-        width: 12vw;
-        height: 17vw;
-        filter: brightness(160%);
-        background-image: url(${leaves9});
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: relative;
-        bottom: 0%;
-        left: -34%;
-    }
-
     .leaves3Png {
         width: 5vw;
-        height: 7vw;
+        height: 8vw;
         filter: brightness(60%);
         transform: rotate(180deg);
         background-image: url(${leaves8});
         background-repeat: no-repeat;
         background-size: 100%;
         position: absolute;
-        top: 0%;
-        right: 32%;
+        top: -10%;
+        right: 35%;
     }
 
     .leaves4Png {
@@ -111,5 +88,40 @@ export const ServicoLimpeza = styled.div`
         background-size: 100%;
         position: absolute;
         top: -50%;  
+    }
+
+    .leaves5Png {
+        width: 4vw;
+        height: 6vw;
+        filter: brightness(60%);
+        transform: rotate(125deg);
+        background-image: url(${leaves9});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: -10%;  
+        left: 0%;
+    }
+
+    .leavesPng {
+        width: 12vw;
+        height: 18vw;
+        background-image: url(${leaves8});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        bottom: 0%;
+        right: -3%;
+    }
+    .leaves2Png {
+        width: 12vw;
+        height: 17vw;
+        filter: brightness(160%);
+        background-image: url(${leaves9});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        bottom: 0%;
+        left: -4%;
     }
 `;
