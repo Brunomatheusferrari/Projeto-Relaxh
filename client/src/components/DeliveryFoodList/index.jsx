@@ -26,7 +26,7 @@ export const DeliveryFoodList = styled.div`
 
     .foodList {
         color: white;
-        width: 50vw;
+        width: 60vw;
         height: 15vh;
         display: flex;
         align-items: center;
@@ -36,17 +36,18 @@ export const DeliveryFoodList = styled.div`
     .counter {
         width: 20vw;
         display: flex;
+        justify-content: flex-end;
     }
 
     .name {
-        width: 60vw;
-        font-size: 35px;        
+        width: 20vw;
+        font-size: 25px;        
     }
 
     .price {
         display: flex;
         justify-content: center;
-        width: 30vw;
+        width: 20vw;
     }
 `;
 

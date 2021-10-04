@@ -16,6 +16,7 @@ export const DeliveryModal = styled.div`
     z-index: 2;
     margin-top: 9%;
     overflow-y: auto;
+    border-radius: 10px;
 
     .headerModal {
         color: white;
@@ -28,6 +29,11 @@ export const DeliveryModal = styled.div`
         top: 0px;
         left: 0px;
        
+    }
+
+    .closeIcon {
+        font-size: 30px;
+        cursor: pointer;
     }
 
     .headerModalObjects {
@@ -45,8 +51,22 @@ export const DeliveryModal = styled.div`
         background-color: ${colors.lightGreen};        
         display: flex;
         align-items: center;
-        justify-content: center;               
+        justify-content: center;
+        top: 0px;
+        left: 0px;            
     }
+
+    .footerContainer {
+        width: 60vw;
+        height: 10vh; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+     .total {
+        font-size: 25px;
+     }
 
     .ModalContent {
         flex: 1;
@@ -55,6 +75,11 @@ export const DeliveryModal = styled.div`
 
     .titleModal {
         font-size: 40px;
+    }
+
+    .sectionsTitle {
+        padding-bottom: 15px;
+        border-bottom: 1px solid lightgray;
     }
     
 `;
