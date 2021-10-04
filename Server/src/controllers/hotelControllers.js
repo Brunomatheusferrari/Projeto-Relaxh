@@ -56,12 +56,28 @@ async function deleteQuarto(req, res, next){
     }
 }
 
+async function getQuartobyUser(req, res, next){
+    try {
+        const id_quarto = await hotelServices.getQuartobyUser(req.body)
+
+        if(!id_quarto){
+            throw new Error("Quarto não Encontrado")
+        }
+
+        res.status(201).json(id_quarto)
+    } catch (error) {
+        console.log(error)
+        next(error)
+    }
+}
+
 module.exports = {
     quartos,
     check_in,
     check_out,
     getQuarto,
-    deleteQuarto
+    deleteQuarto,
+    getQuartobyUser
 }
 
 
