@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useRegister } from "../../../../contexts/registerContext"
 import { DateInput } from "../../../DateInput"
 import { InputPrincipal } from "../../../InputPrincipal/index"
@@ -14,9 +14,12 @@ export function PersonalInfo({ next }) {
 
     const accessToken = authServices.getAccessToken();  
 
-    if (accessToken) {
-        return next()
-      }
+    useEffect(() => {
+        if (accessToken) {
+            return next()
+          }
+    
+    })
 
     async function onSubmit(data) {
         try {
@@ -26,6 +29,7 @@ export function PersonalInfo({ next }) {
             console.log(err.message)
         }
     }
+    
   return (
     <>
     <div className="header">

@@ -11,5 +11,6 @@ router.post("/checkin", authentication(["admin", "guest"]),hotelValidation.postC
 router.post("/checkout", authentication(["admin", "user"]),hotelValidation.postCheckout, hotelControllers.check_out)
 router.delete("/quartos/delete", authentication(["admin"]), hotelValidation.quartoDelete,hotelControllers.deleteQuarto)
 router.get("/quartos/get", authentication(["admin"]), hotelValidation.quartoGet,hotelControllers.getQuarto)
+router.get("/quarto-user", authentication(["admin", "user"]), hotelControllers.getQuartobyUser)
 
 module.exports = router;

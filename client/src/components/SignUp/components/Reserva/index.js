@@ -21,7 +21,7 @@ export function Reserva({ next }) {
   function onSubmit(data) {
     const { data_entrada, data_saida, numero_pessoas} = data
     dispatch({ type: "RESERVA", payload: {data_entrada, data_saida, tipo_quarto, numero_pessoas} })
-    next();
+    return next();
   }
   
   return (
@@ -75,7 +75,7 @@ export function Reserva({ next }) {
                 <div className="input-capsule">
                     <p className="titleInput">Tipo do Quarto</p>
                     <select onChange={(e) => setTipo_quarto(e.target.value)}>
-                        <option selected="selected" >Standart</option>
+                        <option defaultValue="select" >Standart</option>
                         <option>Premium</option>
                         <option>Deluxe</option>
                     </select>

@@ -185,6 +185,16 @@ async function deleteQuarto({id}){
     await quarto.destroy()
 }
 
+async function getQuartobyUser({id}){
+    const reserva = await Reserva.findOne({
+        where:{
+            id_usuario: id
+        }
+    })
+
+    return reserva.id_quarto    
+}
+
 
 
 module.exports = {
@@ -192,5 +202,6 @@ module.exports = {
     check_in,
     check_out,
     getQuarto,
-    deleteQuarto
+    deleteQuarto,
+    getQuartobyUser
 };

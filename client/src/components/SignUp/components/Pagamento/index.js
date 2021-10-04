@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { DateInput } from "../../../DateInput"
 import { InputPrincipal } from "../../../InputPrincipal/index"
 import { ButtonSub } from "../ButtonSub/index"
@@ -7,9 +7,17 @@ import { useForm } from "react-hook-form";
 
 import "./styles.css"
 
-export function Pagamento() {
-    const {createReserva } = useRegister();
+export function Pagamento({next}) {
+    const {state, createReserva } = useRegister();
     const { register, handleSubmit, formState: { errors }, clearErrors} = useForm();
+
+    useEffect(() => {
+        if(!state.data_entrada && !state.data_saida && !state.tipo_quarto && !state.numero_pessoas){
+            alert("Preencha as informações da reserva primeiro")
+            return next()
+        }
+    })
+
 
     async function onSubmit() {
         try {

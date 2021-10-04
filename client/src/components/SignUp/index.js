@@ -49,7 +49,7 @@ export function SignUp() {
             }
             {
               index === "pagamento" &&
-              <Pagamento />
+              <Pagamento next={() => setIndex("reserva")}/>
             }
           </RegisterProvider>
       </div>
