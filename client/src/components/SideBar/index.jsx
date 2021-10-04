@@ -1,24 +1,93 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
 import leaves10 from "../../static/img/leaves10.png";
+import { keyframes } from "styled-components";
 
+const openLeft = keyframes`
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 45vw;
+    }
+`;
+
+const scaleUpMenu = keyframes`
+  0% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+            width: 0;
+            /* -webkit-transform: scaleX(0.4);
+            /* transform: scaleX(0.4); */
+            /* -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%; */ */
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+            width: 45vw;
+            /* -webkit-transform: scaleX(1); */
+            /* transform: scaleX(1); */
+            /* -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%; */
+  }
+`;
+
+const fadeIn = keyframes`
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100%;
+    }
+`;
+
+const lineOpen = keyframes`
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 90%;
+    }
+`;
 
 export const Sidebar = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     width: 45vw;
     height: 100vh;
-    background-color: ${colors.mediumGreen};
+    /* background-color: ${colors.mediumGreen}; */
     position: fixed;
     z-index: 100000;
-    display: none;
+    display: ${props => props.isVisible ? "flex" : "none"};
+    transition: 1s ease-in-out;
     flex-direction: column;
-    justify-content:  center;
-    align-items: center;
+    /* justify-content:  center; */
+    /* align-items: center; */
+    /* animation: ${openLeft} 1.5s cubic-bezier(0.075, 0.82, 0.165, 1); */
+
+    .link {
+        text-decoration: none;  
+    }
+
+    .sidebarBackground {
+        width: 45vw;
+        height: 100vh;
+        background-color: ${colors.mediumGreen};
+        display: flex;
+        flex-direction: column;
+        justify-content:  center;
+        align-items: center;
+        animation: ${scaleUpMenu} 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
 
     .menu-container {
         display: flex;
         height: 40%;
         align-items: center;
+        animation: ${fadeIn} 4s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 
     .white-line {
@@ -28,6 +97,7 @@ export const Sidebar = styled.div`
         position: relative;
         left: -30%;
         top: 2%;
+        animation: ${lineOpen} 4s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 
     .menu-items {
@@ -42,6 +112,13 @@ export const Sidebar = styled.div`
         display: flex;
         flex-direction: row;
         align-items: flex-end;
+        transition: .5s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+            color: white;
+            cursor: pointer;
+        }
     }
 
     .item-number {
@@ -67,6 +144,7 @@ export const Sidebar = styled.div`
         top: -2%;
         right: 10%;
         transform: rotate(275deg);
+        animation: ${fadeIn} 4s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 
     
@@ -81,6 +159,7 @@ export const Sidebar = styled.div`
         left: 0%;
         transform: rotate(180deg);
         transform: scaleX(-1);
+        animation: ${fadeIn} 4s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 
     .menu-close-button {
@@ -91,6 +170,16 @@ export const Sidebar = styled.div`
         top: 5%;
         left: 8%;
     }
+
+    .darkBackground {
+        width: 160vw;
+        height: 100vh;
+        position: absolute;
+        background-color: #00000081;
+        z-index: -2;
+        animation: ${fadeIn} 4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
 `;
 
 export default Sidebar;
