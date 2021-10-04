@@ -47,7 +47,7 @@ export function Homepage(props) {
                         </div>
                         :
                         <LoginButton onClick={handleClick}>
-                            <Link className="loginButtonStyle">SignOut</Link>
+                            <Link to="/" className="loginButtonStyle">SignOut</Link>
                         </LoginButton>
                     }
                 </NavBarHeader>

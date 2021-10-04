@@ -30,13 +30,11 @@ async function getUser() {
     const { sub } = jwtDecode(token)
     try {        
         const user = await api.get("/users", { params: { id: sub} , headers: { "Authorization": `Bearer ${token}`}});
-        
-        console.log(user)
 
         return user;
     } catch (err) {
         console.log(err);
-        return;
+        throw new Error(err.message)
     }
 }
 

@@ -26,7 +26,7 @@ async function createTokens(user) {
         sub: registeredUser.id,
         role: registeredUser.role
     }, process.env.TOKEN_SECRET, {
-        expiresIn: "20m"
+        expiresIn: "1d"
     });
 
     // Criando o refresh token
