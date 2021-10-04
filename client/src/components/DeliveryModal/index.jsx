@@ -22,7 +22,8 @@ export const DeliveryModal = styled.div`
         color: white;
         width: 70vw;
         height: 10vh;
-        background-color: ${colors.lightGreen};        
+        background-color: ${colors.lightGreen};
+        position: absolute;
         display: flex;
         align-items: center;
         justify-content: center;

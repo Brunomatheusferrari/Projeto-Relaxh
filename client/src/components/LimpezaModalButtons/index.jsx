@@ -1,6 +1,7 @@
 import React from "react";
 import { LimpezaServicoList } from "../LimpezaServicoList";
 import { Button } from "./Button"
+import { Service } from "./Text";
 
 // const ButtonP = style.Component `
 
@@ -30,9 +31,16 @@ export class Counter extends React.Component {
     render() {
         return (
             <LimpezaServicoList>
-                <Button legend="+" onClick={this.increment} />
-                <p>{this.state.Counter}</p>
-                <Button legend="-" onClick={this.decrement} />
+                <div className="serviceList">
+                    <div className="name">
+                        <Service name={this.props.name} />
+                    </div>
+                    <div className="counter">
+                        <Button legend="+" onClick={this.increment} />
+                            <p className="number">{this.state.counter}</p>
+                        <Button legend="-" onClick={this.decrement} />
+                    </div>
+                </div>
             </LimpezaServicoList>
         )
     }

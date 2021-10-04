@@ -10,9 +10,39 @@ export const LimpezaServicoList = styled.div`
     background-color: ${colors.lightGreen};
     /* filter: opacity(70%); */
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
+    justify-content: center;
+    align-items: center;    
     z-index: 2;
-    margin-top: 9%;
+    margin: 20px 0px;
+
+    .button {
+        padding: 10px;
+    }
+
+    .number {
+        font-size: 45px;
+        margin: 0px 20px;
+    }
+
+    .foodList {
+        color: white;
+        width: 60vw;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .counter {
+        width: 20vw;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .name {
+        width: 20vw;
+        font-size: 25px;        
+    }
+
 `;
+
