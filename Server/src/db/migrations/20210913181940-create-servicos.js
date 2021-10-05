@@ -9,10 +9,6 @@ module.exports = {
         allowNull: false,
         primaryKey: true
       },
-      produtos: {
-        type : Sequelize.ARRAY(Sequelize.INTEGER), 
-        defaultValue: null
-      },
       tipo: {
         allowNull: false,
         type: Sequelize.ENUM("Delivery", "Limpeza")

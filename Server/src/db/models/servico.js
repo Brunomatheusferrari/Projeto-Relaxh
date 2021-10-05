@@ -5,7 +5,8 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Servico extends Model {
     static associate(models) {
-      this.belongsTo(models.Quarto, { foreignKey: "id_quarto" })
+      this.belongsTo(models.Quarto, { foreignKey: "id_quarto" }),
+      this.belongsToMany(models.Comida, { through: "comida_servico" , as: "comidas" })
     }
   };
   Servico.init({
@@ -14,10 +15,6 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV4,
       allowNull: false,
       primaryKey: true
-    },
-    produtos: {
-      type: DataTypes.ARRAY(DataTypes.INTEGER), 
-      defaultValue: null
     },
     tipo: {
       type: DataTypes.STRING,
@@ -39,7 +36,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         key: "id"
       },
-      allowNull: false
+      allowNull: false,
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE"
     }
   }, {
     sequelize,

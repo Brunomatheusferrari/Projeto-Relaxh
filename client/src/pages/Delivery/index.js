@@ -28,6 +28,19 @@ export function Delivery(props) {
         setIsModalVisible(false);
     }
 
+    async function getComidas(vetorComidas){
+        let vetorNovo = []
+
+        vetorComidas.map(async (id) => {
+            let comida =(await serviceServices.getComida(id)).data
+            vetorNovo.push(comida)
+        })
+
+        console.log(vetorNovo)
+
+        return vetorNovo
+    }
+
     return (
 
         <DeliveryContainer>
@@ -59,17 +72,13 @@ export function Delivery(props) {
                     </div>
                 </div>
                 <div>
-                    {pedidos.map(pedido => {
-                        {
-                            pedido.produtos.map(async (produto, index) => {
-                                let comida =(await serviceServices.getComida(produto)).data
-                                return (
-                                    <>
-                                        <p key={comida.id}>Produto: {comida.nome}</p>
-                                    </>
-                                )
-                            })
-                        }
+                    {pedidos && pedidos.map(pedido => {
+                        const comidas = getComidas(pedido)
+                        comidas.map(comida => {
+                            return (
+                                <p>{comida}</p>
+                            )
+                        })
                     })}
                 </div>
             </div>

@@ -1,18 +1,27 @@
 const createHttpError = require("http-errors");
-const { Servico, Quarto, Comida, Usuario, Reserva } = require("../db/models");
+const { Servico, Quarto, Comida, Usuario, Reserva, Comida_Servico} = require("../db/models");
 
 async function register(serviceInfo){
-    const {produtos, tipo, horario, descricao, id_quarto} = serviceInfo
+    const {comidas, tipo, horario, descricao, id_quarto} = serviceInfo
+
+    const idComidas = comidas.map(comida => comida.id)
+
+    const comidasDb = await Comida.findAll({
+        where: {
+            id: idComidas
+        }
+    });
 
     const servico = await Servico.create({
-        produtos,
         tipo,
         horario,
         descricao,
         id_quarto,
     })
 
-    return servico
+    const vetorServicos = comidas.map(comida => ({comida_id: comida.id, servico_id: servico.id,quantidade: comida.quantidade}))
+
+    return await Comida_Servico.createBulk(vetorServicos, {returning: true})
 }
 
 async function getAll(){
@@ -83,8 +92,9 @@ async function getServicosUser({id}){
     return await Servico.findAll({
         where:{
             id_quarto: id
-        }
-    })
+        },
+        include: "comidas"
+    });
 }
 
 async function getComida({id}){
