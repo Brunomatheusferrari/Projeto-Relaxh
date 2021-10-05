@@ -6,7 +6,9 @@ const authentication = require("../middlewares/authentication")
 
 const hotelValidation = require("../validations/hotelValidations")
 
-router.post("/quartos", authentication(["admin"]), hotelValidation.quartos , hotelControllers.quartos)
+//Depois Coloca
+//, authentication(["admin"]), hotelValidation.quartos ,
+router.post("/quartos" ,hotelControllers.quartos)
 router.post("/checkin", authentication(["admin", "guest"]),hotelValidation.postCheckin , hotelControllers.check_in)
 router.post("/checkout", authentication(["admin", "user"]),hotelValidation.postCheckout, hotelControllers.check_out)
 router.delete("/quartos/delete", authentication(["admin"]), hotelValidation.quartoDelete,hotelControllers.deleteQuarto)

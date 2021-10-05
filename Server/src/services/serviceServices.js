@@ -1,24 +1,18 @@
 const createHttpError = require("http-errors");
-const { Servico, Quarto } = require("../db/models");
+const { Servico, Quarto, Comida, Usuario, Reserva } = require("../db/models");
 
 async function register(serviceInfo){
-    const {descricao, horario , tipo, id_quarto} = serviceInfo
-
-    const {numero_quarto} = await Quarto.findOne({
-        where: {
-            id: id_quarto
-        }
-    })
+    const {produtos, tipo, horario, descricao, id_quarto} = serviceInfo
 
     const servico = await Servico.create({
-        descricao,
-        numero_quarto,
-        horario,
+        produtos,
         tipo,
-        id_quarto
+        horario,
+        descricao,
+        id_quarto,
     })
 
-    return "Serviço Cadastrado"
+    return servico
 }
 
 async function getAll(){
@@ -39,9 +33,75 @@ async function deleteService({id}){
     await servico.destroy()
 }
 
+async function postComida(info){
+    const { tipo, preco, nome} = info
+
+    return await Comida.create({
+        tipo,
+        preco,
+        nome
+    })
+}
+
+async function getAllComidas(){
+    return await Comida.findAll()
+}
+
+async function getQuartoFromUser({id}){
+    try {
+        const user = await Usuario.findOne({
+            where: {
+                id
+            }
+        })
+
+        if(!user){
+            throw new Error("Usuário não encontrado")
+        }
+
+        const reserva = await Reserva.findOne({
+            where: {
+                id_usuario: user.id
+            }
+        })
+
+        if(!reserva){
+            throw new Error("Reserva com este usuário não encontrada")
+        }
+
+        return await Quarto.findOne({
+            where: {
+                id: reserva.id_quarto
+            }
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+async function getServicosUser({id}){
+    return await Servico.findAll({
+        where:{
+            id_quarto: id
+        }
+    })
+}
+
+async function getComida({id}){
+    return await Comida.findOne({
+        where: {
+            id
+        }
+    })
+}
 
 module.exports = {
     register,
     getAll,
-    deleteService
+    deleteService,
+    postComida,
+    getAllComidas,
+    getQuartoFromUser,
+    getServicosUser,
+    getComida
 };
