@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { DeliveryContainer } from "../../components/DeliveryContainer";
 import { DeliveryModal } from "../../components/DeliveryModal";
@@ -5,17 +6,22 @@ import { DeliveryButton } from "../../components/DeliveryButton";
 import { Counter } from "../../components/DeliveryModalButtons/index";
 import { IoClose } from 'react-icons/io5';
 import { useDelivery } from "../../contexts/deliveryContext";
+import serviceServices from "../../services/serviceServices";
+import authServices from "../../services/authServices";
 
 export function Delivery(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const { total, deliveryActions } = useDelivery();
     const [pedidos, setPedidos] = useState([]);
+    const [comidas, setComidas] = useState([])
     
 
-    useEffect(() => {
-        const pedidos = JSON.parse(localStorage.getItem("delivery"));
+    useEffect(async () => {
+        const comidas = (await serviceServices.getComidas()).data
+        setComidas(comidas)
 
-        setPedidos(pedidos);
+        const pedidos = await serviceServices.getPedidosUser()
+        setPedidos(pedidos)
     }, []);
 
     function handleClose() {        
@@ -25,7 +31,6 @@ export function Delivery(props) {
     return (
 
         <DeliveryContainer>
-
             <div className="header">
                 <div className="headerContents">
                     <div className="headerObjects">
@@ -34,12 +39,10 @@ export function Delivery(props) {
                             <div className="dash"></div>
                             <h1 className="title">Delivery</h1>
                         </div>
-
                         <DeliveryButton onClick={() => setIsModalVisible(true)}>
                             <a label="Delivery" className="deliveryButtonStyle">Fazer Pedido +</a>
                         </DeliveryButton>
                     </div>
-
                     <div className="leavesHeader">
                         <div className="leaves3Png"></div>
                         <div className="leaves4Png"></div>
@@ -47,16 +50,29 @@ export function Delivery(props) {
                     </div>
                 </div>
             </div>
-
-            <div></div>
-
-            <div className="leaves2Adjust">
-                <div className="leaves2Png"></div>
+                <div>
+                    <div className="leaves2Adjust">
+                        <div className="leaves2Png"></div>
+                    </div>
+                    <div className="leaves1Adjust">
+                        <div className="leavesPng">
+                    </div>
+                </div>
+                <div>
+                    {pedidos.map(pedido => {
+                        {
+                            pedido.produtos.map(async (produto, index) => {
+                                let comida =(await serviceServices.getComida(produto)).data
+                                return (
+                                    <>
+                                        <p key={comida.id}>Produto: {comida.nome}</p>
+                                    </>
+                                )
+                            })
+                        }
+                    })}
+                </div>
             </div>
-            <div className="leaves1Adjust">
-                <div className="leavesPng"></div>
-            </div>
-
             {
                 isModalVisible &&
                 <DeliveryModal>
@@ -70,16 +86,31 @@ export function Delivery(props) {
                     <div className="ModalContent">
                         <section className="foods">
                             <h2 className="sectionsTitle">Comidas</h2>
-                            <Counter name="Hamburger" price={42} />
-                            <Counter name="Pizza" price={100} />
+
                         </section>
                         <section className="drinks">
                             <h2 className="sectionsTitle">Bebidas</h2>
-                            <Counter name="Coca-Cola 1L" price={12} />
-                            <Counter name="Água" price={4} />
+                            {
+                                comidas.map(comida => {
+                                    if(comida.tipo == "Bebida"){
+                                        return(
+                                            <Counter key={comida.id} name={comida.nome} price={comida.preco}/>
+                                            )
+                                    }
+                                })
+                            }
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            {
+                                comidas.map(comida => {
+                                    if(comida.tipo == "Comida"){
+                                        return(
+                                            <Counter key={comida.id} name={comida.nome} price={comida.preco}/>
+                                            )
+                                    }
+                                })
+                            }   
                         </section>
                     </div>
-
                     <footer className="modalFooter">
                         <div className="footerContainer">
                             <div className="cost">
@@ -94,8 +125,6 @@ export function Delivery(props) {
                     </footer>
                 </DeliveryModal>
             }
-
-
         </DeliveryContainer>
     );
 }

@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('servicos', {
@@ -8,20 +9,19 @@ module.exports = {
         allowNull: false,
         primaryKey: true
       },
-      descricao: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      numero_quarto: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
-      horario: {
-        type: Sequelize.INTEGER
+      produtos: {
+        type : Sequelize.ARRAY(Sequelize.INTEGER), 
+        defaultValue: null
       },
       tipo: {
+        allowNull: false,
+        type: Sequelize.ENUM("Delivery", "Limpeza")
+      },
+      horario: {
+        type: Sequelize.DATE
+      },
+      descricao: {
         type: Sequelize.STRING,
-        allowNull: false
       },
       id_quarto:{
         type: Sequelize.UUID,
@@ -31,10 +31,6 @@ module.exports = {
         },
         onUpdate: "CASCADE",
         onDelete: "CASCADE"
-      },
-      tipo: {
-        type: Sequelize.STRING,
-        allowNull: false
       },
       created_at: {
         allowNull: false,

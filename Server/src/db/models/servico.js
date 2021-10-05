@@ -15,20 +15,21 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       primaryKey: true
     },
-    descricao: {
-      type: DataTypes.STRING,
-      allowNull: false
+    produtos: {
+      type: DataTypes.ARRAY(DataTypes.INTEGER), 
+      defaultValue: null
     },
-    numero_quarto: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+    tipo: {
+      type: DataTypes.STRING,
+      validate: {
+        isIn: [["Delivery","Limpeza"]]
+      }
     },
     horario: {
       type: DataTypes.DATE,
     },
-    tipo: {
-      type: DataTypes.STRING,
-      allowNull: false
+    descricao: {
+      type: DataTypes.STRING
     },
     id_quarto: {
       type: DataTypes.UUID,
