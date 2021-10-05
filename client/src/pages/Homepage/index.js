@@ -17,6 +17,11 @@ import Fade from 'react-reveal/Fade';
 import authServices from "../../services/authServices"
 import { MenuSidebar } from "../../components/SideBar/index.js";
 import { AboutUsSection } from "../../components/AboutUsSection";
+import { CaribeSection } from "../../components/CaribeSection";
+import { CardsSection } from "../../components/CardsSection";
+import gastronomyPhoto from "../../static/img/gastronomyPhoto.png";
+import servicesPhoto from "../../static/img/servicesPhoto.png";
+import confortPhoto from "../../static/img/confortPhoto.png";
 
 
 
@@ -93,6 +98,62 @@ export function Homepage(props) {
 
                     <div className="leaves-about-us" />
             </AboutUsSection>       
+            <CaribeSection>
+                <div className="caribe-card">
+                    <div className="caribe-card-content">
+                        <h2 className="caribe-card-title">Caribe</h2>
+                        <p className="caribe-card-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
+                        <div className="text-line">
+                            <div className="line"></div>
+                            <p className="text">Relaxh</p>
+                        </div>
+                    </div>
+
+                
+                </div>
+
+                <div className="caribe-photo">
+
+                </div>
+            </CaribeSection>
+            
+            <CardsSection>
+                <div className="divider">
+                    <div className="card">
+                        <div className="card-container">
+                            <h2 className="card-title">Gastronomia</h2>
+                            <div className="card-white-line"></div>
+                            <p className="card-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
+                        </div>
+                    </div>
+                    <img src={gastronomyPhoto} className="card-photo" />
+                    <div className="white-line"></div>
+                </div>
+
+                <div className="divider">
+                      <div className="card-2">
+                        <div className="card-container">
+                            <h2 className="card-title">Serviços</h2>
+                            <div className="card-white-line"></div>
+                            <p className="card-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
+                        </div>
+                    </div>
+                    <img src={servicesPhoto} className="card-photo-2" />
+                    <div className="white-line"></div>
+                </div>
+                
+                <div className="divider">
+                <div className="card">
+                        <div className="card-container">
+                            <h2 className="card-title">Conforto</h2>
+                            <div className="card-white-line"></div>
+                            <p className="card-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
+                        </div>
+                    </div>
+                    <img src={confortPhoto} className="card-photo" />
+                    <div className="white-line"></div>
+                </div>
+            </CardsSection>
         </>
     );
 }
