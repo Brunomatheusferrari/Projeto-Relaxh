@@ -23,7 +23,7 @@ export function Limpeza(props) {
 
 
                         <LimpezaButton onClick={() => setIsModalVisible(true)}>
-                            <a label="Limpeza" className="LimpezaButtonStyle">Fazer Pedido +</a>
+                            <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário +</a>
                         </LimpezaButton>
 
                     </div>
@@ -47,7 +47,7 @@ export function Limpeza(props) {
                 <LimpezaModal>
                     <header className="headerModal">
                         <div className="headerModalObjects">
-                            <h2 className="titleModal">Pedidos</h2>
+                            <h2 className="titleModal">Selecionar Horário:</h2>
                             <a onClick={() => setIsModalVisible(false)} className="closeIcon"><IoClose /></a>
                         </div>
                     </header>
@@ -55,10 +55,7 @@ export function Limpeza(props) {
                     <div className="ModalContent">
                         <section className="servicos">
 
-                            <h2 classname="sectionsTitle">Opções de limpeza</h2>
-                            <Counter name="Tipo de Limpeza" />
                             <Counter name="Horário" />
-                            <Counter name="Quarto" />
 
                         </section>
                     </div>
@@ -70,7 +67,7 @@ export function Limpeza(props) {
                             </div>
                             <div className="button">
                                 <LimpezaButton onClick={() => setIsModalVisible(false)}>
-                                    <a label="Limpeza" className="LimpezaButtonStyle">Finalizar Pedido</a>
+                                    <a label="Limpeza" className="LimpezaButtonStyle">Enviar</a>
                                 </LimpezaButton>
 
                             </div>
