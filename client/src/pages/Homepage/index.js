@@ -10,12 +10,13 @@ import { LoginButton } from "../../components/LoginButton";
 import { IntroductSection } from "../../components/IntroductSection";
 import { LineText } from "../../components/LineText";
 import LogoRelaxh from "../../static/img/logoRelaxh.png"
-import hotelPhoto from "../../static/img/hotelPhoto.png"
+import hotelPhoto from "../../static/img/hotelPhoto.jpg"
 import { HotelPhoto } from "../../components/HotelPhoto";
 import { Link } from "react-router-dom";
 import Fade from 'react-reveal/Fade';
 import authServices from "../../services/authServices"
 import { MenuSidebar } from "../../components/SideBar/index.js";
+import { AboutUsSection } from "../../components/AboutUsSection";
 
 
 
@@ -79,7 +80,19 @@ export function Homepage(props) {
 
             </IntroductSection>
 
-            <HotelPhoto src={hotelPhoto} />            
+            <HotelPhoto src={hotelPhoto} />     
+
+            <AboutUsSection>
+                    <div className="about-us-content">
+                        <h2 className="about-us-title">Quem Nós Somos?</h2>
+                        <p className="about-us-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  
+                        Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. 
+                        Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
+                        <p className="about-us-detail">O paraíso é aqui.</p>
+                    </div>
+
+                    <div className="leaves-about-us" />
+            </AboutUsSection>       
         </>
     );
 }

@@ -5,60 +5,60 @@ import colors from "../../themes/colors";
 export const IntroductSection = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     width: 100vw;
-    height: 60%;
+    height: 55vh;
     background-color: ${colors.mediumWhite};
     overflow-y: hidden;
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    position: relative;
     
     
     .lineTextCenter {
         width: 80%;
         height: fit-content;
         position: relative;
-        top: 00px;
+        top: 0px;
     }
 
     .sectionTitle {
-        width: 544px;
-        height: 128px;
-        left: 176px;
-        top: 209px;
-
+        width: 35%;
         font-family: 'Baskervville', serif;
         font-style: normal;
         font-weight: normal;
-        font-size: 64px;
+        font-size: 3vw;
         line-height: 83px;
         text-align: right;
         color: ${colors.lightGreen};
+        margin: 15px;
     }
 
     .contentContainer {
         display: flex;
         position: relative;
         width: 70%;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
         top : 70px;
+        height: fit-content;
+        top: 0;
     }
 
     .logoRelaxh {
         position: relative;
-        width: 390px;
-        height: 390px;
-        top: -70px;
+        width: 20vw;
+        height: 20vw;
         z-index: 2;
         transform: scaleX(-1);
     }
 
-    /* .bgLogo {
-        width: 465px;
-        height: 67%;
-        position: absolute;
-        background-color: ${colors.darkWhite};
-        z-index: 0;
-        right: 0px;
-    } */
+        .bgLogo {
+            width: 31%;
+            height: 100%;
+            position: absolute;
+            background-color: ${colors.darkWhite};
+            z-index: 0;
+            right: 0px;
+        }
 `;
