@@ -46,6 +46,14 @@ export const AboutUsSection = styled.div`
         letter-spacing: 0.395em;
         color: ${colors.lightGreen};
     }
+    .about-us-line {
+        width: 42%;
+        height: 1px;
+        background-color: ${colors.lightGreen};
+        position: absolute;
+        right: 0;
+        bottom: 21%;
+    }
 
     .leaves-about-us {
         width: 12vw;

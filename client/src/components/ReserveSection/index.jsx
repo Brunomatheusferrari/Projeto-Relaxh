@@ -88,4 +88,5 @@ export const ReserveSection = styled.div`
     .reserve-button {
         margin-top: 210px;
     }
+
 `;
