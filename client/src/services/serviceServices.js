@@ -1,4 +1,4 @@
-import { api } from "./api";
+import { api, cancelTokenSource } from "./api";
 import authServices from "./authServices"
 
 async function getComidas(){
@@ -15,7 +15,10 @@ async function getQuartoUser(){
     try {
         const user = (await authServices.getUser()).data
 
-        const quarto = (await api.get("/service/getQuartobyUser", { params: {id: user.id}})).data
+        const quarto = (await api.get("/service/getQuartobyUser", { 
+            params: {id: user.id},
+            cancelToken: cancelTokenSource.token
+        })).data
 
         if(!quarto){
             throw new Error("Usuário não possui quartos")
