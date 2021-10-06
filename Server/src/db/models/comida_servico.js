@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true
     },
-    comida_id: {
+    id_comida: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: "CASCADE",
       onUpdate: "CASCADE"
     },
-    servico_id: {
+    id_servico: {
       type: DataTypes.UUID,
       allowNull: false,
       references: {

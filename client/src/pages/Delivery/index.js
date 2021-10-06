@@ -7,7 +7,7 @@ import { Counter } from "../../components/DeliveryModalButtons/index";
 import { IoClose } from 'react-icons/io5';
 import { useDelivery } from "../../contexts/deliveryContext";
 import serviceServices from "../../services/serviceServices";
-import authServices from "../../services/authServices";
+import { cancelTokenSource } from "../../services/api";
 
 export function Delivery(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -16,12 +16,29 @@ export function Delivery(props) {
     const [comidas, setComidas] = useState([])
 
 
-    useEffect(async () => {
-        const comidas = (await serviceServices.getComidas()).data
-        setComidas(comidas)
+    useEffect(() => {
+        async function getComidas() {
+            try {
+                const comidas = (await serviceServices.getComidas()).data
+                setComidas(comidas)
+            } catch (err) {
+                console.log(err);
+            }            
+        }
+        
+        async function getPedidos() {
+            try {
+                const pedidos = (await serviceServices.getPedidosUser())                
+                setPedidos(pedidos)
+            } catch (err) {
+                console.log(err);
+            }        
+        }
+        
+        getComidas()
+        getPedidos()
 
-        const pedidos = await serviceServices.getPedidosUser()
-        setPedidos(pedidos)
+        return () => cancelTokenSource.cancel();
     }, []);
 
     function handleClose() {
@@ -40,7 +57,7 @@ export function Delivery(props) {
 
         return vetorNovo
     }
-
+  
     return (
 
         <DeliveryContainer>
@@ -81,14 +98,19 @@ export function Delivery(props) {
                     </div>
                 </div>
                 <div>
-                    {pedidos && pedidos.map(pedido => {
-                        const comidas = getComidas(pedido)
-                        comidas.map(comida => {
-                            return (
-                                <p>{comida}</p>
-                            )
-                        })
-                    })}
+                    {
+                        pedidos &&
+                        pedidos.map(pedido => (
+                            <div>
+                                <p>{pedido.id}</p>
+                                {
+                                    pedido.comidas.map(comida => (
+                                        <p>{comida.nome}</p>
+                                    ))
+                                }
+                            </div>
+                        )) 
+                    }
                 </div>
             </div>
             {
@@ -110,10 +132,11 @@ export function Delivery(props) {
                             <h2 className="sectionsTitle">Bebidas</h2>
                             {
                                 comidas.map(comida => {
-                                    if (comida.tipo == "Bebida") {
-                                        return (
-                                            <Counter key={comida.id} name={comida.nome} price={comida.preco} />
-                                        )
+
+                                    if(comida.tipo == "Bebida"){
+                                        return(
+                                            <Counter comida={comida}/>
+                                       )
                                     }
                                 })
                             }
@@ -149,9 +172,10 @@ export function Delivery(props) {
                             
                             {
                                 comidas.map(comida => {
-                                    if (comida.tipo == "Comida") {
-                                        return (
-                                            <Counter key={comida.id} name={comida.nome} price={comida.preco} />
+                                  
+                                    if(comida.tipo == "Comida"){
+                                        return(
+                                            <Counter comida={comida}/>
                                         )
                                     }
                                 })

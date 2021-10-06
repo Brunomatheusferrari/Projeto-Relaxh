@@ -4,13 +4,7 @@ const { Servico, Quarto, Comida, Usuario, Reserva, Comida_Servico} = require("..
 async function register(serviceInfo){
     const {comidas, tipo, horario, descricao, id_quarto} = serviceInfo
 
-    const idComidas = comidas.map(comida => comida.id)
-
-    const comidasDb = await Comida.findAll({
-        where: {
-            id: idComidas
-        }
-    });
+    const idComidas = comidas.map(comida => comida.id)    
 
     const servico = await Servico.create({
         tipo,
@@ -19,9 +13,9 @@ async function register(serviceInfo){
         id_quarto,
     })
 
-    const vetorServicos = comidas.map(comida => ({comida_id: comida.id, servico_id: servico.id,quantidade: comida.quantidade}))
+    const vetorServicos = comidas.map(comida => ({id_comida: comida.id, id_servico: servico.id,quantidade: comida.quantidade}))
 
-    return await Comida_Servico.createBulk(vetorServicos, {returning: true})
+    return await Comida_Servico.bulkCreate(vetorServicos, {returning: true})
 }
 
 async function getAll(){
@@ -89,12 +83,25 @@ async function getQuartoFromUser({id}){
 }
 
 async function getServicosUser({id}){
-    return await Servico.findAll({
+    const servicos = await Servico.findAll({
         where:{
             id_quarto: id
         },
         include: "comidas"
     });
+
+    console.log(servicos);
+    return (servicos);    
+    
+    // const idServicos = servico.map(servico => servico.id)
+
+    // const comidas = await Comida_Servico.findAll({
+    //     where: {
+    //         id_servico: idServicos
+    //     }
+    // });
+
+    // comidas
 }
 
 async function getComida({id}){

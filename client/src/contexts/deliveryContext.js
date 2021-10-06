@@ -4,16 +4,36 @@ const DeliveryContext = createContext();
 
 const initialState = {
     total: 0,
-    pedido: null,
-    pedidos: []
+    comidas: []    
 };
 
 function reducer(prevState, action) {
     switch (action.type) {
-        case "ADD_TOTAL":             
+        case "ADD_TOTAL": 
+
+            function verify(){
+                prevState.comidas.map(comida => {
+                    if(comida && comida.nome === action.payload.comida.nome){
+                        return {
+                            ...comida,
+                            quantidade: comida.quantidade + 1
+                        }
+                    }
+                })
+
+                return {
+                    ...action.payload.comida,
+                    quantidade: 1
+                }
+            }
+
+            const verifyedComida = verify()
+            console.log(verifyedComida)
+
             return {
                 ...prevState,
-                total: prevState.total + action.payload
+                total: prevState.total + action.payload.preco,
+                comidas: [...prevState.comidas, verifyedComida]
             }
         case "SUB_TOTAL":
             return {
@@ -27,12 +47,13 @@ export function DeliveryProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const deliveryActions = {
-        addTotal: (price) => {
-            dispatch({ type: "ADD_TOTAL", payload: price });
+        addTotal: (preco, comida) => {
+            dispatch({ type: "ADD_TOTAL", payload: { preco, comida } });
+            console.log(state.comidas)
         },
-        subTotal: (price) => {
-            dispatch({ type: "SUB_TOTAL", payload: price });
-        },
+        subTotal: (preco) => {
+            dispatch({ type: "SUB_TOTAL", payload: preco });
+        }
     }
 
     return (

@@ -30,6 +30,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Comidas');
+    await queryInterface.dropTable('comidas');
   }
 };
