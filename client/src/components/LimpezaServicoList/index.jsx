@@ -3,42 +3,35 @@ import colors from "../../themes/colors";
 
 
 export const LimpezaServicoList = styled.div`
-    @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     font-family: 'Barskervville';
-    width: 65vw;
+    width: auto;
     height: 10vh;
-    background-color: ${colors.lightGreen};
+    background-color: ${colors.mediumWhite};
     /* filter: opacity(70%); */
     display: flex;
-    justify-content: center;
-    align-items: center;    
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
     z-index: 2;
-    margin: 20px 0px;
+    margin-top: 9%;
+    overflow-y: auto;
+    border-radius: 10px;
 
-    .button {
-        padding: 10px;
-    }
-
-    .number {
-        font-size: 45px;
-        margin: 0px 20px;
-    }
-
-    .foodList {
+    .headerModal {
         color: white;
-        width: 60vw;
-        height: 15vh;
+        width: 70vw;
+        height: 10vh;
+        background-color: ${colors.lightGreen};
+        position: absolute;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        top: 0px;
+        left: 0px;
+       
     }
-
-    .counter {
-        width: 20vw;
-        display: flex;
-        justify-content: flex-end;
-    }
-
     .name {
         width: 20vw;
         font-size: 25px;        

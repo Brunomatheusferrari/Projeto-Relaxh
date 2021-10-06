@@ -21,11 +21,11 @@ export function Limpeza(props) {
                             <h1 className="title">Serviços de Limpeza</h1>
                         </div>
 
-
-                        <LimpezaButton onClick={() => setIsModalVisible(true)}>
-                            <a label="Limpeza" className="LimpezaButtonStyle">Fazer Pedido +</a>
-                        </LimpezaButton>
-
+                        <div className="ButtonHeader">
+                            <LimpezaButton onClick={() => setIsModalVisible(true)}>
+                                <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário +</a>
+                            </LimpezaButton>
+                        </div>
                     </div>
 
                     <div className="leavesHeader">
@@ -35,6 +35,12 @@ export function Limpeza(props) {
                     </div>
                 </div>
             </div>
+
+            <div className="Buttoncell">
+                            <LimpezaButton onClick={() => setIsModalVisible(true)}>
+                                <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário +</a>
+                            </LimpezaButton>
+                        </div>
 
             <div className="leaves2Adjust">
                 <div className="leaves2Png"></div>
@@ -47,7 +53,7 @@ export function Limpeza(props) {
                 <LimpezaModal>
                     <header className="headerModal">
                         <div className="headerModalObjects">
-                            <h2 className="titleModal">Pedidos</h2>
+                            <h2 className="titleModal">Selecione horário de limpeza:</h2>
                             <a onClick={() => setIsModalVisible(false)} className="closeIcon"><IoClose /></a>
                         </div>
                     </header>
@@ -55,10 +61,7 @@ export function Limpeza(props) {
                     <div className="ModalContent">
                         <section className="servicos">
 
-                            <h2 classname="sectionsTitle">Opções de limpeza</h2>
-                            <Counter name="Tipo de Limpeza" />
                             <Counter name="Horário" />
-                            <Counter name="Quarto" />
 
                         </section>
                     </div>
@@ -70,7 +73,7 @@ export function Limpeza(props) {
                             </div>
                             <div className="button">
                                 <LimpezaButton onClick={() => setIsModalVisible(false)}>
-                                    <a label="Limpeza" className="LimpezaButtonStyle">Finalizar Pedido</a>
+                                    <a label="Limpeza" className="LimpezaButtonStyle">Enviar</a>
                                 </LimpezaButton>
 
                             </div>

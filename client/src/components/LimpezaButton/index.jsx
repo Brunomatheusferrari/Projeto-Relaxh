@@ -24,5 +24,11 @@ export const LimpezaButton = styled.a`
             cursor: pointer;
 
         }
+
+        @media screen and (max-width: 768px){
+            padding: 10px 20px 10px 20px;
 }
+}
+
+    
 `;

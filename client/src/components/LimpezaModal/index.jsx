@@ -5,7 +5,7 @@ export const LimpezaModal = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     font-family: 'Barskervville';
     width: auto;
-    height: 70vh;
+    height: 60vh;
     background-color: ${colors.mediumWhite};
     /* filter: opacity(70%); */
     display: flex;
@@ -17,6 +17,7 @@ export const LimpezaModal = styled.div`
     margin-top: 9%;
     overflow-y: auto;
     border-radius: 10px;
+
 
     .headerModal {
         color: white;
@@ -62,13 +63,17 @@ export const LimpezaModal = styled.div`
         height: 10vh; 
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
     }
 
 
     .ModalContent {
         flex: 1;
+        display: flex;
         align-self: center;
+        justify-content: center;
+        align-items: center;
+        
     }
 
     .titleModal {
@@ -79,5 +84,40 @@ export const LimpezaModal = styled.div`
         padding-bottom: 15px;
         border-bottom: 1px solid lightgray;
     }
+
+    .serviceList {
+        width: 50vw;
+        height: 10vh; 
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color:  ${colors.lightGreen};
+    }
+
+    .service {
+        color: white;
+    }
+     @media screen and (max-width: 600px) {
+
+        width: 100vw;
+        height: 100vh;
+        margin-top: 0%;
     
+    .headerModal {
+        width: 100%;       
+    }
+
+    .headerModalObjects {
+        width: 90vw;
+    }
+
+    .modalFooter {
+        width: 100%;          
+    }
+
+    .footerContainer {
+        width: 90vw;
+    }
+     }
+
 `;  

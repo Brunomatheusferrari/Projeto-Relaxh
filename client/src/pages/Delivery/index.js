@@ -14,7 +14,7 @@ export function Delivery(props) {
     const { total, deliveryActions } = useDelivery();
     const [pedidos, setPedidos] = useState([]);
     const [comidas, setComidas] = useState([])
-    
+
 
     useEffect(() => {
         async function getComidas() {
@@ -41,11 +41,23 @@ export function Delivery(props) {
         return () => cancelTokenSource.cancel();
     }, []);
 
-    function handleClose() {        
+    function handleClose() {
         setIsModalVisible(false);
     }
 
+    async function getComidas(vetorComidas) {
+        let vetorNovo = []
 
+        vetorComidas.map(async (id) => {
+            let comida = (await serviceServices.getComida(id)).data
+            vetorNovo.push(comida)
+        })
+
+        console.log(vetorNovo)
+
+        return vetorNovo
+    }
+  
     return (
 
         <DeliveryContainer>
@@ -57,9 +69,11 @@ export function Delivery(props) {
                             <div className="dash"></div>
                             <h1 className="title">Delivery</h1>
                         </div>
-                        <DeliveryButton onClick={() => setIsModalVisible(true)}>
-                            <a label="Delivery" className="deliveryButtonStyle">Fazer Pedido +</a>
-                        </DeliveryButton>
+                        <div className="buttonHeader">
+                            <DeliveryButton onClick={() => setIsModalVisible(true)}>
+                                <a label="Delivery" className="deliveryButtonStyle">Fazer Pedido +</a>
+                            </DeliveryButton>
+                        </div>
                     </div>
                     <div className="leavesHeader">
                         <div className="leaves3Png"></div>
@@ -68,12 +82,19 @@ export function Delivery(props) {
                     </div>
                 </div>
             </div>
-                <div>
+            <div className="buttonCelphone">
+                <DeliveryButton onClick={() => setIsModalVisible(true)}>
+                    <a label="Delivery" className="deliveryButtonStyle">Fazer Pedido +</a>
+                </DeliveryButton>
+            </div>
+            <div>
+                <div className="leaves">
                     <div className="leaves2Adjust">
                         <div className="leaves2Png"></div>
                     </div>
                     <div className="leaves1Adjust">
                         <div className="leavesPng">
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -111,23 +132,54 @@ export function Delivery(props) {
                             <h2 className="sectionsTitle">Bebidas</h2>
                             {
                                 comidas.map(comida => {
+
                                     if(comida.tipo == "Bebida"){
                                         return(
                                             <Counter comida={comida}/>
-                                            )
+                                       )
                                     }
                                 })
                             }
                             <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2><h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+
+                            <h2 className="sectionsTitle">Comidas</h2><h2 className="sectionsTitle">Comidas</h2>
+
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            <h2 className="sectionsTitle">Comidas</h2>
+
+                            <h2 className="sectionsTitle">Comidas</h2>
+                            
                             {
                                 comidas.map(comida => {
+                                  
                                     if(comida.tipo == "Comida"){
                                         return(
                                             <Counter comida={comida}/>
-                                            )
+                                        )
                                     }
                                 })
-                            }   
+                            }
                         </section>
                     </div>
                     <footer className="modalFooter">
