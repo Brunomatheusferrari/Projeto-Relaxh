@@ -13,12 +13,61 @@ export const  CardsSection = styled.div`
         display: flex;
         justify-content: right;
         align-items: center;
+        position: relative;
 
         &:nth-child(1) {
             padding-top: 100px;
         }
     }
 
+    .line-text {
+        position: absolute;
+        top: 16%;
+        right: 16%;
+        display: flex;
+        align-items: center;
+        width: 24vw;
+    }
+
+    .line-text2 {
+        position: absolute;
+        top: 3%;
+        left: 13%;
+        display: flex;
+        align-items: center;
+        width: 24vw;
+    }
+
+
+    .line-text3 {
+        position: absolute;
+        top: 3%;
+        right: 16%;
+        display: flex;
+        align-items: center;
+        width: 24vw;
+    }
+
+    .text {
+        font-family: 'Cormorant', serif;
+        color: ${colors.lightWhite};
+        letter-spacing: 0.395em;
+        margin-right: 20px
+    }
+
+    .text2 {
+        font-family: 'Cormorant', serif;
+        color: ${colors.lightWhite};
+        letter-spacing: 0.395em;
+        margin-left: 20px
+    }
+
+
+    .line {
+        width: 90%;
+        height: 1px;
+        background-color: ${colors.lightWhite};
+    }
 
     .card-photo {
         width: 50vw;

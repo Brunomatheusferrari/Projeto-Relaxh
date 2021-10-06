@@ -25,6 +25,8 @@ import confortPhoto from "../../static/img/confortPhoto.png";
 import { QrCodeSection } from "../../components/QrCodeSection";
 import { RoomsSection } from "../../components/RoomsSection";
 import { ReserveSection } from "../../components/ReserveSection";
+import { DateInputReserve } from "../../components/DateInputReserve";
+import { SelectInputReserve } from "../../components/SelectInputReserve";
 
 
 
@@ -97,6 +99,7 @@ export function Homepage(props) {
                         Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. 
                         Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
                         <p className="about-us-detail">O paraíso é aqui.</p>
+                        <div className="about-us-line" />
                     </div>
 
                     <div className="leaves-about-us" />
@@ -122,6 +125,10 @@ export function Homepage(props) {
             
             <CardsSection>
                 <div className="divider">
+                    <div className="line-text">
+                        <p className="text">Gastronomia</p>
+                        <div className="line" />
+                    </div>
                     <div className="card">
                         <div className="card-container">
                             <h2 className="card-title">Gastronomia</h2>
@@ -134,6 +141,10 @@ export function Homepage(props) {
                 </div>
 
                 <div className="divider">
+                    <div className="line-text2">
+                        <div className="line" />
+                        <p className="text2">Serviços</p>
+                    </div>
                       <div className="card-2">
                         <div className="card-container">
                             <h2 className="card-title">Serviços</h2>
@@ -146,7 +157,11 @@ export function Homepage(props) {
                 </div>
                 
                 <div className="divider">
-                <div className="card">
+                    <div className="line-text3">
+                        <p className="text">Conforto</p>
+                        <div className="line" />
+                    </div>
+                    <div className="card">
                         <div className="card-container">
                             <h2 className="card-title">Conforto</h2>
                             <div className="card-white-line"></div>
@@ -160,6 +175,10 @@ export function Homepage(props) {
 
             <QrCodeSection>
                 <div className="qrcode-leaves1" />
+                <div className="qrcode-line-text">
+                   <p className="qrcode-line-text-text">Qr-Code</p>
+                   <div className="qrcode-line-text-line" />
+                </div>
                 <div className="qrcode-content-container">
                     <h2 className="qrcode-title">Qr Code Check In</h2>
                     <p className="qrcode-text">  Contruido em 2021 com o objetivo de ser simples, moderno e prático, levando o melhor das lindas praias do caribe com uma preço acessível. Com diversos serviços de facil acesso como por exemplo, delivery de comida e agendamento de limpeza de quarto. Também contamos com a nova tecnologia de check-in por qr code, o que facilita a entrada e saída do hotel.</p>
@@ -211,18 +230,41 @@ export function Homepage(props) {
                     <div className="reserve-inputs">
                         <div className="input-container">
                             <p className="input-title">Data de Entrada</p>
+                            <DateInputReserve type="date" />
                         </div>
                         <div className="input-container">
                             <p className="input-title">Data de Saída</p>
+                            <DateInputReserve type="date" />
                         </div>
                         <div className="input-container">
                             <p className="input-title">Quarto</p>
+                           <SelectInputReserve>
+                                <option>Standard</option>
+                                <option>Deluxe</option>
+                                <option>Premium</option>
+                           </SelectInputReserve>
                         </div>
                         <div className="input-container">
                             <p className="input-title">Crianças</p>
+                            <SelectInputReserve className="numberSelect">
+                                <option className="number">0</option>
+                                <option  className="number">1</option>
+                                <option  className="number">2</option>
+                                <option  className="number">3</option>
+                                <option  className="number">4</option>
+                                <option  className="number">5</option>
+                           </SelectInputReserve>
                         </div>
                         <div className="input-container">
                             <p className="input-title">Adultos</p>
+                            <SelectInputReserve className="numberSelect">
+                                <option  className="number">0</option>
+                                <option  className="number">1</option>
+                                <option  className="number">2</option>
+                                <option  className="number">3</option>
+                                <option  className="number">4</option>
+                                <option  className="number">5</option>
+                           </SelectInputReserve>
                         </div>
                     </div>
                     <div className="reserve-button">

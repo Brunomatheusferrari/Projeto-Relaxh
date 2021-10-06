@@ -9,10 +9,33 @@ export const QrCodeSection = styled.div`
     height: 100vh;
     background-color: ${colors.mediumWhite};
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
+
+    .qrcode-line-text {
+        width: 18vw;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 12%;
+        right: 6%;
+    }
+
+    .qrcode-line-text-text {
+        font-family: 'Cormorant', serif;
+        color: ${colors.lightGreen};
+        font-size: 20px;
+        margin-right: 20px;
+    }
+    
+    .qrcode-line-text-line {
+        width: 60%;
+        height: 1px;
+        background-color: ${colors.lightGreen};
+    }
 
     .qrcode-content-container {
         width: 70%;

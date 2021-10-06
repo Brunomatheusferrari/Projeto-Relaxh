@@ -23,3 +23,5 @@ export const DateInput =  styled.input`
         width: 250px;
     }
 `;
+
+export default DateInput;
