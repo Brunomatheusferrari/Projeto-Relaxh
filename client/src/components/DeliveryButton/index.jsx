@@ -25,6 +25,12 @@ export const DeliveryButton = styled.a`
         }
 
         @media (max-width: 768px) {
+            padding: 10px 20px 10px 20px;
+            margin-right: 0px;
+        }
+
+        @media (max-width: 607px) {
+            padding: 10px 40px 10px 40px;
             margin-right: 0px;
         }
     }
