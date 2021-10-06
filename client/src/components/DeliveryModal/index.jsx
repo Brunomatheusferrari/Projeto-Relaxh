@@ -12,11 +12,28 @@ export const DeliveryModal = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    position: relative;
+    position: absolute;
     z-index: 2;
-    margin-top: 9%;
     overflow-y: auto;
     border-radius: 10px;
+    margin-top: 9%;
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track { 
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: lightgray; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: gray; 
+}
 
     .headerModal {
         color: white;
@@ -29,7 +46,6 @@ export const DeliveryModal = styled.div`
         justify-content: center;
         top: 0px;
         left: 0px;
-       
     }
 
     .closeIcon {
@@ -77,7 +93,6 @@ export const DeliveryModal = styled.div`
 
     .titleModal {
         font-size: 40px;
-        color: lightgray;
     }
 
     .sectionsTitle {

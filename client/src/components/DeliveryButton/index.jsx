@@ -14,6 +14,7 @@ export const DeliveryButton = styled.a`
         margin-right: 40px;
         overflow-y: hidden;
         position: relative;
+        
 
 
         &:hover {
@@ -21,6 +22,10 @@ export const DeliveryButton = styled.a`
             color: ${colors.darkGreen};
             cursor: pointer;
 
+        }
+
+        @media (max-width: 768px) {
+            margin-right: 0px;
         }
     }
 `;

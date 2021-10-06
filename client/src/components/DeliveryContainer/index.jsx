@@ -100,25 +100,172 @@ export const DeliveryContainer = styled.div`
         left: 0%;
     }
 
+    .leaves {
+        width: 100vw;
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+        bottom: 0px;
+        left: 0px;
+
+    }
+
     .leavesPng {
         width: 12vw;
         height: 18vw;
         background-image: url(${leaves8});
         background-repeat: no-repeat;
         background-size: 100%;
-        position: absolute;
-        bottom: 0%;
-        right: -3%;
     }
     .leaves2Png {
         width: 12vw;
-        height: 17vw;
+        height: 18vw;
         filter: brightness(160%);
         background-image: url(${leaves9});
         background-repeat: no-repeat;
         background-size: 100%;
-        position: absolute;
-        bottom: 0%;
-        left: -4%;
     }
+
+    @media (max-width: 768px) {
+
+    .dash {
+        padding: 20px;
+    }
+
+    .forkandKnife {
+        width: 5vw;
+        height: 7vw;
+    }
+
+    .leaves3Png {
+        width: 10vw;
+        height: 16vw;
+        right: 30%;
+    }
+
+    .leaves4Png {
+        width: 10vw;
+        height: 20vw;
+    }
+
+    .leaves5Png {
+        width: 7vw;
+        height: 9vw;
+    }
+}
+
+@media (max-width: 425px) {
+    /* .header {
+        width: 100vw;
+        height: 15vh;
+        background-color: ${colors.lightGreen};
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 0px;
+        left: 0px;
+    } */
+
+    /* .title {
+        margin: 0px;
+    } */
+
+    .dash {
+        border-left: 2px solid white;
+        padding: 20px;
+        margin-left: 60px;
+    }
+
+    .forkandKnife {
+        width:5vw;
+        height: 7vw;
+        background-image: url(${forkandKnife});
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    /* .headerObjects {
+        width: 80vw;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    } */
+
+    /* .texts {
+        display: flex;
+    } */
+
+    .leavesHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .leaves3Png {
+        width: 5vw;
+        height: 8vw;
+        filter: brightness(60%);
+        transform: rotate(180deg);
+        background-image: url(${leaves8});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: -10%;
+        right: 35%;
+    }
+
+    .leaves4Png {
+        width: 6vw;
+        height: 12vw;
+        filter: brightness(60%);
+        transform: rotate(125deg);
+        background-image: url(${leaves9});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: -50%;  
+    }
+
+    .leaves5Png {
+        width: 4vw;
+        height: 6vw;
+        filter: brightness(60%);
+        transform: rotate(125deg);
+        background-image: url(${leaves9});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: -10%;  
+        left: 0%;
+    }
+
+    .leaves {
+        width: 100vw;
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+        bottom: 0px;
+        left: 0px;
+
+    }
+
+    .leavesPng {
+        width: 12vw;
+        height: 18vw;
+        background-image: url(${leaves8});
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .leaves2Png {
+        width: 12vw;
+        height: 18vw;
+        filter: brightness(160%);
+        background-image: url(${leaves9});
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+}
+
+    
 `;

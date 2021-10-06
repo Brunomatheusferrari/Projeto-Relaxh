@@ -64,11 +64,13 @@ export function Delivery(props) {
                 </div>
             </div>
                 <div>
-                    <div className="leaves2Adjust">
-                        <div className="leaves2Png"></div>
-                    </div>
-                    <div className="leaves1Adjust">
-                        <div className="leavesPng">
+                    <div className="leaves">
+                        <div className="leaves2Adjust">
+                            <div className="leaves2Png"></div>
+                        </div>
+                        <div className="leaves1Adjust">
+                            <div className="leavesPng">
+                        </div>
                     </div>
                 </div>
                 <div>
