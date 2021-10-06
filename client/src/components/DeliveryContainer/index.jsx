@@ -100,25 +100,155 @@ export const DeliveryContainer = styled.div`
         left: 0%;
     }
 
+    .buttonCelphone {
+        display: none;
+    }
+
+    .leaves {
+        width: 100vw;
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+        bottom: 0px;
+        left: 0px;
+
+    }
+
     .leavesPng {
         width: 12vw;
         height: 18vw;
         background-image: url(${leaves8});
         background-repeat: no-repeat;
         background-size: 100%;
-        position: absolute;
-        bottom: 0%;
-        right: -3%;
     }
     .leaves2Png {
-        width: 12vw;
-        height: 17vw;
+        width: 13vw;
+        height: 18vw;
         filter: brightness(160%);
         background-image: url(${leaves9});
         background-repeat: no-repeat;
         background-size: 100%;
-        position: absolute;
-        bottom: 0%;
-        left: -4%;
     }
+
+    @media (max-width: 768px) {
+
+    .dash {
+        padding: 20px;
+    }
+
+    .forkandKnife {
+        width: 5vw;
+        height: 7vw;
+    }
+
+    .leaves3Png {
+        width: 10vw;
+        height: 16vw;
+        right: 30%;
+    }
+
+    .leaves4Png {
+        width: 10vw;
+        height: 20vw;
+    }
+
+    .leaves5Png {
+        width: 7vw;
+        height: 9vw;
+    }
+}
+
+@media (max-width: 607px) {
+
+    .dash {
+        padding: 20px;
+        margin-left: 50px;
+    }
+
+    .forkandKnife {
+        width:6vw;
+        height: 8vw;
+    }
+
+    .buttonHeader {
+        display: none;
+    }
+
+    .buttonCelphone {
+        display: block;
+    }
+
+    .headerObjects {
+        justify-content: center;
+    }
+
+    .leaves3Png {
+        width: 12vw;
+        height: 18vw;
+        right: 0%;
+    }
+
+    .leaves4Png {
+        width: 11vw;
+        height: 21vw;
+    }
+
+    .leaves5Png {
+        width: 10vw;
+        height: 12vw;
+    }
+
+    .leavesPng {
+        width: 14vw;
+        height: 20vw;
+    }
+    .leaves2Png {
+        width: 14vw;
+        height: 20vw;
+    }
+}   
+
+@media (max-width: 425px) {
+
+.title {
+    font-size: 35px;
+    margin: 0px;
+}
+
+
+.dash {
+    padding: 20px;
+    margin-left: 50px;
+}
+
+.forkandKnife {
+    width:9vw;
+    height: 11vw;
+}
+
+.leaves3Png {
+    width: 14vw;
+    height: 20vw;
+    right: 0%;
+}
+
+.leaves4Png {
+    width: 20vw;
+    height: 31vw;
+}
+
+.leaves5Png {
+    width: 14vw;
+    height: 18vw;
+}
+
+.leavesPng {
+    width: 20vw;
+    height: 26vw;
+}
+.leaves2Png {
+    width: 20vw;
+    height: 26vw;
+}
+}   
 `;

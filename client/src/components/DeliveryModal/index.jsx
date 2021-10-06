@@ -6,17 +6,34 @@ export const DeliveryModal = styled.div`
     font-family: 'Barskervville';
     width: auto;
     height: 70vh;
-    background-color: ${colors.mediumWhite};
+    background-color: ${colors.mediumGreen};
     /* filter: opacity(70%); */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    position: relative;
+    position: absolute;
     z-index: 2;
-    margin-top: 9%;
     overflow-y: auto;
     border-radius: 10px;
+    margin-top: 9%;
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track { 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: lightgray; 
+    border-radius: 0px 10px 10px 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: floralwhite;
+}
 
     .headerModal {
         color: white;
@@ -29,7 +46,6 @@ export const DeliveryModal = styled.div`
         justify-content: center;
         top: 0px;
         left: 0px;
-       
     }
 
     .closeIcon {
@@ -77,12 +93,38 @@ export const DeliveryModal = styled.div`
 
     .titleModal {
         font-size: 40px;
-        color: lightgray;
     }
 
     .sectionsTitle {
         padding-bottom: 15px;
         border-bottom: 1px solid lightgray;
     }
+
+    @media (max-width: 607px) {
+        width: 100vw;
+        height: 100vh;
+        margin-top: 0%;
+        border-radius: 0px;
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 0px;
+    }
+
+    .headerModal {
+        width: 100%;
+    }
+
+    .headerModalObjects {
+        width: 90vw
+    }
+
+    .modalFooter {
+        width: 100%;           
+    }
+
+    .footerContainer {
+        width: 90vw;
+    } 
+} 
     
 `;
