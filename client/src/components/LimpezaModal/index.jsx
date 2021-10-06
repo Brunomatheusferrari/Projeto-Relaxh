@@ -97,5 +97,27 @@ export const LimpezaModal = styled.div`
     .service {
         color: white;
     }
+     @media screen and (max-width: 600px) {
+
+        width: 100vw;
+        height: 100vh;
+        margin-top: 0%;
     
+    .headerModal {
+        width: 100%;       
+    }
+
+    .headerModalObjects {
+        width: 90vw;
+    }
+
+    .modalFooter {
+        width: 100%;          
+    }
+
+    .footerContainer {
+        width: 90vw;
+    }
+     }
+
 `;  
