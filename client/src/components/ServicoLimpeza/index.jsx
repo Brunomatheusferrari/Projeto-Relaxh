@@ -57,6 +57,7 @@ export const ServicoLimpeza = styled.div`
 
     .texts {
         display: flex;
+        width: 35vw;
     }
 
     .leavesHeader {
@@ -123,5 +124,127 @@ export const ServicoLimpeza = styled.div`
         position: absolute;
         bottom: 0%;
         left: -4%;
+    }
+
+    .Buttoncell {
+        display: none;
+    }
+
+    @media screen and (max-width: 768px){
+        .header {
+        width: 100vw;
+        height: 15vh;
+        background-color: ${colors.lightGreen};
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 0px;
+        left: 0px;
+    }
+
+    .ButtonHeader {
+        display: none;
+    }
+
+    .Buttoncell {
+        display: block;
+    }
+
+    .title {
+        margin: 0px;
+    }
+
+    .dash {
+        border-left: 2px solid white;
+        padding: 30px;
+        margin-left: 60px;
+    }
+
+    .cleanerSpray {
+        width: 3vw;
+        height: 4vw;
+        background-image: url(${cleanerSpray});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        
+    }
+
+    .headerObjects {
+        width: 80vw;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .texts {
+        display: flex;
+    }
+
+    .leavesHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .leaves3Png {
+        width: 5vw;
+        height: 8vw;
+        filter: brightness(60%);
+        transform: rotate(180deg);
+        background-image: url(${leaves8});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: -10%;
+        right: 35%;
+    }
+
+    .leaves4Png {
+        width: 6vw;
+        height: 12vw;
+        filter: brightness(60%);
+        transform: rotate(125deg);
+        background-image: url(${leaves9});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: -50%;  
+    }
+
+    .leaves5Png {
+        width: 4vw;
+        height: 6vw;
+        filter: brightness(60%);
+        transform: rotate(125deg);
+        background-image: url(${leaves9});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: -10%;  
+        left: 0%;
+    }
+
+    .leavesPng {
+        width: 12vw;
+        height: 18vw;
+        background-image: url(${leaves8});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        bottom: 0%;
+        right: -3%;
+    }
+    .leaves2Png {
+        width: 12vw;
+        height: 17vw;
+        filter: brightness(160%);
+        background-image: url(${leaves9});
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        bottom: 0%;
+        left: -4%;
+    }
     }
 `;
