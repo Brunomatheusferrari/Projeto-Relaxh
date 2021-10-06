@@ -55,7 +55,7 @@ export const QrCodeSection = styled.div`
     .qrcode-text {
         font-family: 'Baskervville', serif;
         color: ${colors.lightGreen};
-        font-size: 25px;
+        font-size: 3vh;
         text-align: justify;
     }
 
@@ -80,5 +80,11 @@ export const QrCodeSection = styled.div`
         top: -7%;
         left: 7%;
         transform: rotate(180deg);
+    }
+
+    @media (max-width: 1500px) {
+        .qrcode-title {
+            font-size: 30px;
+        }
     }
 `;

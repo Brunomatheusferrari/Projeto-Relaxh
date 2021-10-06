@@ -86,4 +86,16 @@ export const CaribeSection = styled.div`
         height: 1px;
         background-color: ${colors.lightWhite};
     }
+
+    @media (max-width: 1400px) {
+        .caribe-card-title {
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+
+        .caribe-card {
+            width: 32vw;
+            height: 32vw;
+        }
+    }
 `;

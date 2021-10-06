@@ -156,4 +156,15 @@ export const  CardsSection = styled.div`
         left: -37%;
         z-index: 500;
     }
+
+    @media (max-width: 1400px) {
+        .card-title {
+            font-size: 40px;
+        }
+
+        .card {
+            width: 32vw;
+            height: 30vw;
+        }
+    }
 `;

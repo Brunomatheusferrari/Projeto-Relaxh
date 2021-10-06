@@ -13,14 +13,6 @@ export const IntroductSection = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
-    
-    
-    .lineTextCenter {
-        width: 80%;
-        height: fit-content;
-        position: relative;
-        top: 0px;
-    }
 
     .sectionTitle {
         width: 35%;
@@ -60,5 +52,21 @@ export const IntroductSection = styled.div`
             background-color: ${colors.darkWhite};
             z-index: 0;
             right: 0px;
+        }
+
+        @media (max-width: 1500px) {
+            .sectionTitle {
+                width: 47%;
+                font-size: 4vw;
+            }
+
+            .logoRelaxh {
+                width: 22vw;
+                height: 22vw;
+            }
+
+            .bgLogo {
+                width: 29.5%;
+            }
         }
 `;
