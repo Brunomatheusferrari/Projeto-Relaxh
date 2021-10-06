@@ -22,6 +22,9 @@ import { CardsSection } from "../../components/CardsSection";
 import gastronomyPhoto from "../../static/img/gastronomyPhoto.png";
 import servicesPhoto from "../../static/img/servicesPhoto.png";
 import confortPhoto from "../../static/img/confortPhoto.png";
+import { QrCodeSection } from "../../components/QrCodeSection";
+import { RoomsSection } from "../../components/RoomsSection";
+import { ReserveSection } from "../../components/ReserveSection";
 
 
 
@@ -154,6 +157,83 @@ export function Homepage(props) {
                     <div className="white-line"></div>
                 </div>
             </CardsSection>
+
+            <QrCodeSection>
+                <div className="qrcode-leaves1" />
+                <div className="qrcode-content-container">
+                    <h2 className="qrcode-title">Qr Code Check In</h2>
+                    <p className="qrcode-text">  Contruido em 2021 com o objetivo de ser simples, moderno e prático, levando o melhor das lindas praias do caribe com uma preço acessível. Com diversos serviços de facil acesso como por exemplo, delivery de comida e agendamento de limpeza de quarto. Também contamos com a nova tecnologia de check-in por qr code, o que facilita a entrada e saída do hotel.</p>
+                </div>
+                <div className="qrcode-leaves2" />
+            </QrCodeSection>
+
+            <RoomsSection>
+                <div className="rooms-background">
+                    <div className="rooms-container">
+                        <div className="room-content-container">
+                            <h3 className="room-title">Deluxe</h3>
+                            <ul className="room-list">
+                                <li className="room-list-item">2 camas</li>
+                                <li className="room-list-item">Banheira com Hidromassagem</li>
+                                <li className="room-list-item">2 Banheiros</li>
+                                <li className="room-list-item">2 Televisões</li>
+                            </ul>
+                        </div>
+                        <div className="vertical-white-line" />
+                        <div className="room-content-container">
+                            <h3 className="room-title">Premium</h3>
+                            <ul className="room-list">
+                                <li className="room-list-item">2 camas</li>
+                                <li className="room-list-item">Banheira com Hidromassagem</li>
+                                <li className="room-list-item">2 Banheiros</li>
+                                <li className="room-list-item">2 Televisões</li>
+                            </ul>
+                        </div>
+                        <div className="vertical-white-line" />
+                        <div className="room-content-container">
+                            <h3 className="room-title">Standart</h3>
+                            <ul className="room-list">
+                                <li className="room-list-item">2 camas</li>
+                                <li className="room-list-item">Banheira com Hidromassagem</li>
+                                <li className="room-list-item">2 Banheiros</li>
+                                <li className="room-list-item">2 Televisões</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </RoomsSection>
+
+            <ReserveSection>
+                <div className="reserve-white-line-1" />
+                <div className="leaves1" />
+                <div className="reserve-content-container">
+                    <h2 className="reserve-title">Fazer <strong>Reserva</strong></h2>
+                    <div className="reserve-inputs">
+                        <div className="input-container">
+                            <p className="input-title">Data de Entrada</p>
+                        </div>
+                        <div className="input-container">
+                            <p className="input-title">Data de Saída</p>
+                        </div>
+                        <div className="input-container">
+                            <p className="input-title">Quarto</p>
+                        </div>
+                        <div className="input-container">
+                            <p className="input-title">Crianças</p>
+                        </div>
+                        <div className="input-container">
+                            <p className="input-title">Adultos</p>
+                        </div>
+                    </div>
+                    <div className="reserve-button">
+                        <LoginButton onClick={handleClick}>
+                                <Link to="/" className="loginButtonStyle">Fazer Reserva</Link>
+                        </LoginButton>
+                    </div>
+                </div>
+                <div className="reserve-white-line-2" />
+                <div className="leaves2" />
+            </ReserveSection>
         </>
     );
 }

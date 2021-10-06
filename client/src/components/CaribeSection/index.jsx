@@ -23,7 +23,6 @@ export const CaribeSection = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
     }
 
     .caribe-photo {
