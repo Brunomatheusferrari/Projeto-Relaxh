@@ -42,20 +42,8 @@ export function Delivery(props) {
     }, []);
 
     function handleClose() {
+        deliveryActions.postPedido()
         setIsModalVisible(false);
-    }
-
-    async function getComidas(vetorComidas) {
-        let vetorNovo = []
-
-        vetorComidas.map(async (id) => {
-            let comida = (await serviceServices.getComida(id)).data
-            vetorNovo.push(comida)
-        })
-
-        console.log(vetorNovo)
-
-        return vetorNovo
     }
   
     return (
@@ -99,17 +87,21 @@ export function Delivery(props) {
                 </div>
                 <div>
                     {
-                        pedidos &&
+                        pedidos ?
                         pedidos.map(pedido => (
                             <div>
                                 <p>{pedido.id}</p>
                                 {
                                     pedido.comidas.map(comida => (
-                                        <p>{comida.nome}</p>
+                                        <>
+                                            <p key={comida.id}>{comida.nome}</p>
+                                            <p key={comida.id}>{comida.quantidade}</p>
+                                        </>
                                     ))
                                 }
                             </div>
-                        )) 
+                        ))  :
+                        <p>Não Há Pedidos</p>
                     }
                 </div>
             </div>
@@ -135,39 +127,11 @@ export function Delivery(props) {
 
                                     if(comida.tipo == "Bebida"){
                                         return(
-                                            <Counter comida={comida}/>
+                                            <Counter key={comida.id} comida={comida}/>
                                        )
                                     }
                                 })
                             }
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2><h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-
-                            <h2 className="sectionsTitle">Comidas</h2><h2 className="sectionsTitle">Comidas</h2>
-
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-                            <h2 className="sectionsTitle">Comidas</h2>
-
                             <h2 className="sectionsTitle">Comidas</h2>
                             
                             {
@@ -175,7 +139,7 @@ export function Delivery(props) {
                                   
                                     if(comida.tipo == "Comida"){
                                         return(
-                                            <Counter comida={comida}/>
+                                            <Counter key={comida.id} comida={comida}/>
                                         )
                                     }
                                 })
