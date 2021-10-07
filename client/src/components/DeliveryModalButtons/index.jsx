@@ -13,7 +13,7 @@ export function Counter(props) {
     function increment() {
         if(counter !== 20) {
             setCounter(counter => counter + 1);             
-            deliveryActions.addTotal(preco, props.comida);
+            deliveryActions.addTotal(preco, props.comida, counter);
         };        
     }
 

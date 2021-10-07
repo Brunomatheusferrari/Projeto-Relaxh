@@ -15,38 +15,17 @@ function reducer(prevState, action) {
     switch (action.type) {
         case "ADD_TOTAL": 
 
-            // function isDuplicado(newComida){
-            //     return prevState.comidas.find( comida => comida.id === newComida.id)
-            // }
-
-            // if(!isDuplicado(action.payload.comida)){
-            //     return {
-            //         ...prevState,
-            //         total: prevState.total + action.payload.preco,
-            //         comidas: [...prevState.comidas, {...action.payload.comida, quantidade: 1}]
-            //     }
-            // }
-
             prevState.comidas.forEach((comida, index) => {
                 if(comida.id === action.payload.comida.id){
-                    prevState.comidas[index].quantidade = prevState.comidas[index].quantidade + 1
+                    prevState.comidas[index].quantidade = action.payload.counter
                 } 
             })
 
             let exists = prevState.comidas.find(comida => comida.id === action.payload.comida.id)
 
             if(!exists){
-                prevState.comidas.push({...action.payload.comida, quantidade: 1})
+                prevState.comidas.push({...action.payload.comida, quantidade: action.payload.counter})
             }
-
-            // const newVetor = prevState.comidas.map( comida => {
-            //     if(action.payload.comida.id === comida.id){
-            //         return {
-            //             ...comida,
-            //             quantidade: comida.quantidade + 1
-            //         }
-            //     }
-            // })
 
             return {
                 ...prevState,
@@ -70,18 +49,27 @@ function reducer(prevState, action) {
 export function DeliveryProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    async function sendPedido(){
+        try {
+            const quarto = await serviceServices.getQuartoUser()
+            await serviceServices.postServico({id_quarto: quarto.id,tipo: "Delivery", comidas: state.comidas})
+            dispatch({type: "CLEAN"})
+            // return window.location.reload()
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     const deliveryActions = {
-        addTotal: (preco, comida) => {
-            dispatch({ type: "ADD_TOTAL", payload: { preco, comida } });
+        addTotal: (preco, comida, counter) => {
+            dispatch({ type: "ADD_TOTAL", payload: { preco, comida, counter } });
         },
         subTotal: (preco) => {
             dispatch({ type: "SUB_TOTAL", payload: preco });
         },
-        postPedido: async () => {
-            const quarto = await serviceServices.getQuartoUser()
-            console.log(quarto)
-            serviceServices.postServico({id_quarto: quarto.id,tipo: "Delivery", comidas: state.comidas})
-            dispatch({type: "CLEAN"})
+        postPedido: () => {
+            console.log(state.comidas)
+            sendPedido()
         }
     }
 
