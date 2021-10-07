@@ -87,21 +87,12 @@ async function getServicosUser({id}){
         where:{
             id_quarto: id
         },
-        include: "comidas"
-    });
+        include: [
+            { association: "comidas", through: { attributes: ["quantidade"] } }
+        ],        
+    });    
 
-    console.log(servicos);
     return (servicos);    
-    
-    // const idServicos = servico.map(servico => servico.id)
-
-    // const comidas = await Comida_Servico.findAll({
-    //     where: {
-    //         id_servico: idServicos
-    //     }
-    // });
-
-    // comidas
 }
 
 async function getComida({id}){

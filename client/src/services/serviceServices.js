@@ -22,8 +22,6 @@ async function getQuartoUser(){
         if(!quarto){
             throw new Error("Usuário não possui quartos")
         }
-
-        console.log(quarto)
     
         return quarto
     } catch (error) {
@@ -52,10 +50,8 @@ async function getComida(id){
 }
 
 async function postServico({id_quarto, tipo, comidas}){
-    console.log(id_quarto, tipo,comidas )
     try {
         const servico = await api.post("/service", {id_quarto, tipo, comidas})
-        console.log(servico)
     } catch (error) {
         console.log(error)
     }

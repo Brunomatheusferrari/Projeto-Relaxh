@@ -12,6 +12,11 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true
     },
+    quantidade: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      
+    },
     id_comida: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -31,10 +36,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       onDelete: "CASCADE",
       onUpdate: "CASCADE"
-    },
-    quantidade: {
-      type: DataTypes.INTEGER,
-      allowNull: false
     }
   }, {
     sequelize,

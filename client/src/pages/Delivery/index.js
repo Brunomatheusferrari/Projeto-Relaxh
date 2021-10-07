@@ -8,6 +8,7 @@ import { IoClose } from 'react-icons/io5';
 import { useDelivery } from "../../contexts/deliveryContext";
 import serviceServices from "../../services/serviceServices";
 import { cancelTokenSource } from "../../services/api";
+import { Pedido } from "../../components/PedidoDelivery";
 
 export function Delivery(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -88,15 +89,12 @@ export function Delivery(props) {
                 <div>
                     {
                         pedidos ?
-                        pedidos.map(pedido => (
+                        pedidos.map((pedido, index) => (
                             <div>
-                                <p>{pedido.id}</p>
+                                <p>Pedido: {index}</p>
                                 {
                                     pedido.comidas.map(comida => (
-                                        <>
-                                            <p key={comida.id}>{comida.nome}</p>
-                                            <p key={comida.id}>{comida.quantidade}</p>
-                                        </>
+                                        <Pedido comida={comida}/>
                                     ))
                                 }
                             </div>
