@@ -40,7 +40,7 @@ export const ServicoLimpeza = styled.div`
 
     .cleanerSpray {
         width: 3vw;
-        height: 4vw;
+        height: 3vw;
         background-image: url(${cleanerSpray});
         background-repeat: no-repeat;
         background-size: 100%;
@@ -57,9 +57,11 @@ export const ServicoLimpeza = styled.div`
 
     .texts {
         display: flex;
+        align-items: center;
         width: 35vw;
     }
 
+
     .leavesHeader {
         display: flex;
         justify-content: center;
@@ -104,147 +106,165 @@ export const ServicoLimpeza = styled.div`
         left: 0%;
     }
 
+    .leaves {
+        width: 100vw;
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+        bottom: 0px;
+        left: 0px;
+
+    }
+
     .leavesPng {
         width: 12vw;
         height: 18vw;
         background-image: url(${leaves8});
         background-repeat: no-repeat;
         background-size: 100%;
-        position: absolute;
-        bottom: 0%;
-        right: -3%;
     }
     .leaves2Png {
-        width: 12vw;
-        height: 17vw;
+        width: 13vw;
+        height: 18vw;
         filter: brightness(160%);
         background-image: url(${leaves9});
         background-repeat: no-repeat;
         background-size: 100%;
-        position: absolute;
-        bottom: 0%;
-        left: -4%;
     }
 
-    .Buttoncell {
+
+    .buttonCelphone {
         display: none;
     }
 
-    @media screen and (max-width: 768px){
-        .header {
-        width: 100vw;
-        height: 15vh;
-        background-color: ${colors.lightGreen};
-        position: absolute;
-        display: flex;
-        align-items: center;
-        top: 0px;
-        left: 0px;
-    }
-
-    .ButtonHeader {
-        display: none;
-    }
-
-    .Buttoncell {
-        display: block;
-    }
+    @media (max-width: 768px) {
 
     .title {
-        margin: 0px;
+        font-size: 30px;
     }
 
     .dash {
-        border-left: 2px solid white;
-        padding: 30px;
-        margin-left: 60px;
+        padding: 20px;
     }
 
     .cleanerSpray {
-        width: 3vw;
-        height: 4vw;
-        background-image: url(${cleanerSpray});
-        background-repeat: no-repeat;
-        background-size: 100%;
-        
-    }
-
-    .headerObjects {
-        width: 80vw;
-        height: 15vh;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .texts {
-        display: flex;
-    }
-
-    .leavesHeader {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 90vw;
+        height: 9vw;
     }
 
     .leaves3Png {
-        width: 5vw;
-        height: 8vw;
-        filter: brightness(60%);
-        transform: rotate(180deg);
-        background-image: url(${leaves8});
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: absolute;
-        top: -10%;
-        right: 35%;
+        width: 10vw;
+        height: 16vw;
+        right: 30%;
     }
 
     .leaves4Png {
-        width: 6vw;
-        height: 12vw;
-        filter: brightness(60%);
-        transform: rotate(125deg);
-        background-image: url(${leaves9});
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: absolute;
-        top: -50%;  
+        width: 10vw;
+        height: 20vw;
     }
 
     .leaves5Png {
-        width: 4vw;
-        height: 6vw;
-        filter: brightness(60%);
-        transform: rotate(125deg);
-        background-image: url(${leaves9});
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: absolute;
-        top: -10%;  
-        left: 0%;
+        width: 7vw;
+        height: 9vw;
+    }
+    }
+
+    @media (max-width: 607px) {
+
+    .dash {
+        padding: 20px;
+        margin-left: 50px;
+    }
+
+    .cleanerSpray {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .texts {
+        width: 90vw;
+        justify-content: center;
+    }
+
+    .buttonHeader {
+        display: none;
+    }
+
+    .buttonCelphone {
+        display: block;
+    }
+
+    .headerObjects {
+        justify-content: center;
+    }
+
+    .leaves3Png {
+        width: 12vw;
+        height: 18vw;
+        right: 0%;
+    }
+
+    .leaves4Png {
+        width: 11vw;
+        height: 21vw;
+    }
+
+    .leaves5Png {
+        width: 10vw;
+        height: 12vw;
     }
 
     .leavesPng {
-        width: 12vw;
-        height: 18vw;
-        background-image: url(${leaves8});
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: absolute;
-        bottom: 0%;
-        right: -3%;
+        width: 14vw;
+        height: 20vw;
     }
     .leaves2Png {
-        width: 12vw;
-        height: 17vw;
-        filter: brightness(160%);
-        background-image: url(${leaves9});
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: absolute;
-        bottom: 0%;
-        left: -4%;
+        width: 14vw;
+        height: 20vw;
     }
+    }   
+
+    @media (max-width: 425px) {
+
+    .title {
+        font-size: 30px;
+        margin: 0px;
     }
+
+
+    .dash {
+        padding: 30px;
+        margin-left: 50px;
+    }
+
+    .cleanerSpray {
+        width:15vw;
+        height: 12vw;
+    }
+
+    .leaves3Png {
+        width: 14vw;
+        height: 20vw;
+        right: 0%;
+    }
+
+    .leaves4Png {
+        width: 20vw;
+        height: 29vw;
+    }
+
+    .leaves5Png {
+        width: 14vw;
+        height: 15vw;
+    }
+
+    .leavesPng {
+        width: 20vw;
+        height: 26vw;
+    }
+    .leaves2Png {
+        width: 20vw;
+        height: 26vw;
+    }
+}
 `;

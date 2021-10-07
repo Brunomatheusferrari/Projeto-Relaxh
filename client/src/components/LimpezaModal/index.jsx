@@ -2,22 +2,37 @@ import styled from "styled-components";
 import colors from "../../themes/colors";
 
 export const LimpezaModal = styled.div`
-    @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     font-family: 'Barskervville';
     width: auto;
-    height: 60vh;
-    background-color: ${colors.mediumWhite};
+    height: 70vh;
+    background-color: ${colors.mediumGreen};
     /* filter: opacity(70%); */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    position: relative;
+    position: absolute;
     z-index: 2;
-    margin-top: 9%;
-    overflow-y: auto;
     border-radius: 10px;
+    margin-top: 9%;
 
+    /* ::-webkit-scrollbar {
+    width: 10px;
+}
+
+    ::-webkit-scrollbar-track { 
+        border-radius: 10px;
+}
+ 
+    ::-webkit-scrollbar-thumb {
+        background: lightgray; 
+        border-radius: 0px 10px 10px 0px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: floralwhite;
+} */
 
     .headerModal {
         color: white;
@@ -30,7 +45,6 @@ export const LimpezaModal = styled.div`
         justify-content: center;
         top: 0px;
         left: 0px;
-       
     }
 
     .closeIcon {
@@ -55,7 +69,7 @@ export const LimpezaModal = styled.div`
         align-items: center;
         justify-content: center;
         top: 0px;
-        left: 0px;            
+        left: 0px;             
     }
 
     .footerContainer {
@@ -97,27 +111,53 @@ export const LimpezaModal = styled.div`
     .service {
         color: white;
     }
-     @media screen and (max-width: 600px) {
 
+    @media (max-width: 1138px) {
+        .titleModal {
+        font-size: 30px;
+    }
+    }
+
+    @media (max-width: 756px) {
+        .titleModal {
+        font-size: 25px;
+    }
+    }
+
+    @media (max-width: 607px) {
         width: 100vw;
         height: 100vh;
         margin-top: 0%;
-    
+        border-radius: 0px;
+/* 
+    ::-webkit-scrollbar-thumb {
+        border-radius: 0px;
+    } */
+
     .headerModal {
-        width: 100%;       
+        width: 100%;
     }
 
     .headerModalObjects {
-        width: 90vw;
+        width: 90vw
     }
 
     .modalFooter {
-        width: 100%;          
+        width: 100%;           
+    }
+
+    .serviceList {
+        width: 90vw;
+        height: 10vh; 
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color:  ${colors.lightGreen};
     }
 
     .footerContainer {
         width: 90vw;
-    }
-     }
+    } 
+} 
 
 `;  

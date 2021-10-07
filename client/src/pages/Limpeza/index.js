@@ -21,9 +21,9 @@ export function Limpeza(props) {
                             <h1 className="title">Serviços de Limpeza</h1>
                         </div>
 
-                        <div className="ButtonHeader">
+                        <div className="buttonHeader">
                             <LimpezaButton onClick={() => setIsModalVisible(true)}>
-                                <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário +</a>
+                                <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário</a>
                             </LimpezaButton>
                         </div>
                     </div>
@@ -36,17 +36,19 @@ export function Limpeza(props) {
                 </div>
             </div>
 
-            <div className="Buttoncell">
+            <div className="buttonCelphone">
                             <LimpezaButton onClick={() => setIsModalVisible(true)}>
-                                <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário +</a>
+                                <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário</a>
                             </LimpezaButton>
                         </div>
 
-            <div className="leaves2Adjust">
-                <div className="leaves2Png"></div>
-            </div>
-            <div className="leaves1Adjust">
-                <div className="leavesPng"></div>
+            <div className="leaves">
+                <div className="leaves2Adjust">
+                    <div className="leaves2Png"></div>
+                </div>
+                <div className="leaves1Adjust">
+                    <div className="leavesPng"></div>
+                </div>
             </div>
             {
                 isModalVisible &&
