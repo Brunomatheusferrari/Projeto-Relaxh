@@ -65,4 +65,11 @@ export const AboutUsSection = styled.div`
         left: 12%;
         bottom: 0;
     }
+
+    @media (max-width: 700px) {
+        .about-us-line {
+            bottom: 16%;
+            width: 37%;
+        }
+    }
 `;

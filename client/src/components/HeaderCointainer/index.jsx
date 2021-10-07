@@ -8,7 +8,9 @@ export const HeaderContainer = styled.div`
     width: 100vw;
     height: 100vh;
     overflow-y: hidden;
+    overflow-x: hidden;
     box-sizing: border-box;
+    position: relative;
 
     img {
         width: 30%;
@@ -37,9 +39,7 @@ export const HeaderContainer = styled.div`
     }
 
     .videoBg {
-        position: fixed; 
-			right: 0; 
-			bottom: 0;
+            position: absolute;
 			min-width: 100%; 
 			min-height: 100%;
 			width: auto; 

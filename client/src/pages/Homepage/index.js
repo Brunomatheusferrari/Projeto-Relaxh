@@ -80,11 +80,8 @@ export function Homepage(props) {
                     <LineText title="Relaxh" />
                 </div> */}
                 <div className="contentContainer">
-                    <Fade bottom cascade>
                         <p className="sectionTitle">Moderno, Simples e Prático.</p>
                         <img src={LogoRelaxh} className="logoRelaxh" />
-                    </Fade>
-
                 </div>
                 <div className="bgLogo"></div>
 

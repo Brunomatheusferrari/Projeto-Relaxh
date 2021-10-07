@@ -42,7 +42,6 @@ export const IntroductSection = styled.div`
         width: 20vw;
         height: 20vw;
         z-index: 2;
-        transform: scaleX(-1);
     }
 
         .bgLogo {
@@ -68,5 +67,27 @@ export const IntroductSection = styled.div`
             .bgLogo {
                 width: 29.5%;
             }
+        }
+
+        @media (max-width: 750px) {
+            height: 50vh;
+             /* flex-direction: column;
+
+            .contentContainer {
+                flex-direction: column;
+            } */
+
+            .sectionTitle {
+                position: relative;
+                text-align: right;
+                font-size: 5vw;
+                width: 80%;
+                left: -5%;
+                line-height: 180%;
+            }
+
+            .bgLogo {
+               width: 26% ;
+            }  
         }
 `;

@@ -98,4 +98,25 @@ export const CaribeSection = styled.div`
             height: 32vw;
         }
     }
+    
+    @media (max-width: 700px) {
+        height: 115vh;
+        flex-direction: column;
+
+        .caribe-photo {
+            width: 100vw;
+            height: 80vh;
+        }
+
+        .caribe-card {
+            width: 60vw;
+            height: 60vh;
+            bottom: 10%;
+            left: 22%;
+        }
+
+        .caribe-card-text {
+            font-size: 2.1vw;
+        }
+    }
 `;
