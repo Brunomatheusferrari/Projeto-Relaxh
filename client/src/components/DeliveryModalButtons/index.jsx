@@ -32,7 +32,7 @@ export function Counter(props) {
                 </div>
 
                 <div className="price">
-                    <Price price={"R$"+preco}/>
+                    <Price price={"R$"+ preco}/>
                 </div>
 
                 <div className="counter">
