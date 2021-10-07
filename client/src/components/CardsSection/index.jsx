@@ -167,4 +167,23 @@ export const  CardsSection = styled.div`
             height: 30vw;
         }
     }
+
+    @media (max-width: 1000px) {
+        .card-title {
+            font-size: 30px;
+        }
+
+
+        .card-2 .card-title {
+            top: -5%;
+        }
+
+        .card-2 .card-white-line {
+            top: -3%;
+        }
+
+        .line-text:nth-child(1) {
+            top: 22%;
+        }
+    }
 `;

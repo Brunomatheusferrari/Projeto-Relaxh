@@ -70,4 +70,19 @@ export const RoomsSection = styled.div`
         }
     }
 
+    @media (max-width: 1000px) {
+        .rooms-container {
+            width: 80%;
+            padding: 0;
+        }
+
+        .room-title {
+            font-size: 40px;
+        }
+
+        .room-list {
+            font-size: 14px;
+        }
+    }
+
 `;

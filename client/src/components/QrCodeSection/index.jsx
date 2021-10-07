@@ -87,4 +87,10 @@ export const QrCodeSection = styled.div`
             font-size: 30px;
         }
     }
+
+    @media (max-width: 1000px) {
+        .qrcode-content-container {
+            width: 30%;
+        }
+    }
 `;
