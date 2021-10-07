@@ -89,4 +89,18 @@ export const ReserveSection = styled.div`
         margin-top: 210px;
     }
 
+    @media (max-width: 1200px) {
+        .reserve-title {
+            font-size: 40px;
+        }
+
+        .input-title {
+            font-size: 20px;
+        }
+        
+        .reserve-button {
+            margin-top: 100px;
+        }
+    }
+
 `;

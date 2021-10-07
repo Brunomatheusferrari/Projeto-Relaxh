@@ -60,4 +60,14 @@ export const RoomsSection = styled.div`
         z-index: 1000;
     }
 
+    @media (max-width: 1400px) {
+        .room-title {
+            font-size: 50px;
+        }
+
+        .room-list {
+            font-size: 18px;
+        }
+    }
+
 `;

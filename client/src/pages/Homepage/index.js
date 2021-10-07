@@ -76,9 +76,9 @@ export function Homepage(props) {
 
             </HeaderContainer>
             <IntroductSection>
-                <div className="lineTextCenter">
+                {/* <div className="lineTextCenter">
                     <LineText title="Relaxh" />
-                </div>
+                </div> */}
                 <div className="contentContainer">
                     <Fade bottom cascade>
                         <p className="sectionTitle">Moderno, Simples e Prático.</p>
