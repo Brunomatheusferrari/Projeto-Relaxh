@@ -3,7 +3,6 @@ import colors from "../../themes/colors";
 
 
 export const LimpezaButton = styled.a`
-
 .LimpezaButtonStyle {
     color: ${colors.lightWhite};
         padding: 10px 50px 10px 50px;
@@ -17,24 +16,19 @@ export const LimpezaButton = styled.a`
         position: relative;
         font-size: 20px;
         
-
         &:hover {
             box-shadow: inset 300px 0 0 0 ${colors.lightWhite};
             color: ${colors.darkGreen};
             cursor: pointer;
-
         }
-
         @media (max-width: 768px) {
             padding: 10px 10px 10px 10px;
             margin-right: 0px;
         }
-
         @media (max-width: 607px) {
             padding: 10px 40px 10px 40px;
             margin-right: 0px;
         }
 }
-
     
 `;
