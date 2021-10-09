@@ -10,7 +10,7 @@ import { LoginButton } from "../../components/LoginButton";
 import { IntroductSection } from "../../components/IntroductSection";
 import { LineText } from "../../components/LineText";
 import LogoRelaxh from "../../static/img/logoRelaxh.png"
-import hotelPhoto from "../../static/img/hotelPhoto.jpg"
+import hotelPhoto from "../../static/img/hotelPhoto.png"
 import { HotelPhoto } from "../../components/HotelPhoto";
 import { Link } from "react-router-dom";
 import Fade from 'react-reveal/Fade';
@@ -44,8 +44,7 @@ export function Homepage(props) {
     return (
         <>  
             <MenuSidebar isVisible={isMenuVisible} closeModal={() => setIsMenuVisible(false)} />
-            <HeaderContainer>
-                <NavBarHeader>
+            <NavBarHeader>
                     <FiMenu className="menuIcon" onClick={() => setIsMenuVisible(true)} />
                     {!accessToken ?
                         <div>
@@ -62,6 +61,8 @@ export function Homepage(props) {
                         </LoginButton>
                     }
                 </NavBarHeader>
+            <HeaderContainer>
+                
                 <div className="titleContainer">
                     <img src={relaxhTitle} />
                     <img src={relaxhSubtitle} className="subtitle" />

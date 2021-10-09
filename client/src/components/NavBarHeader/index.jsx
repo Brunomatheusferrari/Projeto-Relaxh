@@ -5,22 +5,26 @@ export const NavBarHeader = styled.div`
     display: flex;
     justify-content: space-between;
     z-index: 2;
-    width: 95vw;
-    position: relative;
-    overflow-y: hidden;
+    width: 100vw;
+    position: sticky;
+    /* overflow-y: hidden; */
     align-items: center;
-    height: 50px;
-    margin-top: 30px;
+    height: 0px;
+    margin: 0;
+    top: 5%;
+
+    &::before {
+        position: absolute;
+    }
+
     .menuIcon {
         color:${colors.lightWhite};
         width: 40px;
         height: auto;
         margin-left: 40px;
-        overflow-y: hidden;
 
         &:hover {
             cursor: pointer;
-            overflow-y: hidden;
         }
     }
 `;
