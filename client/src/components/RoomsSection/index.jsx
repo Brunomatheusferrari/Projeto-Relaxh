@@ -34,6 +34,7 @@ export const RoomsSection = styled.div`
 
     .room-content-container {
         z-index: 1000;
+        overflow-y: hidden;
     }
 
     .room-title {
@@ -83,6 +84,10 @@ export const RoomsSection = styled.div`
         .room-list {
             font-size: 14px;
         }
+    }
+
+    @media (max-width: 700px) {
+        height: 120vh;
     }
 
 `;

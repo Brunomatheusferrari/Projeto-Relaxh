@@ -90,4 +90,29 @@ export const IntroductSection = styled.div`
                width: 26% ;
             }  
         }
+
+        @media (max-width: 404px) {
+            height: 90vh;
+
+            .contentContainer {
+                flex-direction: column;
+            }
+
+            .bgLogo {
+                width: 100vw;
+                top: 62vh;
+                left: 0;
+            }
+
+            .sectionTitle {
+                font-size: 8vw;
+                width: 100%;
+            }
+
+            .logoRelaxh {
+                width: 70vw;
+                height: 70vw;
+                top: 8vh;
+            }
+        }
 `;

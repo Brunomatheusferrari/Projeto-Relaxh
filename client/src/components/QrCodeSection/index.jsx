@@ -93,4 +93,53 @@ export const QrCodeSection = styled.div`
             width: 30%;
         }
     }
+
+    @media (max-width: 700px) {
+        height: 130vh;
+
+     .qrcode-content-container {
+            width: 45%;
+     }
+
+     .qrcode-line-text {
+         top: 8%;
+         width: 30%;
+     }
+
+     .qrcode-line-text-text {
+         width: 60%;
+         font-size: 15px;
+     }
+    
+    }
+
+    @media (max-width: 404px) {
+        height: 100vh;
+
+        .qrcode-content-container {
+            width: 65%;
+        }
+
+        .qrcode-text {
+            font-size: 5vw;
+        }
+
+        .qrcode-line-text {
+            top: 5%;
+        }
+
+        .qrcode-line-text-text {
+            width: 100%;
+        }
+
+        .qrcode-leaves1 {
+            width: 50vw;
+            height: 50vw;
+        }
+
+        .qrcode-leaves2 {
+            width: 50vw;
+            height: 50vw;
+        }
+    }
 `;
