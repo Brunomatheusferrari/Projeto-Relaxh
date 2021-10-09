@@ -6,6 +6,7 @@ export const  CardsSection = styled.div`
     width: 100vw;
     height: 290vh;
     background-color: ${colors.darkGreen};
+    overflow-y: none;
 
     .divider {
         width: 100vw;
@@ -158,6 +159,7 @@ export const  CardsSection = styled.div`
     }
 
     @media (max-width: 1400px) {
+        overflow: hidden;
         .card-title {
             font-size: 40px;
         }
@@ -169,6 +171,7 @@ export const  CardsSection = styled.div`
     }
 
     @media (max-width: 1000px) {
+        overflow: hidden;
         .card-title {
             font-size: 30px;
         }
@@ -184,6 +187,84 @@ export const  CardsSection = styled.div`
 
         .line-text:nth-child(1) {
             top: 22%;
+        }
+    }
+
+    @media (max-width: 700px) {
+        height: 340vh;
+
+        .divider {
+            flex-direction: column-reverse;
+            
+            &:nth-child(2) {
+                margin-top: 20vw;
+            }
+
+            &:nth-child(3) {
+                margin-top: 20vw;
+            }
+        }
+
+        .card-photo {
+            width: 100vw;
+            left: 0;
+            position: relative;
+            top: -10%;
+        }
+
+        .card {
+            top: -50%;
+            left: 0vw;
+            width: 55vw;
+            min-height: 55vh;
+        }
+
+        .card-photo-2 {
+            width: 100vw;
+            left: 0;
+            top: -10%;
+            position: relative;
+        }
+
+        .card-2 {
+            top: -50%;
+            left: 0vw;
+            width: 55vw;
+            min-height: 55vh;
+        }
+    }
+    
+    @media (max-width: 404px) {
+
+        height: 250vh;
+
+        .divider {
+            flex-direction: column-reverse;
+            height: 80vh;
+            
+            &:nth-child(2) {
+                margin-top: 0vw;
+            }
+
+            &:nth-child(3) {
+                margin-top: 0vw;
+            }
+        }
+
+        .card {
+            top: -25%;
+            width: 80vw;
+            min-height: 45vh;
+        }
+
+        .card-text {
+            font-size: 3.8vw;
+        }
+
+        .card-2 {
+            top: -25%;
+            width: 80vw;
+            min-height: 45vh;
         }
     }
 `;

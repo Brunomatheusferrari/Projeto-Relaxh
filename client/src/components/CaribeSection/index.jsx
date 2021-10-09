@@ -102,21 +102,57 @@ export const CaribeSection = styled.div`
     @media (max-width: 700px) {
         height: 115vh;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
 
         .caribe-photo {
             width: 100vw;
             height: 80vh;
+            top: -16%;
+            overflow: hidden;
         }
 
         .caribe-card {
             width: 60vw;
-            height: 60vh;
+            height: 70vh;
             bottom: 10%;
-            left: 22%;
+            /* left: 22%; */
+            display: flex;
+            align-self: center;
+            left: 18vw;
+            overflow: hidden;
         }
 
         .caribe-card-text {
             font-size: 2.1vw;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .caribe-card {
+            width: 60vw;
+            height: 60vh;
+            left: 20vw;
+            overflow: hidden;
+        }
+
+        .caribe-card-text {
+            font-size: 2.5vw;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    @media (max-width: 404px) {
+        .caribe-card {
+            width: 80vw;
+            height: 50vh;
+            left: 10vw;
+        }
+
+        .caribe-card-text {
+            font-size: 3.2vw;
         }
     }
 `;

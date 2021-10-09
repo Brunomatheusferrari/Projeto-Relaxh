@@ -72,4 +72,25 @@ export const AboutUsSection = styled.div`
             width: 37%;
         }
     }
+    
+
+    @media (max-width: 404px) {
+        height: 100vh;
+
+        .about-us-text {
+            width: 80%;
+            font-size: 5vw;
+        }
+
+        .about-us-detail {
+            position: relative;
+            top: 8vh;
+        }
+
+        .about-us-line {
+            top: 82%;
+            width: 20%;
+            box-sizing: border-box;
+        }
+    }
 `;
