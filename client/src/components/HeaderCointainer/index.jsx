@@ -40,8 +40,8 @@ export const HeaderContainer = styled.div`
 
     .videoBg {
             position: absolute;
-			min-width: 100%; 
-			min-height: 100%;
+			min-width: 130%; 
+			min-height: 130%;
 			width: auto; 
 			height: auto; 
             z-index: -1000;

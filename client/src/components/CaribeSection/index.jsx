@@ -1,6 +1,27 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import colors from "../../themes/colors";
 import caribePhoto from "../../static/img/caribePhoto.png"
+
+const animationCardRight = keyframes`
+    from {
+        -webkit-transform: translateX(500px);
+            transform: translateX(500px);
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+            transform: translateX(0);
+    }
+`;
+const fadeIn = keyframes`
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100%;
+    }
+`;
 
 export const CaribeSection = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
@@ -33,6 +54,7 @@ export const CaribeSection = styled.div`
         background-repeat: no-repeat;
         background-position-y: 0px;
         position: relative;
+        display: flex;
         /* right: -30%; */
     }
 
@@ -43,9 +65,6 @@ export const CaribeSection = styled.div`
         flex-direction: column;
         justify-content: space-around;
     }
-
-   
-
 
     .caribe-card-title {
         color: ${colors.lightWhite};
@@ -86,6 +105,11 @@ export const CaribeSection = styled.div`
         height: 1px;
         background-color: ${colors.lightWhite};
     }
+
+    .animation-card {
+            animation: ${animationCardRight} 4s cubic-bezier(0.075, 0.82, 0.165, 1);;
+            display: flex;
+        }
 
     @media (max-width: 1400px) {
         .caribe-card-title {
