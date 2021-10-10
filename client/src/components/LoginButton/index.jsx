@@ -39,4 +39,11 @@ export const LoginButton = styled.a`
         transition: 1s ease-in-out;
     } */
 
+    @media (max-width: 500px) {
+        .loginButtonStyle {
+            font-size: 15px;
+            padding: 8px 30px 8px 30px;
+        }
+    }
+
 `;

@@ -1,7 +1,22 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import colors from "../../themes/colors";
 import leaves12 from "../../static/img/leaves12.png"
 import leaves13 from "../../static/img/leaves13.png"
+
+const fadeIn = keyframes`
+    from {
+        -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+            opacity: 0;
+    }
+
+    to {
+        -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+            opacity: 100%;
+    }
+`;
+
 
 export const QrCodeSection = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
@@ -81,6 +96,12 @@ export const QrCodeSection = styled.div`
         left: 7%;
         transform: rotate(180deg);
     }
+
+    
+    .animationText {
+            animation: ${fadeIn} 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
 
     @media (max-width: 1500px) {
         .qrcode-title {

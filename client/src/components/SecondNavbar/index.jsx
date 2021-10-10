@@ -72,4 +72,16 @@ export const SecondNavbar = styled.div `
         position: relative;
         right: -2%;
     }
+
+    @media (max-width: 1150px) {
+        .menuRelaxh {
+            width: 9vw;
+        }
+    } 
+
+    @media (max-width: 850px) {
+        .menuRelaxh {
+            display: none;
+        }
+    }
 `;

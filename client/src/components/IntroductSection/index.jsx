@@ -1,5 +1,36 @@
-import styled from "styled-components";
+import { animation } from "react-reveal/globals";
+import styled, { keyframes } from "styled-components";
 import colors from "../../themes/colors";
+
+
+const slideUp = keyframes`
+    from {
+        -webkit-transform: translateY(1500px);
+            transform: translateY(1500px);
+            opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+            opacity: 100%;
+    }
+`;
+
+const fadeIn = keyframes`
+    from {
+        -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+            opacity: 0;
+    }
+
+    to {
+        -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+            opacity: 100%;
+    }
+`;
+
 
 
 export const IntroductSection = styled.div`
@@ -52,6 +83,15 @@ export const IntroductSection = styled.div`
             z-index: 0;
             right: 0px;
         }
+
+        .animationLogo {
+            animation: ${slideUp} 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .animationText {
+            animation: ${fadeIn} 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
 
         @media (max-width: 1500px) {
             .sectionTitle {

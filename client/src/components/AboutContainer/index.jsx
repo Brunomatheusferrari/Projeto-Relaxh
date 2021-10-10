@@ -26,6 +26,7 @@ export const AboutContainer = styled.div`
     .aboutTitle {
         color : ${colors.lightWhite};
         font-family: 'Cormorant', serif;
+        font-weight: bold;
         font-size: 70px;
         height: 10vh;
         margin-top: 0;
@@ -33,7 +34,7 @@ export const AboutContainer = styled.div`
 
     .aboutContent {
         color : ${colors.lightWhite};
-        font-size: 25px;
+        font-size: 22px;
         width: 80%;
         
     }
@@ -46,6 +47,7 @@ export const AboutContainer = styled.div`
     .cretorsTitle {
         color : ${colors.lightWhite};
         font-family: 'Cormorant';
+        font-weight: bold;
         font-size: 45px;
         height: 5vh;
         
@@ -54,7 +56,7 @@ export const AboutContainer = styled.div`
 
     .creatorsUL {
         color: ${colors.lightWhite};
-        font-size: 25px;
+        font-size: 22px;
         padding: 0px;
         list-style: none;
         
@@ -62,7 +64,7 @@ export const AboutContainer = styled.div`
 
     .creatorsLI {
         height: 5vh;
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .contentAdjust {

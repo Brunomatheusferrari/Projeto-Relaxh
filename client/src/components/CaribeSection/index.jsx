@@ -23,6 +23,19 @@ const fadeIn = keyframes`
     }
 `;
 
+const animationCardRight2 = keyframes`
+    from {
+        -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+            transform: translateX(0);
+    }
+`;
+
+
 export const CaribeSection = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     width: 100vw;
@@ -107,9 +120,15 @@ export const CaribeSection = styled.div`
     }
 
     .animation-card {
-            animation: ${animationCardRight} 4s cubic-bezier(0.075, 0.82, 0.165, 1);;
+            animation: ${animationCardRight} 3s cubic-bezier(0.075, 0.82, 0.165, 1);;
             display: flex;
         }
+
+        
+    .animation-card-2 {
+            animation: ${animationCardRight2} 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            display: flex;
+    }
 
     @media (max-width: 1400px) {
         .caribe-card-title {

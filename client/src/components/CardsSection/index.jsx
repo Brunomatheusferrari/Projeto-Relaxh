@@ -27,6 +27,7 @@ const animationCardRight = keyframes`
 `;
 
 
+
 export const  CardsSection = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     width: 100vw;
@@ -127,6 +128,20 @@ export const  CardsSection = styled.div`
         align-items: center;
     }
 
+    .card-3 {
+        width: 30vw;
+        height: 28vw;
+        background-color: ${colors.mediumGreen};
+        z-index: 1000;
+        position: relative;
+        left: -7%;
+        box-shadow: 0px 0px 188px 20px rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .white-line {
         width: 100vw;
         height: 1px;
@@ -193,14 +208,15 @@ export const  CardsSection = styled.div`
     }
 
     .animation-card {
-            animation: ${animationCardLeft} 4s cubic-bezier(0.075, 0.82, 0.165, 1);;
+            animation: ${animationCardLeft} 3s cubic-bezier(0.075, 0.82, 0.165, 1);
             display: flex;
         }
 
     .animation-card-2 {
-            animation: ${animationCardRight} 4s cubic-bezier(0.075, 0.82, 0.165, 1);;
+            animation: ${animationCardRight} 3s cubic-bezier(0.075, 0.82, 0.165, 1);
             display: flex;
     }
+
 
     @media (max-width: 1400px) {
         overflow: hidden;
@@ -209,6 +225,11 @@ export const  CardsSection = styled.div`
         }
 
         .card {
+            width: 32vw;
+            height: 30vw;
+        }
+
+        .card-3 {
             width: 32vw;
             height: 30vw;
         }
@@ -270,6 +291,13 @@ export const  CardsSection = styled.div`
             min-height: 55vh;
         }
 
+        .card-3 {
+            top: -50%;
+            left: 0vw;
+            width: 55vw;
+            min-height: 55vh;
+        }
+
         .card-photo-2 {
             width: 100vw;
             left: 0;
@@ -303,6 +331,13 @@ export const  CardsSection = styled.div`
         }
 
         .card {
+            top: -25%;
+            width: 80vw;
+            min-height: 45vh;
+        }
+
+        
+        .card-3 {
             top: -25%;
             width: 80vw;
             min-height: 45vh;

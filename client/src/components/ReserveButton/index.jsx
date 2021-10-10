@@ -18,4 +18,8 @@ export const ReserveButton = styled.a`
           cursor: pointer;
       }
   } 
+
+  @media (max-width: 500px) {
+    font-size: 15px;
+  }
 `;
