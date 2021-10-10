@@ -1,5 +1,31 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import colors from "../../themes/colors";
+
+
+const animationCardLeft = keyframes`
+    from {
+        -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+            transform: translateX(0);
+    }
+`;
+
+const animationCardRight = keyframes`
+    from {
+        -webkit-transform: translateX(500px);
+            transform: translateX(500px);
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+            transform: translateX(0);
+    }
+`;
+
 
 export const  CardsSection = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
@@ -71,6 +97,14 @@ export const  CardsSection = styled.div`
     }
 
     .card-photo {
+        width: 50vw;
+        height: auto;
+        position: relative;
+        right: 15%;
+        z-index: 500;
+    }
+
+    .card-photo-3 {
         width: 50vw;
         height: auto;
         position: relative;
@@ -158,6 +192,16 @@ export const  CardsSection = styled.div`
         z-index: 500;
     }
 
+    .animation-card {
+            animation: ${animationCardLeft} 4s cubic-bezier(0.075, 0.82, 0.165, 1);;
+            display: flex;
+        }
+
+    .animation-card-2 {
+            animation: ${animationCardRight} 4s cubic-bezier(0.075, 0.82, 0.165, 1);;
+            display: flex;
+    }
+
     @media (max-width: 1400px) {
         overflow: hidden;
         .card-title {
@@ -206,6 +250,13 @@ export const  CardsSection = styled.div`
         }
 
         .card-photo {
+            width: 100vw;
+            left: 0;
+            position: relative;
+            top: -10%;
+        }
+
+        .card-photo-3 {
             width: 100vw;
             left: 0;
             position: relative;
