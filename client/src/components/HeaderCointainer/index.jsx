@@ -45,7 +45,7 @@ export const HeaderContainer = styled.div`
 			width: auto; 
 			height: auto; 
             z-index: -1000;
-            filter: brightness(80%);
+            filter: brightness(60%);
 			background-size: cover; 
     }
 
