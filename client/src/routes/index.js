@@ -12,6 +12,7 @@ import { Delivery } from "../pages/Delivery";
 import { AdminDelivery } from "../pages/AdminDelivery";
 import { PrivateRoute } from "./privateRoutes";
 import { DeliveryProvider } from "../contexts/deliveryContext";
+import { AdmWay } from "../pages/AdmWay";
 
 export const Routes = () => {
    return(
@@ -25,6 +26,7 @@ export const Routes = () => {
                 <Route component= { Precos } path="/preços" />
                 <Route component= { Servicos } path="/serviços" />
                 <Route component= { Limpeza } path="/serviços-limpeza" />
+                <Route component= { AdmWay } path="/admin-select" />
                 <DeliveryProvider>
                     <Route component = { Delivery } path="/serviços-delivery" />
                 </DeliveryProvider>
