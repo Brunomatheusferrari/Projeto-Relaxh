@@ -3,11 +3,15 @@ import { CardPrecos } from "../../components/CardPrecos";
 import { PrecosContainer } from "../../components/PrecosContainer";
 import { Link } from "react-router-dom";
 import { SubmitButton } from "../../components/SubmitButton";
+import { FiArrowLeft } from "react-icons/fi";
 
 
 export function Precos() {
     return(
         <PrecosContainer>
+            <div className="backButtonContainer">
+                    <Link to="/" label="homepage"><FiArrowLeft className="backButton"/></Link>
+            </div>
             <h1 className="precosTitle">Preços</h1>
             <div className="cards">
             <CardPrecos>
