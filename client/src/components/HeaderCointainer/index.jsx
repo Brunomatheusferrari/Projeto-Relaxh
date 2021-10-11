@@ -58,6 +58,41 @@ export const HeaderContainer = styled.div`
     }
 
 
+    @media (max-width: 1080px) {
+        img {
+            width: 40%;
+            height: auto;
+        }
+
+        .subtitle {
+            width: 14%;
+            height: auto;
+        }
+    }
+
+    @media (max-width: 750px) {
+        img { 
+            width: 55%;
+            height: auto;
+        }
+
+        .subtitle {
+            width: 17%;
+            height: auto;
+        }
+    }
+
+    @media (max-width: 410px) {
+        img {
+            width: 65%;
+            height: auto;
+        }
+
+        .subtitle {
+            width: 19%;
+            height: auto;
+        }
+    }
         
     
 `;

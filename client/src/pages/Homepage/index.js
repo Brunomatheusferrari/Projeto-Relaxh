@@ -56,43 +56,43 @@ export function Homepage(props) {
 
     window.addEventListener('scroll', changeBackground);
 
-    const size = useWindowSize();
+    // const size = useWindowSize();
 
-    const app =  useRef();
-    const scrollContainer = useRef();
+    // const app =  useRef();
+    // const scrollContainer = useRef();
 
-    const skewConfigs = {
-        ease: .1,
-        current: 0,
-        previous: 0,
-        rounded: 0
-    }
+    // const skewConfigs = {
+    //     ease: .1,
+    //     current: 0,
+    //     previous: 0,
+    //     rounded: 0
+    // }
 
-    useEffect(() => {
-        console.log(size.height)
-        document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`;
-    }, [size.height])
+    // useEffect(() => {
+    //     console.log(size.height)
+    //     document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`;
+    // }, [size.height])
 
-    useEffect(() => {
-        requestAnimationFrame(() => skewScrolling())
-    }, [])
+    // useEffect(() => {
+    //     requestAnimationFrame(() => skewScrolling())
+    // }, [])
 
-    const skewScrolling = () => {
-        skewConfigs.current = window.scrollY;
-        skewConfigs.previous += (skewConfigs.current - skewConfigs.previous) * skewConfigs.ease
-        skewConfigs.rounded = Math.round(skewConfigs.previous * 100) / 100;
-
-
-        const difference = skewConfigs.current - skewConfigs.rounded;
-        const acceleration = difference / size.width
-        const velocity = +acceleration;
-        const skew = velocity * 7.5;
+    // const skewScrolling = () => {
+    //     skewConfigs.current = window.scrollY;
+    //     skewConfigs.previous += (skewConfigs.current - skewConfigs.previous) * skewConfigs.ease
+    //     skewConfigs.rounded = Math.round(skewConfigs.previous * 100) / 100;
 
 
-        scrollContainer.current.style.transform = `translateY(-${skewConfigs.rounded}px)`
+    //     const difference = skewConfigs.current - skewConfigs.rounded;
+    //     const acceleration = difference / size.width
+    //     const velocity = +acceleration;
+    //     const skew = velocity * 7.5;
 
-        requestAnimationFrame(() => skewScrolling())
-    }
+
+    //     scrollContainer.current.style.transform = `translateY(-${skewConfigs.rounded}px)`
+
+    //     requestAnimationFrame(() => skewScrolling())
+    // }
 
     
     // function ativaNoScroll() {
@@ -171,6 +171,148 @@ export function Homepage(props) {
         return () => intersectionObserver.disconnect();
       }, []);
 
+      useEffect(() => {
+        const intersectionObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+              console.log(intersectionObserver);
+              let cardsPhotos = document.querySelector('.card');
+              cardsPhotos.classList.add("animation-card");
+          }
+        }, options)
+        intersectionObserver.observe(document.querySelector('.card'));
+        return () => intersectionObserver.disconnect();
+      }, []);
+
+      useEffect(() => {
+        const intersectionObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+              console.log(intersectionObserver);
+              let cardsPhotos = document.querySelector('.card-2');
+              cardsPhotos.classList.add("animation-card-2");
+          }
+        }, options)
+        intersectionObserver.observe(document.querySelector('.card-2'));
+        return () => intersectionObserver.disconnect();
+      }, []);
+
+      
+      useEffect(() => {
+        const intersectionObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+              console.log(intersectionObserver);
+              let cardsPhotos = document.querySelector('.card-3');
+              cardsPhotos.classList.add("animation-card");
+          }
+        }, options)
+        intersectionObserver.observe(document.querySelector('.card-3'));
+        return () => intersectionObserver.disconnect();
+      }, []);
+
+      useEffect(() => {
+        const intersectionObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+              console.log(intersectionObserver);
+              let cardsPhotos = document.querySelector('.logoRelaxh');
+              cardsPhotos.classList.add("animationLogo");
+          }
+        }, options)
+        intersectionObserver.observe(document.querySelector('.logoRelaxh'));
+        return () => intersectionObserver.disconnect();
+      }, []);
+
+      useEffect(() => {
+        const intersectionObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+              console.log(intersectionObserver);
+              let cardsPhotos = document.querySelector('.sectionTitle');
+              cardsPhotos.classList.add("animationText");
+          }
+        }, options)
+        intersectionObserver.observe(document.querySelector('.sectionTitle'));
+        return () => intersectionObserver.disconnect();
+      }, []);
+
+      useEffect(() => {
+        const intersectionObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+              console.log(intersectionObserver);
+              let cardsPhotos = document.querySelector('.about-us-title');
+              cardsPhotos.classList.add("animationText");
+          }
+        }, options)
+        intersectionObserver.observe(document.querySelector('.about-us-title'));
+        return () => intersectionObserver.disconnect();
+      }, []);
+
+      
+      useEffect(() => {
+        const intersectionObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+              console.log(intersectionObserver);
+              let cardsPhotos = document.querySelector('.about-us-text');
+              cardsPhotos.classList.add("animationText");
+          }
+        }, options)
+        intersectionObserver.observe(document.querySelector('.about-us-text'));
+        return () => intersectionObserver.disconnect();
+      }, []);
+
+      useEffect(() => {
+        const intersectionObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+              console.log(intersectionObserver);
+              let cardsPhotos = document.querySelector('.about-us-line');
+              cardsPhotos.classList.add("animationLine");
+          }
+        }, options)
+        intersectionObserver.observe(document.querySelector('.about-us-line'));
+        return () => intersectionObserver.disconnect();
+      }, []);
+
+      useEffect(() => {
+        const intersectionObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+              console.log(intersectionObserver);
+              let cardsPhotos = document.querySelector('.caribe-card');
+              cardsPhotos.classList.add("animation-card-2");
+          }
+        }, options)
+        intersectionObserver.observe(document.querySelector('.caribe-card'));
+        return () => intersectionObserver.disconnect();
+      }, []);
+
+      useEffect(() => {
+        const intersectionObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+              console.log(intersectionObserver);
+              let cardsPhotos = document.querySelector('.qrcode-title');
+              cardsPhotos.classList.add("animationText");
+          }
+        }, options)
+        intersectionObserver.observe(document.querySelector('.qrcode-title'));
+        return () => intersectionObserver.disconnect();
+      }, []);
+
+      useEffect(() => {
+        const intersectionObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+              console.log(intersectionObserver);
+              let cardsPhotos = document.querySelector('.qrcode-text');
+              cardsPhotos.classList.add("animationText");
+          }
+        }, options)
+        intersectionObserver.observe(document.querySelector('.qrcode-text'));
+        return () => intersectionObserver.disconnect();
+      }, []);
+
+
+
+
+
+
+    
+
+
     
     
     // window.addEventListener('scroll', ativaNoScroll);
@@ -217,10 +359,7 @@ export function Homepage(props) {
                     </LoginButton>
                 }
             </div>
-            </SecondNavbar>
-        <div ref={app} className="app">
-            <div ref={scrollContainer} className="scroll">
-                
+            </SecondNavbar> 
                 <HeaderContainer>
                     
                     <div className="titleContainer">
@@ -319,7 +458,7 @@ export function Homepage(props) {
                             <p className="text">Conforto</p>
                             <div className="line" />
                         </div>
-                        <div className="card">
+                        <div className="card-3">
                             <div className="card-container">
                                 <h2 className="card-title">Conforto</h2>
                                 <div className="card-white-line"></div>
@@ -434,8 +573,6 @@ export function Homepage(props) {
                     <div className="reserve-white-line-2" />
                     <div className="leaves2" />
                 </ReserveSection>
-            </div>
-        </div>
         </>
     );
 }
