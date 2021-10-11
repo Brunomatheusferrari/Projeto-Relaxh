@@ -4,6 +4,7 @@ import { InputPrincipal } from "../../../InputPrincipal/index"
 import { ButtonSub } from "../ButtonSub/index"
 import { useRegister } from "../../../../contexts/registerContext"
 import { useForm } from "react-hook-form";
+import authServices from "../../../../services/authServices"
 
 import "./styles.css"
 
@@ -16,8 +17,16 @@ export function Pagamento({next}) {
             alert("Preencha as informações da reserva primeiro")
             return next()
         }
-    })
 
+        const accessToken = authServices.getAccessToken()
+
+        console.log(authServices.getRoleFromAccessToken(accessToken))
+
+        if(authServices.getRoleFromAccessToken(accessToken) === "user" || authServices.getRoleFromAccessToken(accessToken) === "admin" ){
+            alert("Você já possui uma reserva")
+            window.location.replace("/")
+        }
+    })
 
     async function onSubmit() {
         try {

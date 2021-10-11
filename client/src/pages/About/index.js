@@ -13,12 +13,11 @@ import { FiArrowLeft } from "react-icons/fi";
 export function Sobre(props) {
     return (
         <AboutContainer>
-          
             <div className="contentContainer">
-                <div className="backButtonContainer">
-                    <Link to="/" label="homepage"><FiArrowLeft className="backButton"/></Link>
-                </div>
                 <div className="contentAdjust">
+                    <div className="backButtonContainer" >
+                        <Link to="/" label="homepage"><FiArrowLeft className="backButton" /></Link>
+                    </div>
                     <div className="aboutContainerText">
                         <div className="leaves2" />
                         <div className="titleContainer">
@@ -29,52 +28,52 @@ export function Sobre(props) {
                         </p>
                         <div className="leaves1" />
                     </div>
-                    
+
                     <div className="creatorsContainer">
                         <h2 className="cretorsTitle">Criado por:</h2>
-                            <div className="creators-cards">
-                                <div className="creators-card-1">
-                                    <img src={sobreEduardo} className="sobre-img" />
-                                    <h3 className="card-name">Bruno M. Ferrari</h3>
-                                    <p className="subtitle">Hyperw</p>
-                                    <div className="card-leaves" />
-                                    <div className="card-leaves-2" />
-                                </div>
-                                <div className="creators-card-1">
-                                    <img src={sobreBruno} className="sobre-img" />
-                                    <h3 className="card-name-2">Eduardo V. Andruczewicz</h3>
-                                    <p className="subtitle">Hyperw</p>
-                                    <div className="card-leaves" />
-                                    <div className="card-leaves-2" />
-                                </div>
-                                <div className="creators-card-1">
-                                    <img src={sobreLucas} className="sobre-img" />
-                                    <h3 className="card-name">Lucas G. Devigili</h3>
-                                    <p className="subtitle">Hyperw</p>
-                                    <div className="card-leaves" />
-                                    <div className="card-leaves-2" />
-                                </div>
-                                <div className="creators-card-1">
-                                    <img src={sobreMarlon} className="sobre-img" />
-                                    <h3 className="card-name">Marlon W. Martins</h3>
-                                    <p className="subtitle">Hyperw</p>
-                                    <div className="card-leaves" />
-                                    <div className="card-leaves-2" />
-                                </div>
-                                <div className="creators-card-1">
-                                    <img src={sobreVinicius} className="sobre-img" />
-                                    <h3 className="card-name">Vinicius B. Bilk</h3>
-                                    <p className="subtitle">Hyperw</p>
-                                    <div className="card-leaves" />
-                                    <div className="card-leaves-2" />
-                                </div>
-                              
+                        <div className="creators-cards">
+                            <div className="creators-card-1">
+                                <img src={sobreEduardo} className="sobre-img" />
+                                <h3 className="card-name">Bruno M. Ferrari</h3>
+                                <p className="subtitle">Hyperw</p>
+                                <div className="card-leaves" />
+                                <div className="card-leaves-2" />
                             </div>
+                            <div className="creators-card-1">
+                                <img src={sobreBruno} className="sobre-img" />
+                                <h3 className="card-name-2">Eduardo V. Andruczewicz</h3>
+                                <p className="subtitle">Hyperw</p>
+                                <div className="card-leaves" />
+                                <div className="card-leaves-2" />
+                            </div>
+                            <div className="creators-card-1">
+                                <img src={sobreLucas} className="sobre-img" />
+                                <h3 className="card-name">Lucas G. Devigili</h3>
+                                <p className="subtitle">Hyperw</p>
+                                <div className="card-leaves" />
+                                <div className="card-leaves-2" />
+                            </div>
+                            <div className="creators-card-1">
+                                <img src={sobreMarlon} className="sobre-img" />
+                                <h3 className="card-name">Marlon W. Martins</h3>
+                                <p className="subtitle">Hyperw</p>
+                                <div className="card-leaves" />
+                                <div className="card-leaves-2" />
+                            </div>
+                            <div className="creators-card-1">
+                                <img src={sobreVinicius} className="sobre-img" />
+                                <h3 className="card-name">Vinicius B. Bilk</h3>
+                                <p className="subtitle">Hyperw</p>
+                                <div className="card-leaves" />
+                                <div className="card-leaves-2" />
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div className="imagesAdjust"> 
+            <div className="imagesAdjust">
                 <div className="leavesPng"></div>
                 <div className="hyperwTeam"></div>
             </div>

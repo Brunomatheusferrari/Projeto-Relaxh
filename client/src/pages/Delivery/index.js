@@ -9,6 +9,7 @@ import { useDelivery } from "../../contexts/deliveryContext";
 import serviceServices from "../../services/serviceServices";
 import { cancelTokenSource } from "../../services/api";
 import { Pedido } from "../../components/PedidoDelivery";
+import "./style.css"
 
 export function Delivery(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -24,18 +25,18 @@ export function Delivery(props) {
                 setComidas(comidas)
             } catch (err) {
                 console.log(err);
-            }            
+            }
         }
-        
+
         async function getPedidos() {
             try {
-                const pedidos = (await serviceServices.getPedidosUser())                
+                const pedidos = (await serviceServices.getPedidosUser())
                 setPedidos(pedidos)
             } catch (err) {
                 console.log(err);
-            }        
+            }
         }
-        
+
         getComidas()
         getPedidos()
 
@@ -46,7 +47,7 @@ export function Delivery(props) {
         deliveryActions.postPedido()
         setIsModalVisible(false);
     }
-  
+
     return (
 
         <DeliveryContainer>
@@ -76,7 +77,7 @@ export function Delivery(props) {
                     <a label="Delivery" className="deliveryButtonStyle">Fazer Pedido +</a>
                 </DeliveryButton>
             </div>
-            <div>
+            <div className="big-container">
                 <div className="leaves">
                     <div className="leaves2Adjust">
                         <div className="leaves2Png"></div>
@@ -86,20 +87,31 @@ export function Delivery(props) {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="container">
                     {
                         pedidos ?
-                        pedidos.map((pedido, index) => (
-                            <div>
-                                <p>Pedido: {index}</p>
-                                {
-                                    pedido.comidas.map(comida => (
-                                        <Pedido comida={comida}/>
-                                    ))
-                                }
-                            </div>
-                        ))  :
-                        <p>Não Há Pedidos</p>
+                            pedidos.map((pedido, index) => (
+                                <>
+                                    {
+                                        pedido.comidas.length > 0 &&
+                                        <div className="container-header">
+                                            <p className="pedido-title">Pedido: {index}</p>
+                                            <div className="mini-header">
+                                                <p>Item</p>
+                                                <p>Quantidade</p>
+                                            </div>
+                                            <div className="container-body">
+                                                {
+                                                    pedido.comidas.map(comida => (
+                                                        <Pedido comida={comida} />
+                                                    ))
+                                                }
+                                            </div>
+                                        </div>  
+                                    }
+                                </>
+                            )) :
+                            <p>Não Há Pedidos</p>
                     }
                 </div>
             </div>
@@ -123,21 +135,21 @@ export function Delivery(props) {
                             {
                                 comidas.map(comida => {
 
-                                    if(comida.tipo == "Bebida"){
-                                        return(
-                                            <Counter key={comida.id} comida={comida}/>
-                                       )
+                                    if (comida.tipo == "Bebida") {
+                                        return (
+                                            <Counter key={comida.id} comida={comida} />
+                                        )
                                     }
                                 })
                             }
                             <h2 className="sectionsTitle">Comidas</h2>
-                            
+
                             {
                                 comidas.map(comida => {
-                                  
-                                    if(comida.tipo == "Comida"){
-                                        return(
-                                            <Counter key={comida.id} comida={comida}/>
+
+                                    if (comida.tipo == "Comida") {
+                                        return (
+                                            <Counter key={comida.id} comida={comida} />
                                         )
                                     }
                                 })
