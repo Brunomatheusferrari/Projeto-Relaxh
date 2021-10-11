@@ -1,5 +1,18 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import colors from "../../themes/colors";
+
+const arrowAnimation = keyframes`
+    from {
+        -webkit-transform: translateY(0);
+            transform: translateY(0);
+    }
+
+    to {
+        -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    }
+`;
+
 export const HeaderContainer = styled.div`
     display: flex;
     align-items: center;
@@ -35,6 +48,8 @@ export const HeaderContainer = styled.div`
         z-index: 1;
         overflow-y: hidden;
         margin-bottom: 30px;
+        -webkit-animation: ${arrowAnimation} .8s ease-in-out infinite alternate both;
+	            animation: ${arrowAnimation} .8s ease-in-out infinite alternate both;
 
     }
 
@@ -68,6 +83,10 @@ export const HeaderContainer = styled.div`
             width: 14%;
             height: auto;
         }
+
+        .iconArrowDown {
+            width: 6%;
+        }
     }
 
     @media (max-width: 750px) {
@@ -91,6 +110,10 @@ export const HeaderContainer = styled.div`
         .subtitle {
             width: 19%;
             height: auto;
+        }
+
+        .iconArrowDown {
+            width: 12%;
         }
     }
         

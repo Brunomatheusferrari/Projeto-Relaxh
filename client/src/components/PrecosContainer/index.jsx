@@ -15,6 +15,18 @@ export const PrecosContainer =  styled.div`
     position: relative;
     overflow: hidden;
 
+    .backButton {
+        color: ${colors.lightWhite};
+        font-size: 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 80px;
+        margin-left: 100px;
+        z-index: 100000;
+    }
+
+
     .precosTitle {
         font-family: 'Cormorant', serif;
         color: ${colors.lightWhite};
@@ -164,6 +176,15 @@ export const PrecosContainer =  styled.div`
             position: absolute;
             width: 16vw;
             height: 10vw;
+        }
+
+        .backButton {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 30px;
+            margin-left: 30px;
+            font-size: 40px;
         }
     }
 

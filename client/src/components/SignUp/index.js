@@ -6,6 +6,7 @@ import { Cadastro } from "./components/Cadastro"
 import { Pagamento } from "./components/Pagamento"
 import { PersonalInfo } from "./components/PersonalInfo"
 
+
 import "./styles.css"
 import { RegisterProvider } from "../../contexts/registerContext"
 

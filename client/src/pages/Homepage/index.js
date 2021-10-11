@@ -3,7 +3,7 @@ import { HeaderContainer } from "../../components/HeaderCointainer";
 import { ReserveButton } from "../../components/ReserveButton";
 import relaxhTitle from "../../static/img/relaxhTitle.png"
 import relaxhSubtitle from "../../static/img/relaxhSubtitle.png"
-import { FiArrowDownCircle, FiMenu } from "react-icons/fi";
+import { FiArrowDownCircle, FiMenu, FiChevronDown } from "react-icons/fi";
 import bgVideo from "../../static/video/bgVideo.mp4"
 import { NavBarHeader } from "../../components/NavBarHeader";
 import { LoginButton } from "../../components/LoginButton";
@@ -372,7 +372,7 @@ export function Homepage(props) {
                             <source src={bgVideo} />
                         </video>
                     </div>
-                    <FiArrowDownCircle className="iconArrowDown" />
+                    <FiChevronDown className="iconArrowDown" />
 
                 </HeaderContainer>
                 <IntroductSection>
