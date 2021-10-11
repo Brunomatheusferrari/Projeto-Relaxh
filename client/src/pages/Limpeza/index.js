@@ -55,7 +55,7 @@ export function Limpeza(props) {
                 <LimpezaModal>
                     <header className="headerModal">
                         <div className="headerModalObjects">
-                            <h2 className="titleModal">Selecione horário de limpeza:</h2>
+                            <h2 className="titleModal">Selecione o horário de limpeza:</h2>
                             <a onClick={() => setIsModalVisible(false)} className="closeIcon"><IoClose /></a>
                         </div>
                     </header>
