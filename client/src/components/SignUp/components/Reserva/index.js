@@ -4,9 +4,14 @@ import { useRegister } from "../../../../contexts/registerContext"
 import { DateInput } from "../../../DateInput"
 import { ButtonSub } from "../ButtonSub/index"
 import { useForm } from "react-hook-form";
+import { DateInputReserve } from "../../../DateInputReserve"
 
 
 import "./styles.css"
+import NumberInput from "../../../NumberInput"
+import { SelectInputReserve } from "../../../SelectInputReserve"
+import DateInputCadastro from "../../../DateInputCadastro"
+import { SelectInputCadastro } from "../../../SelectInputCadastro"
 
 export function Reserva({ next }) {
   const { dispatch } = useRegister();  
@@ -32,7 +37,7 @@ export function Reserva({ next }) {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-capsule">
                     <p className="titleInput">Data de Entrada</p>
-                    <DateInput 
+                    <DateInputCadastro 
                         type="datetime-local" 
                         {...register("data_entrada", { 
                             required: true,
@@ -47,7 +52,7 @@ export function Reserva({ next }) {
                 {errors.data_entrada && errors.data_entrada.type === "required" && <span>This field is required</span>}
                 <div className="input-capsule">
                     <p className="titleInput">Data de Saída</p>
-                    <DateInput 
+                    <DateInputCadastro
                         type="datetime-local"  
                         {...register("data_saida", { 
                             required: true,
@@ -62,7 +67,7 @@ export function Reserva({ next }) {
                 {errors.data_saida && errors.data_saida.type === "required" && <span>This field is required</span>}
                 <div className="input-capsule">
                     <p className="titleInput">Número de Pessoas</p>
-                    <DateInput 
+                    <NumberInput
                         type="number"  
                         {...register("numero_pessoas", { required: true, min: 1, max: 4 })} 
                         onChange={() => clearErrors("numero_pessoas")} 
@@ -74,11 +79,11 @@ export function Reserva({ next }) {
                 {errors.numero_pessoas && errors.numero_pessoas.type === "max" && <span>The max value is 4</span> }
                 <div className="input-capsule">
                     <p className="titleInput">Tipo do Quarto</p>
-                    <select onChange={(e) => setTipo_quarto(e.target.value)}>
+                    <SelectInputCadastro onChange={(e) => setTipo_quarto(e.target.value)}>
                         <option defaultValue="select" >Standart</option>
                         <option>Premium</option>
                         <option>Deluxe</option>
-                    </select>
+                    </SelectInputCadastro>
                 </div>
                 <div>
                     <ButtonSub title="Continuar"/>

@@ -29,6 +29,12 @@ p{
     margin-bottom: 30px;
 }
 
+@media (max-width:1400px) {
+    input {
+        width: 210px;
+    }
+}
+
 @media (max-width: 1100px) {
     
     input {
