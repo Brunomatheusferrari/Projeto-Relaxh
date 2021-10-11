@@ -46,7 +46,7 @@ export function MenuSidebar({ isVisible, closeModal }) {
                         </Link>
                         {
                             (role === "admin" || role === "user") &&
-                            <Link to="/seriços" className="link">
+                            <Link to="/serviços" className="link">
                                 <div className="menu-item-container">
                                     <p className="item-number">04</p>
                                     <p className="menu-item">Serviços</p>
@@ -55,7 +55,7 @@ export function MenuSidebar({ isVisible, closeModal }) {
                         }
                         {
                             role === "admin" &&
-                            <Link to="/admin-delivery" className="link">
+                            <Link to="/admin-page" className="link">
                                 <div className="menu-item-container">
                                     <p className="item-number">05</p>
                                     <p className="menu-item">Admin Page</p>

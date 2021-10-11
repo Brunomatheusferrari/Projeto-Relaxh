@@ -1,0 +1,66 @@
+.big-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    width: 100%;
+    height: 60%;
+    margin: 0px 15%;
+}
+
+.mini-header{
+    display: flex;
+    justify-content: space-around;
+    background-color: #354F52;
+    border-radius: 7px;
+    width: 100%;
+}
+
+.mini-header p {
+    padding-right: 2%;
+    padding-left: 5%;
+    color: #E2DFDA;
+    font-size: 23px;
+}
+
+.container{
+    width: 100%;
+    overflow: auto;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column ;
+}
+
+.big-container::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+.big-container::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #2F3E46;
+    border-radius: 10px;
+  }
+  
+.big-container::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+  }
+
+.container-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    text-align: center;
+}
+
+.container-body{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+}
+
+.pedido-title{
+    color: white;
+    font-size: 25px;
+}

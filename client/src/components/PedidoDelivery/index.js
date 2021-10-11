@@ -6,13 +6,11 @@ export function Pedido(props){
     const { quantidade } = props.comida.comida_servico
 
     return(
-        <>
-        <hr/>
-        <div className="pedido-container">
-            <p>Nome: {nome}</p>
-            <p>Quantidade: {quantidade}</p>
-        </div>
-        <hr/>
+        <>  
+            <div className="pedido-container">
+                <p className="nome">{nome}</p>
+                <p className="quantidade">{quantidade}</p>
+            </div>
         </>
     )
 }
