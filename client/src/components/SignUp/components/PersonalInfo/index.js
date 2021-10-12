@@ -7,6 +7,8 @@ import authServices from "../../../../services/authServices"
 import { useForm } from "react-hook-form";
 
 import "./styles.css"
+import InputCadastro from "../../../InputCadastro"
+import NumberInput from "../../../NumberInput"
 
 export function PersonalInfo({ next }) {
     const { signIn } = useRegister();
@@ -33,12 +35,12 @@ export function PersonalInfo({ next }) {
   return (
     <>
     <div className="header">
-        <h1 className="title">Informações Pessoais</h1>
         <div className="info">
             <div className="input-container">
+                <h1 className="title">Informações Pessoais</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="input-capsule">
-                        <InputPrincipal 
+                        <InputCadastro
                             placeholder="Nome Completo"  
                             className="inputCadastro"
                             onChange={() => clearErrors("nome")}
@@ -48,7 +50,7 @@ export function PersonalInfo({ next }) {
                     </div>
                     {errors.nome && errors.nome.type === "required" && <span>This field is required</span>}
                     <div className="input-capsule">
-                        <DateInput 
+                        <NumberInput
                             type="number" 
                             placeholder="Telefone" 
                             className="inputCadastro"
@@ -62,7 +64,7 @@ export function PersonalInfo({ next }) {
                     {errors.telefone && errors.telefone.type === "pattern" && <span>Invalid Phone Number</span>}
                     {errors.telefone && errors.telefone.type === "required" && <span>This field is required</span>}
                     <div className="input-capsule">
-                        <DateInput 
+                        <NumberInput
                             type="text" 
                             placeholder="CPF" 
                             className="inputCadastro"
@@ -77,7 +79,7 @@ export function PersonalInfo({ next }) {
                     {errors.cpf && errors.cpf.type === "pattern" && <span>Invalid CPF</span>}
                     {errors.cpf && errors.cpf.type === "required" && <span>This field is required</span>}
                     <div className="input-capsule">
-                        <InputPrincipal 
+                        <InputCadastro
                             placeholder="Endereço"  
                             className="inputCadastro"
                             onChange={() => clearErrors("endereco")}
@@ -86,7 +88,7 @@ export function PersonalInfo({ next }) {
                             })}/>
                     </div>
                     {errors.endereco && errors.endereco.type === "required" && <span>This field is required</span>}
-                    <div>
+                    <div className="buttonDiv">
                     <ButtonSub title="Continuar"/>
                     </div>  
                 </form>

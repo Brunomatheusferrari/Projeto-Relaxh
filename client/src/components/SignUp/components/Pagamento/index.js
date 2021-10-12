@@ -6,6 +6,8 @@ import { useRegister } from "../../../../contexts/registerContext"
 import { useForm } from "react-hook-form";
 
 import "./styles.css"
+import NumberInput from "../../../NumberInput"
+import InputCadastro from "../../../InputCadastro"
 
 export function Pagamento({next}) {
     const {state, createReserva } = useRegister();
@@ -33,12 +35,12 @@ export function Pagamento({next}) {
   return (
     <>
     <div className="header">
-        <h1 className="title">Pagamento</h1>
         <div className="info">
             <div className="input-container">
+                <h1 className="title">Pagamento</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="input-capsule">
-                        <InputPrincipal 
+                        <InputCadastro
                             placeholder="Número do Cartão"  
                             className="inputCadastro"
                             {...register("numero_cartao", { 
@@ -51,7 +53,7 @@ export function Pagamento({next}) {
                     {errors.numero_cartao && errors.numero_cartao.type === "required" && <p>This field is required</p>}
                     {errors.numero_cartao && errors.numero_cartao.type === "pattern" && <p>Invalid Card Code</p>}
                     <div className="input-capsule">
-                        <DateInput 
+                        <NumberInput
                             type="text" 
                             placeholder="Validade" 
                             className="inputCadastro"
@@ -65,7 +67,7 @@ export function Pagamento({next}) {
                     {errors.validade && errors.validade.type === "required" && <p>This field is required</p>}
                     {errors.validade && errors.validade.type === "pattern" && <p>Invalid Format Date</p>}
                     <div className="input-capsule">
-                        <DateInput 
+                        <NumberInput
                             type="number" 
                             placeholder="CCV" 
                             className="inputCadastro"
@@ -79,7 +81,7 @@ export function Pagamento({next}) {
                     {errors.ccv && errors.ccv.type === "required" && <p>This field is required</p>}
                     {errors.ccv && errors.ccv.type === "pattern" && <p>Invalid CCV</p>}
                     <div className="input-capsule">
-                        <InputPrincipal 
+                        <InputCadastro
                             placeholder="Banco"  
                             className="inputCadastro"
                             {...register("banco", { required: true })}
@@ -87,7 +89,7 @@ export function Pagamento({next}) {
                             />
                     </div>
                     {errors.banco && errors.banco.type === "required" && <p>This field is required</p>}
-                    <div>
+                    <div className="buttonDiv">
                     <ButtonSub title="Continuar"/>
                     </div> 
                 </form> 

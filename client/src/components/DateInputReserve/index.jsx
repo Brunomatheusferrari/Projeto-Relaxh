@@ -13,4 +13,8 @@ export const DateInputReserve = styled.input`
         cursor: pointer;
         filter: invert(100%);
     }
+
+    @media (max-width: 700px) {
+        width: 70%;
+    }
 `;
