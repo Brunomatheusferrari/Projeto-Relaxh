@@ -43,7 +43,7 @@ export const ReserveSection = styled.div`
     .leaves1 {
         width: 24vw;
         height: 22vw;
-        background-image: url(${leaves14});
+        background-image: url("https://i.imgur.com/iwyyrCK.png");
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
@@ -55,7 +55,7 @@ export const ReserveSection = styled.div`
     .leaves2 {
         width: 24vw;
         height: 22vw;
-        background-image: url(${leaves14});
+        background-image: url("https://i.imgur.com/iwyyrCK.png");
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;

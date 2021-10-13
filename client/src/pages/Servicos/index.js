@@ -3,9 +3,6 @@ import { CardDelivery } from "../../components/CardsServicos/CardDelivery";
 import { CardLimpeza } from "../../components/CardsServicos/CardLimpeza";
 import { CardOutros } from "../../components/CardsServicos/CardOutros";
 import { ServicosContainer } from "../../components/PaginaServicos/ServicosContainer";
-import forkndKnife from "../../static/img/forkandKnife.png";
-import cleanerSpray from "../../static/img/cleanerSpray.png";
-import poolPng from "../../static/img/poolPng.png";
 
 
 export function Servicos() {
@@ -17,21 +14,21 @@ export function Servicos() {
                 <div className="cards">
                     <CardDelivery>
                         <div className="leaves1"></div>
-                        <img src={forkndKnife} alt="Fork and Knife" className="deliveryCardPng"/>
+                        <img src="https://i.imgur.com/fklWtf4.png" alt="Fork and Knife" className="deliveryCardPng"/>
                         <h1 className="cardTitle">Delivery</h1>
                         <div className="leaves2"></div>
                     </CardDelivery>
 
                     <CardLimpeza>
                         <div className="leaves1"></div>
-                        <img src={cleanerSpray} alt="Fork and Knife" className="deliveryCardPng"/>
+                        <img src="https://i.imgur.com/4HdoMuR.png" alt="Fork and Knife" className="deliveryCardPng"/>
                         <h1 className="cardTitle">Limpeza</h1>
                         <div className="leaves2"></div>
                     </CardLimpeza>
 
                     <CardOutros>
                         <div className="leaves1"></div>
-                        <img src={poolPng} alt="Fork and Knife" className="deliveryCardPng"/>
+                        <img src="https://i.imgur.com/7aHGEs7.png" alt="Fork and Knife" className="deliveryCardPng"/>
                         <h1 className="cardTitle">Outros</h1>
                         <div className="leaves2"></div>
                     </CardOutros>

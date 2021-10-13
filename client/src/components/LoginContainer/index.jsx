@@ -36,7 +36,7 @@ export const LoginContainer = styled.div`
     .leavesPng {
         width: 14vw;
         height: 12vw;
-        background-image: url(${Leaves1});
+        background-image: url("https://i.imgur.com/1tJPyLi.png");
         background-repeat: no-repeat;
         background-size: 100%;
         display: flex;
@@ -50,7 +50,7 @@ export const LoginContainer = styled.div`
     .leavesPng2 {
         width: 14vw;
         height: 12vw;
-        background-image: url(${Leaves1});
+        background-image: url("https://i.imgur.com/1tJPyLi.png");
         background-repeat: no-repeat;
         background-size: 100%;
         display: flex;

@@ -1,10 +1,5 @@
 import React from "react";
 import { AboutContainer } from "../../components/AboutContainer";
-import sobreBruno from "../../static/img/sobreEduardo.png"
-import sobreEduardo from "../../static/img/sobreBruno.png"
-import sobreLucas from "../../static/img/sobreLucas.png"
-import sobreMarlon from "../../static/img/sobreMarlon.png"
-import sobreVinicius from "../../static/img/sobreVinicius.png"
 import { Link } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 
@@ -34,35 +29,35 @@ export function Sobre(props) {
                         <h2 className="cretorsTitle">Criado por:</h2>
                             <div className="creators-cards">
                                 <div className="creators-card-1">
-                                    <img src={sobreEduardo} className="sobre-img" />
+                                    <img src="https://i.imgur.com/E0pDGEM.png" className="sobre-img" />
                                     <h3 className="card-name">Bruno M. Ferrari</h3>
                                     <p className="subtitle">Hyperw</p>
                                     <div className="card-leaves" />
                                     <div className="card-leaves-2" />
                                 </div>
                                 <div className="creators-card-1">
-                                    <img src={sobreBruno} className="sobre-img" />
+                                    <img src="https://i.imgur.com/sPYWzdb.png" className="sobre-img" />
                                     <h3 className="card-name-2">Eduardo V. Andruczewicz</h3>
                                     <p className="subtitle">Hyperw</p>
                                     <div className="card-leaves" />
                                     <div className="card-leaves-2" />
                                 </div>
                                 <div className="creators-card-1">
-                                    <img src={sobreLucas} className="sobre-img" />
+                                    <img src="https://i.imgur.com/1OFS5wx.png" className="sobre-img" />
                                     <h3 className="card-name">Lucas G. Devigili</h3>
                                     <p className="subtitle">Hyperw</p>
                                     <div className="card-leaves" />
                                     <div className="card-leaves-2" />
                                 </div>
                                 <div className="creators-card-1">
-                                    <img src={sobreMarlon} className="sobre-img" />
+                                    <img src="https://i.imgur.com/9FLpBLQ.png" className="sobre-img" />
                                     <h3 className="card-name">Marlon W. Martins</h3>
                                     <p className="subtitle">Hyperw</p>
                                     <div className="card-leaves" />
                                     <div className="card-leaves-2" />
                                 </div>
                                 <div className="creators-card-1">
-                                    <img src={sobreVinicius} className="sobre-img" />
+                                    <img src="https://i.imgur.com/RGjeR5P.png" className="sobre-img" />
                                     <h3 className="card-name">Vinicius B. Bilk</h3>
                                     <p className="subtitle">Hyperw</p>
                                     <div className="card-leaves" />

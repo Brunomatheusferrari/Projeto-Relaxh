@@ -63,7 +63,7 @@ export function Login(props) {
                 </div>
                 <div className="leavesPng2"></div>
             </div>
-                <img src={perfilPhoto} className="perfilImg"/>
+                <img src="https://i.imgur.com/77JMfdd.png" className="perfilImg"/>
         </LoginContainer>
     );
 }

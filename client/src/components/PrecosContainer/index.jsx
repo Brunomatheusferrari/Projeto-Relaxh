@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
-import leaves4 from "../../static/img/leaves4.png"
 
 
 export const PrecosContainer =  styled.div`
@@ -47,7 +46,7 @@ export const PrecosContainer =  styled.div`
     .leaves {
         width: 14vw;
         height: 10vw;
-        background-image: url(${leaves4});
+        background-image: url("https://i.imgur.com/9iUZkVr.png");
         background-repeat: no-repeat;
         background-size: 100%;
         display: flex;
@@ -65,7 +64,7 @@ export const PrecosContainer =  styled.div`
     .leaves2 {
         width: 12vw;
         height: 8vw;
-        background-image: url(${leaves4});
+        background-image: url("https://i.imgur.com/9iUZkVr.png");
         background-repeat: no-repeat;
         background-size: 100%;
         display: flex;
@@ -84,7 +83,7 @@ export const PrecosContainer =  styled.div`
     .leaves3 {
         width: 12vw;
         height: 8vw;
-        background-image: url(${leaves4});
+        background-image: url("https://i.imgur.com/9iUZkVr.png");
         background-repeat: no-repeat;
         background-size: 100%;
         display: flex;
@@ -102,7 +101,7 @@ export const PrecosContainer =  styled.div`
     .leaves4 {
         width: 10vw;
         height: 7vw;
-        background-image: url(${leaves4});
+        background-image: url("https://i.imgur.com/9iUZkVr.png");
         background-repeat: no-repeat;
         background-size: 100%;
         display: flex;

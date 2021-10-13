@@ -180,7 +180,7 @@ export const Sidebar = styled.div`
         width: 12vw;
         height: 22vh;
         position: absolute;
-        background-image: url(${leaves10});
+        background-image: url("https://i.imgur.com/xYZfIx2.png");
         background-repeat: no-repeat;
         background-size: cover;
         top: -4%;
@@ -194,7 +194,7 @@ export const Sidebar = styled.div`
         width: 12vw;
         height: 22vh;
         position: absolute;
-        background-image: url(${leaves10});
+        background-image: url("https://i.imgur.com/xYZfIx2.png");
         background-repeat: no-repeat;
         background-size: cover;
         bottom: -2%;

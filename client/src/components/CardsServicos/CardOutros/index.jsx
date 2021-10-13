@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import colors from "../../../themes/colors";
-import leaves6 from "../../../static/img/leaves6.png"
 
 export const CardOutros = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
@@ -36,7 +35,7 @@ export const CardOutros = styled.div`
     .leaves1 {
         width: 25%;
         height: 20%;
-        background-image: url(${leaves6});
+        background-image: url("https://i.imgur.com/AZ8zOHu.png");
         background-size: cover;
         position: absolute;
         top: -2%;
@@ -50,7 +49,7 @@ export const CardOutros = styled.div`
     .leaves2 {
         width: 25%;
         height: 20%;
-        background-image: url(${leaves6});
+        background-image: url("https://i.imgur.com/AZ8zOHu.png");
         background-size: cover;
         position: absolute;
         bottom: -1%;

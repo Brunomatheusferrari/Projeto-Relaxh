@@ -1,27 +1,18 @@
 import React, { useEffect, useState, useRef } from "react";
 import { HeaderContainer } from "../../components/HeaderCointainer";
 import { ReserveButton } from "../../components/ReserveButton";
-import relaxhTitle from "../../static/img/relaxhTitle.png"
-import relaxhSubtitle from "../../static/img/relaxhSubtitle.png"
 import { FiArrowDownCircle, FiMenu, FiChevronDown } from "react-icons/fi";
 import bgVideo from "../../static/video/bgVideo.mp4"
 import { NavBarHeader } from "../../components/NavBarHeader";
 import { LoginButton } from "../../components/LoginButton";
 import { IntroductSection } from "../../components/IntroductSection";
-import { LineText } from "../../components/LineText";
-import LogoRelaxh from "../../static/img/logoRelaxh.png"
-import hotelPhoto from "../../static/img/hotelPhoto.png"
 import { HotelPhoto } from "../../components/HotelPhoto";
 import { Link } from "react-router-dom";
-import Fade from 'react-reveal/Fade';
 import authServices from "../../services/authServices"
 import { MenuSidebar } from "../../components/SideBar/index.js";
 import { AboutUsSection } from "../../components/AboutUsSection";
 import { CaribeSection } from "../../components/CaribeSection";
 import { CardsSection } from "../../components/CardsSection";
-import gastronomyPhoto from "../../static/img/gastronomyPhoto.png";
-import servicesPhoto from "../../static/img/servicesPhoto.png";
-import confortPhoto from "../../static/img/confortPhoto.png";
 import { QrCodeSection } from "../../components/QrCodeSection";
 import { RoomsSection } from "../../components/RoomsSection";
 import { ReserveSection } from "../../components/ReserveSection";
@@ -135,6 +126,18 @@ export function Homepage(props) {
     const caribeSectionRef = useRef(null);
     const caribeCardRef = useRef(null);
     const caribePhotoRef  = useRef(null);
+    const cardsSectionRef = useRef(null);
+    const cardRef = useRef(null);
+    const cardPhotoRef = useRef(null);
+    const cardsSectionRef2 = useRef(null);
+    const cardRef2 = useRef(null);
+    const cardPhotoRef2 = useRef(null);
+    const cardsSectionRef3 = useRef(null);
+    const cardRef3 = useRef(null);
+    const cardPhotoRef3 = useRef(null);
+    const qrCodeSectionRef = useRef(null);
+    const qrCodeTitleRef = useRef(null);
+    const qrCodeTextRef = useRef(null);
 
     useEffect(() => {
         const introductionSectionObserver = new IntersectionObserver(entries => {
@@ -172,199 +175,61 @@ export function Homepage(props) {
 
         if(caribePhotoRef.current) caribeSectionObserver.observe(caribeSectionRef.current);
 
-        
+        const cardsSectionObserver = new IntersectionObserver(entries => {
+            const [entry] = entries;
+
+            if (entry.isIntersecting) {
+                cardRef.current.classList.add("animation-card");
+                cardPhotoRef.current.classList.add("animation-card-2");
+            }
+        });
+
+        if(cardRef.current) cardsSectionObserver.observe(cardsSectionRef.current);
+
+        const cardsSectionObserver2 = new IntersectionObserver(entries => {
+            const [entry] = entries;
+
+            if (entry.isIntersecting) {
+                cardRef2.current.classList.add("animation-card-2");
+                cardPhotoRef2.current.classList.add("animation-card");
+            }
+        });
+
+        if(cardRef2.current) cardsSectionObserver2.observe(cardsSectionRef2.current);
+
+        const cardsSectionObserver3 = new IntersectionObserver(entries => {
+            const [entry] = entries;
+
+            if (entry.isIntersecting) {
+                cardRef3.current.classList.add("animation-card");
+                cardPhotoRef3.current.classList.add("animation-card-2");
+            }
+        });
+
+        if(cardRef3.current) cardsSectionObserver3.observe(cardsSectionRef3.current);
+
+        const qrCodeSectionObserver = new IntersectionObserver(entries => {
+            const [entry] = entries;
+
+            if (entry.isIntersecting) {
+                qrCodeTitleRef.current.classList.add("animationText");
+                qrCodeTextRef.current.classList.add("animationText");
+            }
+        });
+
+        if(qrCodeTitleRef.current) qrCodeSectionObserver.observe(qrCodeSectionRef.current);
+
 
         return () => {
             introductionSectionObserver.unobserve(introductionSectionRef.current); 
             aboutUsSectionObserver.unobserve(aboutUsSectionRef.current);
             caribeSectionObserver.unobserve(caribeSectionRef.current);
+            cardsSectionObserver.unobserve(cardPhotoRef.current);
+            cardsSectionObserver2.unobserve(cardPhotoRef2.current);
+            cardsSectionObserver3.unobserve(cardPhotoRef3.current);
+            qrCodeSectionObserver.unobserve(qrCodeTitleRef.current);
         }
     }, []);
-
-    // useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let caribePhoto = document.querySelector('.caribe-photo');
-    //           caribePhoto.classList.add("animation-card");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.caribe-photo'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.card-photo');
-    //           cardsPhotos.classList.add("animation-card-2");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.card-photo'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.card-photo-2');
-    //           cardsPhotos.classList.add("animation-card");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.card-photo-2'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.card-photo-3');
-    //           cardsPhotos.classList.add("animation-card-2");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.card-photo-3'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.card');
-    //           cardsPhotos.classList.add("animation-card");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.card'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.card-2');
-    //           cardsPhotos.classList.add("animation-card-2");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.card-2'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-      
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.card-3');
-    //           cardsPhotos.classList.add("animation-card");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.card-3'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.logoRelaxh');
-    //           cardsPhotos.classList.add("animationLogo");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.logoRelaxh'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.sectionTitle');
-    //           cardsPhotos.classList.add("animationText");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.sectionTitle'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.about-us-title');
-    //           cardsPhotos.classList.add("animationText");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.about-us-title'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-      
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.about-us-text');
-    //           cardsPhotos.classList.add("animationText");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.about-us-text'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.about-us-line');
-    //           cardsPhotos.classList.add("animationLine");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.about-us-line'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.caribe-card');
-    //           cardsPhotos.classList.add("animation-card-2");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.caribe-card'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.qrcode-title');
-    //           cardsPhotos.classList.add("animationText");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.qrcode-title'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-    //   useEffect(() => {
-    //     const intersectionObserver = new IntersectionObserver(entries => {
-    //       if (entries.some(entry => entry.isIntersecting)) {
-    //           console.log(intersectionObserver);
-    //           let cardsPhotos = document.querySelector('.qrcode-text');
-    //           cardsPhotos.classList.add("animationText");
-    //       }
-    //     }, options)
-    //     intersectionObserver.observe(document.querySelector('.qrcode-text'));
-    //     return () => intersectionObserver.disconnect();
-    //   }, []);
-
-
-    // window.addEventListener('scroll', ativaNoScroll);
   
     return (
         <>  
@@ -392,7 +257,7 @@ export function Homepage(props) {
             <SecondNavbar>
             <div className={navbar ? 'navbarActive active' : 'navbar'}>
                 <FiMenu className="menuIcon" onClick={() => setIsMenuVisible(true)} />
-                <img src={relaxhTitle} className="menuRelaxh" />
+                <img src="https://i.imgur.com/Ckxi9oc.png" className="menuRelaxh" />
                 {!accessToken ?
                     <div>
                         <LoginButton>
@@ -412,8 +277,8 @@ export function Homepage(props) {
                 <HeaderContainer>
                     
                     <div className="titleContainer">
-                        <img src={relaxhTitle} />
-                        <img src={relaxhSubtitle} className="subtitle" />
+                        <img src="https://i.imgur.com/Ckxi9oc.png" />
+                        <img src="https://i.imgur.com/Rn6FtdI.png" className="subtitle" />
                         <ReserveButton>
                             <Link to="/cadastro" label="cadastro" className="reserveButton">Reservar Agora</Link>
                         </ReserveButton>
@@ -430,13 +295,13 @@ export function Homepage(props) {
                     </div> */}
                     <div className="contentContainer" ref={introductionSectionRef}>
                             <p className="sectionTitle" ref={sloganRef}>Moderno, Simples e Prático.</p>
-                            <img src={LogoRelaxh} className="logoRelaxh" ref={logoRef} />
+                            <img src="https://i.imgur.com/Yqg8FYM.png" className="logoRelaxh" ref={logoRef} />
                     </div>
                     <div className="bgLogo"></div>
 
                 </IntroductSection>
 
-                <HotelPhoto src={hotelPhoto}/>     
+                <HotelPhoto src="https://i.imgur.com/V2n4lOg.png"/>     
 
                 <AboutUsSection>
                         <div className="about-us-content" ref={aboutUsSectionRef}>
@@ -470,51 +335,51 @@ export function Homepage(props) {
                 </CaribeSection>
                 
                 <CardsSection>
-                    <div className="divider">
+                    <div className="divider" ref={cardsSectionRef}>
                         <div className="line-text">
                             <p className="text">Gastronomia</p>
                             <div className="line" />
                         </div>
-                        <div className="card">
+                        <div className="card" ref={cardRef}>
                             <div className="card-container">
                                 <h2 className="card-title">Gastronomia</h2>
                                 <div className="card-white-line"></div>
                                 <p className="card-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
                             </div>
                         </div>
-                        <img src={gastronomyPhoto} className="card-photo" />
+                        <img src="https://i.imgur.com/1FeyaHg.jpg" className="card-photo" ref={cardPhotoRef}/>
                         <div className="white-line"></div>
                     </div>
 
-                    <div className="divider">
+                    <div className="divider" ref={cardsSectionRef2}>
                         <div className="line-text2">
                             <div className="line" />
                             <p className="text2">Serviços</p>
                         </div>
-                        <div className="card-2">
+                        <div className="card-2" ref={cardRef2}>
                             <div className="card-container">
                                 <h2 className="card-title">Serviços</h2>
                                 <div className="card-white-line"></div>
                                 <p className="card-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
                             </div>
                         </div>
-                        <img src={servicesPhoto} className="card-photo-2" />
+                        <img src="https://i.imgur.com/b0dZKvZ.jpg" className="card-photo-2" ref={cardPhotoRef2} />
                         <div className="white-line"></div>
                     </div>
                     
-                    <div className="divider">
+                    <div className="divider" ref={cardsSectionRef3}>
                         <div className="line-text3">
                             <p className="text">Conforto</p>
                             <div className="line" />
                         </div>
-                        <div className="card-3">
+                        <div className="card-3" ref={cardRef3}>
                             <div className="card-container">
                                 <h2 className="card-title">Conforto</h2>
                                 <div className="card-white-line"></div>
                                 <p className="card-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
                             </div>
                         </div>
-                        <img src={confortPhoto} className="card-photo-3" />
+                        <img src="https://i.imgur.com/iuycRay.png" className="card-photo-3" ref={cardPhotoRef3}  />
                         <div className="white-line"></div>
                     </div>
                 </CardsSection>
@@ -525,9 +390,9 @@ export function Homepage(props) {
                     <p className="qrcode-line-text-text">Qr-Code</p>
                     <div className="qrcode-line-text-line" />
                     </div>
-                    <div className="qrcode-content-container">
-                        <h2 className="qrcode-title">Qr Code Check In</h2>
-                        <p className="qrcode-text">  Contruido em 2021 com o objetivo de ser simples, moderno e prático, levando o melhor das lindas praias do caribe com uma preço acessível. Com diversos serviços de facil acesso como por exemplo, delivery de comida e agendamento de limpeza de quarto. Também contamos com a nova tecnologia de check-in por qr code, o que facilita a entrada e saída do hotel.</p>
+                    <div className="qrcode-content-container" ref={qrCodeSectionRef}>
+                        <h2 className="qrcode-title" ref={qrCodeTitleRef}>Qr Code Check In</h2>
+                        <p className="qrcode-text" ref={qrCodeTextRef}>  Contruido em 2021 com o objetivo de ser simples, moderno e prático, levando o melhor das lindas praias do caribe com uma preço acessível. Com diversos serviços de facil acesso como por exemplo, delivery de comida e agendamento de limpeza de quarto. Também contamos com a nova tecnologia de check-in por qr code, o que facilita a entrada e saída do hotel.</p>
                     </div>
                     <div className="qrcode-leaves2" />
                 </QrCodeSection>
