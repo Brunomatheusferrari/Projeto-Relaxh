@@ -103,4 +103,53 @@ export const ReserveSection = styled.div`
         }
     }
 
+    @media (max-width: 700px) {
+        height: fit-content;
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        .reserve-title {
+            font-size: 30px;
+        }
+        .reserve-inputs {
+            flex-direction: column;
+            align-items: center;
+            width: 95vw;
+        }
+
+        .reserve-button {
+            margin-top: 60px;
+            margin-right: 0;
+            text-align: center;
+        }
+
+        .reserve-content-container {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loginButtonStyle {
+            margin: 0;
+        }
+
+        .reserve-white-line-1 {
+            display: none;
+        }
+
+        .reserve-white-line-2 {
+            display: none;
+        }
+
+        .input-container {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-title {
+            font-size: 16px;
+        }
+    }
+
 `;

@@ -22,4 +22,8 @@ export const SelectInputReserve = styled.select`
     .number {
         font-family: 'Montserrat', sans-serif;
     }
+
+    @media (max-width: 700px) {
+        width: 80%;
+    } 
 `;

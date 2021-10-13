@@ -6,6 +6,7 @@ import authServices from "../../../../services/authServices"
 import { useForm } from "react-hook-form";
 
 import "./styles.css"
+import InputCadastro from "../../../InputCadastro"
 
 export function Cadastro({ next }) {
     const { registerUser } = useRegister();
@@ -32,12 +33,12 @@ export function Cadastro({ next }) {
 
     return (
         <div className="header">
-            <h1 className="title">Cadastrar - se</h1>
             <div className="info">
                 <div className="input-container">
+                    <h1 className="title">Cadastrar - se</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="input-capsule">
-                            <InputPrincipal  
+                            <InputCadastro  
                                 placeholder="Nome" 
                                 {...register("nome", { required: true })}
                                 className="inputCadastro"
@@ -46,7 +47,7 @@ export function Cadastro({ next }) {
                         </div>
                         {errors.nome && <p>This field is required</p>}
                         <div className="input-capsule">
-                            <InputPrincipal  
+                            <InputCadastro  
                                 placeholder="Email"  
                                 className="inputCadastro"
                                 {...register("email", { 
@@ -61,7 +62,7 @@ export function Cadastro({ next }) {
                         {errors.email && errors.email.type ===   "pattern" && <p>Invalid Email</p>}
 
                         <div className="input-capsule">
-                            <InputPrincipal
+                            <InputCadastro
                                 name="password"
                                 type="password" 
                                 placeholder="Senha" 
@@ -78,7 +79,7 @@ export function Cadastro({ next }) {
                         </div>
                         {errors.password && <p>{errors.password.message}</p>}
                         <div className="input-capsule">
-                            <InputPrincipal
+                            <InputCadastro
                                 name="password_repeat"
                                 type="password" 
                                 placeholder="Confirmar Senha"  
@@ -91,7 +92,7 @@ export function Cadastro({ next }) {
                             />
                         </div>
                         {errors.password_repeat && <p>{errors.password_repeat.message}</p>}
-                        <div>
+                        <div className="buttonDiv">
                             <ButtonSub title="Continuar"/>
                         </div>  
                     </form>

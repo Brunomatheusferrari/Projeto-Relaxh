@@ -31,9 +31,9 @@ export function Reserva({ next }) {
   
   return (
     <div className="header">
-    <h1 className="title">Reserva</h1>
     <div className="info">
         <div className="input-container">
+            <h1 className="title">Reserva</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-capsule">
                     <p className="titleInput">Data de Entrada</p>

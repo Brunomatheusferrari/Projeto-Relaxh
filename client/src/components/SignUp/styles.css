@@ -82,6 +82,9 @@ h1{
     top: 10px;
 }
 
+
+
+
 @media (max-width: 1400px) {
     .header {
         top: 0;
@@ -149,4 +152,5 @@ h1{
         font-size: 30px;
         margin-bottom: 10px;
     }
+    
 }
