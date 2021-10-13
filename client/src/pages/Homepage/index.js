@@ -29,8 +29,8 @@ import { DateInputReserve } from "../../components/DateInputReserve";
 import { SelectInputReserve } from "../../components/SelectInputReserve";
 import { SecondNavbar } from "../../components/SecondNavbar/index";
 import './styles.css'
-import useWindowSize from "../../hooks/useWindowSize";
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 
 
@@ -484,9 +484,14 @@ export function Homepage(props) {
                 </QrCodeSection>
 
                 <RoomsSection>
-                    <div className="rooms-background">
-                        <div className="rooms-container">
-                            <div className="room-content-container">
+
+                <Carousel autoPlay={true} showArrows={false} infiniteLoop={true}showThumbs={false} swipeable={true} showStatus={false} selectedItem={false}>
+                    <div className = "head-text">
+                        <div className = "head-image">
+                        <img src ="https://images.unsplash.com/photo-1560846288-b58bb7ae1083?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" alt = "Freedom Blog" />
+                        </div>
+                        <div class='text-on-image'>
+                        <div className="room-content-container">
                                 <h3 className="room-title">Deluxe</h3>
                                 <ul className="room-list">
                                     <li className="room-list-item">2 camas</li>
@@ -495,18 +500,30 @@ export function Homepage(props) {
                                     <li className="room-list-item">2 Televisões</li>
                                 </ul>
                             </div>
-                            <div className="vertical-white-line" />
+                        </div>
+                    </div>
+                    <div className = "head-text">
+                        <div className = "head-image">
+                        <img src ="https://images.unsplash.com/photo-1560846288-b58bb7ae1083?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" alt = "Freedom Blog" />
+                        </div>
+                        <div class='text-on-image'>
                             <div className="room-content-container">
-                                <h3 className="room-title">Premium</h3>
-                                <ul className="room-list">
-                                    <li className="room-list-item">2 camas</li>
-                                    <li className="room-list-item">Banheira com Hidromassagem</li>
-                                    <li className="room-list-item">2 Banheiros</li>
-                                    <li className="room-list-item">2 Televisões</li>
-                                </ul>
-                            </div>
-                            <div className="vertical-white-line" />
-                            <div className="room-content-container">
+                                    <h3 className="room-title">Premium</h3>
+                                    <ul className="room-list">
+                                        <li className="room-list-item">2 camas</li>
+                                        <li className="room-list-item">Banheira com Hidromassagem</li>
+                                        <li className="room-list-item">2 Banheiros</li>
+                                        <li className="room-list-item">2 Televisões</li>
+                                    </ul>
+                                </div>
+                        </div>
+                    </div>
+                    <div className = "head-text">
+                        <div className = "head-image">
+                        <img src ="https://images.unsplash.com/photo-1560846288-b58bb7ae1083?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" alt = "Freedom Blog" />
+                        </div>
+                        <div class='text-on-image'>
+                        <div className="room-content-container">
                                 <h3 className="room-title">Standart</h3>
                                 <ul className="room-list">
                                     <li className="room-list-item">2 camas</li>
@@ -517,6 +534,23 @@ export function Homepage(props) {
                             </div>
                         </div>
                     </div>
+
+                </Carousel>
+
+                    
+
+
+
+                    {/* <div className="rooms-background">
+                        <div className="rooms-container">
+
+                            </div>
+                            <div className="vertical-white-line" />
+                           
+                            <div className="vertical-white-line" />
+                           
+                        </div>
+                    </div> */}
                 </RoomsSection>
 
                 <ReserveSection>
