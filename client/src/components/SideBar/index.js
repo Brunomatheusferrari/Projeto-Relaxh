@@ -55,7 +55,7 @@ export function MenuSidebar({ isVisible, closeModal }) {
                         }
                         {
                             role === "admin" &&
-                            <Link to="/admin-page" className="link">
+                            <Link to="/admin-select" className="link">
                                 <div className="menu-item-container">
                                     <p className="item-number">05</p>
                                     <p className="menu-item">Admin Page</p>

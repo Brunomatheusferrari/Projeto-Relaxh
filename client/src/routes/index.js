@@ -26,10 +26,12 @@ export const Routes = () => {
                 <Route component= { Precos } path="/preços" />
                 <Route component= { Servicos } path="/serviços" />
                 <Route component= { Limpeza } path="/serviços-limpeza" />
-                <Route component= { AdmWay } path="/admin-select" />
                 <DeliveryProvider>
                     <Route component = { Delivery } path="/serviços-delivery" />
                 </DeliveryProvider>
+                <PrivateRoute path="/admin-select" permissions={["admin"]}>
+                    <AdmWay/>
+                </PrivateRoute>
                 <PrivateRoute path="/admin-delivery" permissions={["admin"]}>
                     <AdminDelivery/>
                 </PrivateRoute>

@@ -1,12 +1,67 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LimpezaButton } from "../../components/LimpezaButton";
 import { ServicoLimpeza } from "../../components/ServicoLimpeza";
 import { LimpezaModal } from "../../components/LimpezaModal";
 import { Counter } from "../../components/LimpezaModalButtons/index";
 import { IoClose } from "react-icons/io5";
+import serviceServices from "../../services/serviceServices";
+import InputCadastro from "../../components/InputCadastro";
 
 export function Limpeza(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [horario, setHorario] = useState(null);
+    const [descricao, setDescricao] = useState("");
+    const [pedidos, setPedidos] = useState(null)
+
+    useEffect(() => {   
+        async function getPedidos(){
+            try {
+          
+                const pedidosUser = await serviceServices.getPedidosUser()
+    
+                setPedidos(pedidosUser)
+              
+            } catch (error) {
+                console.log(error)    
+            }
+        }
+
+        getPedidos()
+    })
+
+    async function onSubmit(descricao, horario){
+        setIsModalVisible(false)
+
+        const hora = horario.split(":")
+
+        var dt = new Date();
+        dt.setHours(hora[0])
+        dt.setMinutes(hora[1])
+
+        function toTimestamp(dt){
+            var datum = Date.parse(dt);
+            return datum/1000;
+         }
+
+         const newDate = toTimestamp( dt )
+         console.log(newDate)
+        
+        try {
+            const quarto = await serviceServices.getQuartoUser()
+            const pedido = await serviceServices.postServico({id_quarto: quarto.id,  tipo: "Limpeza", descricao, horario: dt})
+
+            if(!pedido){
+                console.log("Não Há Pedidos")
+            }
+
+            if(!quarto){
+                console.log("Não há quartos")
+            }
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     return (
 
@@ -37,10 +92,21 @@ export function Limpeza(props) {
             </div>
 
             <div className="buttonCelphone">
-                            <LimpezaButton onClick={() => setIsModalVisible(true)}>
-                                <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário</a>
-                            </LimpezaButton>
-                        </div>
+                <LimpezaButton onClick={() => setIsModalVisible(true)}>
+                    <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário</a>
+                </LimpezaButton>
+            </div>
+            
+            <div>
+                {
+                    pedidos ?
+                    pedidos.map(pedido => {
+                        <p>{pedido}</p>
+                    })
+                    : 
+                    <p>Não Há Pedidos</p>
+                }
+            </div>
 
             <div className="leaves">
                 <div className="leaves2Adjust">
@@ -63,7 +129,8 @@ export function Limpeza(props) {
                     <div className="ModalContent">
                         <section className="servicos">
 
-                            <Counter name="Horário" />
+                            <Counter onChange={(e) => setHorario(e.target.value) } name="Horário" />
+                            <InputCadastro onChange={(e) => setDescricao(e.target.value)}/>
 
                         </section>
                     </div>
@@ -74,7 +141,7 @@ export function Limpeza(props) {
                                 <p className="Pedidos feitos"></p>
                             </div>
                             <div className="button">
-                                <LimpezaButton onClick={() => setIsModalVisible(false)}>
+                                <LimpezaButton onClick={() => onSubmit(descricao, horario)}>
                                     <a label="Limpeza" className="LimpezaButtonStyle">Enviar</a>
                                 </LimpezaButton>
 
