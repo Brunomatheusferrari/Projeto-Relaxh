@@ -28,6 +28,7 @@ export function Sobre(props) {
                         </p>
                         <div className="leaves1" />
                     </div>
+                    //
 
                     <div className="creatorsContainer">
                         <h2 className="cretorsTitle">Criado por:</h2>
