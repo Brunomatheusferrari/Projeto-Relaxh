@@ -104,6 +104,11 @@ export const DeliveryContainer = styled.div`
         display: none;
     }
 
+    .container {
+        display: flex;
+        align-items: center;
+    }
+
     .leaves {
         width: 100vw;
         display: flex;
@@ -111,7 +116,6 @@ export const DeliveryContainer = styled.div`
         justify-content: space-between;
         bottom: 0px;
         left: 0px;
-
     }
 
     .leavesPng {
@@ -176,6 +180,12 @@ export const DeliveryContainer = styled.div`
 
     .buttonCelphone {
         display: block;
+    }
+
+    .big-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 
     .headerObjects {
