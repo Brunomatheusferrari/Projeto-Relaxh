@@ -5,6 +5,7 @@ import { ButtonSub } from "../ButtonSub/index"
 import { useRegister } from "../../../../contexts/registerContext"
 import { useForm } from "react-hook-form";
 import authServices from "../../../../services/authServices"
+import serviceServices from "../../../../services/serviceServices"
 
 import "./styles.css"
 import NumberInput from "../../../NumberInput"
@@ -20,19 +21,28 @@ export function Pagamento({next}) {
             return next()
         }
 
-        const accessToken = authServices.getAccessToken()
+        async function getQuartoUser(){
+            try {
+                const quarto = await serviceServices.getQuartoUser()
 
-        console.log(authServices.getRoleFromAccessToken(accessToken))
+                if(quarto){
+                    alert("Você já poossui uma reserva")
+                    window.location.replace("/")
+                }
 
-        if(authServices.getRoleFromAccessToken(accessToken) === "user" || authServices.getRoleFromAccessToken(accessToken) === "admin" ){
-            alert("Você já possui uma reserva")
-            window.location.replace("/")
+            } catch (error) {
+                console.log(error)
+            }
         }
+
+        getQuartoUser()
+
     })
 
     async function onSubmit() {
         try {
             await createReserva()
+            authServices.refreshToken()
             alert("Criado....Verifique sua caixa de email")
             
             window.location.replace("/")   
