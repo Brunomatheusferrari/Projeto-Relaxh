@@ -34,11 +34,13 @@ import { Carousel } from 'react-responsive-carousel';
 
 
 
+
 export function Homepage(props) {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const accessToken = authServices.getAccessToken();
     const [navbar, setNavbar] = useState(false);
     const [card, setCard] = useState(false);
+
 
     function handleClick() {
         localStorage.clear()
@@ -120,201 +122,248 @@ export function Homepage(props) {
     const options = {
         root: document.querySelector('#viewport'),
         rootMargin: '0px',
-        threshold: 0.0
+        threshold: 1
     };
 
+    const introductionSectionRef = useRef(null);
+    const sloganRef = useRef(null);
+    const logoRef = useRef(null);
+    const aboutUsSectionRef = useRef(null);
+    const aboutUsTitleRef = useRef(null);
+    const aboutUsTextRef = useRef(null);
+    const aboutUsDetailRef = useRef(null);
+    const caribeSectionRef = useRef(null);
+    const caribeCardRef = useRef(null);
+    const caribePhotoRef  = useRef(null);
+
     useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let caribePhoto = document.querySelector('.caribe-photo');
-              caribePhoto.classList.add("animation-card");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.caribe-photo'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+        const introductionSectionObserver = new IntersectionObserver(entries => {
+            const [entry] = entries;
 
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.card-photo');
-              cardsPhotos.classList.add("animation-card-2");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.card-photo'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+            if (entry.isIntersecting) {
+                sloganRef.current.classList.add("animationText");
+                logoRef.current.classList.add("animationLogo");
+            }            
+        });
 
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.card-photo-2');
-              cardsPhotos.classList.add("animation-card");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.card-photo-2'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+        if (sloganRef.current) introductionSectionObserver.observe(introductionSectionRef.current);
 
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.card-photo-3');
-              cardsPhotos.classList.add("animation-card-2");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.card-photo-3'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+        const aboutUsSectionObserver = new IntersectionObserver(entries => {
+            const [entry] = entries;
 
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.card');
-              cardsPhotos.classList.add("animation-card");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.card'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+            if (entry.isIntersecting) {
+                aboutUsTitleRef.current.classList.add("animationText");
+                aboutUsTextRef.current.classList.add("animationText");
+                aboutUsDetailRef.current.classList.add("animationText");
+            }
+        });
 
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.card-2');
-              cardsPhotos.classList.add("animation-card-2");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.card-2'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+        if(aboutUsTitleRef.current) aboutUsSectionObserver.observe(aboutUsSectionRef.current);
 
-      
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.card-3');
-              cardsPhotos.classList.add("animation-card");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.card-3'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+        
+        const caribeSectionObserver = new IntersectionObserver(entries => {
+            const [entry] = entries;
 
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.logoRelaxh');
-              cardsPhotos.classList.add("animationLogo");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.logoRelaxh'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+            if (entry.isIntersecting) {
+                caribeCardRef.current.classList.add("animation-card-2");
+                caribePhotoRef.current.classList.add("animation-card");
+            }
+        });
 
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.sectionTitle');
-              cardsPhotos.classList.add("animationText");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.sectionTitle'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+        if(caribePhotoRef.current) caribeSectionObserver.observe(caribeSectionRef.current);
 
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.about-us-title');
-              cardsPhotos.classList.add("animationText");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.about-us-title'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+        
+
+        return () => {
+            introductionSectionObserver.unobserve(introductionSectionRef.current); 
+            aboutUsSectionObserver.unobserve(aboutUsSectionRef.current);
+            caribeSectionObserver.unobserve(caribeSectionRef.current);
+        }
+    }, []);
+
+    // useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let caribePhoto = document.querySelector('.caribe-photo');
+    //           caribePhoto.classList.add("animation-card");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.caribe-photo'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
+
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.card-photo');
+    //           cardsPhotos.classList.add("animation-card-2");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.card-photo'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
+
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.card-photo-2');
+    //           cardsPhotos.classList.add("animation-card");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.card-photo-2'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
+
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.card-photo-3');
+    //           cardsPhotos.classList.add("animation-card-2");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.card-photo-3'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
+
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.card');
+    //           cardsPhotos.classList.add("animation-card");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.card'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
+
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.card-2');
+    //           cardsPhotos.classList.add("animation-card-2");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.card-2'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
 
       
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.about-us-text');
-              cardsPhotos.classList.add("animationText");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.about-us-text'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.card-3');
+    //           cardsPhotos.classList.add("animation-card");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.card-3'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
 
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.about-us-line');
-              cardsPhotos.classList.add("animationLine");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.about-us-line'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.logoRelaxh');
+    //           cardsPhotos.classList.add("animationLogo");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.logoRelaxh'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
 
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.caribe-card');
-              cardsPhotos.classList.add("animation-card-2");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.caribe-card'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.sectionTitle');
+    //           cardsPhotos.classList.add("animationText");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.sectionTitle'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
 
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.qrcode-title');
-              cardsPhotos.classList.add("animationText");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.qrcode-title'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.about-us-title');
+    //           cardsPhotos.classList.add("animationText");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.about-us-title'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
 
-      useEffect(() => {
-        const intersectionObserver = new IntersectionObserver(entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-              console.log(intersectionObserver);
-              let cardsPhotos = document.querySelector('.qrcode-text');
-              cardsPhotos.classList.add("animationText");
-          }
-        }, options)
-        intersectionObserver.observe(document.querySelector('.qrcode-text'));
-        return () => intersectionObserver.disconnect();
-      }, []);
+      
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.about-us-text');
+    //           cardsPhotos.classList.add("animationText");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.about-us-text'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
+
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.about-us-line');
+    //           cardsPhotos.classList.add("animationLine");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.about-us-line'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
+
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.caribe-card');
+    //           cardsPhotos.classList.add("animation-card-2");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.caribe-card'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
+
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.qrcode-title');
+    //           cardsPhotos.classList.add("animationText");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.qrcode-title'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
+
+    //   useEffect(() => {
+    //     const intersectionObserver = new IntersectionObserver(entries => {
+    //       if (entries.some(entry => entry.isIntersecting)) {
+    //           console.log(intersectionObserver);
+    //           let cardsPhotos = document.querySelector('.qrcode-text');
+    //           cardsPhotos.classList.add("animationText");
+    //       }
+    //     }, options)
+    //     intersectionObserver.observe(document.querySelector('.qrcode-text'));
+    //     return () => intersectionObserver.disconnect();
+    //   }, []);
 
 
-
-
-
-
-    
-
-
-    
-    
     // window.addEventListener('scroll', ativaNoScroll);
   
     return (
@@ -379,30 +428,30 @@ export function Homepage(props) {
                     {/* <div className="lineTextCenter">
                         <LineText title="Relaxh" />
                     </div> */}
-                    <div className="contentContainer">
-                            <p className="sectionTitle">Moderno, Simples e Prático.</p>
-                            <img src={LogoRelaxh} className="logoRelaxh" />
+                    <div className="contentContainer" ref={introductionSectionRef}>
+                            <p className="sectionTitle" ref={sloganRef}>Moderno, Simples e Prático.</p>
+                            <img src={LogoRelaxh} className="logoRelaxh" ref={logoRef} />
                     </div>
                     <div className="bgLogo"></div>
 
                 </IntroductSection>
 
-                <HotelPhoto src={hotelPhoto} />     
+                <HotelPhoto src={hotelPhoto}/>     
 
                 <AboutUsSection>
-                        <div className="about-us-content">
-                            <h2 className="about-us-title">Quem Nós Somos?</h2>
-                            <p className="about-us-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  
+                        <div className="about-us-content" ref={aboutUsSectionRef}>
+                            <h2 className="about-us-title" ref={aboutUsTitleRef}>Quem Nós Somos?</h2>
+                            <p className="about-us-text" ref={aboutUsTextRef}>A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  
                             Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. 
                             Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
-                            <p className="about-us-detail">O paraíso é aqui.</p>
+                            <p className="about-us-detail" ref={aboutUsDetailRef}>O paraíso é aqui.</p>
                             <div className="about-us-line" />
                         </div>
 
                         <div className="leaves-about-us" />
                 </AboutUsSection>       
-                <CaribeSection>
-                    <div className="caribe-card">
+                <CaribeSection ref={caribeSectionRef}>
+                    <div className="caribe-card" ref={caribeCardRef}>
                         <div className="caribe-card-content">
                             <h2 className="caribe-card-title">Caribe</h2>
                             <p className="caribe-card-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
@@ -415,7 +464,7 @@ export function Homepage(props) {
                     
                     </div>
 
-                    <div className="caribe-photo">
+                    <div className="caribe-photo" ref={caribePhotoRef}>
 
                     </div>
                 </CaribeSection>
