@@ -27,6 +27,7 @@ export const ServicoLimpeza = styled.div`
     }
     .title {
         margin: 0px;
+        display: flex;
     }
     .dash {
         border-left: 2px solid white;
@@ -119,6 +120,26 @@ export const ServicoLimpeza = styled.div`
     .buttonCelphone {
         display: none;
     }
+    @media (max-width: 1250px) {
+    .title {
+        font-size: 30px;
+        justify-content: flex-start;
+    }
+    .dash {
+        padding: 20px;
+        margin-left: 45px;
+    }
+    .cleanerSpray {
+        width: 4vw;
+        height: 4vw;
+    }
+    }
+    @media (max-width: 900px) {
+    .cleanerSpray {
+        width: 6vw;
+        height: 5vw;
+    }
+    }
     @media (max-width: 768px) {
     .title {
         font-size: 30px;
@@ -127,8 +148,8 @@ export const ServicoLimpeza = styled.div`
         padding: 20px;
     }
     .cleanerSpray {
-        width: 90vw;
-        height: 9vw;
+        width: 9vw;
+        height: 6vw;
     }
     .leaves3Png {
         width: 10vw;
@@ -145,18 +166,30 @@ export const ServicoLimpeza = styled.div`
     }
     }
     @media (max-width: 607px) {
+    .title {
+        font-size: 30px;
+    }
     .dash {
         padding: 20px;
-        margin-left: 50px;
+        margin-left: 45px;
     }
     .cleanerSpray {
         width: 10vw;
-        height: 10vw;
+        height: 3vw;
     }
+    .Big-Container {
+        width: 100vw;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
     .texts {
-        width: 90vw;
-        justify-content: center;
+        width: 90%;
     }
+
     .buttonHeader {
         display: none;
     }
@@ -223,4 +256,50 @@ export const ServicoLimpeza = styled.div`
         height: 26vw;
     }
 }
+@media (max-width: 669px) {
+    .title {
+        width: 240px;
+        font-size: 30px;
+        justify-content: flex-start;
+    }
+    .dash {
+        padding: 20px;
+        margin-left: 45px;
+    }
+    .cleanerSpray {
+        width: 5vw;
+        height: 8vw;
+    }
+    .texts {
+        justify-content: center;
+    }
+    }
+    @media (max-width: 590px) {
+    .title {
+        width: 240px;
+        font-size: 30px;
+    }
+    .dash {
+        padding: 20px;
+        margin-left: 45px;
+    }
+    .cleanerSpray {
+        width: 14vw;
+        height: 9vw;
+    }
+    }
+    @media (max-width: 300px) {
+    .title {
+        width: 240px;
+        font-size: 20px;
+    }
+    .dash {
+        padding: 20px;
+        margin-left: 45px;
+    }
+    .cleanerSpray {
+        width: 20vw;
+        height: 10vw;
+    }
+    }
 `;
