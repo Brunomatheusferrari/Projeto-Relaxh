@@ -90,14 +90,13 @@ export function Limpeza(props) {
                     </div>
                 </div>
             </div>
-
-            <div className="buttonCelphone">
-                <LimpezaButton onClick={() => setIsModalVisible(true)}>
-                    <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário</a>
-                </LimpezaButton>
-            </div>
             
-            <div>
+            <div className="Big-Container">
+                <div className="buttonCelphone">
+                    <LimpezaButton onClick={() => setIsModalVisible(true)}>
+                        <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário</a>
+                    </LimpezaButton>
+                </div>
                 {
                     pedidos ?
                     pedidos.map(pedido => {
