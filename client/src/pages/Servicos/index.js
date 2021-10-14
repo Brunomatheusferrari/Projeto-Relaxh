@@ -13,28 +13,6 @@ import authServices from "../../services/authServices";
 
 export function Servicos() {
     
-    useEffect(() =>{
-
-        async function verifyUser(){
-            try {
-                const token = await authServices.getAccessToken()
-                const role = await authServices.getRoleFromAccessToken(token)
-
-                if(role === "guest"){
-                    window.location.replace("/")
-                }
-
-
-            } catch (error) {
-                console.log(error)
-            }
-        }
-
-        verifyUser()
-
-    },[])
-
-
     return(
         <ServicosContainer>
             <div className="leaves6"></div>

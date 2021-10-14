@@ -9,7 +9,12 @@ export function Pedido(props){
         <>  
             <div className="pedido-container">
                 <p className="nome">{nome}</p>
+                {quantidade === 0 ?
+                <p className="quantidade">1</p>
+                :
                 <p className="quantidade">{quantidade}</p>
+                }
+                
             </div>
         </>
     )
