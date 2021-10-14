@@ -93,6 +93,7 @@ export const LimpezaModal = styled.div`
         align-items: center;
         justify-content: space-around;
         background-color:  ${colors.lightGreen};
+        overflow-y: hidden;
     }
     .service {
         color: white;

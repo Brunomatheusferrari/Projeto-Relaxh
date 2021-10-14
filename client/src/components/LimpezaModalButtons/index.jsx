@@ -2,14 +2,14 @@ import React from "react";
 import { LimpezaServicoList } from "../LimpezaServicoList";
 import { Service } from "./Text";
 
-export class Counter extends React.Component {
+export function Counter(props) {
 
-    render() {
+
         return (
-            <LimpezaServicoList>
+            <LimpezaServicoList onChange={props.onChange}>
                 <div className="serviceList">
                     <div className="name">
-                        <Service name={this.props.name} />
+                        <Service name={props.name} />
                     </div>
                     <div className="input">
                         <input type="time"/>
@@ -17,6 +17,5 @@ export class Counter extends React.Component {
                 </div>
             </LimpezaServicoList>
         )
-    }
 }
     

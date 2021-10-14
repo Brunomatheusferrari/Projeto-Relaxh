@@ -15,9 +15,9 @@ export const AboutContainer = styled.div`
     .backButton {
         color: ${colors.lightWhite};
         font-size: 40px;
-        position: absolute;
-        top: 0;
-        left: 0;
+        position: relative;
+        top: -10%;
+        left: -10%;
         margin-top: 80px;
         margin-left: 100px;
     }
@@ -122,7 +122,7 @@ export const AboutContainer = styled.div`
     .contentAdjust {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        align-content: space-around;
         height: 100%;
     }
 
@@ -306,6 +306,10 @@ export const AboutContainer = styled.div`
         height: fit-content;
         position: relative;
 
+        .backButton{
+            left: -50%;
+        }
+
         .creatorsContainer {
             width: 100%;
             position: relative;
@@ -447,7 +451,31 @@ export const AboutContainer = styled.div`
             width: 20vw;
             height: 20vw;
         }
-        
+    }
+
+    @media(max-height: 860px){
+        .aboutContainerText{
+            height: 10%;
+        }
+
+        .aboutTitle{
+            font-size: 30px;
+        }
+
+        .leaves1{
+            display: none;
+        }
+
+        .aboutContent{
+            font-size: 15px;
+            width: auto;
+        }
+
+        .contentAdjust{
+            box-sizing: border-box;
+            height: 110%;
+            transform: scale(0.9);
+        }
     }
 
     @media (max-width: 850px) {
@@ -491,6 +519,10 @@ export const AboutContainer = styled.div`
     }
 
     @media (max-width: 470px) {
+        .backButton{
+            top: -0.5%;
+        }
+
         .aboutContainerText {
             width: 60vw;
             height: 55vh;

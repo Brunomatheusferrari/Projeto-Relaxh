@@ -22,7 +22,7 @@ async function getQuartoUser(){
         if(!quarto){
             throw new Error("Usuário não possui quartos")
         }
-    
+        
         return quarto
     } catch (error) {
         console.log(error)
@@ -32,7 +32,7 @@ async function getQuartoUser(){
 async function getPedidosUser(){
     try {
         const quarto = await getQuartoUser()
-    
+
         const pedidos = (await api.get("/service/getServicosUser", { params: {id: quarto.id}})).data
     
         return pedidos
@@ -49,9 +49,13 @@ async function getComida(id){
     }
 }
 
-async function postServico({id_quarto, tipo, comidas}){
+async function postServico({id_quarto, tipo, comidas, descricao, horario}){
+
+    console.log(id_quarto, tipo, comidas, descricao, horario)
     try {
-        const servico = await api.post("/service", {id_quarto, tipo, comidas})
+        const servico = await api.post("/service", {id_quarto, tipo, comidas, descricao, horario})
+        
+        return servico
     } catch (error) {
         console.log(error)
     }

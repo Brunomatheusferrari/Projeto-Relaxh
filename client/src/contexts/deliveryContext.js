@@ -17,7 +17,7 @@ function reducer(prevState, action) {
 
             prevState.comidas.forEach((comida, index) => {
                 if(comida.id === action.payload.comida.id){
-                    prevState.comidas[index].quantidade = action.payload.counter
+                    prevState.comidas[index].quantidade = action.payload.counter + 1
                 } 
             })
 
@@ -33,9 +33,22 @@ function reducer(prevState, action) {
             }   
 
         case "SUB_TOTAL":
+        
+            prevState.comidas.forEach((comida, index) => {
+                if(comida.id === action.payload.comida.id){
+                    prevState.comidas[index].quantidade = action.payload.counter
+                } 
+            })
+
+            let alredyexists = prevState.comidas.find(comida => comida.id === action.payload.comida.id)
+
+            if(!alredyexists){
+                prevState.comidas.push({...action.payload.comida, quantidade: action.payload.counter})
+            }
+
             return {
                 ...prevState,
-                total: prevState.total - action.payload
+                total: prevState.total - action.payload.preco
             }
 
         case "CLEAN":
@@ -54,7 +67,7 @@ export function DeliveryProvider({ children }) {
             const quarto = await serviceServices.getQuartoUser()
             await serviceServices.postServico({id_quarto: quarto.id,tipo: "Delivery", comidas: state.comidas})
             dispatch({type: "CLEAN"})
-            // return window.location.reload()
+            return window.location.reload()
         } catch (error) {
             console.log(error)
         }
@@ -63,9 +76,10 @@ export function DeliveryProvider({ children }) {
     const deliveryActions = {
         addTotal: (preco, comida, counter) => {
             dispatch({ type: "ADD_TOTAL", payload: { preco, comida, counter } });
+            console.log(state.comidas)
         },
-        subTotal: (preco) => {
-            dispatch({ type: "SUB_TOTAL", payload: preco });
+        subTotal: (preco, comida, counter) => {
+            dispatch({ type: "SUB_TOTAL", payload: { preco, comida, counter} });
         },
         postPedido: () => {
             console.log(state.comidas)
