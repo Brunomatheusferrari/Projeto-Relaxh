@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
-import leaves14 from "../../static/img/leaves14.png"
 
 export const ReserveSection = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
@@ -43,7 +42,7 @@ export const ReserveSection = styled.div`
     .leaves1 {
         width: 24vw;
         height: 22vw;
-        background-image: url(${leaves14});
+        background-image: url("https://i.imgur.com/iwyyrCK.png");
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
@@ -55,7 +54,7 @@ export const ReserveSection = styled.div`
     .leaves2 {
         width: 24vw;
         height: 22vw;
-        background-image: url(${leaves14});
+        background-image: url("https://i.imgur.com/iwyyrCK.png");
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;

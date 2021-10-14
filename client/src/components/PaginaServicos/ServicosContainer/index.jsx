@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import colors from "../../../themes/colors";
-import leaves6 from "../../../static/img/leaves3.png"
 
 
 export const ServicosContainer = styled.div`
@@ -43,7 +42,7 @@ export const ServicosContainer = styled.div`
     .leaves6 {
         width: 12vw;
         height: 12vw ;
-        background-image: url(${leaves6});
+        background-image: url("https://i.imgur.com/EyoFvc9.png");
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
@@ -56,7 +55,7 @@ export const ServicosContainer = styled.div`
     .leaves7 {
         width: 12vw;
         height: 12vw ;
-        background-image: url(${leaves6});
+        background-image: url("https://i.imgur.com/EyoFvc9.png");
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
@@ -70,7 +69,7 @@ export const ServicosContainer = styled.div`
     .leaves8 {
         width: 8vw;
         height: 8vw ;
-        background-image: url(${leaves6});
+        background-image: url("https://i.imgur.com/EyoFvc9.png");
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;

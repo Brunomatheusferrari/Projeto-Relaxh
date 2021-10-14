@@ -1,4 +1,3 @@
-import { animation } from "react-reveal/globals";
 import styled, { keyframes } from "styled-components";
 import colors from "../../themes/colors";
 

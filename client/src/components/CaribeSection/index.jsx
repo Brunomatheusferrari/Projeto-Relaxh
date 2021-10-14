@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import colors from "../../themes/colors";
-import caribePhoto from "../../static/img/caribePhoto.png"
 
 const animationCardRight = keyframes`
     from {

@@ -1,10 +1,5 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
-import Leaves3 from "../../static/img/leaves3.png";
-import leaves8 from "../../static/img/leaves8.png"
-import leaves10 from "../../static/img/leaves10.png"
-import hyperwTeam from "../../static/img/hyperwTeam.png";
-
 
 export const AboutContainer = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
@@ -68,7 +63,7 @@ export const AboutContainer = styled.div`
     .leaves1 {
         width: 10vw;
         height: 9.5vw;
-        background-image: url(${leaves10});
+        background-image: url("https://i.imgur.com/xYZfIx2.png");
         background-repeat: no-repeat;
         background-size: 100%;
         position: absolute;
@@ -83,7 +78,7 @@ export const AboutContainer = styled.div`
     .leaves2 {
         width: 10vw;
         height: 9.5vw;
-        background-image: url(${leaves10});
+        background-image: url("https://i.imgur.com/xYZfIx2.png");
         background-repeat: no-repeat;
         background-size: 100%;
         position: absolute;
@@ -134,7 +129,7 @@ export const AboutContainer = styled.div`
     .leavesPng {
         width: 32vw;
         height: 30vw;
-        background-image: url(${Leaves3});
+        background-image: url("https://i.imgur.com/EyoFvc9.png");
         background-repeat: no-repeat;
         background-size: 100%;
         position: relative;
@@ -149,7 +144,7 @@ export const AboutContainer = styled.div`
     .hyperwTeam {
         width: 10vw;
         height: 14vw;
-        background-image: url(${hyperwTeam});
+        background-image: url("https://i.imgur.com/9di6Kkr.png");
         background-repeat: no-repeat;
         background-size: 100%;
         /* order: -1; */
@@ -219,7 +214,7 @@ export const AboutContainer = styled.div`
 
     .card-leaves {
         position: absolute;
-        background-image: url(${leaves8});
+        background-image: url("https://i.imgur.com/fwFeMRz.png");
         background-size: cover;
         background-repeat: no-repeat;
         width: 2vw;
@@ -230,7 +225,7 @@ export const AboutContainer = styled.div`
 
     .card-leaves-2 {
         position: absolute;
-        background-image: url(${leaves8});
+        background-image: url("https://i.imgur.com/fwFeMRz.png");
         background-size: cover;
         background-repeat: no-repeat;
         width: 2vw;

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
-import premiumRoom from "../../static/img/premiumRoom.png";
 
 export const RoomsSection = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
@@ -10,7 +9,7 @@ export const RoomsSection = styled.div`
     .rooms-background {
         width: 100vw;
         height: 100vh;
-        background-image: url(${premiumRoom});
+        background-image: url("https://imgur.com/CeQek88");
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;

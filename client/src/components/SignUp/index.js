@@ -1,5 +1,4 @@
 import React from "react"
-import ImageSignUp from "../../static/img/SingUpPage.png"
 import { useState } from "react"
 import { Reserva } from "./components/Reserva"
 import { Cadastro } from "./components/Cadastro"
@@ -15,7 +14,7 @@ export function SignUp() {
 
   return (
     <div className="container-principal">
-      <img src={ImageSignUp} className="img-header" />
+      <img src="https://i.imgur.com/L2HdO40.png" className="img-header" />
       <div className="container-sub">
         <div className="container-buttons">
           <div className="div-button">
