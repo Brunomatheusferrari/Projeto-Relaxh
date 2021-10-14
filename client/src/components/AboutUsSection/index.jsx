@@ -1,7 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import colors from "../../themes/colors";
-import leavesAbout from "../../static/img/leaves11.png"
-
 
 const fadeIn = keyframes`
     from {
@@ -88,7 +86,7 @@ export const AboutUsSection = styled.div`
         width: 12vw;
         height: 20vw;
         position: absolute;
-        background-image: url(${leavesAbout});
+        background-image: url("https://i.imgur.com/dzUbdxl.png");
         background-size: cover;
         background-repeat: no-repeat;
         left: 12%;

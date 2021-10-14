@@ -1,7 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import colors from "../../themes/colors";
-import leaves12 from "../../static/img/leaves12.png"
-import leaves13 from "../../static/img/leaves13.png"
 
 const fadeIn = keyframes`
     from {
@@ -77,7 +75,7 @@ export const QrCodeSection = styled.div`
     .qrcode-leaves1 {
         width: 40vw;
         height: 40vw;
-        background-image: url(${leaves12});
+        background-image: url("https://i.imgur.com/witnuL1.png");
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
@@ -88,7 +86,7 @@ export const QrCodeSection = styled.div`
     .qrcode-leaves2 {
         width: 40vw;
         height: 40vw;
-        background-image: url(${leaves13});
+        background-image: url("https://i.imgur.com/sA4w4mU.png");
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;

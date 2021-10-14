@@ -1,9 +1,5 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
-import leaves8 from "../../static/img/leaves8.png";
-import leaves9 from "../../static/img/leaves9.png";
-import cleanerSpray from "../../static/img/cleanerSpray.png";
-
 
 export const ServicoLimpeza = styled.div`
 @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
@@ -27,6 +23,7 @@ export const ServicoLimpeza = styled.div`
     }
     .title {
         margin: 0px;
+        display: flex;
     }
     .dash {
         border-left: 2px solid white;
@@ -36,7 +33,7 @@ export const ServicoLimpeza = styled.div`
     .cleanerSpray {
         width: 3vw;
         height: 3vw;
-        background-image: url(${cleanerSpray});
+        background-image: url("https://i.imgur.com/4HdoMuR.png");
         background-repeat: no-repeat;
         background-size: 100%;
         
@@ -63,7 +60,7 @@ export const ServicoLimpeza = styled.div`
         height: 8vw;
         filter: brightness(60%);
         transform: rotate(180deg);
-        background-image: url(${leaves8});
+        background-image: url("https://i.imgur.com/fwFeMRz.png");
         background-repeat: no-repeat;
         background-size: 100%;
         position: absolute;
@@ -75,7 +72,7 @@ export const ServicoLimpeza = styled.div`
         height: 12vw;
         filter: brightness(60%);
         transform: rotate(125deg);
-        background-image: url(${leaves9});
+        background-image: url("https://i.imgur.com/YJBmYS3.png");
         background-repeat: no-repeat;
         background-size: 100%;
         position: absolute;
@@ -86,7 +83,7 @@ export const ServicoLimpeza = styled.div`
         height: 6vw;
         filter: brightness(60%);
         transform: rotate(125deg);
-        background-image: url(${leaves9});
+        background-image: url("https://i.imgur.com/YJBmYS3.png");
         background-repeat: no-repeat;
         background-size: 100%;
         position: absolute;
@@ -104,7 +101,7 @@ export const ServicoLimpeza = styled.div`
     .leavesPng {
         width: 12vw;
         height: 18vw;
-        background-image: url(${leaves8});
+        background-image: url("https://i.imgur.com/fwFeMRz.png");
         background-repeat: no-repeat;
         background-size: 100%;
     }
@@ -112,12 +109,32 @@ export const ServicoLimpeza = styled.div`
         width: 13vw;
         height: 18vw;
         filter: brightness(160%);
-        background-image: url(${leaves9});
+        background-image: url("https://i.imgur.com/YJBmYS3.png");
         background-repeat: no-repeat;
         background-size: 100%;
     }
     .buttonCelphone {
         display: none;
+    }
+    @media (max-width: 1250px) {
+    .title {
+        font-size: 30px;
+        justify-content: flex-start;
+    }
+    .dash {
+        padding: 20px;
+        margin-left: 45px;
+    }
+    .cleanerSpray {
+        width: 4vw;
+        height: 4vw;
+    }
+    }
+    @media (max-width: 900px) {
+    .cleanerSpray {
+        width: 6vw;
+        height: 5vw;
+    }
     }
     @media (max-width: 768px) {
     .title {
@@ -127,8 +144,8 @@ export const ServicoLimpeza = styled.div`
         padding: 20px;
     }
     .cleanerSpray {
-        width: 90vw;
-        height: 9vw;
+        width: 9vw;
+        height: 6vw;
     }
     .leaves3Png {
         width: 10vw;
@@ -145,18 +162,30 @@ export const ServicoLimpeza = styled.div`
     }
     }
     @media (max-width: 607px) {
+    .title {
+        font-size: 30px;
+    }
     .dash {
         padding: 20px;
-        margin-left: 50px;
+        margin-left: 45px;
     }
     .cleanerSpray {
         width: 10vw;
-        height: 10vw;
+        height: 3vw;
     }
+    .Big-Container {
+        width: 100vw;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
     .texts {
-        width: 90vw;
-        justify-content: center;
+        width: 90%;
     }
+
     .buttonHeader {
         display: none;
     }
@@ -223,4 +252,50 @@ export const ServicoLimpeza = styled.div`
         height: 26vw;
     }
 }
+@media (max-width: 669px) {
+    .title {
+        width: 240px;
+        font-size: 30px;
+        justify-content: flex-start;
+    }
+    .dash {
+        padding: 20px;
+        margin-left: 45px;
+    }
+    .cleanerSpray {
+        width: 5vw;
+        height: 8vw;
+    }
+    .texts {
+        justify-content: center;
+    }
+    }
+    @media (max-width: 590px) {
+    .title {
+        width: 240px;
+        font-size: 30px;
+    }
+    .dash {
+        padding: 20px;
+        margin-left: 45px;
+    }
+    .cleanerSpray {
+        width: 14vw;
+        height: 9vw;
+    }
+    }
+    @media (max-width: 300px) {
+    .title {
+        width: 240px;
+        font-size: 20px;
+    }
+    .dash {
+        padding: 20px;
+        margin-left: 45px;
+    }
+    .cleanerSpray {
+        width: 20vw;
+        height: 10vw;
+    }
+    }
 `;

@@ -1,15 +1,10 @@
 import React from "react"
 import { useState } from "react"
 import { useRegister } from "../../../../contexts/registerContext"
-import { DateInput } from "../../../DateInput"
 import { ButtonSub } from "../ButtonSub/index"
 import { useForm } from "react-hook-form";
-import { DateInputReserve } from "../../../DateInputReserve"
-
-
 import "./styles.css"
 import NumberInput from "../../../NumberInput"
-import { SelectInputReserve } from "../../../SelectInputReserve"
 import DateInputCadastro from "../../../DateInputCadastro"
 import { SelectInputCadastro } from "../../../SelectInputCadastro"
 

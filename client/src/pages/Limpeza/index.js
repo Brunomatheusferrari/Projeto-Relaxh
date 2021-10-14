@@ -84,14 +84,13 @@ export function Limpeza(props) {
                     </div>
                 </div>
             </div>
-
-            <div className="buttonCelphone">
-                <LimpezaButton onClick={() => setIsModalVisible(true)}>
-                    <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário</a>
-                </LimpezaButton>
-            </div>
-            
-            <div className="container">
+            <div className="Big-Container">
+                <div className="buttonCelphone">
+                    <LimpezaButton onClick={() => setIsModalVisible(true)}>
+                        <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário</a>
+                    </LimpezaButton>
+                </div>
+                <div className="container">
                     {
                         pedidos ?
                             pedidos.map((pedido, index) => (
@@ -113,7 +112,7 @@ export function Limpeza(props) {
                             <p>Não Há Pedidos</p>
                     }
                 </div>
-
+            </div>
             <div className="leaves">
                 <div className="leaves2Adjust">
                     <div className="leaves2Png"></div>

@@ -1,10 +1,8 @@
 import React, { useEffect } from "react"
 import { useRegister } from "../../../../contexts/registerContext"
-import { InputPrincipal } from "../../../InputPrincipal/index"
 import { ButtonSub } from "../ButtonSub/index"
 import authServices from "../../../../services/authServices"
 import { useForm } from "react-hook-form";
-
 import "./styles.css"
 import InputCadastro from "../../../InputCadastro"
 

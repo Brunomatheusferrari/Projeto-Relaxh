@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
-import leaves2 from "../../static/img/leaves2.png"
 
 export const ContatoContainer = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
@@ -52,7 +51,7 @@ export const ContatoContainer = styled.div`
     .leaves {
         width: 35vw;
         height: 37vw;
-        background-image: url(${leaves2});
+        background-image: url("https://i.imgur.com/rF8uc9Q.png");
         background-repeat: no-repeat;
         background-size: 100%;
         display: flex;
@@ -66,7 +65,7 @@ export const ContatoContainer = styled.div`
     .leaves2 {
         width: 30vw;
         height: 32vw;
-        background-image: url(${leaves2});
+        background-image: url("https://i.imgur.com/rF8uc9Q.png");
         background-repeat: no-repeat;
         background-size: 100%;
         display: flex;
