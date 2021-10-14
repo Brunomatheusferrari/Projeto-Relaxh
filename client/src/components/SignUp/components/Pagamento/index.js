@@ -1,10 +1,7 @@
 import React, { useEffect } from "react"
-import { DateInput } from "../../../DateInput"
-import { InputPrincipal } from "../../../InputPrincipal/index"
 import { ButtonSub } from "../ButtonSub/index"
 import { useRegister } from "../../../../contexts/registerContext"
 import { useForm } from "react-hook-form";
-
 import "./styles.css"
 import NumberInput from "../../../NumberInput"
 import InputCadastro from "../../../InputCadastro"

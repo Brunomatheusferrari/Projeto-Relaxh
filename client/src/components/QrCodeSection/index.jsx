@@ -1,7 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import colors from "../../themes/colors";
-import leaves12 from "../../static/img/leaves12.png"
-import leaves13 from "../../static/img/leaves13.png"
 
 const fadeIn = keyframes`
     from {

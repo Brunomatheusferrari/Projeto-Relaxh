@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
-import leaves14 from "../../static/img/leaves14.png"
 
 export const ReserveSection = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');

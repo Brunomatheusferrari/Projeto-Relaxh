@@ -1,8 +1,6 @@
 import React from "react";
 import { InputPrincipal } from "../../components/InputPrincipal";
-import { LoginButton } from "../../components/LoginButton";
 import { LoginContainer } from "../../components/LoginContainer";
-import perfilPhoto from "../../static/img/perfilPhoto.png";
 import { Link } from "react-router-dom";
 import { SubmitButton } from "../../components/SubmitButton";
 import { FiArrowLeft } from "react-icons/fi";

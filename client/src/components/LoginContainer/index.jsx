@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
-import Leaves1 from "../../static/img/leaves1.png"
  
 
 export const LoginContainer = styled.div`

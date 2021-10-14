@@ -149,7 +149,7 @@ export function Homepage(props) {
             }            
         });
 
-        if (sloganRef.current) introductionSectionObserver.observe(introductionSectionRef.current);
+        if (introductionSectionRef.current) introductionSectionObserver.observe(introductionSectionRef.current);
 
         const aboutUsSectionObserver = new IntersectionObserver(entries => {
             const [entry] = entries;
@@ -161,7 +161,7 @@ export function Homepage(props) {
             }
         });
 
-        if(aboutUsTitleRef.current) aboutUsSectionObserver.observe(aboutUsSectionRef.current);
+        if(aboutUsSectionRef.current) aboutUsSectionObserver.observe(aboutUsSectionRef.current);
 
         
         const caribeSectionObserver = new IntersectionObserver(entries => {
@@ -173,7 +173,7 @@ export function Homepage(props) {
             }
         });
 
-        if(caribePhotoRef.current) caribeSectionObserver.observe(caribeSectionRef.current);
+        if(caribeSectionRef.current) caribeSectionObserver.observe(caribeSectionRef.current);
 
         const cardsSectionObserver = new IntersectionObserver(entries => {
             const [entry] = entries;
@@ -184,7 +184,7 @@ export function Homepage(props) {
             }
         });
 
-        if(cardRef.current) cardsSectionObserver.observe(cardsSectionRef.current);
+        if(cardsSectionRef.current) cardsSectionObserver.observe(cardsSectionRef.current);
 
         const cardsSectionObserver2 = new IntersectionObserver(entries => {
             const [entry] = entries;
@@ -195,7 +195,7 @@ export function Homepage(props) {
             }
         });
 
-        if(cardRef2.current) cardsSectionObserver2.observe(cardsSectionRef2.current);
+        if(cardsSectionRef2.current) cardsSectionObserver2.observe(cardsSectionRef2.current);
 
         const cardsSectionObserver3 = new IntersectionObserver(entries => {
             const [entry] = entries;
@@ -206,7 +206,7 @@ export function Homepage(props) {
             }
         });
 
-        if(cardRef3.current) cardsSectionObserver3.observe(cardsSectionRef3.current);
+        if(cardsSectionRef3.current) cardsSectionObserver3.observe(cardsSectionRef3.current);
 
         const qrCodeSectionObserver = new IntersectionObserver(entries => {
             const [entry] = entries;
@@ -221,13 +221,13 @@ export function Homepage(props) {
 
 
         return () => {
-            introductionSectionObserver.unobserve(introductionSectionRef.current); 
-            aboutUsSectionObserver.unobserve(aboutUsSectionRef.current);
-            caribeSectionObserver.unobserve(caribeSectionRef.current);
-            cardsSectionObserver.unobserve(cardPhotoRef.current);
-            cardsSectionObserver2.unobserve(cardPhotoRef2.current);
-            cardsSectionObserver3.unobserve(cardPhotoRef3.current);
-            qrCodeSectionObserver.unobserve(qrCodeTitleRef.current);
+            if (introductionSectionRef.current) introductionSectionObserver.unobserve(introductionSectionRef.current); 
+            if (aboutUsSectionRef.current) aboutUsSectionObserver.unobserve(aboutUsSectionRef.current);
+            if (caribeSectionRef.current) caribeSectionObserver.unobserve(caribeSectionRef.current);
+            if (cardsSectionRef.current) cardsSectionObserver.unobserve(cardsSectionRef.current);
+            if (cardsSectionRef3.current) cardsSectionObserver2.unobserve(cardsSectionRef3.current);
+            if (cardsSectionRef3.current) cardsSectionObserver3.unobserve(cardsSectionRef3.current);
+            if (qrCodeSectionRef.current) qrCodeSectionObserver.unobserve(qrCodeSectionRef.current);
         }
     }, []);
   
@@ -306,9 +306,10 @@ export function Homepage(props) {
                 <AboutUsSection>
                         <div className="about-us-content" ref={aboutUsSectionRef}>
                             <h2 className="about-us-title" ref={aboutUsTitleRef}>Quem Nós Somos?</h2>
-                            <p className="about-us-text" ref={aboutUsTextRef}>A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  
-                            Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. 
-                            Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
+                            <p className="about-us-text" ref={aboutUsTextRef}>Fundado em 2021, o hotel Relaxh conta com
+                            uma equipe profissionalizada e pronta para atender as mais diversas necessidades do nosso
+                            cliente. Nossa missão é fazer com que você e sua família tenham uma estadia digna de ficar
+                            gravada em sua memória, com que cada momento de permanência no hotel seja especial.</p>
                             <p className="about-us-detail" ref={aboutUsDetailRef}>O paraíso é aqui.</p>
                             <div className="about-us-line" />
                         </div>
@@ -319,7 +320,9 @@ export function Homepage(props) {
                     <div className="caribe-card" ref={caribeCardRef}>
                         <div className="caribe-card-content">
                             <h2 className="caribe-card-title">Caribe</h2>
-                            <p className="caribe-card-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
+                            <p className="caribe-card-text"> O Caribe é considerado por muitos, um pedaço do paraíso na Terra. Sua fauna e flora bem conservada
+                             e povo acolhedor faz com que os sonhos de muitas pessoas sejam presenciar a beleza deste local. Esta maravilha natural fará
+                            com que todo o seu estresse, tensão e preocupações, sejam levados junto com a calma brisa do mar.</p>
                             <div className="text-line">
                                 <div className="line"></div>
                                 <p className="text">Relaxh</p>
@@ -344,7 +347,10 @@ export function Homepage(props) {
                             <div className="card-container">
                                 <h2 className="card-title">Gastronomia</h2>
                                 <div className="card-white-line"></div>
-                                <p className="card-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
+                                <p className="card-text">Ambiente preparado, com chefs especializados e devidamente 
+                                treinados para oferecer uma grande diversidade de sabores para nosso cliente. Com os 
+                                mais diversos pratos, como por exemplo, os deliciosos pratos confeccionados com os
+                                 frutos do mar locais.</p>
                             </div>
                         </div>
                         <img src="https://i.imgur.com/1FeyaHg.jpg" className="card-photo" ref={cardPhotoRef}/>
@@ -360,7 +366,7 @@ export function Homepage(props) {
                             <div className="card-container">
                                 <h2 className="card-title">Serviços</h2>
                                 <div className="card-white-line"></div>
-                                <p className="card-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
+                                <p className="card-text">Com um ambiente digital feito especialmente para você ter todos os serviços disponibilizados 24 horas pelo hotel na ponta de seu dedo. Podendo-se pedir os mais diversos tipos de comida, ou até mesmo, agendar uma limpeza em seu quarto, fazendo você se sentir em casa.</p>
                             </div>
                         </div>
                         <img src="https://i.imgur.com/b0dZKvZ.jpg" className="card-photo-2" ref={cardPhotoRef2} />
@@ -376,7 +382,7 @@ export function Homepage(props) {
                             <div className="card-container">
                                 <h2 className="card-title">Conforto</h2>
                                 <div className="card-white-line"></div>
-                                <p className="card-text">A ilhas do Caribe são considerados por muitos um dos lugares mais bonitos do mundo.  Com suas lindas águas cristalina e prais magníficas. Isso faz com que seus problemas se percam em meio a tanta beleza. Esperamos que goste da brisa do mar e das lindas noites estreladas.</p>
+                                <p className="card-text">Feito com grandes e espaçosos quartos, o hotel Relaxh oferece a você um dos mais aconchegantes locais para sua estadia. Possui sala de estar, cozinha integrada aos quartos, em um banheiro com uma luxuosa banheira de hidromassagem.</p>
                             </div>
                         </div>
                         <img src="https://i.imgur.com/iuycRay.png" className="card-photo-3" ref={cardPhotoRef3}  />
@@ -392,7 +398,7 @@ export function Homepage(props) {
                     </div>
                     <div className="qrcode-content-container" ref={qrCodeSectionRef}>
                         <h2 className="qrcode-title" ref={qrCodeTitleRef}>Qr Code Check In</h2>
-                        <p className="qrcode-text" ref={qrCodeTextRef}>  Contruido em 2021 com o objetivo de ser simples, moderno e prático, levando o melhor das lindas praias do caribe com uma preço acessível. Com diversos serviços de facil acesso como por exemplo, delivery de comida e agendamento de limpeza de quarto. Também contamos com a nova tecnologia de check-in por qr code, o que facilita a entrada e saída do hotel.</p>
+                        <p className="qrcode-text" ref={qrCodeTextRef}>  Apresentamos a você nossa nova tecnologia de Check-in e Checkout com o uso do Qr-Code, fazendo com que em questão de minutos, você já esteja no conforto do seu quarto. Assim que a reserva for concluída, o cliente receberá o Qr-code em seu email, que ao chegar no hotel será lido na recepção. E Pronto! A praticidade e agilidade que essa tecnologia nos proporciona é algo sem igual.</p>
                     </div>
                     <div className="qrcode-leaves2" />
                 </QrCodeSection>

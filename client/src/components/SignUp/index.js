@@ -1,5 +1,4 @@
 import React from "react"
-import ImageSignUp from "../../static/img/SingUpPage.png"
 import { useState } from "react"
 import { Reserva } from "./components/Reserva"
 import { Cadastro } from "./components/Cadastro"

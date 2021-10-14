@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
-import leaves10 from "../../static/img/leaves10.png";
 import { keyframes } from "styled-components";
 
 const openLeft = keyframes`

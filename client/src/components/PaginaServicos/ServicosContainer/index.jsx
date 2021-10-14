@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import colors from "../../../themes/colors";
-import leaves6 from "../../../static/img/leaves3.png"
 
 
 export const ServicosContainer = styled.div`
