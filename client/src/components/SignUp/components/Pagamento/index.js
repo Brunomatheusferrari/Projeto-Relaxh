@@ -25,7 +25,7 @@ export function Pagamento({next}) {
             try {
                 const quarto = await serviceServices.getQuartoUser()
 
-                if(quarto){
+                if(quarto != undefined){
                     alert("Você já poossui uma reserva")
                     window.location.replace("/")
                 }
@@ -37,12 +37,11 @@ export function Pagamento({next}) {
 
         getQuartoUser()
 
-    })
+    },[])
 
     async function onSubmit() {
         try {
             await createReserva()
-            authServices.refreshToken()
             alert("Criado....Verifique sua caixa de email")
             
             window.location.replace("/")   
