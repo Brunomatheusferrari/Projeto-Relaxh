@@ -4,7 +4,7 @@ const { Servico, Quarto, Comida, Usuario, Reserva, Comida_Servico} = require("..
 async function register(serviceInfo){
     const {comidas, tipo, horario, descricao, id_quarto} = serviceInfo
 
-    const idComidas = comidas.map(comida => comida.id)    
+    // const idComidas = comidas.map(comida => comida.id)    
 
     const servico = await Servico.create({
         tipo,
@@ -12,6 +12,10 @@ async function register(serviceInfo){
         descricao,
         id_quarto,
     })
+
+    if(!comidas){
+        return  servico
+    }
 
     const vetorServicos = comidas.map(comida => ({id_comida: comida.id, id_servico: servico.id,quantidade: comida.quantidade}))
 
@@ -64,7 +68,7 @@ async function getQuartoFromUser({id}){
 
         const reserva = await Reserva.findOne({
             where: {
-                id_usuario: user.id
+                id_usuario: user.dataValues.id
             }
         })
 
@@ -72,11 +76,13 @@ async function getQuartoFromUser({id}){
             throw new Error("Reserva com este usuário não encontrada")
         }
 
-        return await Quarto.findOne({
+        const quarto = await Quarto.findOne({
             where: {
                 id: reserva.id_quarto
             }
         })
+
+        return quarto
     } catch (error) {
         console.log(error)
     }

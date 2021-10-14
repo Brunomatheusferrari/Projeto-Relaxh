@@ -72,12 +72,12 @@ export function Delivery(props) {
                     </div>
                 </div>
             </div>
-            <div className="buttonCelphone">
-                <DeliveryButton onClick={() => setIsModalVisible(true)}>
-                    <a label="Delivery" className="deliveryButtonStyle">Fazer Pedido +</a>
-                </DeliveryButton>
-            </div>
             <div className="big-container">
+                <div className="buttonCelphone">
+                    <DeliveryButton onClick={() => setIsModalVisible(true)}>
+                        <a label="Delivery" className="deliveryButtonStyle">Fazer Pedido +</a>
+                    </DeliveryButton>
+                </div>
                 <div className="leaves">
                     <div className="leaves2Adjust">
                         <div className="leaves2Png"></div>

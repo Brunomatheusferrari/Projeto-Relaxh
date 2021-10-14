@@ -22,12 +22,16 @@ const fadeIn = keyframes`
         -webkit-transform: scale(0.9);
             transform: scale(0.9);
             opacity: 0;
+            -webkit-transform: translateY(100px);
+            transform: translateY(100px);
     }
 
     to {
         -webkit-transform: scale(1.0);
             transform: scale(1.0);
             opacity: 100%;
+            -webkit-transform: translateY(0px);
+            transform: translateY(0px);
     }
 `;
 
@@ -44,6 +48,7 @@ export const IntroductSection = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
+
 
     .sectionTitle {
         width: 35%;
@@ -66,6 +71,7 @@ export const IntroductSection = styled.div`
         top : 70px;
         height: fit-content;
         top: 0;
+        transform-style: inherit; 
     }
 
     .logoRelaxh {

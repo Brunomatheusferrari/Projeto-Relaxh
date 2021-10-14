@@ -62,7 +62,7 @@ export const CaribeSection = styled.div`
     .caribe-photo {
         width: 75%;
         height: 100%;
-        background-image: url(${caribePhoto});
+        background-image: url("https://i.imgur.com/qB2kiEC.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position-y: 0px;

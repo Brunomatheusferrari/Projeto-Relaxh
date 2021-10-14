@@ -31,6 +31,9 @@ export const Routes = () => {
                 <DeliveryProvider>
                     <Route component = { Delivery } path="/serviços-delivery" />
                 </DeliveryProvider>
+                <PrivateRoute path="/admin-select" permissions={["admin"]}>
+                    <AdmWay/>
+                </PrivateRoute>
                 <PrivateRoute path="/admin-delivery" permissions={["admin"]}>
                     <AdminDelivery/>
                 </PrivateRoute>
