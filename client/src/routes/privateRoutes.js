@@ -11,7 +11,7 @@ export function PrivateRoute({ children, permissions, ...rest }) {
 	if (accessToken) {
 		userRole = authServices.getRoleFromAccessToken(accessToken);				
 	}	
-		
+
 	return (
 		<Route
 		  {...rest}

@@ -5,9 +5,6 @@ import { DivPedido } from "../../components/AdminDContainer/DivPedido";
 import userServices from "../../services/userServices";
 
 export function AdminDelivery({userRole}) {
-    if (!userRole === "admin") {
-      return window.location.replace("/")
-    }
 
     async function getServicos(){
       try {

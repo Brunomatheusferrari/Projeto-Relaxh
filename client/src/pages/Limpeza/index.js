@@ -11,13 +11,15 @@ export function Limpeza(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [horario, setHorario] = useState(null);
     const [descricao, setDescricao] = useState("");
-    const [pedidos, setPedidos] = useState(null)
+    const [pedidos, setPedidos] = useState([])
 
     useEffect(() => {   
         async function getPedidos(){
             try {
           
                 const pedidosUser = await serviceServices.getPedidosUser()
+
+                console.log(pedidosUser)
     
                 setPedidos(pedidosUser)
               
@@ -27,7 +29,7 @@ export function Limpeza(props) {
         }
 
         getPedidos()
-    })
+    },[])
 
     async function onSubmit(descricao, horario){
         setIsModalVisible(false)
@@ -37,14 +39,6 @@ export function Limpeza(props) {
         var dt = new Date();
         dt.setHours(hora[0])
         dt.setMinutes(hora[1])
-
-        function toTimestamp(dt){
-            var datum = Date.parse(dt);
-            return datum/1000;
-         }
-
-         const newDate = toTimestamp( dt )
-         console.log(newDate)
         
         try {
             const quarto = await serviceServices.getQuartoUser()
@@ -90,23 +84,35 @@ export function Limpeza(props) {
                     </div>
                 </div>
             </div>
-            
             <div className="Big-Container">
                 <div className="buttonCelphone">
                     <LimpezaButton onClick={() => setIsModalVisible(true)}>
                         <a label="Limpeza" className="LimpezaButtonStyle">Agendar horário</a>
                     </LimpezaButton>
                 </div>
-                {
-                    pedidos ?
-                    pedidos.map(pedido => {
-                        <p>{pedido}</p>
-                    })
-                    : 
-                    <p>Não Há Pedidos</p>
-                }
+                <div className="container">
+                    {
+                        pedidos ?
+                            pedidos.map((pedido, index) => (
+                                <>
+                                    {
+                                        pedido.tipo === "Limpeza" &&
+                                        <div className="container-header">
+                                            <p className="pedido-title">Pedido: {index}</p>
+                                            <div className="mini-header">
+                                                <p>Limpeza</p>
+                                            </div>
+                                            <div className="container-body">
+                                    <p key={pedido.id} >{pedido.descricao}, {pedido.horario}</p>
+                                            </div>
+                                        </div>  
+                                    }
+                                </>
+                            )) :
+                            <p>Não Há Pedidos</p>
+                    }
+                </div>
             </div>
-
             <div className="leaves">
                 <div className="leaves2Adjust">
                     <div className="leaves2Png"></div>
