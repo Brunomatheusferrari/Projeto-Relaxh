@@ -103,9 +103,15 @@ export const AboutUsSection = styled.div`
     }
 
     @media (max-width: 700px) {
+        height: 70vh;
+     
+        .about-us-text {
+            width: 79%;
+        }
+
         .about-us-line {
-            bottom: 16%;
-            width: 37%;
+            bottom: 23%;
+            width: 20%;
         }
     }
     
