@@ -11,7 +11,7 @@ h1{
     margin-bottom: 10px;
 }
 
-.leaves1 {
+.leaves1-2 {
     position: absolute;
     width: 20vw;
     height: 25vw;
@@ -36,6 +36,8 @@ h1{
     background-color: #2F3E46;
     width: 100%;
     height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .container-buttons{
@@ -82,19 +84,71 @@ h1{
     top: 10px;
 }
 
+.leaves1-2 {
+    width: 12vw;
+    height: 18vw;
+    background-image: url("https://i.imgur.com/fwFeMRz.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 3%;
+    left: 0%;
+    transform: rotate(-290deg);
+    opacity: 40%;
+    z-index: 0;
+}
+
+.leaves2-2 {
+    width: 12vw;
+    height: 18vw;
+    background-image: url("https://i.imgur.com/fwFeMRz.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 3%;
+    right: 1%;
+    transform: rotate(240deg);
+    opacity: 40%;
+    z-index: 0;
+}
 
 
 
 @media (max-width: 1400px) {
     .header {
         top: 0;
-        height: 100vh;
+        height: 140vh;
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+
+    .input-capsule {
+        height: fit-content;
+    }
+
+    .info {
+        display: flex;
+        align-items: center;
+    }
+
+    .container-sub {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .title {
         position: relative;
         top: -5%;
         font-size: 35px;
+    }
+
+    .input-container {
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .input-capsule {
@@ -143,9 +197,19 @@ h1{
     }
 }
 
-@media (max-width: 600px){
+@media (max-width: 650px){
     .container-buttons{
         transform: scale(0.7);
+    }
+
+    .leaves1-2 {
+        width: 20vw;
+        height: 26vw;
+    }
+
+    .leaves2-2 {
+        width: 20vw;
+        height: 26vw;
     }
 
     .title {

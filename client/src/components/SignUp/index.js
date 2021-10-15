@@ -17,21 +17,21 @@ export function SignUp() {
       <img src="https://i.imgur.com/L2HdO40.png" className="img-header" />
       <div className="container-sub">
         <div className="container-buttons">
-          <div className="div-button">
+          <div className="div-button" onClick={() => setIndex("reserva")}>
             <p>Reserva</p>
-            <button className="button-header" onClick={() => setIndex("reserva")}></button>
+            <button className="button-header"></button>
           </div>
-          <div className="div-button">
+          <div className="div-button" onClick={() => setIndex("cadastro")}>
             <p>Cadastro</p>
-            <button className="button-header" onClick={() => setIndex("cadastro")}></button>
+            <button className="button-header"></button>
           </div>
-          <div className="div-button">
+          <div className="div-button" onClick={() => setIndex("info")}>
             <p>Informações</p>
-            <button className="button-header" onClick={() => setIndex("info")}></button>
+            <button className="button-header"></button>
           </div>
-          <div className="div-button">
+          <div className="div-button" onClick={() => setIndex("pagamento")}>
             <p>Pagamento</p>
-            <button className="button-header" onClick={() => setIndex("pagamento")}></button>
+            <button className="button-header"></button>
           </div>
         </div>
           <RegisterProvider>
@@ -52,6 +52,8 @@ export function SignUp() {
               <Pagamento next={() => setIndex("reserva")}/>
             }
           </RegisterProvider>
+          <div className="leaves1-2" />
+          <div className="leaves2-2" />
       </div>
     </div>
   )
