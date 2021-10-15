@@ -22,8 +22,8 @@ async function createUser(nome,email,password){
 
 async function getServicos(){
     try {   
-        const res = await api.get("/service/getAll").data;
-        
+        const res = await api.get("/service/getAll");
+
         return res
     } catch (err) {
         throw new Error(err);

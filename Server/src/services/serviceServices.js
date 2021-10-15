@@ -23,7 +23,8 @@ async function register(serviceInfo){
 }
 
 async function getAll(){
-    return await Servico.findAll()
+    const servicos = await Servico.findAll() 
+    return servicos
 }
 
 async function deleteService({id}){
