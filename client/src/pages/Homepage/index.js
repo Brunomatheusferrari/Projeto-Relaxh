@@ -19,6 +19,7 @@ import { ReserveSection } from "../../components/ReserveSection";
 import { DateInputReserve } from "../../components/DateInputReserve";
 import { SelectInputReserve } from "../../components/SelectInputReserve";
 import { SecondNavbar } from "../../components/SecondNavbar/index";
+import { RegisterProvider, useRegister } from "../../contexts/registerContext"
 import './styles.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -473,60 +474,62 @@ export function Homepage(props) {
                     </div> */}
                 </RoomsSection>
 
-                <ReserveSection>
-                    <div className="reserve-white-line-1" />
-                    <div className="leaves1" />
-                    <div className="reserve-content-container">
-                        <h2 className="reserve-title">Fazer <strong>Reserva</strong></h2>
-                        <div className="reserve-inputs">
-                            <div className="input-container">
-                                <p className="input-title">Data de Entrada</p>
-                                <DateInputReserve type="date" />
+                <RegisterProvider>
+                    <ReserveSection>
+                        <div className="reserve-white-line-1" />
+                        <div className="leaves1" />
+                        <div className="reserve-content-container">
+                            <h2 className="reserve-title">Fazer <strong>Reserva</strong></h2>
+                            <div className="reserve-inputs">
+                                <div className="input-container">
+                                    <p className="input-title">Data de Entrada</p>
+                                    <DateInputReserve type="date" />
+                                </div>
+                                <div className="input-container">
+                                    <p className="input-title">Data de Saída</p>
+                                    <DateInputReserve type="date" />
+                                </div>
+                                <div className="input-container">
+                                    <p className="input-title">Quarto</p>
+                                <SelectInputReserve>
+                                        <option>Standard</option>
+                                        <option>Deluxe</option>
+                                        <option>Premium</option>
+                                </SelectInputReserve>
+                                </div>
+                                <div className="input-container">
+                                    <p className="input-title">Crianças</p>
+                                    <SelectInputReserve className="numberSelect">
+                                        <option className="number">0</option>
+                                        <option  className="number">1</option>
+                                        <option  className="number">2</option>
+                                        <option  className="number">3</option>
+                                        <option  className="number">4</option>
+                                        <option  className="number">5</option>
+                                </SelectInputReserve>
+                                </div>
+                                <div className="input-container">
+                                    <p className="input-title">Adultos</p>
+                                    <SelectInputReserve className="numberSelect">
+                                        <option  className="number">0</option>
+                                        <option  className="number">1</option>
+                                        <option  className="number">2</option>
+                                        <option  className="number">3</option>
+                                        <option  className="number">4</option>
+                                        <option  className="number">5</option>
+                                </SelectInputReserve>
+                                </div>
                             </div>
-                            <div className="input-container">
-                                <p className="input-title">Data de Saída</p>
-                                <DateInputReserve type="date" />
-                            </div>
-                            <div className="input-container">
-                                <p className="input-title">Quarto</p>
-                            <SelectInputReserve>
-                                    <option>Standard</option>
-                                    <option>Deluxe</option>
-                                    <option>Premium</option>
-                            </SelectInputReserve>
-                            </div>
-                            <div className="input-container">
-                                <p className="input-title">Crianças</p>
-                                <SelectInputReserve className="numberSelect">
-                                    <option className="number">0</option>
-                                    <option  className="number">1</option>
-                                    <option  className="number">2</option>
-                                    <option  className="number">3</option>
-                                    <option  className="number">4</option>
-                                    <option  className="number">5</option>
-                            </SelectInputReserve>
-                            </div>
-                            <div className="input-container">
-                                <p className="input-title">Adultos</p>
-                                <SelectInputReserve className="numberSelect">
-                                    <option  className="number">0</option>
-                                    <option  className="number">1</option>
-                                    <option  className="number">2</option>
-                                    <option  className="number">3</option>
-                                    <option  className="number">4</option>
-                                    <option  className="number">5</option>
-                            </SelectInputReserve>
+                            <div className="reserve-button">
+                                <LoginButton onClick={handleClick}>
+                                        <Link to="/" className="loginButtonStyle">Fazer Reserva</Link>
+                                </LoginButton>
                             </div>
                         </div>
-                        <div className="reserve-button">
-                            <LoginButton onClick={handleClick}>
-                                    <Link to="/" className="loginButtonStyle">Fazer Reserva</Link>
-                            </LoginButton>
-                        </div>
-                    </div>
-                    <div className="reserve-white-line-2" />
-                    <div className="leaves2" />
-                </ReserveSection>
+                        <div className="reserve-white-line-2" />
+                        <div className="leaves2" />
+                    </ReserveSection>
+                </RegisterProvider>
         </>
     );
 }

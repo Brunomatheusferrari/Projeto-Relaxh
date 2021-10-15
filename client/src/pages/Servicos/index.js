@@ -1,14 +1,10 @@
-import React, { useEffect }  from "react";
+import React from "react";
 import { CardDelivery } from "../../components/CardsServicos/CardDelivery";
 import { CardLimpeza } from "../../components/CardsServicos/CardLimpeza";
 import { CardOutros } from "../../components/CardsServicos/CardOutros";
 import { ServicosContainer } from "../../components/PaginaServicos/ServicosContainer";
-import forkndKnife from "../../static/img/forkandKnife.png";
-import cleanerSpray from "../../static/img/cleanerSpray.png";
-import poolPng from "../../static/img/poolPng.png";
 import { Link } from "react-router-dom";
 import "../../components/SideBar/index"
-import authServices from "../../services/authServices";
 
 export function Servicos() {
     

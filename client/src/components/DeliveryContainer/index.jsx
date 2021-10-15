@@ -101,10 +101,15 @@ export const DeliveryContainer = styled.div`
         display: none;
     }
 
-    .container {
-        display: flex;
-        align-items: center;
-    }
+        .container {
+            display: flex;
+            align-items: center;
+            height: 80%;
+        }
+
+        .container-header{
+            width: 100%;
+        }
 
     .leaves {
         width: 100vw;

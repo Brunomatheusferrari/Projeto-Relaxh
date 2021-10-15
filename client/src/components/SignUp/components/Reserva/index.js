@@ -9,7 +9,7 @@ import DateInputCadastro from "../../../DateInputCadastro"
 import { SelectInputCadastro } from "../../../SelectInputCadastro"
 
 export function Reserva({ next }) {
-  const { dispatch } = useRegister();  
+  const { dispatch, state } = useRegister();  
   const { register, handleSubmit, formState: { errors }, watch, clearErrors} = useForm();
   const [tipo_quarto, setTipo_quarto] = useState("Standart")
 
@@ -41,7 +41,9 @@ export function Reserva({ next }) {
                         })}
                         onChange={() => clearErrors("data_entrada")} 
                         placeholder="Data de Entrada"  
-                        className="inputCadastro"/>
+                        className="inputCadastro"
+                        defaultValue={state.data_entrada}
+                        />
                 </div>
                 {errors.data_entrada && errors.data_entrada.type === "validate" && <span>Invalid Date</span>}
                 {errors.data_entrada && errors.data_entrada.type === "required" && <span>This field is required</span>}
@@ -56,7 +58,9 @@ export function Reserva({ next }) {
                         })}
                         onChange={() => clearErrors("data_saida")} 
                         placeholder="Confirmar Email" 
-                        className="inputCadastro"/>
+                        className="inputCadastro"
+                        defaultValue={state.data_saida}
+                        />
                 </div>
                 {errors.data_saida && errors.data_saida.type === "validate" && <span>Invalid Date</span>}
                 {errors.data_saida && errors.data_saida.type === "required" && <span>This field is required</span>}
@@ -67,7 +71,9 @@ export function Reserva({ next }) {
                         {...register("numero_pessoas", { required: true, min: 1, max: 4 })} 
                         onChange={() => clearErrors("numero_pessoas")} 
                         placeholder="Número de Pessoas" 
-                        className="inputCadastro"/>
+                        className="inputCadastro"
+                        defaultValue={state.numero_pessoas}
+                        />
                 </div>
                 {errors.numero_pessoas && errors.numero_pessoas.type === "required" && <span>This is required</span>}
                 {errors.numero_pessoas && errors.numero_pessoas.type === "min" && <span>The minimum value is 1</span> }

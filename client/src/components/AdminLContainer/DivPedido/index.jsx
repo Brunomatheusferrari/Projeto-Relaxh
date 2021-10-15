@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import colors from "../../themes/colors";
-import leaves2 from "../../static/img/leaves2.png"
+import colors from "../../../themes/colors";
+// import leaves2 from "../../static/img/leaves2.png"
 
-export const AdminDContainer = styled.div`
+export const AdminLContainer = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     width: 100vw;
     height: 100vh;
@@ -27,7 +27,7 @@ export const AdminDContainer = styled.div`
     .leaves1 {
         width: 15vw;
         height: 20vw;
-        background-image: url(${leaves2});
+        ${'' /* background-image: url(${leaves2}); */}
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
@@ -38,7 +38,7 @@ export const AdminDContainer = styled.div`
     .leaves2 {
         width: 10vw;
         height: 15vw;
-        background-image: url(${leaves2});
+        ${'' /* background-image: url(${leaves2}); */}
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
