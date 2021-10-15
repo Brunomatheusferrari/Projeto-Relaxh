@@ -19,7 +19,7 @@ async function getAll(req, res, next) {
     try {
         const services = await serviceServices.getAll();
 
-        res.status(201).json(services);
+        res.status(200).json(services);
     } catch (error) {
         console.log(error);
         next(error);

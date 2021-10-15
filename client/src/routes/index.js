@@ -9,11 +9,11 @@ import { Precos } from "../pages/Precos";
 import { Servicos } from "../pages/Servicos";
 import { Limpeza } from "../pages/Limpeza";
 import { Delivery } from "../pages/Delivery";
-import { AdminDelivery } from "../pages/AdminDelivery";
 import { PrivateRoute } from "./privateRoutes";
 import { DeliveryProvider } from "../contexts/deliveryContext";
 import { AdmWay } from "../pages/AdmWay";
 import { AdminLimpeza} from "../pages/AdminLimpeza";
+import { AdminDelivery } from "../pages/AdminDelivery";
 export const Routes = () => {
    return(
        <BrowserRouter>
@@ -24,18 +24,31 @@ export const Routes = () => {
                 <Route component = { SignUpContent } path="/cadastro" />
                 <Route component= { Sobre } path="/sobre" />
                 <Route component= { Precos } path="/preços" />
-                <Route component= { Servicos } path="/serviços" />
-                <Route component= { Limpeza } path="/serviços-limpeza" />
-                <Route component= { AdmWay } path="/admin-select" />
-                <Route component= { AdminLimpeza } path="/admin-limpeza" />
-                <DeliveryProvider>
-                    <Route component = { Delivery } path="/serviços-delivery" />
-                </DeliveryProvider>
+
+                <PrivateRoute path="/serviços-limpeza" permissions={["admin", "user"]}>
+                    <Limpeza/>
+                </PrivateRoute>
+
+                <PrivateRoute path="/serviços" permissions={["admin", "user"]}>
+                    <Servicos/>
+                </PrivateRoute>
+
+                <PrivateRoute path="/serviços-delivery" permissions={["admin", "user"]}>
+                    <DeliveryProvider>
+                        <Delivery />
+                    </DeliveryProvider>
+                </PrivateRoute>      
+
                 <PrivateRoute path="/admin-select" permissions={["admin"]}>
                     <AdmWay/>
                 </PrivateRoute>
+
                 <PrivateRoute path="/admin-delivery" permissions={["admin"]}>
-                    <AdminDelivery/>
+                    <AdminDelivery />
+                </PrivateRoute>
+
+                <PrivateRoute path="/admin-limpeza" permissions={["admin"]}>
+                    <AdminLimpeza/>
                 </PrivateRoute>
            </Switch>
        </BrowserRouter>

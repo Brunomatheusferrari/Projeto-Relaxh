@@ -1,36 +1,13 @@
-import React, { useEffect }  from "react";
+import React from "react";
 import { CardDelivery } from "../../components/CardsServicos/CardDelivery";
 import { CardLimpeza } from "../../components/CardsServicos/CardLimpeza";
 import { CardOutros } from "../../components/CardsServicos/CardOutros";
 import { ServicosContainer } from "../../components/PaginaServicos/ServicosContainer";
 import { Link } from "react-router-dom";
 import "../../components/SideBar/index"
-import authServices from "../../services/authServices";
 
 export function Servicos() {
     
-    useEffect(() =>{
-
-        async function verifyUser(){
-            try {
-                const token = await authServices.getAccessToken()
-                const role = await authServices.getRoleFromAccessToken(token)
-
-                if(role === "guest"){
-                    window.location.replace("/")
-                }
-
-
-            } catch (error) {
-                console.log(error)
-            }
-        }
-
-        verifyUser()
-
-    },[])
-
-
     return(
         <ServicosContainer>
             <div className="leaves6"></div>

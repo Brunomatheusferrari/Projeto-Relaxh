@@ -104,8 +104,6 @@ async function reserve(InfoReserva) {
         data_saida
     } = InfoReserva
 
-    // console.log(email)
-
     const user = await getUserByEmail(email)
 
     if (!user) {

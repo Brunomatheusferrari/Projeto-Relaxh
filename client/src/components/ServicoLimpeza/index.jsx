@@ -2,7 +2,7 @@ import styled from "styled-components";
 import colors from "../../themes/colors";
 
 export const ServicoLimpeza = styled.div`
-@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     font-family: 'Barskervville';
     width: 100vw;
     height: 100vh;
@@ -11,6 +11,7 @@ export const ServicoLimpeza = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
+
     .header {
         width: 100vw;
         height: 15vh;
@@ -90,6 +91,35 @@ export const ServicoLimpeza = styled.div`
         top: -10%;  
         left: 0%;
     }
+
+    .container-header{
+        width: 100%;
+    }
+
+    .servicos{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 50%;
+    }
+
+    .large-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        overflow: auto;
+        height: 60%
+    }
+
+    .container {    
+        display: flex;
+        align-items: center;
+        height: auto;
+        width: 70%;
+        overflow: auto;
+    }
+
     .leaves {
         width: 100vw;
         display: flex;
@@ -175,11 +205,18 @@ export const ServicoLimpeza = styled.div`
     }
     .Big-Container {
         width: 100vw;
-        height: 50vh;
+        height: 10%;
         display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+        flex-direction: column-reverse;
         align-items: center;
+        margin-top: 5%;
+    }
+
+    .large-container{
+        margin-top: 10%
+        height: 100%;
+        justify-content: space-between;
+        overflow: hidden;
     }
 
     .texts {

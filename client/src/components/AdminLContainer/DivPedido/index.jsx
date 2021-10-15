@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import colors from "../../themes/colors";
 
-export const AdminDContainer = styled.div`
+export const AdminLContainer = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     width: 100vw;
     height: 100vh;
