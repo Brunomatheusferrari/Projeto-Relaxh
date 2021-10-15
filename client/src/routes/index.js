@@ -13,7 +13,7 @@ import { AdminDelivery } from "../pages/AdminDelivery";
 import { PrivateRoute } from "./privateRoutes";
 import { DeliveryProvider } from "../contexts/deliveryContext";
 import { AdmWay } from "../pages/AdmWay";
-
+import { AdminLimpeza} from "../pages/AdminLimpeza";
 export const Routes = () => {
    return(
        <BrowserRouter>
@@ -27,9 +27,13 @@ export const Routes = () => {
                 <Route component= { Servicos } path="/serviços" />
                 <Route component= { Limpeza } path="/serviços-limpeza" />
                 <Route component= { AdmWay } path="/admin-select" />
+                <Route component= { AdminLimpeza } path="/admin-limpeza" />
                 <DeliveryProvider>
                     <Route component = { Delivery } path="/serviços-delivery" />
                 </DeliveryProvider>
+                <PrivateRoute path="/admin-select" permissions={["admin"]}>
+                    <AdmWay/>
+                </PrivateRoute>
                 <PrivateRoute path="/admin-delivery" permissions={["admin"]}>
                     <AdminDelivery/>
                 </PrivateRoute>

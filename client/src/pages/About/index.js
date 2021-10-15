@@ -8,12 +8,11 @@ import { FiArrowLeft } from "react-icons/fi";
 export function Sobre(props) {
     return (
         <AboutContainer>
-          
             <div className="contentContainer">
-                <div className="backButtonContainer">
-                    <Link to="/" label="homepage"><FiArrowLeft className="backButton"/></Link>
-                </div>
                 <div className="contentAdjust">
+                    <div className="backButtonContainer" >
+                        <Link to="/" label="homepage"><FiArrowLeft className="backButton" /></Link>
+                    </div>
                     <div className="aboutContainerText">
                         <div className="leaves2" />
                         <div className="titleContainer">
@@ -24,7 +23,7 @@ export function Sobre(props) {
                         </p>
                         <div className="leaves1" />
                     </div>
-                    
+
                     <div className="creatorsContainer">
                         <h2 className="cretorsTitle">Criado por:</h2>
                             <div className="creators-cards">
@@ -63,13 +62,12 @@ export function Sobre(props) {
                                     <div className="card-leaves" />
                                     <div className="card-leaves-2" />
                                 </div>
-                              
-                            </div>
-                    </div>
-                </div>
-            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
-            <div className="imagesAdjust"> 
+            <div className="imagesAdjust">
                 <div className="leavesPng"></div>
                 <div className="hyperwTeam"></div>
             </div>

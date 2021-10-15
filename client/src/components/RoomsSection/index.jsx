@@ -4,7 +4,7 @@ import colors from "../../themes/colors";
 export const RoomsSection = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
     width: 100vw;
-    height: 100vh;
+    height: auto;
 
     .rooms-background {
         width: 100vw;
@@ -85,8 +85,14 @@ export const RoomsSection = styled.div`
         }
     }
 
-    @media (max-width: 700px) {
-        height: 120vh;
+    .head-text {
+    position: relative;
+    }
+    .text-on-image {
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    color: black;
     }
 
 `;

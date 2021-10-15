@@ -2,6 +2,9 @@ import React, { useEffect } from "react"
 import { ButtonSub } from "../ButtonSub/index"
 import { useRegister } from "../../../../contexts/registerContext"
 import { useForm } from "react-hook-form";
+import authServices from "../../../../services/authServices"
+import serviceServices from "../../../../services/serviceServices"
+
 import "./styles.css"
 import NumberInput from "../../../NumberInput"
 import InputCadastro from "../../../InputCadastro"
@@ -15,8 +18,24 @@ export function Pagamento({next}) {
             alert("Preencha as informações da reserva primeiro")
             return next()
         }
-    })
 
+        async function getQuartoUser(){
+            try {
+                const quarto = await serviceServices.getQuartoUser()
+
+                if(quarto != undefined){
+                    alert("Você já poossui uma reserva")
+                    window.location.replace("/")
+                }
+
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+        getQuartoUser()
+
+    },[])
 
     async function onSubmit() {
         try {
