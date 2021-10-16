@@ -132,6 +132,18 @@ export const QrCodeSection = styled.div`
     
     }
 
+    @media (max-width: 650px) {
+        height: 100vh;
+
+        .qrcode-content-container {
+            width: 80%;
+        }
+
+        .qrcode-text {
+            font-size: 5vw;
+        }
+    }
+
     @media (max-width: 404px) {
         height: 100vh;
 

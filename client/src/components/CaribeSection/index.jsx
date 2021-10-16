@@ -140,6 +140,7 @@ export const CaribeSection = styled.div`
             height: 32vw;
         }
     }
+
     
     @media (max-width: 700px) {
         height: 115vh;
@@ -171,16 +172,18 @@ export const CaribeSection = styled.div`
         }
     }
 
+
+
     @media (max-width: 450px) {
         .caribe-card {
-            width: 60vw;
+            width: 85vw;
             height: 60vh;
-            left: 20vw;
+            left: 7vw;
             overflow: hidden;
         }
 
         .caribe-card-text {
-            font-size: 2.5vw;
+            font-size: 3vw;
             width: 100%;
             overflow: hidden;
         }

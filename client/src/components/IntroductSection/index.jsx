@@ -114,7 +114,7 @@ export const IntroductSection = styled.div`
             }
         }
 
-        @media (max-width: 750px) {
+        @media (max-width: 850px) {
             height: 50vh;
              /* flex-direction: column;
 
@@ -134,6 +134,32 @@ export const IntroductSection = styled.div`
             .bgLogo {
                width: 26% ;
             }  
+        }
+
+        @media (max-width: 600px) {
+            height: 80vh;
+            
+            .contentContainer {
+                flex-direction: column;
+            }
+
+            .bgLogo {
+                height: 30%;
+                width: 100vw;
+                bottom: 0;
+                left: 0;
+            }
+
+            .logoRelaxh {
+                width: 60vw;
+                height: 60vw;
+                top: 12%;
+            }
+
+            .sectionTitle {
+                font-size: 8vw;
+                width: 100%;
+            }
         }
 
         @media (max-width: 404px) {
