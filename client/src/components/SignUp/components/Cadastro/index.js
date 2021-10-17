@@ -43,7 +43,7 @@ export function Cadastro({ next }) {
                                 onChange={() => clearErrors("nome")}
                             />
                         </div>
-                        {errors.nome && <p>This field is required</p>}
+                        {errors.nome && <span>This field is required</span>}
                         <div className="input-capsule">
                             <InputCadastro  
                                 placeholder="Email"  
@@ -56,8 +56,8 @@ export function Cadastro({ next }) {
                                 onChange={() => clearErrors("email")}
                             />
                         </div>
-                        {errors.email && errors.email.type === "required" && <p>This field is required</p>}
-                        {errors.email && errors.email.type ===   "pattern" && <p>Invalid Email</p>}
+                        {errors.email && errors.email.type === "required" && <span>This field is required</span>}
+                        {errors.email && errors.email.type ===   "pattern" && <span>Invalid Email</span>}
 
                         <div className="input-capsule">
                             <InputCadastro
@@ -75,7 +75,7 @@ export function Cadastro({ next }) {
                                 onChange={() => clearErrors("password")}
                             />
                         </div>
-                        {errors.password && <p>{errors.password.message}</p>}
+                        {errors.password && <span>{errors.password.message}</span>}
                         <div className="input-capsule">
                             <InputCadastro
                                 name="password_repeat"
@@ -89,7 +89,7 @@ export function Cadastro({ next }) {
                                 onChange={() => clearErrors("password_repeat")}
                             />
                         </div>
-                        {errors.password_repeat && <p>{errors.password_repeat.message}</p>}
+                        {errors.password_repeat && <span>{errors.password_repeat.message}</span>}
                         <div className="buttonDiv">
                             <ButtonSub title="Continuar"/>
                         </div>  

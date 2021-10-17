@@ -443,6 +443,7 @@ export const AboutContainer = styled.div`
         
         .contentContainer {
             height: fit-content;
+            flex-direction: column;
            
         }
 
@@ -506,6 +507,56 @@ export const AboutContainer = styled.div`
         }
     }
 
+    @media (max-width: 750px) {
+        width: 100vw;
+        overflow-y: hidden;
+
+        .card-name {
+            font-size: 20px;
+        }
+
+        .card-name-2 {
+            font-size: 20px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+        }
+
+        .contentContainer {
+            height: fit-content;
+            width: 100vw;
+            flex-direction: column;
+        }
+
+        .contentAdjust {
+            height: fit-content;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .creatorsContainer {
+            margin: 0;
+            width: 100%;
+        }
+
+        .creators-card-1 {
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        .backButtonContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+    }
+
     @media (max-width: 640px) {
         .aboutContainerText {
             width: 100%;
@@ -520,13 +571,17 @@ export const AboutContainer = styled.div`
 
     @media (max-width: 470px) {
         .backButton{
-            top: -0.5%;
+            top: -20.5%;
+            position: absolute;
+            top: -12vh;
+
         }
 
         .aboutContainerText {
             width: 60vw;
             height: 55vh;
-            left: -35%;
+            left: 0;
+            right: 0;
             align-items: center;
             justify-content: center;
         }
@@ -545,6 +600,7 @@ export const AboutContainer = styled.div`
         }
 
         .creators-card-1 {
+            position: relative;
             width: 85vw;
             height: 120vw;
         }
@@ -578,6 +634,17 @@ export const AboutContainer = styled.div`
         .creatorsContainer {
             right: 0;
         }      
+
+        .contentAdjust {
+            height: fit-content;
+            margin: 0;
+            top: -8vh;
+        }
+
+        .contentContainer {
+            height: fit-content;
+        }
+
 
     }
 `;

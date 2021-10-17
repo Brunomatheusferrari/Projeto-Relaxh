@@ -66,8 +66,8 @@ export function Pagamento({next}) {
                             onChange={() => clearErrors("numero_cartão")}
                             />
                     </div>
-                    {errors.numero_cartao && errors.numero_cartao.type === "required" && <p>This field is required</p>}
-                    {errors.numero_cartao && errors.numero_cartao.type === "pattern" && <p>Invalid Card Code</p>}
+                    {errors.numero_cartao && errors.numero_cartao.type === "required" && <span>This field is required</span>}
+                    {errors.numero_cartao && errors.numero_cartao.type === "pattern" && <span>Invalid Card Code</span>}
                     <div className="input-capsule">
                         <NumberInput
                             type="text" 
@@ -80,8 +80,8 @@ export function Pagamento({next}) {
                             onChange={() => clearErrors("validade")}
                             />
                     </div>
-                    {errors.validade && errors.validade.type === "required" && <p>This field is required</p>}
-                    {errors.validade && errors.validade.type === "pattern" && <p>Invalid Format Date</p>}
+                    {errors.validade && errors.validade.type === "required" && <span>This field is required</span>}
+                    {errors.validade && errors.validade.type === "pattern" && <span>Invalid Format Date</span>}
                     <div className="input-capsule">
                         <NumberInput
                             type="number" 
@@ -94,8 +94,8 @@ export function Pagamento({next}) {
                             onChange={() => clearErrors("ccv")}
                             />
                     </div>
-                    {errors.ccv && errors.ccv.type === "required" && <p>This field is required</p>}
-                    {errors.ccv && errors.ccv.type === "pattern" && <p>Invalid CCV</p>}
+                    {errors.ccv && errors.ccv.type === "required" && <span>This field is required</span>}
+                    {errors.ccv && errors.ccv.type === "pattern" && <span>Invalid CCV</span>}
                     <div className="input-capsule">
                         <InputCadastro
                             placeholder="Banco"  
@@ -104,7 +104,7 @@ export function Pagamento({next}) {
                             onChange={() => clearErrors("banco")}
                             />
                     </div>
-                    {errors.banco && errors.banco.type === "required" && <p>This field is required</p>}
+                    {errors.banco && errors.banco.type === "required" && <span>This field is required</span>}
                     <div className="buttonDiv">
                     <ButtonSub title="Continuar"/>
                     </div> 
