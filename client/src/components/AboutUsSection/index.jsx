@@ -114,7 +114,7 @@ export const AboutUsSection = styled.div`
             width: 20%;
         }
     }
-    
+
 
     @media (max-width: 404px) {
         height: 100vh;

@@ -65,13 +65,13 @@ export function Sobre(props) {
                           </div>
                       </div>
                   </div>
-              </div>
-
-            <div className="imagesAdjust">
+                  <div className="imagesAdjust">
                 <div className="leavesPng"></div>
                 <div className="hyperwTeam"></div>
             </div>
+              </div>
 
+           
         </AboutContainer>
     );
 }
