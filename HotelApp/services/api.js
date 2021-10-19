@@ -1,8 +1,8 @@
-import Constants from "expo-constants";
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "http://0edd-179-190-114-125.ngrok.io",
+    //"https://relaxh-server.herokuapp.com"
+    baseURL: "http://f22e-177-130-224-143.ngrok.io",
     timeout: 2000
 });
 

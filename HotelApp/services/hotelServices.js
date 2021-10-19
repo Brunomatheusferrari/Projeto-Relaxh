@@ -1,10 +1,17 @@
 import { api } from "./api";
+import jwtDecode from "jwt-decode";
 
 async function CheckIn({token}) {
     try {
-        const res = await api.post("/hotel/checkin", { token });
+        let res = await api.post("/hotel/checkin", { token });
+
+        const { id_reserva } = jwtDecode(token)
+
+        const { id_quarto } = (await api.get("/users/reserve/get", {params: {"id": id_reserva}})).data
+
+        const { numero_quarto } = (await api.get("/hotel/quartos/get", {params: {"id": id_quarto}})).data
         
-       return res 
+       return numero_quarto
     } catch (err) {
         console.log(err);
         throw new Error("Ocorreu um Erro");

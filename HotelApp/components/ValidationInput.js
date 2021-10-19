@@ -13,7 +13,6 @@ export function ValidationInput({labelText, isValid, ...rest}) {
                     {...rest}
                     style={styles.input}  
                 />                  
-                { isValid && <AntDesign name="checkcircle" style={styles.icon} size={24} color={colors.check} /> }
             </View>
         </>
     );

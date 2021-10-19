@@ -1,6 +1,6 @@
 export default {
-    name: "Todo App",
-    slug: "TodoApp",
+    name: "RealaxhApp",
+    slug: "RealaxhApp",
     version: "1.0.0",
     orientation: "portrait",
     icon: "./assets/icon.png",
@@ -19,6 +19,7 @@ export default {
       supportsTablet: true
     },
     android: {
+      package: "com.hyperw.relaxhapp",
       adaptiveIcon: {
         foregroundImage: "./assets/adaptive-icon.png",
         backgroundColor: "#FFFFFF"
@@ -30,5 +31,5 @@ export default {
     },
     extra: {
         apiURL: "https://3a08-2804-d57-4e14-4c00-6066-c41-fbd8-1b96.ngrok.io/api"
-    },
+    }
 };

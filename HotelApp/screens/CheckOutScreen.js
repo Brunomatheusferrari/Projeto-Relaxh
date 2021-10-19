@@ -10,8 +10,8 @@ export function CheckOutScreen({navigation}) {
 
     return (
       <View style={styles.container}>
-        <Scanner type="Checkout">
-          <AppButton title="Go Back" onPress={() => navigation.goBack()}/>
+        <Scanner type="Check-out">
+          <AppButton title="Voltar" onPress={() => navigation.goBack()}/>
         </Scanner>
       </View>
     );
