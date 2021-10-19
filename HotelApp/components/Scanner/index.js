@@ -17,20 +17,20 @@ export default function Scanner(props) {
     })();
   }, []);
 
-  const handleBarCodeScanned = ({ type, data }) => {
+  async function handleBarCodeScanned({ type, data }){
     setScanned(true);
 
-    if(props.type == "Checkin"){
+    if(props.type == "Check-in"){
       try {
-        const res = hotelServices.CheckIn({token: data})
-        alert(res)
+        const res = await hotelServices.CheckIn({token: data})
+        alert(`Número do quarto: ${JSON.stringify(res)}`)
       } catch (error) {
         alert(error)
       }
-    }else if (props.type == "Checkout"){
+    }else if (props.type == "Check-out"){
       try {
-        const res = hotelServices.CheckOut({token: data})
-        alert(res)
+        const res = await hotelServices.CheckOut({token: data})
+        alert("Check-out Concluído....")
       } catch (error) {
         alert(error)
       }
@@ -73,8 +73,11 @@ const styles = StyleSheet.create({
   description: {
     marginTop: '10%',
     textAlign: 'center',
-    width: '80%',
-    fontSize: 50,
+    width: '50%',
+    fontSize: 30,
     color: '#FAF7F2',
+    padding: 5,
+    backgroundColor: 'rgba(50, 52, 52, 0.7)',
+    borderRadius: 10
   }
 })
